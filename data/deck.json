@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "count": 60,
+ "count": 61,
  "species": [
   {
    "id": 48662,
@@ -4307,6 +4307,70 @@
      "Nephilengys papuana",
      "Herennia tsoi",
      "Nephila vitiana"
+    ]
+   }
+  },
+  {
+   "id": 59675,
+   "scientific": "Pyrrharctia isabella",
+   "genus": "Pyrrharctia",
+   "epithet": "isabella",
+   "common": "Isabella Tiger Moth",
+   "family": "Erebidae",
+   "order": "Lepidoptera",
+   "level": 39,
+   "photo": {
+    "file": "59675.jpg",
+    "license": "cc-by",
+    "credit": "(c) naturalist charlie, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/21293359"
+   },
+   "silhouette": {
+    "file": "59675.svg",
+    "rank": "family",
+    "matched": "Erebidae",
+    "credit": "Zyoute (modified)",
+    "link": "https://www.phylopic.org/images/59587051-70a0-46d9-9953-78b1b39592b9"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Hypena",
+     "Catocala",
+     "Spilosoma",
+     "Orgyia",
+     "Lophocampa",
+     "Halysidota",
+     "Lymantria",
+     "Idia",
+     "Hyphantria",
+     "Estigmene"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Pyrrharctia genini"
+    ],
+    "speciesFamily": [
+     "Lymantria dispar",
+     "Hyphantria cunea",
+     "Spilosoma virginica",
+     "Estigmene acrea",
+     "Halysidota tessellaris",
+     "Lophocampa caryae",
+     "Hypena scabra",
+     "Hypercompe scribonia",
+     "Euchaetes egle",
+     "Euplagia quadripunctaria"
     ]
    }
   }
