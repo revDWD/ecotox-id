@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "count": 147,
+ "count": 174,
  "species": [
   {
    "id": 48662,
@@ -10455,6 +10455,1852 @@
      "Ephemera simulans",
      "Ephemera japonica",
      "Ephemera formosana"
+    ]
+   }
+  },
+  {
+   "id": 49540,
+   "scientific": "Gasteracantha cancriformis",
+   "genus": "Gasteracantha",
+   "epithet": "cancriformis",
+   "common": "Spinybacked Orbweaver",
+   "family": "Araneidae",
+   "order": "Araneae",
+   "level": 43,
+   "photo": {
+    "file": "49540-546efe23.jpg",
+    "license": "cc-by-sa",
+    "credit": "(c) Judy Gallagher, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/4160127"
+   },
+   "silhouette": {
+    "file": "49540-44a6edc3.svg",
+    "rank": "genus",
+    "matched": "Gasteracantha",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/7b69a869-4e88-44e4-ac80-e8bebfb145a7"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Larinioides",
+     "Araniella",
+     "Micrathena",
+     "Cyclosa",
+     "Mangora",
+     "Nuctenea",
+     "Eriophora"
+    ],
+    "genusOrder": [
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila",
+     "Philodromus",
+     "Latrodectus",
+     "Xysticus"
+    ],
+    "speciesGenus": [
+     "Gasteracantha kuhli",
+     "Gasteracantha fornicata",
+     "Gasteracantha geminata",
+     "Gasteracantha diardi",
+     "Gasteracantha quadrispinosa",
+     "Gasteracantha sanguinolenta",
+     "Gasteracantha diadesmia",
+     "Gasteracantha sacerdotalis",
+     "Gasteracantha sauteri",
+     "Gasteracantha versicolor"
+    ],
+    "speciesFamily": [
+     "Araneus diadematus",
+     "Argiope aurantia",
+     "Neoscona crucifera",
+     "Argiope bruennichi",
+     "Argiope argentata",
+     "Argiope trifasciata",
+     "Larinioides cornutus",
+     "Neoscona oaxacensis",
+     "Nuctenea umbratica",
+     "Araneus marmoreus"
+    ]
+   }
+  },
+  {
+   "id": 120578,
+   "scientific": "Micrathena sagittata",
+   "genus": "Micrathena",
+   "epithet": "sagittata",
+   "common": "Arrow-shaped Orbweaver",
+   "family": "Araneidae",
+   "order": "Araneae",
+   "level": 53,
+   "photo": {
+    "file": "120578-6e070db2.jpg",
+    "license": "cc-by-sa",
+    "credit": "(c) Curtis Meyers, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/16317641"
+   },
+   "silhouette": {
+    "file": "120578-80d8eb21.svg",
+    "rank": "family",
+    "matched": "Araneidae",
+    "credit": "Birgit Lang",
+    "link": "https://www.phylopic.org/images/c8ca5adb-0b7d-4966-a5ca-efcca71b1542"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Larinioides",
+     "Gasteracantha",
+     "Araniella",
+     "Cyclosa",
+     "Mangora",
+     "Nuctenea",
+     "Eriophora"
+    ],
+    "genusOrder": [
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila",
+     "Philodromus",
+     "Latrodectus",
+     "Xysticus"
+    ],
+    "speciesGenus": [
+     "Micrathena gracilis",
+     "Micrathena mitrata",
+     "Micrathena sexspinosa",
+     "Micrathena schreibersi",
+     "Micrathena plana",
+     "Micrathena fissispina",
+     "Micrathena funebris",
+     "Micrathena lucasi",
+     "Micrathena nigrichelis",
+     "Micrathena kirbyi"
+    ],
+    "speciesFamily": [
+     "Araneus diadematus",
+     "Argiope aurantia",
+     "Neoscona crucifera",
+     "Argiope bruennichi",
+     "Gasteracantha cancriformis",
+     "Argiope argentata",
+     "Argiope trifasciata",
+     "Larinioides cornutus",
+     "Neoscona oaxacensis",
+     "Nuctenea umbratica"
+    ]
+   }
+  },
+  {
+   "id": 62035,
+   "scientific": "Misumenoides formosipes",
+   "genus": "Misumenoides",
+   "epithet": "formosipes",
+   "common": "White-banded Crab Spider",
+   "family": "Thomisidae",
+   "order": "Araneae",
+   "level": 50,
+   "photo": {
+    "file": "62035-eb9b19a5.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Thomas Shahan, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/298270129"
+   },
+   "silhouette": {
+    "file": "62035-7bde8647.svg",
+    "rank": "family",
+    "matched": "Thomisidae",
+    "credit": "Lauren Sumner-Rooney",
+    "link": "https://www.phylopic.org/images/dbe53517-3435-41f7-95ad-da28f7f1397c"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Xysticus",
+     "Misumena",
+     "Mecaphesa",
+     "Thomisus",
+     "Synema",
+     "Misumessus",
+     "Diaea",
+     "Tmarus",
+     "Ebrechtella",
+     "Sidymella"
+    ],
+    "genusOrder": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila"
+    ],
+    "speciesGenus": [
+     "Misumenoides quetzaltocatl",
+     "Misumenoides athleticus",
+     "Misumenoides rugosus",
+     "Misumenoides annulipes",
+     "Misumenoides vazquezae",
+     "Misumenoides paucispinosus",
+     "Misumenoides magnus",
+     "Misumenoides vigilans",
+     "Misumenoides parvus",
+     "Misumenoides crassipes"
+    ],
+    "speciesFamily": [
+     "Misumena vatia",
+     "Synema globosum",
+     "Thomisus onustus",
+     "Misumessus oblongus",
+     "Mecaphesa asperata",
+     "Ebrechtella tricuspidata",
+     "Diaea dorsata",
+     "Xysticus ulmi",
+     "Runcinia grammica",
+     "Mecaphesa celer"
+    ]
+   }
+  },
+  {
+   "id": 82117,
+   "scientific": "Dolomedes tenebrosus",
+   "genus": "Dolomedes",
+   "epithet": "tenebrosus",
+   "common": "Dark Fishing Spider",
+   "family": "Dolomedidae",
+   "order": "Araneae",
+   "level": 43,
+   "photo": {
+    "file": "82117-703e9920.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Thomas Shahan, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/194388079"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Megadolomedes",
+     "Ornodolomedes",
+     "Caledomedes",
+     "Mangromedes",
+     "Bradystichus",
+     "Tasmomedes"
+    ],
+    "genusOrder": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Trichonephila",
+     "Philodromus"
+    ],
+    "speciesGenus": [
+     "Dolomedes triton",
+     "Dolomedes scriptus",
+     "Dolomedes albineus",
+     "Dolomedes minor",
+     "Dolomedes vittatus",
+     "Dolomedes fimbriatus",
+     "Dolomedes sulfureus",
+     "Dolomedes facetus",
+     "Dolomedes raptor",
+     "Dolomedes mizhoanus"
+    ],
+    "speciesFamily": [
+     "Megadolomedes trux"
+    ]
+   }
+  },
+  {
+   "id": 122621,
+   "scientific": "Hogna carolinensis",
+   "genus": "Hogna",
+   "epithet": "carolinensis",
+   "common": "Carolina Wolf Spider",
+   "family": "Lycosidae",
+   "order": "Araneae",
+   "level": 55,
+   "photo": {
+    "file": "122621-ee23b518.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Leif, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/398358304"
+   },
+   "silhouette": {
+    "file": "122621-1c74307b.svg",
+    "rank": "family",
+    "matched": "Lycosidae",
+    "credit": "Sidney Frederic Harmer, Arthur Everett Shipley (vectorized by Maxime Dahirel)",
+    "link": "https://www.phylopic.org/images/16ce8ca6-f4f7-42e5-891c-a5fc773005ac"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Pardosa",
+     "Tigrosa",
+     "Rabidosa",
+     "Trochosa",
+     "Schizocosa",
+     "Alopecosa",
+     "Arctosa",
+     "Lycosa",
+     "Gladicosa",
+     "Pirata"
+    ],
+    "genusOrder": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Phidippus",
+     "Steatoda",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila",
+     "Philodromus"
+    ],
+    "speciesGenus": [
+     "Hogna radiata",
+     "Hogna antelucana",
+     "Hogna lenta",
+     "Hogna frondicola",
+     "Hogna baltimoriana",
+     "Hogna gumia",
+     "Hogna graeca",
+     "Hogna crispipes",
+     "Hogna coloradensis",
+     "Hogna bivittata"
+    ],
+    "speciesFamily": [
+     "Rabidosa rabida",
+     "Tigrosa helluo",
+     "Tigrosa annexa",
+     "Tigrosa georgicola",
+     "Alopecosa kochi",
+     "Trochosa ruricola",
+     "Pardosa amentata",
+     "Gladicosa gulosa",
+     "Schizocosa avida",
+     "Arctosa littoralis"
+    ]
+   }
+  },
+  {
+   "id": 50181,
+   "scientific": "Loxosceles reclusa",
+   "genus": "Loxosceles",
+   "epithet": "reclusa",
+   "common": "Brown Recluse",
+   "family": "Sicariidae",
+   "order": "Araneae",
+   "level": 52,
+   "photo": {
+    "file": "50181-88cbe41a.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) northganaturalist, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/150442964"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Sicarius",
+     "Hexophthalma"
+    ],
+    "genusOrder": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila"
+    ],
+    "speciesGenus": [
+     "Loxosceles rufescens",
+     "Loxosceles laeta",
+     "Loxosceles yucatana",
+     "Loxosceles tenochtitlan",
+     "Loxosceles deserta",
+     "Loxosceles intermedia",
+     "Loxosceles amazonica",
+     "Loxosceles hirsuta",
+     "Loxosceles devia",
+     "Loxosceles gaucho"
+    ],
+    "speciesFamily": [
+     "Sicarius thomisoides",
+     "Sicarius tropicus",
+     "Sicarius levii",
+     "Sicarius cariri",
+     "Sicarius fumosus"
+    ]
+   }
+  },
+  {
+   "id": 126777,
+   "scientific": "Peucetia viridans",
+   "genus": "Peucetia",
+   "epithet": "viridans",
+   "common": "Green Lynx Spider",
+   "family": "Oxyopidae",
+   "order": "Araneae",
+   "level": 45,
+   "photo": {
+    "file": "126777-7191b576.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Pedro Alanis, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/7799129"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Oxyopes",
+     "Hamadruas",
+     "Hamataliwa",
+     "Tapinillus",
+     "Schaenicoscelis",
+     "Tapponia",
+     "Pseudohostus",
+     "Hostus"
+    ],
+    "genusOrder": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila"
+    ],
+    "speciesGenus": [
+     "Peucetia longipalpis",
+     "Peucetia rubrolineata",
+     "Peucetia viridana",
+     "Peucetia viridis",
+     "Peucetia lucasi",
+     "Peucetia flava",
+     "Peucetia formosensis",
+     "Peucetia madagascariensis",
+     "Peucetia striata",
+     "Peucetia nicolae"
+    ],
+    "speciesFamily": [
+     "Oxyopes salticus",
+     "Oxyopes scalaris",
+     "Oxyopes macilentus",
+     "Oxyopes sertatus",
+     "Oxyopes heterophthalmus",
+     "Oxyopes gracilipes",
+     "Oxyopes lineatus",
+     "Oxyopes shweta",
+     "Hamadruas hieroglyphica",
+     "Hamataliwa grisea"
+    ]
+   }
+  },
+  {
+   "id": 47383,
+   "scientific": "Latrodectus geometricus",
+   "genus": "Latrodectus",
+   "epithet": "geometricus",
+   "common": "Brown Widow",
+   "family": "Theridiidae",
+   "order": "Araneae",
+   "level": 46,
+   "photo": {
+    "file": "47383-cd37712c.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Randi Poer, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/121683"
+   },
+   "silhouette": {
+    "file": "47383-b9c55f91.svg",
+    "rank": "species",
+    "matched": "Latrodectus geometricus",
+    "credit": "Mr E? (vectorized by T. Michael Keesey)",
+    "link": "https://www.phylopic.org/images/42453623-4b9a-4084-bdbf-ab43e2845cf2"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Steatoda",
+     "Parasteatoda",
+     "Enoplognatha",
+     "Theridion",
+     "Nesticodes",
+     "Cryptachaea",
+     "Argyrodes",
+     "Phylloneta",
+     "Anelosimus",
+     "Euryopis"
+    ],
+    "genusOrder": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Phidippus",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila",
+     "Philodromus"
+    ],
+    "speciesGenus": [
+     "Latrodectus hesperus",
+     "Latrodectus mactans",
+     "Latrodectus hasselti",
+     "Latrodectus variolus",
+     "Latrodectus katipo",
+     "Latrodectus occidentalis",
+     "Latrodectus tredecimguttatus",
+     "Latrodectus bishopi",
+     "Latrodectus mirabilis",
+     "Latrodectus curacaviensis"
+    ],
+    "speciesFamily": [
+     "Steatoda nobilis",
+     "Steatoda triangulosa",
+     "Steatoda grossa",
+     "Parasteatoda tepidariorum",
+     "Enoplognatha ovata",
+     "Nesticodes rufipes",
+     "Steatoda borealis",
+     "Steatoda bipunctata",
+     "Steatoda capensis",
+     "Cryptachaea veruculata"
+    ]
+   }
+  },
+  {
+   "id": 67708,
+   "scientific": "Argiope trifasciata",
+   "genus": "Argiope",
+   "epithet": "trifasciata",
+   "common": "Banded Garden Spider",
+   "family": "Araneidae",
+   "order": "Araneae",
+   "level": 44,
+   "photo": {
+    "file": "67708-7f6586d7.jpg",
+    "license": "cc-by",
+    "credit": "(c) Katja Schulz, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/1204004"
+   },
+   "silhouette": {
+    "file": "67708-5689f571.svg",
+    "rank": "genus",
+    "matched": "Argiope",
+    "credit": "Birgit Lang",
+    "link": "https://www.phylopic.org/images/593cd880-1440-4562-b589-264cc6f9e5f2"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Araneus",
+     "Neoscona",
+     "Larinioides",
+     "Gasteracantha",
+     "Araniella",
+     "Micrathena",
+     "Cyclosa",
+     "Mangora",
+     "Nuctenea",
+     "Eriophora"
+    ],
+    "genusOrder": [
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila",
+     "Philodromus",
+     "Latrodectus",
+     "Xysticus"
+    ],
+    "speciesGenus": [
+     "Argiope aurantia",
+     "Argiope bruennichi",
+     "Argiope argentata",
+     "Argiope keyserlingi",
+     "Argiope lobata",
+     "Argiope appensa",
+     "Argiope aemula",
+     "Argiope anasuja",
+     "Argiope australis",
+     "Argiope aetherea"
+    ],
+    "speciesFamily": [
+     "Araneus diadematus",
+     "Neoscona crucifera",
+     "Gasteracantha cancriformis",
+     "Larinioides cornutus",
+     "Neoscona oaxacensis",
+     "Nuctenea umbratica",
+     "Araneus marmoreus",
+     "Larinioides sclopetarius",
+     "Micrathena gracilis",
+     "Neoscona arabesca"
+    ]
+   }
+  },
+  {
+   "id": 179749,
+   "scientific": "Phidippus regius",
+   "genus": "Phidippus",
+   "epithet": "regius",
+   "common": "Regal Jumping Spider",
+   "family": "Salticidae",
+   "order": "Araneae",
+   "level": 57,
+   "photo": {
+    "file": "179749-9cc16b17.jpg",
+    "license": "cc-by",
+    "credit": "(c) Dennis Vollmar, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/65412681"
+   },
+   "silhouette": {
+    "file": "179749-5296085f.svg",
+    "rank": "genus",
+    "matched": "Phidippus",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/6ed46f09-0e46-46cd-9ed4-03b03001de57"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Menemerus",
+     "Salticus",
+     "Platycryptus",
+     "Habronattus",
+     "Plexippus",
+     "Hentzia",
+     "Heliophanus",
+     "Evarcha",
+     "Eris",
+     "Pelegrina"
+    ],
+    "genusOrder": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila",
+     "Philodromus"
+    ],
+    "speciesGenus": [
+     "Phidippus audax",
+     "Phidippus johnsoni",
+     "Phidippus clarus",
+     "Phidippus putnami",
+     "Phidippus princeps",
+     "Phidippus otiosus",
+     "Phidippus whitmani",
+     "Phidippus adumbratus",
+     "Phidippus apacheanus",
+     "Phidippus carneus"
+    ],
+    "speciesFamily": [
+     "Salticus scenicus",
+     "Platycryptus undatus",
+     "Menemerus bivittatus",
+     "Menemerus semilimbatus",
+     "Eris militaris",
+     "Paraphidippus aurantius",
+     "Plexippus paykulli",
+     "Hasarius adansoni",
+     "Anasaitis canosus",
+     "Maevia inclemens"
+    ]
+   }
+  },
+  {
+   "id": 121441,
+   "scientific": "Mecynogea lemniscata",
+   "genus": "Mecynogea",
+   "epithet": "lemniscata",
+   "common": "Basilica Orbweaver",
+   "family": "Araneidae",
+   "order": "Araneae",
+   "level": 54,
+   "photo": {
+    "file": "121441-c6dc710f.jpg",
+    "license": "cc-by",
+    "credit": "(c) Bill Keim, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/8902564"
+   },
+   "silhouette": {
+    "file": "121441-80d8eb21.svg",
+    "rank": "family",
+    "matched": "Araneidae",
+    "credit": "Birgit Lang",
+    "link": "https://www.phylopic.org/images/c8ca5adb-0b7d-4966-a5ca-efcca71b1542"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Argiope",
+     "Araneus",
+     "Neoscona",
+     "Larinioides",
+     "Gasteracantha",
+     "Araniella",
+     "Micrathena",
+     "Cyclosa",
+     "Mangora",
+     "Nuctenea"
+    ],
+    "genusOrder": [
+     "Phidippus",
+     "Steatoda",
+     "Pardosa",
+     "Tetragnatha",
+     "Leucauge",
+     "Dolomedes",
+     "Trichonephila",
+     "Philodromus",
+     "Latrodectus",
+     "Xysticus"
+    ],
+    "speciesGenus": [
+     "Mecynogea erythromela",
+     "Mecynogea bigibba",
+     "Mecynogea martiana",
+     "Mecynogea buique",
+     "Mecynogea apatzingan",
+     "Mecynogea ocosingo",
+     "Mecynogea infelix",
+     "Mecynogea sucre"
+    ],
+    "speciesFamily": [
+     "Araneus diadematus",
+     "Argiope aurantia",
+     "Neoscona crucifera",
+     "Argiope bruennichi",
+     "Gasteracantha cancriformis",
+     "Argiope argentata",
+     "Argiope trifasciata",
+     "Larinioides cornutus",
+     "Neoscona oaxacensis",
+     "Nuctenea umbratica"
+    ]
+   }
+  },
+  {
+   "id": 199583,
+   "scientific": "Centruroides hentzi",
+   "genus": "Centruroides",
+   "epithet": "hentzi",
+   "common": "Hentz Striped Scorpion",
+   "family": "Buthidae",
+   "order": "Scorpiones",
+   "level": 61,
+   "photo": {
+    "file": "199583-39e1f43a.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) benansel, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/67302233"
+   },
+   "silhouette": {
+    "file": "199583-8483d525.svg",
+    "rank": "genus",
+    "matched": "Centruroides",
+    "credit": "Gareth Monger",
+    "link": "https://www.phylopic.org/images/4e4d37b7-6671-4c53-9c0f-bc95cfbbb984"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Tityus",
+     "Buthus",
+     "Uroplectes",
+     "Parabuthus",
+     "Lychas",
+     "Hottentotta",
+     "Androctonus",
+     "Aegaeobuthus",
+     "Mesobuthus",
+     "Isometrus"
+    ],
+    "genusOrder": [
+     "Paravaejovis",
+     "Paruroctonus",
+     "Vaejovis",
+     "Uroctonus",
+     "Euscorpius",
+     "Opistophthalmus",
+     "Hadrurus",
+     "Heterometrus",
+     "Opisthacanthus",
+     "Cercophonius"
+    ],
+    "speciesGenus": [
+     "Centruroides vittatus",
+     "Centruroides gracilis",
+     "Centruroides sculpturatus",
+     "Centruroides edwardsii",
+     "Centruroides limbatus",
+     "Centruroides limpidus",
+     "Centruroides bicolor",
+     "Centruroides exilicauda",
+     "Centruroides ochraceus",
+     "Centruroides ornatus"
+    ],
+    "speciesFamily": [
+     "Buthus halius",
+     "Buthus occitanus",
+     "Lychas marmoreus",
+     "Aegaeobuthus gibbosus",
+     "Tityus serrulatus",
+     "Lychas mucronatus",
+     "Uroplectes carinatus",
+     "Uroplectes triangulifer",
+     "Uroplectes lineatus",
+     "Lychas scutilus"
+    ]
+   }
+  },
+  {
+   "id": 84644,
+   "scientific": "Phalangium opilio",
+   "genus": "Phalangium",
+   "epithet": "opilio",
+   "common": "European Harvestman",
+   "family": "Phalangiidae",
+   "order": "Opiliones",
+   "level": 43,
+   "photo": {
+    "file": "84644-76d40233.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Martin Galli, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/99786346"
+   },
+   "silhouette": {
+    "file": "84644-386e2b2e.svg",
+    "rank": "species",
+    "matched": "Phalangium opilio",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/05aa1876-bf3a-4c00-b286-1c8178f9c6c9"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Opilio",
+     "Dicranopalpus",
+     "Rilaena",
+     "Odiellus",
+     "Mitopus",
+     "Paroligolophus",
+     "Oligolophus",
+     "Lacinius",
+     "Platybunus",
+     "Metaphalangium"
+    ],
+    "genusOrder": [
+     "Leiobunum",
+     "Nelima",
+     "Protolophus",
+     "Hadrobunus",
+     "Eumesosoma",
+     "Libitioides",
+     "Nemastoma",
+     "Eurybunus",
+     "Gagrella"
+    ],
+    "speciesGenus": [
+     "Phalangium savignyi",
+     "Phalangium ligusticum",
+     "Phalangium gorbunovi",
+     "Phalangium targionii",
+     "Phalangium punctipes",
+     "Phalangium venustum",
+     "Phalangium minus",
+     "Phalangium uncatum",
+     "Phalangium armatum",
+     "Phalangium armenicum"
+    ],
+    "speciesFamily": [
+     "Opilio canestrinii",
+     "Rilaena triangularis",
+     "Mitopus morio",
+     "Dicranopalpus ramosus",
+     "Odiellus spinosus",
+     "Paroligolophus agrestis",
+     "Odiellus pictus",
+     "Oligolophus tridens",
+     "Lacinius dentiger",
+     "Metaphalangium cirtanum"
+    ]
+   }
+  },
+  {
+   "id": 83744,
+   "scientific": "Amblyomma americanum",
+   "genus": "Amblyomma",
+   "epithet": "americanum",
+   "common": "Lone Star Tick",
+   "family": "Ixodidae",
+   "order": "Ixodida",
+   "level": 50,
+   "photo": {
+    "file": "83744-14a4bbe9.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Jared Gorrell, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/56273611"
+   },
+   "silhouette": {
+    "file": "83744-2fd36e07.svg",
+    "rank": "genus",
+    "matched": "Amblyomma",
+    "credit": "Shyamal",
+    "link": "https://www.phylopic.org/images/a8798038-522c-4010-a425-8dd19c58119b"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Dermacentor",
+     "Ixodes",
+     "Rhipicephalus",
+     "Hyalomma",
+     "Haemaphysalis",
+     "Bothriocroton",
+     "Archaeocroton",
+     "Robertsicus",
+     "Rhipicentor",
+     "Africaniella"
+    ],
+    "genusOrder": [
+     "Argas",
+     "Ornithodoros",
+     "Carios",
+     "Alectorobius",
+     "Otobius",
+     "Secretargas",
+     "Antricola",
+     "Nothoaspis",
+     "Nuttalliella"
+    ],
+    "speciesGenus": [
+     "Amblyomma maculatum",
+     "Amblyomma cajennense",
+     "Amblyomma triguttatum",
+     "Amblyomma hebraeum",
+     "Amblyomma ovale",
+     "Amblyomma testudinarium",
+     "Amblyomma longirostre",
+     "Amblyomma sylvaticum",
+     "Amblyomma marmoreum",
+     "Amblyomma tuberculatum"
+    ],
+    "speciesFamily": [
+     "Dermacentor variabilis",
+     "Ixodes scapularis",
+     "Ixodes ricinus",
+     "Dermacentor occidentalis",
+     "Dermacentor reticulatus",
+     "Ixodes pacificus",
+     "Rhipicephalus sanguineus",
+     "Dermacentor marginatus",
+     "Ixodes holocyclus",
+     "Dermacentor andersoni"
+    ]
+   }
+  },
+  {
+   "id": 52155,
+   "scientific": "Dermacentor variabilis",
+   "genus": "Dermacentor",
+   "epithet": "variabilis",
+   "common": "American Dog Tick",
+   "family": "Ixodidae",
+   "order": "Ixodida",
+   "level": 46,
+   "photo": {
+    "file": "52155-872c3990.jpg",
+    "license": "cc-by-sa",
+    "credit": "(c) Nova Patch, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/219647484"
+   },
+   "silhouette": {
+    "file": "52155-7a3e0c86.svg",
+    "rank": "genus",
+    "matched": "Dermacentor",
+    "credit": "Titouan Montessuit",
+    "link": "https://www.phylopic.org/images/2d370180-57ac-461d-9861-99c2ee6d64f5"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Ixodes",
+     "Amblyomma",
+     "Rhipicephalus",
+     "Hyalomma",
+     "Haemaphysalis",
+     "Bothriocroton",
+     "Archaeocroton",
+     "Robertsicus",
+     "Rhipicentor",
+     "Africaniella"
+    ],
+    "genusOrder": [
+     "Argas",
+     "Ornithodoros",
+     "Carios",
+     "Alectorobius",
+     "Otobius",
+     "Secretargas",
+     "Antricola",
+     "Nothoaspis",
+     "Nuttalliella"
+    ],
+    "speciesGenus": [
+     "Dermacentor occidentalis",
+     "Dermacentor reticulatus",
+     "Dermacentor marginatus",
+     "Dermacentor andersoni",
+     "Dermacentor similis",
+     "Dermacentor albipictus",
+     "Dermacentor rhinocerinus",
+     "Dermacentor hunteri",
+     "Dermacentor auratus",
+     "Dermacentor taiwanensis"
+    ],
+    "speciesFamily": [
+     "Ixodes scapularis",
+     "Amblyomma americanum",
+     "Ixodes ricinus",
+     "Amblyomma maculatum",
+     "Ixodes pacificus",
+     "Rhipicephalus sanguineus",
+     "Ixodes holocyclus",
+     "Amblyomma cajennense",
+     "Hyalomma marginatum",
+     "Ixodes persulcatus"
+    ]
+   }
+  },
+  {
+   "id": 60598,
+   "scientific": "Ixodes scapularis",
+   "genus": "Ixodes",
+   "epithet": "scapularis",
+   "common": "Eastern Black-legged Tick",
+   "family": "Ixodidae",
+   "order": "Ixodida",
+   "level": 49,
+   "photo": {
+    "file": "60598-65e60f8e.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Erin Talmage, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/75550807"
+   },
+   "silhouette": {
+    "file": "60598-14fe1677.svg",
+    "rank": "species",
+    "matched": "Ixodes scapularis",
+    "credit": "Mathilde Cordellier",
+    "link": "https://www.phylopic.org/images/70576445-1ec9-44de-9379-22f6e8451b50"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Dermacentor",
+     "Amblyomma",
+     "Rhipicephalus",
+     "Hyalomma",
+     "Haemaphysalis",
+     "Bothriocroton",
+     "Archaeocroton",
+     "Robertsicus",
+     "Rhipicentor",
+     "Africaniella"
+    ],
+    "genusOrder": [
+     "Argas",
+     "Ornithodoros",
+     "Carios",
+     "Alectorobius",
+     "Otobius",
+     "Secretargas",
+     "Antricola",
+     "Nothoaspis",
+     "Nuttalliella"
+    ],
+    "speciesGenus": [
+     "Ixodes ricinus",
+     "Ixodes pacificus",
+     "Ixodes holocyclus",
+     "Ixodes persulcatus",
+     "Ixodes hexagonus",
+     "Ixodes vespertilionis",
+     "Ixodes frontalis",
+     "Ixodes cookei",
+     "Ixodes acutitarsus",
+     "Ixodes cornuatus"
+    ],
+    "speciesFamily": [
+     "Dermacentor variabilis",
+     "Amblyomma americanum",
+     "Dermacentor occidentalis",
+     "Dermacentor reticulatus",
+     "Amblyomma maculatum",
+     "Rhipicephalus sanguineus",
+     "Dermacentor marginatus",
+     "Dermacentor andersoni",
+     "Dermacentor similis",
+     "Amblyomma cajennense"
+    ]
+   }
+  },
+  {
+   "id": 208328,
+   "scientific": "Scolopendra viridis",
+   "genus": "Scolopendra",
+   "epithet": "viridis",
+   "common": "Florida Blue Centipede",
+   "family": "Scolopendridae",
+   "order": "Scolopendromorpha",
+   "level": 60,
+   "photo": {
+    "file": "208328-5b2c9117.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Jon McIntyre, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/5594979"
+   },
+   "silhouette": {
+    "file": "208328-80d0b3b5.svg",
+    "rank": "family",
+    "matched": "Scolopendridae",
+    "credit": "Noah Schlottman, photo by Carol Cummings",
+    "link": "https://www.phylopic.org/images/7e73ef98-7333-461d-8e3f-8f12c8d57e2d"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Cormocephalus",
+     "Hemiscolopendra",
+     "Rhysida",
+     "Otostigmus",
+     "Ethmostigmus",
+     "Akymnopellis",
+     "Arthrorhabdus",
+     "Asanada",
+     "Alipes",
+     "Scolopendropsis"
+    ],
+    "genusOrder": [
+     "Scolopocryptops",
+     "Cryptops",
+     "Theatops",
+     "Newportia",
+     "Plutonium"
+    ],
+    "speciesGenus": [
+     "Scolopendra cingulata",
+     "Scolopendra polymorpha",
+     "Scolopendra heros",
+     "Scolopendra mutilans",
+     "Scolopendra morsitans",
+     "Scolopendra subspinipes",
+     "Scolopendra dehaani",
+     "Scolopendra oraniensis",
+     "Scolopendra multidens",
+     "Scolopendra alternans"
+    ],
+    "speciesFamily": [
+     "Hemiscolopendra marginata",
+     "Rhysida longipes",
+     "Cormocephalus aurantiipes",
+     "Ethmostigmus rubripes",
+     "Cormocephalus westwoodi",
+     "Otostigmus scaber",
+     "Cormocephalus rubriceps",
+     "Cormocephalus nitidus"
+    ]
+   }
+  },
+  {
+   "id": 49552,
+   "scientific": "Scutigera coleoptrata",
+   "genus": "Scutigera",
+   "epithet": "coleoptrata",
+   "common": "House Centipede",
+   "family": "Scutigeridae",
+   "order": "Scutigeromorpha",
+   "level": 44,
+   "photo": {
+    "file": "49552-86a75450.jpeg",
+    "license": "cc-by-sa",
+    "credit": "(c) Cecile Roux, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/35972293"
+   },
+   "silhouette": {
+    "file": "49552-8354d68c.svg",
+    "rank": "species",
+    "matched": "Scutigera coleoptrata",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/ed16bf8d-7512-4af0-a50c-3cf34993b701"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Thereuonema",
+     "Thereuopoda",
+     "Allothereua",
+     "Parascutigera",
+     "Pilbarascutigera",
+     "Seychellonema",
+     "Prothereua",
+     "Tachythereua",
+     "Thereulla",
+     "Thereuoquima"
+    ],
+    "genusOrder": [
+     "Sphendononema",
+     "Scutigerina",
+     "Gonethella",
+     "Gonethina",
+     "Madagassophora"
+    ],
+    "speciesGenus": [
+     "Scutigera linceci",
+     "Scutigera buda",
+     "Scutigera smithii",
+     "Scutigera tonsoris",
+     "Scutigera planiceps"
+    ],
+    "speciesFamily": [
+     "Thereuonema tuberculata",
+     "Thereuopoda clunifera",
+     "Allothereua maculata",
+     "Thereuopoda longicornis",
+     "Thereuonema turkestana",
+     "Pilbarascutigera incola",
+     "Seychellonema gerlachi",
+     "Prothereua annulata",
+     "Tachythereua hispanica",
+     "Thereuonema microstoma"
+    ]
+   }
+  },
+  {
+   "id": 56083,
+   "scientific": "Armadillidium vulgare",
+   "genus": "Armadillidium",
+   "epithet": "vulgare",
+   "common": "Common Pill Woodlouse",
+   "family": "Armadillidiidae",
+   "order": "Isopoda",
+   "level": 37,
+   "photo": {
+    "file": "56083-215c14d2.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Robby Deans, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/46502479"
+   },
+   "silhouette": {
+    "file": "56083-7a12ea86.svg",
+    "rank": "species",
+    "matched": "Armadillidium vulgare",
+    "credit": "Gareth Monger",
+    "link": "https://www.phylopic.org/images/d6600a83-dbe0-4bdf-9cc0-5e86caeb5e5c"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Eluma",
+     "Schizidium",
+     "Cristarmadillidium",
+     "Alloschizidium",
+     "Paraschizidium",
+     "Echinarmadillidium",
+     "Iberiarmadillidium",
+     "Trogleluma",
+     "Ballodillium",
+     "Typhlarmadillidium"
+    ],
+    "genusOrder": [
+     "Porcellio",
+     "Oniscus",
+     "Philoscia",
+     "Ligia",
+     "Trachelipus",
+     "Porcellionides",
+     "Pentidotea",
+     "Idotea",
+     "Asellus",
+     "Trichoniscus"
+    ],
+    "speciesGenus": [
+     "Armadillidium nasatum",
+     "Armadillidium versicolor",
+     "Armadillidium depressum",
+     "Armadillidium granulatum",
+     "Armadillidium arcangelii",
+     "Armadillidium pictum",
+     "Armadillidium klugii",
+     "Armadillidium pulchellum",
+     "Armadillidium maculatum",
+     "Armadillidium pallasii"
+    ],
+    "speciesFamily": [
+     "Eluma caelata"
+    ]
+   }
+  },
+  {
+   "id": 53875,
+   "scientific": "Ocypode quadrata",
+   "genus": "Ocypode",
+   "epithet": "quadrata",
+   "common": "Atlantic Ghost Crab",
+   "family": "Ocypodidae",
+   "order": "Decapoda",
+   "level": 47,
+   "photo": {
+    "file": "53875-7b762531.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) dervogelmann, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/177209772"
+   },
+   "silhouette": {
+    "file": "53875-4a0e2e5c.svg",
+    "rank": "species",
+    "matched": "Ocypode quadrata",
+    "credit": "Loran Honório da Silva",
+    "link": "https://www.phylopic.org/images/8988a8a4-cd9d-43b8-b18a-4b12e1c7b14a"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Minuca",
+     "Leptuca",
+     "Tubuca",
+     "Austruca",
+     "Gelasimus",
+     "Afruca",
+     "Paraleptuca",
+     "Uca",
+     "Ucides",
+     "Xeruca"
+    ],
+    "genusOrder": [
+     "Pachygrapsus",
+     "Pagurus",
+     "Carcinus",
+     "Hemigrapsus",
+     "Procambarus",
+     "Faxonius",
+     "Grapsus",
+     "Coenobita",
+     "Cancer",
+     "Callinectes"
+    ],
+    "speciesGenus": [
+     "Ocypode gaudichaudii",
+     "Ocypode pallidula",
+     "Ocypode occidentalis",
+     "Ocypode cordimana",
+     "Ocypode ceratophthalmus",
+     "Ocypode celadon",
+     "Ocypode sinensis",
+     "Ocypode ryderi",
+     "Ocypode cursor",
+     "Ocypode urvillii"
+    ],
+    "speciesFamily": [
+     "Leptuca pugilator",
+     "Minuca pugnax",
+     "Tubuca arcuata",
+     "Minuca minax",
+     "Minuca rapax",
+     "Afruca tangeri",
+     "Austruca lactea",
+     "Austruca annulipes",
+     "Leptuca crenulata",
+     "Gelasimus borealis"
+    ]
+   }
+  },
+  {
+   "id": 49504,
+   "scientific": "Callinectes sapidus",
+   "genus": "Callinectes",
+   "epithet": "sapidus",
+   "common": "Atlantic Blue Crab",
+   "family": "Portunidae",
+   "order": "Decapoda",
+   "level": 47,
+   "photo": {
+    "file": "49504-2a7a2412.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) oxydoras, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/291083232"
+   },
+   "silhouette": {
+    "file": "49504-4c36a650.svg",
+    "rank": "species",
+    "matched": "Callinectes sapidus",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/7197c71a-0653-4e82-bcbb-b156c150826a"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Portunus",
+     "Arenaeus",
+     "Charybdis",
+     "Thranita",
+     "Scylla",
+     "Achelous",
+     "Thalamita",
+     "Lissocarcinus",
+     "Cronius",
+     "Goniosupradens"
+    ],
+    "genusOrder": [
+     "Ocypode",
+     "Pachygrapsus",
+     "Pagurus",
+     "Carcinus",
+     "Hemigrapsus",
+     "Procambarus",
+     "Faxonius",
+     "Grapsus",
+     "Coenobita",
+     "Cancer"
+    ],
+    "speciesGenus": [
+     "Callinectes arcuatus",
+     "Callinectes ornatus",
+     "Callinectes similis",
+     "Callinectes larvatus",
+     "Callinectes danae",
+     "Callinectes bellicosus",
+     "Callinectes bocourti",
+     "Callinectes pallidus",
+     "Callinectes toxotes",
+     "Callinectes rathbunae"
+    ],
+    "speciesFamily": [
+     "Arenaeus cribrarius",
+     "Portunus armatus",
+     "Portunus pelagicus",
+     "Thranita crenata",
+     "Charybdis hellerii",
+     "Scylla serrata",
+     "Thranita danae",
+     "Portunus sayi",
+     "Charybdis annulata",
+     "Portunus sanguinolentus"
+    ]
+   }
+  },
+  {
+   "id": 48302,
+   "scientific": "Limulus polyphemus",
+   "genus": "Limulus",
+   "epithet": "polyphemus",
+   "common": "Atlantic Horseshoe Crab",
+   "family": "Limulidae",
+   "order": "Xiphosurida",
+   "level": 46,
+   "photo": {
+    "file": "48302-9a03a31b.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Squidpastry, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/259997105"
+   },
+   "silhouette": {
+    "file": "48302-1dd39a70.svg",
+    "rank": "species",
+    "matched": "Limulus polyphemus",
+    "credit": "Noah Schlottman",
+    "link": "https://www.phylopic.org/images/38c82deb-b187-4e85-a9f8-dba2794b42d0"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Tachypleus",
+     "Carcinoscorpius"
+    ],
+    "genusOrder": [],
+    "speciesGenus": [],
+    "speciesFamily": [
+     "Carcinoscorpius rotundicauda",
+     "Tachypleus tridentatus",
+     "Tachypleus gigas"
+    ]
+   }
+  },
+  {
+   "id": 51221,
+   "scientific": "Procambarus clarkii",
+   "genus": "Procambarus",
+   "epithet": "clarkii",
+   "common": "Red Swamp Crayfish",
+   "family": "Cambaridae",
+   "order": "Decapoda",
+   "level": 46,
+   "photo": {
+    "file": "51221-5259f527.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Breena Riley, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/120352887"
+   },
+   "silhouette": {
+    "file": "51221-6b74b1c8.svg",
+    "rank": "species",
+    "matched": "Procambarus clarkii",
+    "credit": "Mattia Menchetti",
+    "link": "https://www.phylopic.org/images/cfd0917f-1fc1-422f-ac80-9c2dc2a85762"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Faxonius",
+     "Cambarus",
+     "Lacunicambarus",
+     "Creaserinus",
+     "Fallicambarus",
+     "Cambarellus",
+     "Orconectes",
+     "Faxonella",
+     "Barbicambarus",
+     "Distocambarus"
+    ],
+    "genusOrder": [
+     "Ocypode",
+     "Pachygrapsus",
+     "Pagurus",
+     "Carcinus",
+     "Hemigrapsus",
+     "Grapsus",
+     "Coenobita",
+     "Cancer",
+     "Callinectes",
+     "Palaemon"
+    ],
+    "speciesGenus": [
+     "Procambarus acutus",
+     "Procambarus gracilis",
+     "Procambarus simulans",
+     "Procambarus spiculifer",
+     "Procambarus alleni",
+     "Procambarus virginalis",
+     "Procambarus steigmani",
+     "Procambarus liberorum",
+     "Procambarus versutus",
+     "Procambarus troglodytes"
+    ],
+    "speciesFamily": [
+     "Faxonius virilis",
+     "Cambarus bartonii",
+     "Faxonius rusticus",
+     "Faxonius propinquus",
+     "Faxonius limosus",
+     "Cambarus robustus",
+     "Faxonius immunis",
+     "Faxonius neglectus",
+     "Creaserinus fodiens",
+     "Cambarus latimanus"
+    ]
+   }
+  },
+  {
+   "id": 67439,
+   "scientific": "Eurema nicippe",
+   "genus": "Eurema",
+   "epithet": "nicippe",
+   "common": "Sleepy Orange",
+   "family": "Pieridae",
+   "order": "Lepidoptera",
+   "level": 45,
+   "photo": {
+    "file": "67439-8982b9ee.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Nick Carlson, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/106507727"
+   },
+   "silhouette": {
+    "file": "67439-e2ea6e82.svg",
+    "rank": "family",
+    "matched": "Pieridae",
+    "credit": "Prespa Research Group",
+    "link": "https://www.phylopic.org/images/7c15898f-a80c-4f2b-bac5-07a187782879"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Pieris",
+     "Colias",
+     "Phoebis",
+     "Gonepteryx",
+     "Pontia",
+     "Anthocharis",
+     "Catopsilia",
+     "Delias",
+     "Nathalis",
+     "Ascia"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais"
+    ],
+    "speciesGenus": [
+     "Eurema hecabe",
+     "Eurema lisa",
+     "Eurema daira",
+     "Eurema blanda",
+     "Eurema proterpia",
+     "Eurema nise",
+     "Eurema mexicana",
+     "Eurema mandarina",
+     "Eurema brigitta",
+     "Eurema albula"
+    ],
+    "speciesFamily": [
+     "Pieris rapae",
+     "Pieris napi",
+     "Colias eurytheme",
+     "Gonepteryx rhamni",
+     "Pieris brassicae",
+     "Phoebis sennae",
+     "Colias philodice",
+     "Anthocharis cardamines",
+     "Colias crocea",
+     "Pontia protodice"
+    ]
+   }
+  },
+  {
+   "id": 1456562,
+   "scientific": "Argynnis cybele",
+   "genus": "Argynnis",
+   "epithet": "cybele",
+   "common": "Great Spangled Fritillary",
+   "family": "Nymphalidae",
+   "order": "Lepidoptera",
+   "level": 42,
+   "photo": {
+    "file": "1456562-5e7ae497.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) hypanartia, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/95626330"
+   },
+   "silhouette": {
+    "file": "1456562-f620e48e.svg",
+    "rank": "genus",
+    "matched": "Argynnis",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/dc500f07-4ea3-41c6-aad1-f9f1af5c780e"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Danaus",
+     "Vanessa",
+     "Junonia",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais",
+     "Polygonia",
+     "Dione",
+     "Nymphalis",
+     "Pararge"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Pieris",
+     "Idaea",
+     "Acronicta",
+     "Polyommatus",
+     "Colias",
+     "Noctua",
+     "Eurema",
+     "Eupithecia",
+     "Lycaena"
+    ],
+    "speciesGenus": [
+     "Argynnis paphia",
+     "Argynnis aglaja",
+     "Argynnis hyperbius",
+     "Argynnis adippe",
+     "Argynnis pandora",
+     "Argynnis atlantis",
+     "Argynnis aphrodite",
+     "Argynnis mormonia",
+     "Argynnis hydaspe",
+     "Argynnis hesperis"
+    ],
+    "speciesFamily": [
+     "Danaus plexippus",
+     "Vanessa atalanta",
+     "Vanessa cardui",
+     "Dione vanillae",
+     "Pararge aegeria",
+     "Aglais io",
+     "Limenitis arthemis",
+     "Maniola jurtina",
+     "Phyciodes tharos",
+     "Junonia coenia"
+    ]
+   }
+  },
+  {
+   "id": 555968,
+   "scientific": "Leptuca pugilator",
+   "genus": "Leptuca",
+   "epithet": "pugilator",
+   "common": "Atlantic Sand Fiddler Crab",
+   "family": "Ocypodidae",
+   "order": "Decapoda",
+   "level": 52,
+   "photo": {
+    "file": "555968-40f5a00a.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) juditga, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/234528776"
+   },
+   "silhouette": {
+    "file": "555968-7628bb86.svg",
+    "rank": "family",
+    "matched": "Ocypodidae",
+    "credit": "Michael Rosenberg",
+    "link": "https://www.phylopic.org/images/d45c8762-fe53-4e29-8c13-60c1e62e722c"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Ocypode",
+     "Minuca",
+     "Tubuca",
+     "Austruca",
+     "Gelasimus",
+     "Afruca",
+     "Paraleptuca",
+     "Uca",
+     "Ucides",
+     "Xeruca"
+    ],
+    "genusOrder": [
+     "Pachygrapsus",
+     "Pagurus",
+     "Carcinus",
+     "Hemigrapsus",
+     "Procambarus",
+     "Faxonius",
+     "Grapsus",
+     "Coenobita",
+     "Cancer",
+     "Callinectes"
+    ],
+    "speciesGenus": [
+     "Leptuca crenulata",
+     "Leptuca leptodactyla",
+     "Leptuca uruguayensis",
+     "Leptuca thayeri",
+     "Leptuca panacea",
+     "Leptuca musica",
+     "Leptuca speciosa",
+     "Leptuca terpsichores",
+     "Leptuca latimanus",
+     "Leptuca subcylindrica"
+    ],
+    "speciesFamily": [
+     "Ocypode quadrata",
+     "Minuca pugnax",
+     "Tubuca arcuata",
+     "Ocypode gaudichaudii",
+     "Minuca minax",
+     "Minuca rapax",
+     "Ocypode pallidula",
+     "Afruca tangeri",
+     "Austruca lactea",
+     "Ocypode occidentalis"
+    ]
+   }
+  },
+  {
+   "id": 70419,
+   "scientific": "Apheloria virginiensis",
+   "genus": "Apheloria",
+   "epithet": "virginiensis",
+   "common": "Black-and-gold Flat Millipede",
+   "family": "Xystodesmidae",
+   "order": "Polydesmida",
+   "level": 66,
+   "photo": {
+    "file": "70419-a0001cf0.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) daphmcleod, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/104978006"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Harpaphe",
+     "Pleuroloma",
+     "Rudiloria",
+     "Euryurus",
+     "Xystocheir",
+     "Cherokia",
+     "Rhysodesmus",
+     "Sigmoria",
+     "Dicellarius",
+     "Riukiaria"
+    ],
+    "genusOrder": [
+     "Oxidus",
+     "Polydesmus",
+     "Pseudopolydesmus",
+     "Orthomorpha",
+     "Anoplodesmus",
+     "Helicorthomorpha",
+     "Eurymerodesmus",
+     "Chondrodesmus",
+     "Nyssodesmus",
+     "Orthomorphella"
+    ],
+    "speciesGenus": [
+     "Apheloria corrugata",
+     "Apheloria tigana",
+     "Apheloria montana",
+     "Apheloria polychroma",
+     "Apheloria uwharrie",
+     "Apheloria whiteheadi"
+    ],
+    "speciesFamily": [
+     "Harpaphe haydeniana",
+     "Pleuroloma flavipes",
+     "Xystocheir dissecta",
+     "Rudiloria trimaculata",
+     "Cherokia georgiana",
+     "Euryurus leachii",
+     "Boraria stricta",
+     "Melaphe vestita",
+     "Euryurus maculatus",
+     "Euryurus evides"
     ]
    }
   }
