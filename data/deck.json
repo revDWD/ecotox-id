@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "count": 118,
+ "count": 147,
  "species": [
   {
    "id": 48662,
@@ -8461,6 +8461,2000 @@
      "Pselliopus barberi",
      "Phymata fasciata",
      "Apiomerus spissipes"
+    ]
+   }
+  },
+  {
+   "id": 469238,
+   "scientific": "Neotibicen canicularis",
+   "genus": "Neotibicen",
+   "epithet": "canicularis",
+   "common": "Northern Dog-day Cicada",
+   "family": "Cicadidae",
+   "order": "Hemiptera",
+   "level": 47,
+   "photo": {
+    "file": "469238-8a4839f4.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) thecicadadude, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/131081834"
+   },
+   "silhouette": {
+    "file": "469238-62de0e08.svg",
+    "rank": "family",
+    "matched": "Cicadidae",
+    "credit": "Caleb Gordon",
+    "link": "https://www.phylopic.org/images/29af591e-9d31-4fef-8942-391367b542c5"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Magicicada",
+     "Megatibicen",
+     "Cicada",
+     "Cryptotympana",
+     "Platypedia",
+     "Psaltoda",
+     "Diceroprocta",
+     "Yoyetta",
+     "Okanagana",
+     "Quesada"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Halyomorpha",
+     "Zelus",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus",
+     "Lygus"
+    ],
+    "speciesGenus": [
+     "Neotibicen tibicen",
+     "Neotibicen pruinosus",
+     "Neotibicen superbus",
+     "Neotibicen lyricen",
+     "Neotibicen linnei",
+     "Neotibicen davisi",
+     "Neotibicen winnemanna",
+     "Neotibicen robinsonianus",
+     "Neotibicen auriferus",
+     "Neotibicen latifasciatus"
+    ],
+    "speciesFamily": [
+     "Magicicada septendecim",
+     "Cicada orni",
+     "Megatibicen resh",
+     "Magicicada cassinii",
+     "Megatibicen grossus",
+     "Quesada gigas",
+     "Graptopsaltria nigrofuscata",
+     "Lyristes plebejus",
+     "Neocicada hieroglyphica",
+     "Cryptotympana atrata"
+    ]
+   }
+  },
+  {
+   "id": 56925,
+   "scientific": "Graphocephala coccinea",
+   "genus": "Graphocephala",
+   "epithet": "coccinea",
+   "common": "Red-banded Leafhopper",
+   "family": "Cicadellidae",
+   "order": "Hemiptera",
+   "level": 46,
+   "photo": {
+    "file": "56925-9f1cd269.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) bob15noble, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/19761777"
+   },
+   "silhouette": {
+    "file": "56925-fe79af22.svg",
+    "rank": "species",
+    "matched": "Graphocephala coccinea",
+    "credit": "Melissa Broussard",
+    "link": "https://www.phylopic.org/images/6de195d7-b240-459a-8fd8-dfacde454f81"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Jikradia",
+     "Draeculacephala",
+     "Gyponana",
+     "Homalodisca",
+     "Oncometopia",
+     "Cicadella",
+     "Scaphoideus",
+     "Erythroneura",
+     "Agallia",
+     "Eratoneura"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Halyomorpha",
+     "Zelus",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus"
+    ],
+    "speciesGenus": [
+     "Graphocephala versuta",
+     "Graphocephala fennahi",
+     "Graphocephala atropunctata",
+     "Graphocephala confluens",
+     "Graphocephala lugubris",
+     "Graphocephala flavovittata",
+     "Graphocephala cythura",
+     "Graphocephala appropinquans",
+     "Graphocephala idonea",
+     "Graphocephala aurora"
+    ],
+    "speciesFamily": [
+     "Jikradia olitoria",
+     "Cicadella viridis",
+     "Homalodisca vitripennis",
+     "Oncometopia orbona",
+     "Orientus ishidae",
+     "Paraulacizes irrorata",
+     "Empoasca fabae",
+     "Exitianus exitiosus",
+     "Tylozygus bifidus",
+     "Agallia constricta"
+    ]
+   }
+  },
+  {
+   "id": 324726,
+   "scientific": "Lycorma delicatula",
+   "genus": "Lycorma",
+   "epithet": "delicatula",
+   "common": "Spotted Lanternfly",
+   "family": "Fulgoridae",
+   "order": "Hemiptera",
+   "level": 40,
+   "photo": {
+    "file": "324726-b77d09e5.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Sabrina, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/312475869"
+   },
+   "silhouette": {
+    "file": "324726-1596b8f9.svg",
+    "rank": "species",
+    "matched": "Lycorma delicatula",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/4f224bff-64ac-4b2f-b330-520de4a45500"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Pyrops",
+     "Aphaena",
+     "Fulgora",
+     "Desudaba",
+     "Kalidasa",
+     "Enchophora",
+     "Zanna",
+     "Phrictus",
+     "Calyptoproctus",
+     "Pterodictya"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Halyomorpha",
+     "Zelus",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Aphis",
+     "Lygaeus",
+     "Lygus"
+    ],
+    "speciesGenus": [
+     "Lycorma meliae",
+     "Lycorma imperialis",
+     "Lycorma punicea"
+    ],
+    "speciesFamily": [
+     "Pyrops candelaria",
+     "Kalidasa albiflos",
+     "Fulgora laternaria",
+     "Desudaba psittacus",
+     "Pterodictya reticularis",
+     "Phenax variegata",
+     "Pyrops watanabei",
+     "Pyrops whiteheadi",
+     "Lystra lanata",
+     "Cerogenes auricoma"
+    ]
+   }
+  },
+  {
+   "id": 62045,
+   "scientific": "Lygaeus kalmii",
+   "genus": "Lygaeus",
+   "epithet": "kalmii",
+   "common": "Small Milkweed Bug",
+   "family": "Lygaeidae",
+   "order": "Hemiptera",
+   "level": 44,
+   "photo": {
+    "file": "62045-6c537cc5.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Matthew Beziat, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/47583263"
+   },
+   "silhouette": {
+    "file": "62045-9708a940.svg",
+    "rank": "family",
+    "matched": "Lygaeidae",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/61e306a9-9b19-4c9a-ba10-7856bd096356"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Oncopeltus",
+     "Spilostethus",
+     "Kleidocerys",
+     "Nysius",
+     "Arocatus",
+     "Melanocoryphus",
+     "Neacoryphus",
+     "Melacoryphus",
+     "Tropidothorax",
+     "Graptostethus"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Halyomorpha",
+     "Zelus",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Lycorma",
+     "Aphis",
+     "Lygus",
+     "Graphosoma"
+    ],
+    "speciesGenus": [
+     "Lygaeus turcicus",
+     "Lygaeus equestris",
+     "Lygaeus creticus",
+     "Lygaeus reclivatus",
+     "Lygaeus alboornatus",
+     "Lygaeus analis",
+     "Lygaeus hanseni",
+     "Lygaeus simulans",
+     "Lygaeus peruvianus",
+     "Lygaeus trux"
+    ],
+    "speciesFamily": [
+     "Oncopeltus fasciatus",
+     "Kleidocerys resedae",
+     "Spilostethus pandurus",
+     "Spilostethus saxatilis",
+     "Melanocoryphus albomaculatus",
+     "Neacoryphus bicrucis",
+     "Spilostethus hospes",
+     "Arocatus melanocephalus",
+     "Melacoryphus lateralis",
+     "Belonochilus numenius"
+    ]
+   }
+  },
+  {
+   "id": 81572,
+   "scientific": "Lethocerus americanus",
+   "genus": "Lethocerus",
+   "epithet": "americanus",
+   "common": "American Giant Water Bug",
+   "family": "Belostomatidae",
+   "order": "Hemiptera",
+   "level": 52,
+   "photo": {
+    "file": "81572-d68885fc.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Basil Conlin, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/10232747"
+   },
+   "silhouette": {
+    "file": "81572-57d218a5.svg",
+    "rank": "family",
+    "matched": "Belostomatidae",
+    "credit": "TGHays",
+    "link": "https://www.phylopic.org/images/09a54836-e0a9-4a27-a7f3-720ced958b2b"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Belostoma",
+     "Abedus",
+     "Benacus",
+     "Diplonychus",
+     "Appasus",
+     "Hydrocyrius",
+     "Kirkaldyia",
+     "Limnogeton",
+     "Horvathinia",
+     "Scarabaeides"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Halyomorpha",
+     "Zelus",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus"
+    ],
+    "speciesGenus": [
+     "Lethocerus uhleri",
+     "Lethocerus medius",
+     "Lethocerus indicus",
+     "Lethocerus cordofanus",
+     "Lethocerus insulanus",
+     "Lethocerus patruelis",
+     "Lethocerus collosicus",
+     "Lethocerus annulipes",
+     "Lethocerus maximus",
+     "Lethocerus truxali"
+    ],
+    "speciesFamily": [
+     "Benacus griseus",
+     "Belostoma flumineum",
+     "Abedus indentatus",
+     "Belostoma lutarium",
+     "Diplonychus eques",
+     "Diplonychus rusticus",
+     "Appasus japonicus",
+     "Kirkaldyia deyrolli",
+     "Belostoma testaceum"
+    ]
+   }
+  },
+  {
+   "id": 59774,
+   "scientific": "Pachydiplax longipennis",
+   "genus": "Pachydiplax",
+   "epithet": "longipennis",
+   "common": "Blue Dasher",
+   "family": "Libellulidae",
+   "order": "Odonata",
+   "level": 37,
+   "photo": {
+    "file": "59774-dd73af24.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) matthewschmalz, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/30457135"
+   },
+   "silhouette": {
+    "file": "59774-afe87257.svg",
+    "rank": "family",
+    "matched": "Libellulidae",
+    "credit": "Neil Kelley",
+    "link": "https://www.phylopic.org/images/f66c3113-65ba-459c-9fd2-9d255aff2e24"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Sympetrum",
+     "Libellula",
+     "Orthetrum",
+     "Erythemis",
+     "Plathemis",
+     "Celithemis",
+     "Crocothemis",
+     "Trithemis",
+     "Perithemis",
+     "Erythrodiplax"
+    ],
+    "genusOrder": [
+     "Ischnura",
+     "Argia",
+     "Enallagma",
+     "Calopteryx",
+     "Aeshna",
+     "Anax",
+     "Lestes",
+     "Coenagrion"
+    ],
+    "speciesGenus": [],
+    "speciesFamily": [
+     "Erythemis simplicicollis",
+     "Plathemis lydia",
+     "Libellula luctuosa",
+     "Sympetrum vicinum",
+     "Sympetrum striolatum",
+     "Perithemis tenera",
+     "Orthetrum cancellatum",
+     "Sympetrum sanguineum",
+     "Celithemis eponina",
+     "Libellula incesta"
+    ]
+   }
+  },
+  {
+   "id": 59776,
+   "scientific": "Perithemis tenera",
+   "genus": "Perithemis",
+   "epithet": "tenera",
+   "common": "Eastern Amberwing",
+   "family": "Libellulidae",
+   "order": "Odonata",
+   "level": 43,
+   "photo": {
+    "file": "59776-c863e890.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Rick Nirschl, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/34667276"
+   },
+   "silhouette": {
+    "file": "59776-afe87257.svg",
+    "rank": "family",
+    "matched": "Libellulidae",
+    "credit": "Neil Kelley",
+    "link": "https://www.phylopic.org/images/f66c3113-65ba-459c-9fd2-9d255aff2e24"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Sympetrum",
+     "Libellula",
+     "Orthetrum",
+     "Erythemis",
+     "Pachydiplax",
+     "Plathemis",
+     "Celithemis",
+     "Crocothemis",
+     "Trithemis",
+     "Erythrodiplax"
+    ],
+    "genusOrder": [
+     "Ischnura",
+     "Argia",
+     "Enallagma",
+     "Calopteryx",
+     "Aeshna",
+     "Anax",
+     "Lestes",
+     "Coenagrion"
+    ],
+    "speciesGenus": [
+     "Perithemis intensa",
+     "Perithemis domitia",
+     "Perithemis mooma",
+     "Perithemis icteroptera",
+     "Perithemis electra",
+     "Perithemis lais",
+     "Perithemis thais",
+     "Perithemis parzefalli",
+     "Perithemis cornelia",
+     "Perithemis bella"
+    ],
+    "speciesFamily": [
+     "Pachydiplax longipennis",
+     "Erythemis simplicicollis",
+     "Plathemis lydia",
+     "Libellula luctuosa",
+     "Sympetrum vicinum",
+     "Sympetrum striolatum",
+     "Orthetrum cancellatum",
+     "Sympetrum sanguineum",
+     "Celithemis eponina",
+     "Libellula incesta"
+    ]
+   }
+  },
+  {
+   "id": 50147,
+   "scientific": "Celithemis eponina",
+   "genus": "Celithemis",
+   "epithet": "eponina",
+   "common": "Halloween Pennant",
+   "family": "Libellulidae",
+   "order": "Odonata",
+   "level": 44,
+   "photo": {
+    "file": "50147-1d1e3515.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Denis Doucet, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/396222405"
+   },
+   "silhouette": {
+    "file": "50147-21a07e76.svg",
+    "rank": "species",
+    "matched": "Celithemis eponina",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/c433562b-0fe4-4677-b45e-044e70d08a04"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Sympetrum",
+     "Libellula",
+     "Orthetrum",
+     "Erythemis",
+     "Pachydiplax",
+     "Plathemis",
+     "Crocothemis",
+     "Trithemis",
+     "Perithemis",
+     "Erythrodiplax"
+    ],
+    "genusOrder": [
+     "Ischnura",
+     "Argia",
+     "Enallagma",
+     "Calopteryx",
+     "Aeshna",
+     "Anax",
+     "Lestes",
+     "Coenagrion"
+    ],
+    "speciesGenus": [
+     "Celithemis elisa",
+     "Celithemis fasciata",
+     "Celithemis ornata",
+     "Celithemis amanda",
+     "Celithemis martha",
+     "Celithemis verna",
+     "Celithemis bertha"
+    ],
+    "speciesFamily": [
+     "Pachydiplax longipennis",
+     "Erythemis simplicicollis",
+     "Plathemis lydia",
+     "Libellula luctuosa",
+     "Sympetrum vicinum",
+     "Sympetrum striolatum",
+     "Perithemis tenera",
+     "Orthetrum cancellatum",
+     "Sympetrum sanguineum",
+     "Libellula incesta"
+    ]
+   }
+  },
+  {
+   "id": 68229,
+   "scientific": "Tramea carolina",
+   "genus": "Tramea",
+   "epithet": "carolina",
+   "common": "Carolina Saddlebags",
+   "family": "Libellulidae",
+   "order": "Odonata",
+   "level": 52,
+   "photo": {
+    "file": "68229-00c46ebf.jpg",
+    "license": "cc-by",
+    "credit": "(c) Alex Stach, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/216968549"
+   },
+   "silhouette": {
+    "file": "68229-afe87257.svg",
+    "rank": "family",
+    "matched": "Libellulidae",
+    "credit": "Neil Kelley",
+    "link": "https://www.phylopic.org/images/f66c3113-65ba-459c-9fd2-9d255aff2e24"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Sympetrum",
+     "Libellula",
+     "Orthetrum",
+     "Erythemis",
+     "Pachydiplax",
+     "Plathemis",
+     "Celithemis",
+     "Crocothemis",
+     "Trithemis",
+     "Perithemis"
+    ],
+    "genusOrder": [
+     "Ischnura",
+     "Argia",
+     "Enallagma",
+     "Calopteryx",
+     "Aeshna",
+     "Anax",
+     "Lestes",
+     "Coenagrion"
+    ],
+    "speciesGenus": [
+     "Tramea lacerata",
+     "Tramea onusta",
+     "Tramea loewii",
+     "Tramea darwini",
+     "Tramea limbata",
+     "Tramea basilaris",
+     "Tramea virginia",
+     "Tramea transmarina",
+     "Tramea abdominalis",
+     "Tramea insularis"
+    ],
+    "speciesFamily": [
+     "Pachydiplax longipennis",
+     "Erythemis simplicicollis",
+     "Plathemis lydia",
+     "Libellula luctuosa",
+     "Sympetrum vicinum",
+     "Sympetrum striolatum",
+     "Perithemis tenera",
+     "Orthetrum cancellatum",
+     "Sympetrum sanguineum",
+     "Celithemis eponina"
+    ]
+   }
+  },
+  {
+   "id": 100391,
+   "scientific": "Erythrodiplax berenice",
+   "genus": "Erythrodiplax",
+   "epithet": "berenice",
+   "common": "Seaside Dragonlet",
+   "family": "Libellulidae",
+   "order": "Odonata",
+   "level": 50,
+   "photo": {
+    "file": "100391-89a9bafe.png",
+    "license": "cc-by-nc",
+    "credit": "(c) Gail Taylor, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/152118235"
+   },
+   "silhouette": {
+    "file": "100391-afe87257.svg",
+    "rank": "family",
+    "matched": "Libellulidae",
+    "credit": "Neil Kelley",
+    "link": "https://www.phylopic.org/images/f66c3113-65ba-459c-9fd2-9d255aff2e24"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Sympetrum",
+     "Libellula",
+     "Orthetrum",
+     "Erythemis",
+     "Pachydiplax",
+     "Plathemis",
+     "Celithemis",
+     "Crocothemis",
+     "Trithemis",
+     "Perithemis"
+    ],
+    "genusOrder": [
+     "Ischnura",
+     "Argia",
+     "Enallagma",
+     "Calopteryx",
+     "Aeshna",
+     "Anax",
+     "Lestes",
+     "Coenagrion"
+    ],
+    "speciesGenus": [
+     "Erythrodiplax umbrata",
+     "Erythrodiplax minuscula",
+     "Erythrodiplax funerea",
+     "Erythrodiplax fusca",
+     "Erythrodiplax basifusca",
+     "Erythrodiplax nigricans",
+     "Erythrodiplax fervida",
+     "Erythrodiplax corallina",
+     "Erythrodiplax media",
+     "Erythrodiplax unimaculata"
+    ],
+    "speciesFamily": [
+     "Pachydiplax longipennis",
+     "Erythemis simplicicollis",
+     "Plathemis lydia",
+     "Libellula luctuosa",
+     "Sympetrum vicinum",
+     "Sympetrum striolatum",
+     "Perithemis tenera",
+     "Orthetrum cancellatum",
+     "Sympetrum sanguineum",
+     "Celithemis eponina"
+    ]
+   }
+  },
+  {
+   "id": 102006,
+   "scientific": "Hagenius brevistylus",
+   "genus": "Hagenius",
+   "epithet": "brevistylus",
+   "common": "Dragonhunter",
+   "family": "Gomphidae",
+   "order": "Odonata",
+   "level": 52,
+   "photo": {
+    "file": "102006-2e8ba40f.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Jason King, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/9744976"
+   },
+   "silhouette": {
+    "file": "102006-3e8d8d55.svg",
+    "rank": "family",
+    "matched": "Gomphidae",
+    "credit": "Lisa Nicvert",
+    "link": "https://www.phylopic.org/images/ba61ce1b-b940-433b-a573-5e338ca4ef87"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Phanogomphus",
+     "Onychogomphus",
+     "Dromogomphus",
+     "Ictinogomphus",
+     "Gomphurus",
+     "Ophiogomphus",
+     "Arigomphus",
+     "Gomphus",
+     "Stylurus",
+     "Erpetogomphus"
+    ],
+    "genusOrder": [
+     "Sympetrum",
+     "Libellula",
+     "Ischnura",
+     "Argia",
+     "Enallagma",
+     "Orthetrum",
+     "Calopteryx",
+     "Erythemis",
+     "Pachydiplax",
+     "Plathemis"
+    ],
+    "speciesGenus": [],
+    "speciesFamily": [
+     "Onychogomphus forcipatus",
+     "Phanogomphus exilis",
+     "Dromogomphus spinosus",
+     "Gomphus vulgatissimus",
+     "Phanogomphus lividus",
+     "Arigomphus villosipes",
+     "Onychogomphus uncatus",
+     "Erpetogomphus designatus",
+     "Ictinogomphus rapax",
+     "Gomphurus vastus"
+    ]
+   }
+  },
+  {
+   "id": 70191,
+   "scientific": "Ischnura ramburii",
+   "genus": "Ischnura",
+   "epithet": "ramburii",
+   "common": "Rambur's Forktail",
+   "family": "Coenagrionidae",
+   "order": "Odonata",
+   "level": 46,
+   "photo": {
+    "file": "70191-4d890616.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Teresa Murr, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/14411291"
+   },
+   "silhouette": {
+    "file": "70191-1956d9f7.svg",
+    "rank": "genus",
+    "matched": "Ischnura",
+    "credit": "Lisa Nicvert",
+    "link": "https://www.phylopic.org/images/516df51a-adc7-4cfc-86b9-9954698bd5ed"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Argia",
+     "Enallagma",
+     "Coenagrion",
+     "Ceriagrion",
+     "Pseudagrion",
+     "Pyrrhosoma",
+     "Erythromma",
+     "Agriocnemis",
+     "Nehalennia",
+     "Telebasis"
+    ],
+    "genusOrder": [
+     "Sympetrum",
+     "Libellula",
+     "Orthetrum",
+     "Calopteryx",
+     "Erythemis",
+     "Pachydiplax",
+     "Plathemis",
+     "Aeshna",
+     "Anax",
+     "Lestes"
+    ],
+    "speciesGenus": [
+     "Ischnura verticalis",
+     "Ischnura elegans",
+     "Ischnura posita",
+     "Ischnura senegalensis",
+     "Ischnura cervula",
+     "Ischnura hastata",
+     "Ischnura heterosticta",
+     "Ischnura aurora",
+     "Ischnura graellsii",
+     "Ischnura kellicotti"
+    ],
+    "speciesFamily": [
+     "Coenagrion puella",
+     "Enallagma civile",
+     "Enallagma cyathigerum",
+     "Argia moesta",
+     "Argia apicalis",
+     "Argia fumipennis",
+     "Pyrrhosoma nymphula",
+     "Argia sedula",
+     "Argia vivida",
+     "Argia tibialis"
+    ]
+   }
+  },
+  {
+   "id": 51761,
+   "scientific": "Hetaerina americana",
+   "genus": "Hetaerina",
+   "epithet": "americana",
+   "common": "American Rubyspot",
+   "family": "Calopterygidae",
+   "order": "Odonata",
+   "level": 47,
+   "photo": {
+    "file": "51761-fd2c5e94.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Gail Taylor, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/56013005"
+   },
+   "silhouette": {
+    "file": "51761-2c8080a2.svg",
+    "rank": "family",
+    "matched": "Calopterygidae",
+    "credit": "Maxime Dahirel",
+    "link": "https://www.phylopic.org/images/8af9c80d-92f9-4ba8-87c0-8ffa026c770c"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Calopteryx",
+     "Vestalis",
+     "Matrona",
+     "Neurobasis",
+     "Mnais",
+     "Atrocalopteryx",
+     "Psolodesmus",
+     "Phaon",
+     "Mnesarete",
+     "Archineura"
+    ],
+    "genusOrder": [
+     "Sympetrum",
+     "Libellula",
+     "Ischnura",
+     "Argia",
+     "Enallagma",
+     "Orthetrum",
+     "Erythemis",
+     "Pachydiplax",
+     "Plathemis",
+     "Aeshna"
+    ],
+    "speciesGenus": [
+     "Hetaerina titia",
+     "Hetaerina occisa",
+     "Hetaerina vulnerata",
+     "Hetaerina cruentata",
+     "Hetaerina miniata",
+     "Hetaerina rosea",
+     "Hetaerina caja",
+     "Hetaerina capitalis",
+     "Hetaerina fuscoguttata",
+     "Hetaerina majuscula"
+    ],
+    "speciesFamily": [
+     "Calopteryx maculata",
+     "Calopteryx splendens",
+     "Calopteryx virgo",
+     "Calopteryx haemorrhoidalis",
+     "Calopteryx aequabilis",
+     "Neurobasis chinensis",
+     "Matrona cyanoptera",
+     "Calopteryx xanthostoma",
+     "Atrocalopteryx atrata",
+     "Psolodesmus mandarinus"
+    ]
+   }
+  },
+  {
+   "id": 69736,
+   "scientific": "Schistocerca americana",
+   "genus": "Schistocerca",
+   "epithet": "americana",
+   "common": "American Bird Grasshopper",
+   "family": "Acrididae",
+   "order": "Orthoptera",
+   "level": 48,
+   "photo": {
+    "file": "69736-b5b65986.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) marygartshore, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/80563919"
+   },
+   "silhouette": {
+    "file": "69736-ee930e6d.svg",
+    "rank": "family",
+    "matched": "Acrididae",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/e7ba011c-6172-47ca-84bf-0dfc87b47a32"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Melanoplus",
+     "Chorthippus",
+     "Trimerotropis",
+     "Oedipoda",
+     "Dissosteira",
+     "Pseudochorthippus",
+     "Chortophaga",
+     "Anacridium",
+     "Calliptamus",
+     "Acrida"
+    ],
+    "genusOrder": [
+     "Conocephalus",
+     "Scudderia",
+     "Gryllus",
+     "Tettigonia",
+     "Oecanthus",
+     "Phaneroptera",
+     "Pholidoptera",
+     "Romalea",
+     "Microcentrum",
+     "Neoconocephalus"
+    ],
+    "speciesGenus": [
+     "Schistocerca nitens",
+     "Schistocerca obscura",
+     "Schistocerca lineata",
+     "Schistocerca damnifica",
+     "Schistocerca flavofasciata",
+     "Schistocerca shoshone",
+     "Schistocerca serialis",
+     "Schistocerca gregaria",
+     "Schistocerca melanocera",
+     "Schistocerca albolineata"
+    ],
+    "speciesFamily": [
+     "Melanoplus differentialis",
+     "Melanoplus bivittatus",
+     "Dissosteira carolina",
+     "Chorthippus brunneus",
+     "Anacridium aegyptium",
+     "Pseudochorthippus parallelus",
+     "Melanoplus femurrubrum",
+     "Chortophaga viridifasciata",
+     "Oedipoda caerulescens",
+     "Trimerotropis pallidipennis"
+    ]
+   }
+  },
+  {
+   "id": 126206,
+   "scientific": "Dissosteira carolina",
+   "genus": "Dissosteira",
+   "epithet": "carolina",
+   "common": "Carolina Grasshopper",
+   "family": "Acrididae",
+   "order": "Orthoptera",
+   "level": 44,
+   "photo": {
+    "file": "126206-629ba051.jpeg",
+    "license": "cc0",
+    "credit": "no rights reserved",
+    "link": "https://www.inaturalist.org/observations/175625492"
+   },
+   "silhouette": {
+    "file": "126206-ee930e6d.svg",
+    "rank": "family",
+    "matched": "Acrididae",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/e7ba011c-6172-47ca-84bf-0dfc87b47a32"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Melanoplus",
+     "Chorthippus",
+     "Schistocerca",
+     "Trimerotropis",
+     "Oedipoda",
+     "Pseudochorthippus",
+     "Chortophaga",
+     "Anacridium",
+     "Calliptamus",
+     "Acrida"
+    ],
+    "genusOrder": [
+     "Conocephalus",
+     "Scudderia",
+     "Gryllus",
+     "Tettigonia",
+     "Oecanthus",
+     "Phaneroptera",
+     "Pholidoptera",
+     "Romalea",
+     "Microcentrum",
+     "Neoconocephalus"
+    ],
+    "speciesGenus": [
+     "Dissosteira pictipennis",
+     "Dissosteira spurcata",
+     "Dissosteira longipennis"
+    ],
+    "speciesFamily": [
+     "Melanoplus differentialis",
+     "Melanoplus bivittatus",
+     "Chorthippus brunneus",
+     "Anacridium aegyptium",
+     "Schistocerca nitens",
+     "Pseudochorthippus parallelus",
+     "Melanoplus femurrubrum",
+     "Chortophaga viridifasciata",
+     "Oedipoda caerulescens",
+     "Trimerotropis pallidipennis"
+    ]
+   }
+  },
+  {
+   "id": 63518,
+   "scientific": "Melanoplus differentialis",
+   "genus": "Melanoplus",
+   "epithet": "differentialis",
+   "common": "Differential Grasshopper",
+   "family": "Acrididae",
+   "order": "Orthoptera",
+   "level": 42,
+   "photo": {
+    "file": "63518-9f50cd59.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) wildwestnature, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/126007203"
+   },
+   "silhouette": {
+    "file": "63518-ee930e6d.svg",
+    "rank": "family",
+    "matched": "Acrididae",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/e7ba011c-6172-47ca-84bf-0dfc87b47a32"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Chorthippus",
+     "Schistocerca",
+     "Trimerotropis",
+     "Oedipoda",
+     "Dissosteira",
+     "Pseudochorthippus",
+     "Chortophaga",
+     "Anacridium",
+     "Calliptamus",
+     "Acrida"
+    ],
+    "genusOrder": [
+     "Conocephalus",
+     "Scudderia",
+     "Gryllus",
+     "Tettigonia",
+     "Oecanthus",
+     "Phaneroptera",
+     "Pholidoptera",
+     "Romalea",
+     "Microcentrum",
+     "Neoconocephalus"
+    ],
+    "speciesGenus": [
+     "Melanoplus bivittatus",
+     "Melanoplus femurrubrum",
+     "Melanoplus punctulatus",
+     "Melanoplus sanguinipes",
+     "Melanoplus ponderosus",
+     "Melanoplus scudderi",
+     "Melanoplus keeleri",
+     "Melanoplus viridipes",
+     "Melanoplus lakinus",
+     "Melanoplus devastator"
+    ],
+    "speciesFamily": [
+     "Dissosteira carolina",
+     "Chorthippus brunneus",
+     "Anacridium aegyptium",
+     "Schistocerca nitens",
+     "Pseudochorthippus parallelus",
+     "Chortophaga viridifasciata",
+     "Oedipoda caerulescens",
+     "Trimerotropis pallidipennis",
+     "Schistocerca obscura",
+     "Schistocerca americana"
+    ]
+   }
+  },
+  {
+   "id": 126600,
+   "scientific": "Chortophaga viridifasciata",
+   "genus": "Chortophaga",
+   "epithet": "viridifasciata",
+   "common": "Green-striped Grasshopper",
+   "family": "Acrididae",
+   "order": "Orthoptera",
+   "level": 46,
+   "photo": {
+    "file": "126600-95298753.jpeg",
+    "license": "cc-by",
+    "credit": "(c) Michelle W. （鍾偉瑋）, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/20169754"
+   },
+   "silhouette": {
+    "file": "126600-ee930e6d.svg",
+    "rank": "family",
+    "matched": "Acrididae",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/e7ba011c-6172-47ca-84bf-0dfc87b47a32"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Melanoplus",
+     "Chorthippus",
+     "Schistocerca",
+     "Trimerotropis",
+     "Oedipoda",
+     "Dissosteira",
+     "Pseudochorthippus",
+     "Anacridium",
+     "Calliptamus",
+     "Acrida"
+    ],
+    "genusOrder": [
+     "Conocephalus",
+     "Scudderia",
+     "Gryllus",
+     "Tettigonia",
+     "Oecanthus",
+     "Phaneroptera",
+     "Pholidoptera",
+     "Romalea",
+     "Microcentrum",
+     "Neoconocephalus"
+    ],
+    "speciesGenus": [
+     "Chortophaga australior",
+     "Chortophaga mendocino",
+     "Chortophaga cubensis"
+    ],
+    "speciesFamily": [
+     "Melanoplus differentialis",
+     "Melanoplus bivittatus",
+     "Dissosteira carolina",
+     "Chorthippus brunneus",
+     "Anacridium aegyptium",
+     "Schistocerca nitens",
+     "Pseudochorthippus parallelus",
+     "Melanoplus femurrubrum",
+     "Oedipoda caerulescens",
+     "Trimerotropis pallidipennis"
+    ]
+   }
+  },
+  {
+   "id": 118951,
+   "scientific": "Pterophylla camellifolia",
+   "genus": "Pterophylla",
+   "epithet": "camellifolia",
+   "common": "Common True Katydid",
+   "family": "Tettigoniidae",
+   "order": "Orthoptera",
+   "level": 48,
+   "photo": {
+    "file": "118951-c0893201.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Seth Shively, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/223604454"
+   },
+   "silhouette": {
+    "file": "118951-a663cfe0.svg",
+    "rank": "family",
+    "matched": "Tettigoniidae",
+    "credit": "Birgit Lang",
+    "link": "https://www.phylopic.org/images/8f55e2ec-f2ea-407a-bfbf-077aa10b5d36"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Conocephalus",
+     "Scudderia",
+     "Tettigonia",
+     "Phaneroptera",
+     "Pholidoptera",
+     "Microcentrum",
+     "Neoconocephalus",
+     "Meconema",
+     "Leptophyes",
+     "Decticus"
+    ],
+    "genusOrder": [
+     "Melanoplus",
+     "Chorthippus",
+     "Schistocerca",
+     "Gryllus",
+     "Oecanthus",
+     "Trimerotropis",
+     "Romalea",
+     "Oedipoda",
+     "Dissosteira",
+     "Pseudochorthippus"
+    ],
+    "speciesGenus": [
+     "Pterophylla beltrani",
+     "Pterophylla baezi",
+     "Pterophylla furcata",
+     "Pterophylla robertsi"
+    ],
+    "speciesFamily": [
+     "Tettigonia viridissima",
+     "Pholidoptera griseoaptera",
+     "Phaneroptera nana",
+     "Scudderia furcata",
+     "Leptophyes punctatissima",
+     "Roeseliana roeselii",
+     "Microcentrum rhombifolium",
+     "Meconema thalassinum",
+     "Neoconocephalus triops",
+     "Conocephalus brevipennis"
+    ]
+   }
+  },
+  {
+   "id": 84752,
+   "scientific": "Microcentrum rhombifolium",
+   "genus": "Microcentrum",
+   "epithet": "rhombifolium",
+   "common": "Greater Anglewing",
+   "family": "Tettigoniidae",
+   "order": "Orthoptera",
+   "level": 48,
+   "photo": {
+    "file": "84752-0e8e557a.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Shawn Carroll, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/267305082"
+   },
+   "silhouette": {
+    "file": "84752-a663cfe0.svg",
+    "rank": "family",
+    "matched": "Tettigoniidae",
+    "credit": "Birgit Lang",
+    "link": "https://www.phylopic.org/images/8f55e2ec-f2ea-407a-bfbf-077aa10b5d36"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Conocephalus",
+     "Scudderia",
+     "Tettigonia",
+     "Phaneroptera",
+     "Pholidoptera",
+     "Neoconocephalus",
+     "Meconema",
+     "Leptophyes",
+     "Decticus",
+     "Roeseliana"
+    ],
+    "genusOrder": [
+     "Melanoplus",
+     "Chorthippus",
+     "Schistocerca",
+     "Gryllus",
+     "Oecanthus",
+     "Trimerotropis",
+     "Romalea",
+     "Oedipoda",
+     "Dissosteira",
+     "Pseudochorthippus"
+    ],
+    "speciesGenus": [
+     "Microcentrum retinerve",
+     "Microcentrum californicum",
+     "Microcentrum marginatum",
+     "Microcentrum incarnatum",
+     "Microcentrum xavieri",
+     "Microcentrum syntechnoides",
+     "Microcentrum decoratum",
+     "Microcentrum cribrosum",
+     "Microcentrum latifrons",
+     "Microcentrum minus"
+    ],
+    "speciesFamily": [
+     "Tettigonia viridissima",
+     "Pholidoptera griseoaptera",
+     "Phaneroptera nana",
+     "Scudderia furcata",
+     "Leptophyes punctatissima",
+     "Roeseliana roeselii",
+     "Pterophylla camellifolia",
+     "Meconema thalassinum",
+     "Neoconocephalus triops",
+     "Conocephalus brevipennis"
+    ]
+   }
+  },
+  {
+   "id": 122193,
+   "scientific": "Gryllus pennsylvanicus",
+   "genus": "Gryllus",
+   "epithet": "pennsylvanicus",
+   "common": "Fall Field Cricket",
+   "family": "Gryllidae",
+   "order": "Orthoptera",
+   "level": 49,
+   "photo": {
+    "file": "122193-a394ea9d.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Wolf Dietrich, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/32310451"
+   },
+   "silhouette": {
+    "file": "122193-dae2a7a1.svg",
+    "rank": "genus",
+    "matched": "Gryllus",
+    "credit": "Thomas Hegna",
+    "link": "https://www.phylopic.org/images/b80d830b-155a-4ca5-9119-9a9fde019cc6"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Gryllodes",
+     "Velarifictorus",
+     "Teleogryllus",
+     "Nisitrus",
+     "Acheta",
+     "Eumodicogryllus",
+     "Loxoblemmus",
+     "Gryllomorpha",
+     "Cardiodactylus",
+     "Eneoptera"
+    ],
+    "genusOrder": [
+     "Melanoplus",
+     "Chorthippus",
+     "Schistocerca",
+     "Conocephalus",
+     "Scudderia",
+     "Tettigonia",
+     "Oecanthus",
+     "Trimerotropis",
+     "Phaneroptera",
+     "Pholidoptera"
+    ],
+    "speciesGenus": [
+     "Gryllus campestris",
+     "Gryllus bimaculatus",
+     "Gryllus veletis",
+     "Gryllus lineaticeps",
+     "Gryllus saxatilis",
+     "Gryllus rubens",
+     "Gryllus firmus",
+     "Gryllus assimilis",
+     "Gryllus fulvipennis",
+     "Gryllus texensis"
+    ],
+    "speciesFamily": [
+     "Gryllodes sigillatus",
+     "Velarifictorus micado",
+     "Eumodicogryllus bordigalensis",
+     "Acheta domesticus",
+     "Nisitrus malaya",
+     "Teleogryllus commodus",
+     "Gryllomorpha dalmatina",
+     "Teleogryllus emma",
+     "Cardiodactylus guttulus",
+     "Teleogryllus mitratus"
+    ]
+   }
+  },
+  {
+   "id": 84286,
+   "scientific": "Diapheromera femorata",
+   "genus": "Diapheromera",
+   "epithet": "femorata",
+   "common": "Northern Walkingstick",
+   "family": "Diapheromeridae",
+   "order": "Phasmida",
+   "level": 47,
+   "photo": {
+    "file": "84286-daca1fba.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) entobarbie, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/131673173"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Megaphasma",
+     "Pseudosermyle",
+     "Niveaphasma",
+     "Manomera",
+     "Libethra",
+     "Phanocles",
+     "Oreophoetes",
+     "Oncotophasma",
+     "Dyme",
+     "Tectarchus"
+    ],
+    "genusOrder": [
+     "Anisomorpha",
+     "Ramulus",
+     "Anchiale",
+     "Acanthoxyla",
+     "Carausius",
+     "Sipyloidea",
+     "Clonopsis",
+     "Clitarchus",
+     "Pseudophasma",
+     "Ctenomorpha"
+    ],
+    "speciesGenus": [
+     "Diapheromera velii",
+     "Diapheromera arizonensis",
+     "Diapheromera carolina",
+     "Diapheromera tamaulipensis",
+     "Diapheromera kevani",
+     "Diapheromera persimilis",
+     "Diapheromera covilleae",
+     "Diapheromera beckeri",
+     "Diapheromera arena",
+     "Diapheromera calcarata"
+    ],
+    "speciesFamily": [
+     "Megaphasma denticrus",
+     "Niveaphasma annulatum",
+     "Manomera blatchleyi",
+     "Tectarchus huttoni",
+     "Pijnackeria masettii",
+     "Ocnophiloidea regularis",
+     "Macellina souchongia",
+     "Micrarchus hystriculeus",
+     "Phanocloidea muricata",
+     "Spinotectarchus acornutus"
+    ]
+   }
+  },
+  {
+   "id": 134119,
+   "scientific": "Anisomorpha buprestoides",
+   "genus": "Anisomorpha",
+   "epithet": "buprestoides",
+   "common": "Southern Two-striped Walkingstick",
+   "family": "Pseudophasmatidae",
+   "order": "Phasmida",
+   "level": 51,
+   "photo": {
+    "file": "134119-4e873e6f.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Robert Simons, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/189640735"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Pseudophasma",
+     "Isagoras",
+     "Paraphasma",
+     "Acanthoclonia",
+     "Metriophasma",
+     "Creoxylus",
+     "Autolyca",
+     "Peruphasma",
+     "Urucumania",
+     "Monticomorpha"
+    ],
+    "genusOrder": [
+     "Diapheromera",
+     "Megaphasma",
+     "Ramulus",
+     "Pseudosermyle",
+     "Anchiale",
+     "Acanthoxyla",
+     "Carausius",
+     "Sipyloidea",
+     "Clonopsis",
+     "Clitarchus"
+    ],
+    "speciesGenus": [
+     "Anisomorpha ferruginea",
+     "Anisomorpha paromalus",
+     "Anisomorpha clara"
+    ],
+    "speciesFamily": [
+     "Pseudophasma unicolor",
+     "Creoxylus spinosus",
+     "Pseudophasma bispinosum",
+     "Peruphasma pentlandi",
+     "Pseudophasma phthisicum",
+     "Anthericonia anketeschke",
+     "Paraphasma marginale",
+     "Paraphasma laterale",
+     "Tithonophasma tithonus",
+     "Peruphasma schultei"
+    ]
+   }
+  },
+  {
+   "id": 59442,
+   "scientific": "Chrysoperla rufilabris",
+   "genus": "Chrysoperla",
+   "epithet": "rufilabris",
+   "common": "Red-lipped Green Lacewing",
+   "family": "Chrysopidae",
+   "order": "Neuroptera",
+   "level": 50,
+   "photo": {
+    "file": "59442-dc842883.jpg",
+    "license": "cc0",
+    "credit": "no rights reserved",
+    "link": "https://www.inaturalist.org/observations/40099004"
+   },
+   "silhouette": {
+    "file": "59442-ceac9a36.svg",
+    "rank": "family",
+    "matched": "Chrysopidae",
+    "credit": "Darren J. Parker",
+    "link": "https://www.phylopic.org/images/5053ea6b-faf3-438a-82b1-b9b742eed5a0"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Chrysopa",
+     "Leucochrysa",
+     "Apertochrysa",
+     "Mallada",
+     "Ceraeochrysa",
+     "Italochrysa",
+     "Eremochrysa",
+     "Nineta",
+     "Plesiochrysa",
+     "Ankylopteryx"
+    ],
+    "genusOrder": [
+     "Micromus",
+     "Myrmeleon",
+     "Hemerobius",
+     "Dicromantispa",
+     "Libelloides",
+     "Ululodes",
+     "Distoleon",
+     "Brachynemurus",
+     "Neleon",
+     "Zeugomantispa"
+    ],
+    "speciesGenus": [
+     "Chrysoperla carnea",
+     "Chrysoperla comanche",
+     "Chrysoperla externa",
+     "Chrysoperla plorabunda",
+     "Chrysoperla nipponensis",
+     "Chrysoperla lucasina",
+     "Chrysoperla mutata",
+     "Chrysoperla suzukii",
+     "Chrysoperla mediterranea",
+     "Chrysoperla harrisii"
+    ],
+    "speciesFamily": [
+     "Chrysopa oculata",
+     "Leucochrysa pavida",
+     "Chrysopa nigricornis",
+     "Chrysopa perla",
+     "Chrysopa quadripunctata",
+     "Mallada basalis",
+     "Mallada signatus",
+     "Apertochrysa flavifrons",
+     "Ceraeochrysa lineaticornis",
+     "Apertochrysa edwardsi"
+    ]
+   }
+  },
+  {
+   "id": 126712,
+   "scientific": "Corydalus cornutus",
+   "genus": "Corydalus",
+   "epithet": "cornutus",
+   "common": "Eastern Dobsonfly",
+   "family": "Corydalidae",
+   "order": "Megaloptera",
+   "level": 48,
+   "photo": {
+    "file": "126712-ee20c0e0.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) jen_the_swamp_hag, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/27051623"
+   },
+   "silhouette": {
+    "file": "126712-67dcd234.svg",
+    "rank": "species",
+    "matched": "Corydalus cornutus",
+    "credit": "Darren J. Parker",
+    "link": "https://www.phylopic.org/images/50a3840c-8e67-4d89-8904-609fcd53860a"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Chauliodes",
+     "Nigronia",
+     "Neohermes",
+     "Archichauliodes",
+     "Neochauliodes",
+     "Protohermes",
+     "Chloronia",
+     "Neoneuromus",
+     "Protochauliodes",
+     "Dysmicohermes"
+    ],
+    "genusOrder": [
+     "Sialis",
+     "Protosialis",
+     "Stenosialis"
+    ],
+    "speciesGenus": [
+     "Corydalus luteus",
+     "Corydalus flavicornis",
+     "Corydalus peruvianus",
+     "Corydalus texanus",
+     "Corydalus armatus",
+     "Corydalus affinis",
+     "Corydalus australis",
+     "Corydalus diasi",
+     "Corydalus magnus",
+     "Corydalus clauseni"
+    ],
+    "speciesFamily": [
+     "Chauliodes rastricornis",
+     "Chauliodes pectinicornis",
+     "Nigronia serricornis",
+     "Neohermes concolor",
+     "Neohermes filicornis",
+     "Archichauliodes diversus",
+     "Nigronia fasciata",
+     "Neochauliodes formosanus",
+     "Protohermes costalis",
+     "Neochauliodes koreanus"
+    ]
+   }
+  },
+  {
+   "id": 133448,
+   "scientific": "Climaciella brunnea",
+   "genus": "Climaciella",
+   "epithet": "brunnea",
+   "common": "Brown Wasp Mantidfly",
+   "family": "Mantispidae",
+   "order": "Neuroptera",
+   "level": 56,
+   "photo": {
+    "file": "133448-7bad9711.jpg",
+    "license": "cc-by",
+    "credit": "(c) Katja Schulz, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/4317595"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Dicromantispa",
+     "Zeugomantispa",
+     "Mantispa",
+     "Campion",
+     "Leptomantispa",
+     "Ditaxis",
+     "Theristria",
+     "Necyla",
+     "Afromantispa",
+     "Spaminta"
+    ],
+    "genusOrder": [
+     "Chrysoperla",
+     "Chrysopa",
+     "Micromus",
+     "Myrmeleon",
+     "Hemerobius",
+     "Leucochrysa",
+     "Libelloides",
+     "Ululodes",
+     "Apertochrysa",
+     "Distoleon"
+    ],
+    "speciesGenus": [
+     "Climaciella semihyalina",
+     "Climaciella cubana",
+     "Climaciella obtusa",
+     "Climaciella amapaensis",
+     "Climaciella porosa",
+     "Climaciella duckei",
+     "Climaciella personata"
+    ],
+    "speciesFamily": [
+     "Dicromantispa sayi",
+     "Dicromantispa interrupta",
+     "Zeugomantispa minuta",
+     "Mantispa styriaca",
+     "Leptomantispa pulchella",
+     "Ditaxis biseriata",
+     "Spaminta minjerribae",
+     "Zeugomantispa virescens",
+     "Mantispilla japonica",
+     "Paramantispa decorata"
+    ]
+   }
+  },
+  {
+   "id": 82231,
+   "scientific": "Periplaneta americana",
+   "genus": "Periplaneta",
+   "epithet": "americana",
+   "common": "American Cockroach",
+   "family": "Blattidae",
+   "order": "Blattodea",
+   "level": 44,
+   "photo": {
+    "file": "82231-336761dd.jpg",
+    "license": "cc-by",
+    "credit": "(c) Christina S. Baer, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/156516132"
+   },
+   "silhouette": {
+    "file": "82231-81a285b7.svg",
+    "rank": "species",
+    "matched": "Periplaneta americana",
+    "credit": "Thomas Hegna",
+    "link": "https://www.phylopic.org/images/04cfa0a6-3c8d-418c-99cb-12fb88c00fe0"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Validiblatta",
+     "Blatta",
+     "Drymaplaneta",
+     "Eurycotis",
+     "Celatoblatta",
+     "Deropeltis",
+     "Neostylopyga",
+     "Methana",
+     "Platyzosteria",
+     "Polyzosteria"
+    ],
+    "genusOrder": [
+     "Ectobius",
+     "Blattella",
+     "Reticulitermes",
+     "Parcoblatta",
+     "Pycnoscelus",
+     "Nasutitermes",
+     "Planuncus",
+     "Ellipsidion",
+     "Zootermopsis",
+     "Panchlora"
+    ],
+    "speciesGenus": [
+     "Periplaneta lateralis",
+     "Periplaneta ceylonica",
+     "Periplaneta japanna",
+     "Periplaneta quadrinotata",
+     "Periplaneta arabica",
+     "Periplaneta suzukii",
+     "Periplaneta svenhedini",
+     "Periplaneta monochroma",
+     "Periplaneta formosana",
+     "Periplaneta kijimuna"
+    ],
+    "speciesFamily": [
+     "Blatta orientalis",
+     "Validiblatta fuliginosa",
+     "Validiblatta australasiae",
+     "Eurycotis floridana",
+     "Drymaplaneta semivitta",
+     "Neostylopyga rhombifolia",
+     "Deropeltis erythrocephala",
+     "Methana marginalis",
+     "Validiblatta brunnea",
+     "Crescispina japonica"
+    ]
+   }
+  },
+  {
+   "id": 119931,
+   "scientific": "Reticulitermes flavipes",
+   "genus": "Reticulitermes",
+   "epithet": "flavipes",
+   "common": "Eastern Subterranean Termite",
+   "family": "Heterotermitidae",
+   "order": "Blattodea",
+   "level": 51,
+   "photo": {
+    "file": "119931-051ffcc1.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Julian Fuchs, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/254674040"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Coptotermes",
+     "Heterotermes"
+    ],
+    "genusOrder": [
+     "Periplaneta",
+     "Ectobius",
+     "Blattella",
+     "Parcoblatta",
+     "Validiblatta",
+     "Pycnoscelus",
+     "Nasutitermes",
+     "Blatta",
+     "Planuncus",
+     "Ellipsidion"
+    ],
+    "speciesGenus": [
+     "Reticulitermes hesperus",
+     "Reticulitermes speratus",
+     "Reticulitermes lucifugus",
+     "Reticulitermes grassei",
+     "Reticulitermes flaviceps",
+     "Reticulitermes urbis",
+     "Reticulitermes banyulensis",
+     "Reticulitermes hageni",
+     "Reticulitermes tibialis",
+     "Reticulitermes aegeus"
+    ],
+    "speciesFamily": [
+     "Coptotermes formosanus",
+     "Coptotermes lacteus",
+     "Coptotermes testaceus",
+     "Coptotermes gestroi",
+     "Heterotermes aureus",
+     "Coptotermes acinaciformis",
+     "Coptotermes michaelseni"
+    ]
+   }
+  },
+  {
+   "id": 1470430,
+   "scientific": "Forficula auricularia",
+   "genus": "Forficula",
+   "epithet": "auricularia",
+   "common": "European Earwig",
+   "family": "Forficulidae",
+   "order": "Dermaptera",
+   "level": 46,
+   "photo": {
+    "file": "1470430-9ed173dc.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Valentina, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/362749855"
+   },
+   "silhouette": {
+    "file": "1470430-8dcc51c4.svg",
+    "rank": "species",
+    "matched": "Forficula auricularia",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/3fd92960-bac6-4cd4-bcf6-584c27ee2758"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Doru",
+     "Timomenus",
+     "Apterygida",
+     "Chelidurella",
+     "Anechura",
+     "Eparchus",
+     "Allodahlia",
+     "Guanchia",
+     "Eudohrnia",
+     "Metresura"
+    ],
+    "genusOrder": [
+     "Euborellia",
+     "Labidura",
+     "Anisolabis",
+     "Nala",
+     "Labia",
+     "Carcinophora",
+     "Chelisoches",
+     "Cranopygia",
+     "Anisolabella",
+     "Vostox"
+    ],
+    "speciesGenus": [
+     "Forficula dentata",
+     "Forficula mediterranea",
+     "Forficula smyrnensis",
+     "Forficula tomis",
+     "Forficula decipiens",
+     "Forficula scudderii",
+     "Forficula lurida",
+     "Forficula vicaria",
+     "Forficula senegalensis",
+     "Forficula planicollis"
+    ],
+    "speciesFamily": [
+     "Doru taeniatum",
+     "Apterygida albipennis",
+     "Chelidurella acanthopygia",
+     "Timomenus komarowi",
+     "Timomenus aeris",
+     "Anechura bipunctata",
+     "Doru lineare",
+     "Eparchus insignis",
+     "Guanchia pubescens",
+     "Elaunon bipartitus"
+    ]
+   }
+  },
+  {
+   "id": 51116,
+   "scientific": "Hexagenia limbata",
+   "genus": "Hexagenia",
+   "epithet": "limbata",
+   "common": "Giant Mayfly",
+   "family": "Ephemeridae",
+   "order": "Ephemeroptera",
+   "level": 48,
+   "photo": {
+    "file": "51116-8b504982.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) MK, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/359408805"
+   },
+   "silhouette": {
+    "file": "51116-295da49b.svg",
+    "rank": "genus",
+    "matched": "Hexagenia",
+    "credit": "George Starr",
+    "link": "https://www.phylopic.org/images/6693ecd9-1674-43ee-a11e-da5d7176002e"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Ephemera",
+     "Pentagenia",
+     "Eatonica",
+     "Litobrancha",
+     "Eatonigenia",
+     "Afromera"
+    ],
+    "genusOrder": [
+     "Callibaetis",
+     "Cloeon",
+     "Baetis",
+     "Maccaffertium",
+     "Stenacron",
+     "Isonychia",
+     "Caenis",
+     "Stenonema",
+     "Ecdyonurus",
+     "Ephemerella"
+    ],
+    "speciesGenus": [
+     "Hexagenia bilineata",
+     "Hexagenia atrocaudata",
+     "Hexagenia rigida",
+     "Hexagenia albivitta",
+     "Hexagenia orlando",
+     "Hexagenia mexicana"
+    ],
+    "speciesFamily": [
+     "Ephemera danica",
+     "Ephemera vulgata",
+     "Ephemera glaucops",
+     "Ephemera orientalis",
+     "Pentagenia vittigera",
+     "Ephemera lineata",
+     "Ephemera strigata",
+     "Ephemera simulans",
+     "Ephemera japonica",
+     "Ephemera formosana"
     ]
    }
   }
