@@ -20,6 +20,8 @@ export const poolFor = (deck, group) => {
 };
 // Rare entries are kept out of the normal pool and drop in now and then as a surprise.
 export const RARE_CHANCE = 0.04;
+// A legendary entry is also a normal species; now and then it shows up in a special golden encounter.
+export const LEGEND_CHANCE = 0.015;
 export const rarePoolFor = (deck, group) => deck.filter((e) => e.rare && (group === 'all' || e.role === group));
 
 export const MODE_ORDER = ['genus', 'species', 'both'];

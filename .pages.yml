@@ -38,7 +38,11 @@ content:
             label: Rare surprise encounter
             type: boolean
             description: Tick for a rare easter egg. It stays out of the normal rotation and shows up in about 1 of 25 battles.
+          - name: legendary
+            label: Legendary encounter (also stays in the normal deck)
+            type: boolean
+            description: Tick for a golden legendary encounter that shows up in about 1 of 65 battles. The species stays in the normal rotation too.
           - name: intro
-            label: Rare intro line
+            label: Rare/legendary intro line
             type: string
             description: Optional line shown when a rare organism appears, e.g. A RARE fire-breather appeared!

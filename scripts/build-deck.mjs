@@ -15,7 +15,7 @@ const INAT = 'https://api.inaturalist.org/v1';
 const PHYLOPIC = 'https://api.phylopic.org';
 const UA = 'ecotox-id-battle/1.0 (educational game; github.com/DWDyck/ecotox-id-battle)';
 const ROLES = ['pest', 'enemy', 'pollinator', 'test'];
-const stripFlags = ({ rare, intro, ...rest }) => rest;
+const stripFlags = ({ rare, legendary, intro, ...rest }) => rest;
 const PHOTO_LICENSES = ['cc0', 'cc-by', 'cc-by-sa', 'cc-by-nc', 'cc-by-nc-sa'];
 
 const args = process.argv.slice(2);
@@ -198,6 +198,10 @@ async function main() {
   await mkdir(PHOTOS, { recursive: true });
   await mkdir(SILS, { recursive: true });
   const wanted = JSON.parse(await readFile(path.join(DATA, 'species.json'), 'utf8')).species;
+  const factsPath = path.join(DATA, 'facts.json');
+  const facts = (await exists(factsPath)) ? JSON.parse(await readFile(factsPath, 'utf8')) : {};
+  const listed = new Set(wanted.map((w) => String(typeof w === 'string' ? w : w?.name || '').trim()));
+  for (const k of Object.keys(facts)) if (!listed.has(k)) console.warn(`! facts.json: "${k}" is not in species.json`);
   const deckPath = path.join(DATA, 'deck.json');
   const previous = !refresh && (await exists(deckPath)) ? JSON.parse(await readFile(deckPath, 'utf8')).species : [];
   const byName = new Map(previous.map((e) => [e.scientific.toLowerCase(), e]));
@@ -209,10 +213,12 @@ async function main() {
     const item = typeof raw === 'string' ? { name: raw } : raw || {};
     const name = String(item.name || '').trim();
     const role = String(item.role || '').trim();
-    const notes = (Array.isArray(item.notes) ? item.notes : [item.note])
-      .map((n) => String(n || '').trim().slice(0, 220)).filter(Boolean).slice(0, 6);
+    const fun = [].concat(facts[name] || []).map((f) => `Fun fact: ${String(f).trim()}`.slice(0, 220));
+    const notes = [...(Array.isArray(item.notes) ? item.notes : [item.note])
+      .map((n) => String(n || '').trim().slice(0, 220)).filter(Boolean).slice(0, 6), ...fun].slice(0, 8);
     const intro = String(item.intro || '').trim().slice(0, 120);
-    const meta = { role, notes, ...(item.rare === true ? { rare: true, ...(intro ? { intro } : {}) } : {}) };
+    const flags = { ...(item.rare === true ? { rare: true } : {}), ...(item.legendary === true ? { legendary: true } : {}) };
+    const meta = { role, notes, ...flags, ...(intro && Object.keys(flags).length ? { intro } : {}) };
     if (name && !ROLES.includes(role)) {
       console.warn(`! ${name}: role must be one of ${ROLES.join(', ')} (got "${role}")`);
       problems.push(`${name}: role must be one of ${ROLES.join(', ')}`);

@@ -1,6 +1,6 @@
 import { Flow, TextBox, Cancelled, prefersReducedMotion } from './ui.js';
 import {
-  MODES, ROLES, poolFor, rarePoolFor, RARE_CHANCE, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, recentLimit, nextMode, expNeeded, expFor, pointsFor, addExp,
+  MODES, ROLES, poolFor, rarePoolFor, RARE_CHANCE, LEGEND_CHANCE, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, recentLimit, nextMode, expNeeded, expFor, pointsFor, addExp,
 } from './game.js';
 import { store } from './storage.js';
 import { sound } from './sound.js';
@@ -128,7 +128,7 @@ export class Battle {
     this.text = new TextBox(this.flow, { textEl: $('text'), liveEl: $('live'), moreEl: $('more') });
     this.active = true;
     this.s = {
-      mode, startMode: mode, group, pool: poolFor(this.deck, group), rare: rarePoolFor(this.deck, group), hp: MAX_HP, level: 1, exp: 0, score: 0, streak: 0, bestStreak: 0, chain: 0,
+      mode, startMode: mode, group, pool: poolFor(this.deck, group), rare: rarePoolFor(this.deck, group), legend: poolFor(this.deck, group).filter((e) => e.legendary), hp: MAX_HP, level: 1, exp: 0, score: 0, streak: 0, bestStreak: 0, chain: 0,
       recent: [], rounds: 0, correct: 0, discovered: 0,
     };
     sound.set(store.settings.sound);
@@ -148,7 +148,7 @@ export class Battle {
   resetScene() {
     const { el } = this;
     el.results.hidden = true;
-    el.scene.classList.remove('is-challenge', 'is-shaking');
+    el.scene.classList.remove('is-challenge', 'is-shaking', 'is-legend');
     el.foe.className = 'foe';
     el.foe.style.visibility = 'hidden';
     el.player.className = 'player';
@@ -366,12 +366,17 @@ export class Battle {
     let entry;
     let visual;
     let q;
-    const useRare = !challenge && s.rare.length > 0 && Math.random() < RARE_CHANCE;
+    const useLegend = !challenge && s.legend.length > 0 && Math.random() < LEGEND_CHANCE;
+    const useRare = !useLegend && !challenge && s.rare.length > 0 && Math.random() < RARE_CHANCE;
+    let legend = false;
     // A broken image should never end the game: try another species.
     for (let attempt = 0; attempt < 4; attempt++) {
-      entry = useRare && attempt === 0
-        ? s.rare[Math.floor(Math.random() * s.rare.length)]
-        : pickEntry(s.pool, s.recent, { needSilhouette: challenge });
+      legend = useLegend && attempt === 0;
+      entry = legend
+        ? s.legend[Math.floor(Math.random() * s.legend.length)]
+        : useRare && attempt === 0
+          ? s.rare[Math.floor(Math.random() * s.rare.length)]
+          : pickEntry(s.pool, s.recent, { needSilhouette: challenge });
       visual = !challenge ? 'photo' : entry.silhouette ? 'silhouette' : 'pixel';
       q = makeQuestion(entry, s.mode, s.pool);
       try {
@@ -382,6 +387,7 @@ export class Battle {
         }
         this.hideFoe();
         this.setChoices(null);
+        el.scene.classList.toggle('is-legend', legend);
         await this.prepareFoe(entry, visual);
         break;
       } catch (err) {
@@ -398,7 +404,10 @@ export class Battle {
     if (challenge) await this.wipe(false);
     await this.enterFoe();
 
-    const intro = entry.rare ? entry.intro || 'A RARE organism appeared!' : 'A field organism appeared!';
+    if (legend) sound.levelUp();
+    const intro = legend
+      ? entry.intro || 'A LEGENDARY organism appeared!'
+      : entry.rare ? entry.intro || 'A RARE organism appeared!' : 'A field organism appeared!';
     await this.text.say(challenge ? 'Challenge! Something is lurking in the shadows!' : intro);
     await this.flow.delay(350);
     const prompt = {
@@ -487,7 +496,7 @@ export class Battle {
   async sayRole(entry) {
     if (!entry.role || !entry.notes?.length) return;
     const note = entry.notes[Math.floor(Math.random() * entry.notes.length)];
-    await this.text.say(`${ROLES[entry.role].single}: ${note}`, { hold: true });
+    await this.text.say(note.startsWith('Fun fact:') ? note : `${ROLES[entry.role].single}: ${note}`, { hold: true });
   }
 
   async onWrong(entry) {
