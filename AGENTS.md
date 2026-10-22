@@ -1,83 +1,314 @@
 # AGENTS.md - Wild ID
 
-Context for AI agents and contributors. Read this before changing anything.
+Guide for AI coding agents (and human contributors). Read it top to bottom once; it is written so you can be productive in about five minutes. Where this file and the code disagree, the code wins: fix this file in the same change.
 
-## What this is
-
-A static, no-build, no-dependency web game (plain HTML/CSS/ES modules) hosted on GitHub Pages at `https://dwdike-maker.github.io/wild-id-battle/`. The player sees an iNaturalist photo of an organism and picks its scientific name from 4 choices, inside a retro creature-battle screen. The owner is a research entomologist and not a developer: keep things simple, avoid tooling, and prefer changes that can be made through Pages CMS or GitHub's web UI.
-
-## Hard constraints
-
-- **No build step, no npm dependencies at runtime.** `package.json` only holds scripts. Scripts use Node 20+ built-ins (`fetch`, `fs`, `http`) only.
-- **No runtime network calls to third parties.** All photos and silhouettes are pre-downloaded into `data/` by the deck builder. The game only loads its own files.
-- **Everything shipped must be redistributable.** Photos are restricted to cc0 / cc-by / cc-by-sa / cc-by-nc / cc-by-nc-sa, with credit stored in the deck and displayed in-game. Sprites and backdrops are original (drawn in `js/sprites.js`); do not add Nintendo / Pokemon assets, names or audio.
-- **Public site:** never commit secrets, personal data, tokens or API keys.
-
-## Layout
+Quick start:
 
 ```
-index.html              All screens (title, battle, guide, credits) + dialogs (card, zoom)
-css/style.css           All styling. Layout sizes use cqw units inside .game (container query)
-js/main.js              Boot: load deck, route between screens, inject backdrops, register sw.js
-js/battle.js            Battle screen: HUD, rounds, effects, keyboard, zoom, challenge/silhouette
-js/game.js              PURE rules (no DOM): modes, makeQuestion, pickEntry, scoring, EXP/levels
-js/guide.js             Field guide grid + card dialog + credits
-js/sprites.js           Pixel-art player sprite and scene backdrops (SVG strings)
-js/sound.js             WebAudio chiptune effects (off by default)
-js/storage.js           localStorage wrapper, key `wildid.v1`
-js/ui.js                Tiny DOM helpers
-data/species.json       HUMAN-EDITED list of scientific names (via Pages CMS)
-data/deck.json          GENERATED. Do not hand-edit
-data/photos/, data/silhouettes/   GENERATED media
-scripts/build-deck.mjs  Deck builder (iNaturalist + PhyloPic)
-scripts/check.mjs       Validates deck.json and game.js rules; run after any change
-scripts/serve.mjs       Local static server (npm start, default port 8123)
-sw.js                   Service worker (offline shell + media cache)
-.pages.yml              Pages CMS schema for data/species.json
-.github/workflows/build-deck.yml   Rebuilds the deck on species.json changes
+npm run check     # validates deck + game rules; must say "All checks passed"
+npm start         # http://localhost:8123  (static server, no build step)
 ```
 
-## Game rules (js/game.js is the source of truth)
+Live site: https://dwdike-maker.github.io/wild-id-battle/ - Repo: `dwdike-maker/wild-id-battle` (public).
 
-- Modes: `genus` (Easy x1), `species` (Medium x2), `both` (Hard x3). Points = 100 x multiplier, x3 for challenges. EXP 10 per correct, 30 per challenge.
-- 5 HP. Wrong answer: -1 HP, streak and chain reset. HP 0 shows the results screen.
-- `CHAIN_GOAL = 3` correct in a row triggers a Challenge round (silhouette, or a pixelated photo when no silhouette exists). Clearing it gives +2 HP and promotes the mode (genus -> species -> both).
-- Distractors come from `entry.decoys` (same family/genus from iNaturalist, computed at build time), topped up from the rest of the deck. `makeQuestion` returns `{choices, correctIndex}`.
-- Progress (field guide, best score, settings) lives in `localStorage` under `wildid.v1`. If the saved shape changes incompatibly, bump the key (e.g. `wildid.v2`) and handle the old one in `js/storage.js`.
+---
 
-## The deck pipeline
+## 1. Project Overview
 
-`data/species.json` -> `scripts/build-deck.mjs` -> `data/deck.json` + `data/photos/*` + `data/silhouettes/*`.
+**What it does.** Wild ID is a browser game styled as a retro creature-battle screen. A real iNaturalist photo of an insect, spider or other organism appears; the player picks its scientific name from four choices. Difficulty controls what you name: Easy = genus, Medium = species, Hard = genus + species. Three correct answers in a row trigger a **Challenge** round that shows only a silhouette. Progress is kept in a **Field guide** (a collection screen), stored in the browser.
 
-- Per species it queries the iNaturalist API (taxon lookup, a CC-licensed research-grade photo, taxonomy/ancestry, observation count -> level, same-genus/family look-alikes) and PhyloPic (silhouette, exact-name match with species -> genus -> family fallback; 404 means "no match").
-- Incremental by default (skips species already in the deck). `--refresh` rebuilds everything; `--only "Genus species"` rebuilds one. Calls are throttled (~750 ms); a full 60-species build takes ~20 minutes.
-- iNaturalist taxa are renamed over time. If a name 404s, search iNaturalist for the current name (e.g. `Papilio cresphontes` is now `Heraclides cresphontes`; `Agraulis vanillae` is now `Dione vanillae`) and fix `species.json`.
-- The Action (`build-deck.yml`) runs on pushes touching `data/species.json` and via manual **Run workflow** (optional `refresh`). It commits `data/` as `github-actions[bot]`. Pushes made with `GITHUB_TOKEN` may not trigger a further Pages build on their own; if the live site lags after an Action run, re-run the Pages deployment or push any small commit.
-- Level = clamp(5, 90, round(100 - log10(observations) x 12)), so rarer species are higher level.
+**Primary users.**
+- *Players:* students, naturalists and curious people, mostly on phones. They want a quick, fun way to learn to recognize taxa. They are not expected to know taxonomy.
+- *Maintainer/owner:* a research entomologist who is **not a developer**. They maintain the species list through a web form (Pages CMS) and never run code. Anything that requires a terminal for routine upkeep is a regression.
 
-## Layout and CSS notes
+**Main goals.**
+1. Make learning scientific names feel like play, with accurate, properly credited real photos.
+2. Zero running cost and zero servers: static hosting, no accounts, no tracking.
+3. Content updates by non-coders: edit a list of names, wait a few minutes, the game updates.
+4. Works well on phones, offline once loaded, keyboard and screen-reader usable.
 
-- `.game` is a size container (`container-type: inline-size`); almost every size is in `cqw`, with `max()` floors on fonts so text stays readable on phones.
-- `.scene` is 3:2 on wide containers and square below 560px (`@container (max-width: 559px)`), swapping to the tall backdrop and repositioning `.foe`, `.player` and the infoboxes.
-- `.choice` is also a container; label font size is derived from the longest word via the `--n` custom property set in `Battle.setChoices`, so scientific names never break mid-word.
-- Top-layer `<dialog>` elements (`.card`, `.zoom`) use px/vw units, not cqw.
-- Respect `prefers-reduced-motion`. Keep tap targets >= 44px.
+**Explicit non-goals.**
+- No user accounts, leaderboards, multiplayer, analytics, ads or server-side state.
+- No runtime calls to third-party APIs from the browser (everything is pre-fetched into `data/`).
+- No framework, bundler, transpiler or runtime npm dependency.
+- No Nintendo/Pokemon assets, names, audio or trade dress. The look is an *unaffiliated homage* made of original pixel art; keep it that way.
+- Not a field-identification tool: the game teaches names, it does not claim authoritative identification.
 
-## Testing
+---
 
-1. `npm run check` - must print "All checks passed".
-2. `npm start`, open `http://localhost:8123/`, play a few rounds on a phone-width window (about 390 px) and on desktop. Check: photo frame fully inside the scene, no infobox/photo overlap, no horizontal scroll, choice labels not wrapped mid-word, field guide tiles uniform, zoom dialog opens/closes.
-3. Keyboard: 1-4 answers, Enter/Space advances, Escape closes dialogs.
+## 2. Architecture
 
-## Releasing
+### High-level design
 
-- **Bump `VERSION` in `sw.js`** whenever any shipped app file changes, or returning players may see stale files.
-- **Keep `SHELL` in `sw.js` in sync** with the files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest` (a missing file makes the service worker install fail).
-- Deploy = push to `main`; Pages serves the repo root. Allow 1-5 minutes, then hard-refresh.
+A **static site** plus an **offline content pipeline**. The browser only ever loads files from its own origin.
 
-## Gotchas
+```
+ Maintainer (Pages CMS form)          GitHub Action "Build deck"
+        |  edits                              |  runs scripts/build-deck.mjs
+        v                                     v
+ data/species.json  ---push--->  iNaturalist API + PhyloPic API
+ (list of scientific names)              |  photos, taxonomy, look-alikes, silhouettes
+                                         v
+                          data/deck.json + data/photos/* + data/silhouettes/*
+                                         |  committed by github-actions[bot]
+                                         v
+                              GitHub Pages serves the repo root
+                                         v
+                       Browser: index.html + js/*.js + css/style.css (+ sw.js cache)
+```
 
-- Windows + PowerShell 5 is the owner's environment: no `&&` / `||`; use `;`.
-- Photo credits can contain non-Latin characters; the pixel font falls back to the system font for those. That is expected.
-- The Field guide shows silhouettes for organisms you have not met yet; that is intentional (collection feel), not a spoiler leak, because the silhouette is not tied to the answer choices.
-- Sound is off by default and only starts after a user gesture (browser autoplay rules).
+### Major components
+
+| Component | File | Responsibility |
+|---|---|---|
+| Boot / router | `js/main.js` | Load `deck.json`, inject scene backdrops, show/hide the four screens (`title`, `battle`, `guide`, `credits`), bind title-screen controls, register the service worker |
+| Battle controller | `js/battle.js` (largest file, ~520 lines) | One run of the game: HUD, question flow, answer reveal, effects, challenge round, keyboard handling, photo zoom, results screen |
+| Game rules (pure) | `js/game.js` | Modes, `makeQuestion`, `pickEntry`, scoring, EXP/levels. **No DOM**, unit-checked by `scripts/check.mjs` |
+| Field guide | `js/guide.js` | Collection grid, entry-card dialog |
+| Async/text helpers | `js/ui.js` | `Flow` (cancellable timed steps), `TextBox` (typewriter dialogue, `*italic*` markup), `prefersReducedMotion` |
+| Persistence | `js/storage.js` | `localStorage` wrapper (key `wildid.v1`) |
+| Art | `js/sprites.js` | Original pixel-art player sprite and scene backdrops, as SVG strings |
+| Audio | `js/sound.js` | WebAudio chiptune effects, off by default |
+| Offline | `sw.js` | App shell cache + cache-first media |
+| Content pipeline | `scripts/build-deck.mjs` | Builds the deck from `data/species.json` |
+
+### Data flow (one round)
+
+1. `main.js` fetches `data/deck.json` (network-first via the service worker) and hands `deck.species` to `Battle`.
+2. `Battle` asks `game.js#pickEntry` for an organism (avoids recent ones; needs a silhouette for challenges), then `makeQuestion(entry, mode, deck)` for four labels. Decoys come from `entry.decoys` (computed at build time from iNaturalist look-alikes in the same genus/family/order) topped up from the rest of the deck.
+3. The photo loads from `data/photos/<file>`; the player answers; `Battle` updates HP/EXP/chain, reveals the name, credit and links, and calls `store.record(id, correct)`.
+4. After `CHAIN_GOAL` (3) correct in a row, a challenge round runs with `data/silhouettes/<file>` (or a client-side pixelated photo if no silhouette exists). Clearing it promotes the mode (genus -> species -> both) and heals 2 HP.
+5. HP 0 shows the results overlay and `store.submitRun` records best score/streak.
+
+### State management
+
+- **No framework, no store library.** Three kinds of state:
+  - *Persistent:* `storage.js` (`discovered`, `best`, `stats`, `settings`) in `localStorage`. Reads are defensive (corrupt/blocked storage falls back to defaults).
+  - *Run state:* a plain object inside `Battle` (hp, exp, level, chain, score, mode) mutated through `game.js` helpers such as `addExp`.
+  - *UI state:* the DOM itself (`hidden` attributes for screens, `aria-*` for widgets). Screens are all present in `index.html` and toggled by `show()`.
+- Every awaited delay/step in a battle goes through a `Flow`, so **"Run" cancels everything at once**. Do not use bare `setTimeout`/`await` inside battle logic; use `flow.delay()` / `flow.wait()` or "Run" will leave zombie timers.
+
+---
+
+## 3. Technology Stack
+
+| Area | Choice |
+|---|---|
+| Frontend | Plain HTML5, CSS (container queries, `cqw` units), ES modules. No framework, no TypeScript |
+| Runtime libraries | **None** |
+| Font | Press Start 2P (Latin subset, WOFF2, SIL OFL, self-hosted in `fonts/`) |
+| Tooling | Node 20+ only for `scripts/` (built-in `fetch`, `fs`, `http`). `package.json` has scripts but no dependencies and no lockfile |
+| Content sources | iNaturalist API v1 (no key), PhyloPic API v2 (no key). Server-side only, inside the Action |
+| CMS | Pages CMS (https://app.pagescms.org), configured by `.pages.yml` |
+| Hosting | GitHub Pages, branch `main`, path `/` (legacy branch build, no build step) |
+| CI | One GitHub Actions workflow: `.github/workflows/build-deck.yml` |
+| Testing | `scripts/check.mjs` (Node, no framework) + manual browser verification |
+
+### Deployment process
+
+- **Code/UI change:** commit to `main` and push. Pages publishes in about 1-5 minutes. Hard-refresh to see it.
+- **Species change:** edit `data/species.json` (Pages CMS or GitHub). The push triggers *Build deck*, which fetches content, runs `check.mjs`, and commits `data/` as `github-actions[bot]`. That bot commit also triggers a Pages build (verified).
+- **Manual rebuild:** Actions tab > *Build deck* > *Run workflow* (tick `refresh` to re-pick every photo).
+- Because the bot commits to `main`, **always `git pull` before you push**, or your push may be rejected.
+- **Service worker:** bump `VERSION` in `sw.js` whenever any shipped app file changes (see section 4).
+
+### Verified pipeline behavior (tested live, 2026-10-22)
+
+| Case | Result |
+|---|---|
+| New valid species | Built (about 20-30 s each; a full 60-species build takes about 20 min), committed by the bot, Pages redeploys |
+| Duplicate name in `species.json` | Skipped with a warning (the builder dedupes case-insensitively); build succeeds |
+| Unknown name / typo | Other species still build and commit; the run then ends **red** (annotated `Species not added`) and GitHub emails the owner |
+| Name removed from the list | Entry and its photo/silhouette files are pruned |
+| An occasional Pages build shows `errored` when two pushes land seconds apart | Self-heals on the next successful build; no action needed |
+
+**Not yet verified:** a real sign-in and save through Pages CMS. `.pages.yml` follows the documented single-file JSON pattern and the same edit made directly in `data/species.json` was tested end to end, but the CMS form itself has not been exercised. If the owner reports that saving does nothing, check `.pages.yml` first (field name `species`, `path: data/species.json`, `format: json`).
+
+---
+
+## 4. File Structure
+
+```
+index.html                 All screens + dialogs (card, zoom). Single page, no router library
+css/style.css              All styling (~400 lines). Sizes in cqw inside .game
+js/                        See component table above
+fonts/                     Self-hosted font + OFL.txt (keep the license file)
+icon.svg, manifest.webmanifest   PWA metadata
+sw.js                      Service worker (CAUTION: version + file list)
+data/species.json          HUMAN-EDITED list of scientific names
+data/deck.json             GENERATED deck (do not hand-edit)
+data/photos/, data/silhouettes/   GENERATED media (do not hand-edit)
+scripts/build-deck.mjs     Deck builder (iNaturalist + PhyloPic)
+scripts/check.mjs          Deck + game-rule validator
+scripts/serve.mjs          Local static server (port 8123)
+.github/workflows/build-deck.yml   Automation (CAUTION: write access to main)
+.pages.yml                 Pages CMS schema for data/species.json
+.gitattributes             Forces LF line endings (Windows owner + Linux Action)
+README.md                  Short public/user-facing description
+AGENTS.md                  This file
+```
+
+### Areas that need special caution
+
+1. **`data/deck.json`, `data/photos/`, `data/silhouettes/`** are generated. Hand edits are overwritten and can break attribution. Change `species.json` or the builder instead.
+2. **`sw.js`.** Two rules: (a) bump `VERSION` on every app-file release; (b) keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`. A missing file makes `cache.addAll` fail and the *whole service worker install fails silently*. Nothing in CI checks this today.
+3. **`.github/workflows/build-deck.yml`** has `contents: write` and pushes to `main`. See Security Rules.
+4. **`js/game.js`** is pure on purpose and validated by `check.mjs`. Keep it DOM-free.
+5. **`storage.js` key `wildid.v1`.** If you change the saved shape incompatibly, bump the key (e.g. `wildid.v2`) and migrate the old one; otherwise returning players lose their Field guide.
+6. **`.pages.yml` field names** must match the JSON shape (`{"species": [...]}`). Renaming one without the other breaks the maintainer's only editing path.
+7. **Photo licensing.** The builder restricts to cc0, cc-by, cc-by-sa, cc-by-nc, cc-by-nc-sa. Do not widen this or drop the stored `credit`/`link`; both are displayed in the game.
+8. **Cache-first media (known trap).** The SW serves `data/photos|silhouettes/*` cache-first by filename, and filenames are `<taxonId>.<ext>`. A `--refresh` rebuild that picks a *different* photo with the same filename will show the old image (with the new credit) until `VERSION` is bumped. Bump it after any refresh/rebuild that replaces media.
+
+---
+
+## 5. Development Principles
+
+- **Simplicity first.** The owner cannot debug a build system. Prefer a boring 20-line function to an abstraction.
+- **Maintainability over cleverness.** Small modules, pure rules, explicit names. No metaprogramming, no clever one-liners that need a comment to decode.
+- **Minimize dependencies.** Zero runtime deps today. Keep it that way (see Agent Constraints).
+- **Mobile-first.** Design for ~360-430 px portrait first, then widen. Test a phone viewport before desktop. Layout uses a single size container (`.game`) and `cqw` units, so text and art scale together; fonts have `max()` floors so they never get unreadably small.
+- **Accessibility is a requirement, not polish:**
+  - Everything operable by keyboard: `1-4` answer, `Enter`/`Space` advance, arrows move within the choices, `Esc` closes dialogs.
+  - Visible `:focus-visible` outlines; tap targets >= 44 px.
+  - Dynamic text is announced via the `aria-live` regions (`#live`, `#title-stats`, `#guide-count`); keep them updated when you change dialogue.
+  - Meters use `role="img"` + descriptive `aria-label`; difficulty is a `radiogroup`.
+  - Respect `prefers-reduced-motion` (`Flow.delay` shortens waits; CSS has a reduced-motion block). Never convey correctness by color alone: `.is-correct`/`.is-wrong` styling is always paired with the dialogue text ("Correct! It's ..."), which is also announced via the live region.
+  - Sound is off by default and starts only after a user gesture.
+
+---
+
+## 6. Coding Standards
+
+**Naming.** `camelCase` for functions/variables, `PascalCase` for classes (`Battle`, `Flow`, `TextBox`), `UPPER_SNAKE` for constants (`MAX_HP`, `CHAIN_GOAL`). CSS uses BEM-ish `block__element` / `block--modifier` and state classes `is-*` (e.g. `.card-tile.is-unknown`). Files are lowercase single words. Ids in HTML are `kebab-case`; `main.js` and `battle.js` read them with a local `$('id')` helper.
+
+**File organization.** One responsibility per module. Rules logic -> `game.js`; anything that touches the DOM -> `battle.js`/`guide.js`/`main.js`; persistence -> `storage.js`. New cross-cutting helpers go in `ui.js`. Imports are relative ES modules with the `.js` extension. If you add a file to `js/`, add it to `SHELL` in `sw.js`.
+
+**Component structure.** There are no components; there are modules that own a part of the page. Build DOM with `createElement`/`append`/`textContent` (see the `el()` helper in `guide.js`), not string templates. Keep each module's DOM lookups in one place (`Battle` collects them in `this.el`).
+
+**Error handling.**
+- Boundaries (network, storage, image loading) get `try/catch` with a **user-visible, plain-language fallback** (e.g. "Could not load the species deck. Check your connection and reload."; "Something went wrong. Press Run and try again.").
+- Storage failures are swallowed deliberately (`catch { /* storage blocked or corrupt: start fresh */ }`); the game must work with storage disabled.
+- Cancellation uses the `Cancelled` error class; swallow it where flows are cancelled, never show it to the user.
+- Pure code (`game.js`) does not throw for normal inputs; `makeQuestion` always returns 4 unique choices (verified by `check.mjs`).
+- Scripts: fail loudly. `build-deck.mjs` skips a bad species with a warning but exits non-zero (code 2) so the Action turns red; `check.mjs` exits 1 on any failure.
+
+**Logging.** Browser: `console.error(err)` only for genuine failures at a boundary; no debug logging committed, no analytics, no tracking. Scripts: concise progress lines (`+ Name`, `Deck: N species...`), warnings prefixed `!`, GitHub annotations via `::error title=...::`. Never log secrets (there are none).
+
+**Style.** Two-space indent, single quotes, semicolons, `const` by default, early returns. Comment only the *why* of non-obvious code (e.g. the cache-first trap, the `cqw` formulas). Match the surrounding file.
+
+---
+
+## 7. Security Rules
+
+This is a **public repository and public site**. Treat everything committed as world-readable.
+
+- **Never expose secrets.** There are currently none and none are needed (both APIs are keyless). Do not add API keys, tokens or `.env` files. If a future feature needs a secret, use GitHub Actions secrets and server-side use only; never ship it to the browser.
+- **Never commit credentials,** personal data, emails, or analytics identifiers. Check `git diff --cached` before committing.
+- **Sanitize untrusted input.** The only untrusted text is API data: photographer credits (`photo.attribution`), names and links. Current rules, keep them:
+  - Render all dynamic text with `textContent` / `el()`; **never `innerHTML` with data**. The existing `innerHTML`/`insertAdjacentHTML` uses insert only static, app-authored SVG strings (`sprites.js`, wipe cells). Keep it that way.
+  - Links are *constructed by the builder* from numeric ids (`inaturalist.org/observations/<id>`, `phylopic.org/images/<uuid>`), opened with `rel="noopener"`. Do not pass through API-provided URLs unchanged.
+  - Silhouettes are loaded as `<img src>` (scripts in SVG do not run in `<img>`). **Never inline downloaded SVGs into the DOM, and never `fetch`+`innerHTML` them.**
+  - Downloaded filenames are `<numeric taxonId>.<ext>`; never build file paths from species text or API strings.
+  - The species name is the one free-text input: it is only used inside `encodeURIComponent` in API URLs and as a lookup key. Keep it that way.
+- **Least privilege.** The workflow's `permissions` is `contents: write`; do not widen it. Use only first-party pinned-major actions (`actions/checkout@v4`, `actions/setup-node@v4`). Do not add `pull_request_target`, third-party actions, or steps that interpolate untrusted text into `run:` scripts (the only input is the boolean `refresh`). Only the bot should write `data/`.
+- **No third-party requests from the browser.** No CDNs, fonts, trackers or embeds; this also keeps the offline/PWA behavior valid.
+- **Document any risk you introduce or discover** in this file's section 10 and in the PR/commit message.
+
+Known residual risks (accepted, documented): no Content-Security-Policy (see section 10); the repo is public so anyone can fork it (data is CC-licensed and credited); Pages CMS acts with the maintainer's GitHub permissions.
+
+---
+
+## 8. Agent Workflows
+
+When making any change, follow this order:
+
+1. **Understand the existing implementation.** Read the relevant module and this file. Run `npm run check` and play a round locally *before* editing so you know the baseline.
+2. **Reuse existing patterns.** Pure rule -> `game.js`; DOM -> existing modules; delays -> `Flow`; text -> `TextBox`; storage -> `store`. Look for an existing helper before writing a new one.
+3. **Minimize scope.** One concern per change. No drive-by reformatting or renames.
+4. **Explain architectural trade-offs** in your PR/commit message or reply when more than one reasonable approach existed (what you chose, what you rejected, why).
+5. **Identify risks before coding:** player data loss (storage shape), stale caches (SW version), attribution/licensing, pipeline breakage (`species.json`/`.pages.yml` shape), accessibility regressions, layout on small screens.
+6. **List impacted files** up front and again at the end. Include `sw.js` (version/list), `README.md`/`AGENTS.md`, and `.pages.yml` when relevant.
+
+Typical task recipes:
+
+- **Add or remove species:** edit `data/species.json` only (the Action does the rest). Names must be exact two-word binomials as on iNaturalist; check for renamed taxa (e.g. `Papilio cresphontes` is now `Heraclides cresphontes`; `Agraulis vanillae` is now `Dione vanillae`).
+- **Change a rule or score:** edit `game.js`, extend `check.mjs` for it, then update this file's rules summary: Easy x1, Medium x2, Hard x3 points (base 100, x3 for challenges), EXP 10 per correct / 30 per challenge, 5 HP, wrong answer = -1 HP and chain reset, challenge after 3 in a row (+2 HP, promotes difficulty).
+- **Change layout/CSS:** test at ~390x844, ~1280x800 and a short landscape phone (~844x390). Check: photo frame fully inside the scene, no infobox/photo overlap, no horizontal scroll, labels not broken mid-word, tiles uniform.
+- **Ship a release:** `npm run check` -> bump `sw.js` `VERSION` -> `git pull` -> commit (include the `Co-authored-by` trailer when an AI assisted) -> push -> wait for Pages -> hard-refresh and smoke-test the live URL.
+
+---
+
+## 9. Agent Constraints
+
+- **No new frameworks or build tools** (React, Vite, TypeScript, Tailwind...). If you believe one is justified, stop and write up the problem, the alternatives and the cost to a non-developer owner *before* adding it.
+- **No new dependencies** (runtime or dev) without an explicit explanation of why the platform/Node built-ins are insufficient, the license, and the maintenance burden. Browser code must stay dependency-free.
+- **Prefer modifying existing code over rewriting.** Do not split `battle.js` or reorganize folders opportunistically; propose it first.
+- **Avoid premature optimization.** The deck is ~60 species and about 8.5 MB; the bottleneck is the human, not the CPU. Optimize only with a measured problem.
+- **Preserve the architecture** (static site + pre-built deck + Pages CMS + Action) unless the owner asks to change it.
+- **Do not hand-edit generated data,** do not widen photo licenses, do not add copyrighted/Nintendo assets, do not add tracking.
+- **Keep the owner's workflow non-technical.** Any new content type should be editable through Pages CMS (`.pages.yml`) and rebuilt by the Action.
+- **Windows/PowerShell 5 is the owner's environment:** no `&&`/`||` in shell instructions; use `;`. `git push` writes progress to stderr (not an error); verify with `git status -sb`.
+
+---
+
+## 10. Testing Expectations
+
+### What should be tested
+
+- **Automated, always:** `npm run check`. It verifies every deck entry has its files and credit, every species yields 4 unique choices with the correct one exactly once in all three modes, ids are unique, and the core rules (`nextMode`, `addExp`, `pickEntry`) behave. The Action runs it on every deck build.
+- **Add checks to `check.mjs`** for any new rule in `game.js` or any new deck invariant.
+
+### Manual verification (about 5 minutes)
+
+1. `npm start`, open `http://localhost:8123/` in a phone-sized window (about 390 px wide), then desktop.
+2. Title screen: difficulty radios work by tap and arrow keys; stats show.
+3. Play: answer right and wrong; confirm HP/EXP change, the reveal shows name + credit + links, `Run` exits cleanly mid-animation.
+4. Get 3 correct in a row: challenge round shows a silhouette (or pixelated photo), clearing it promotes the mode.
+5. Lose all HP: results overlay shows and `Try again` works.
+6. Photo zoom (+) opens and closes (button, backdrop, `Esc`).
+7. Field guide: tiles uniform, unknown entries are silhouettes, tapping an entry opens its card with credits.
+8. Reload: progress persists. Toggle Sound. Keyboard-only run (`1-4`, `Enter`).
+9. DevTools: no console errors, no failed requests, no horizontal scroll. Test offline after one load (service worker).
+10. After a release: open the live URL in a fresh profile and confirm the new version loads (SW `VERSION`).
+
+### Edge cases to remember
+
+- Species with no silhouette (pixelated-photo fallback) and with only a genus/family-rank silhouette.
+- Genera with a single species in the deck (decoys must come from outside the deck).
+- Very small decks (the game must still show 4 unique choices).
+- Long scientific names and names with non-Latin photographer credits (must wrap/fall back, not overflow).
+- Storage blocked or corrupt (`localStorage` throws): game must still run.
+- Slow/failed image loads; deck fetch failure message.
+- Rapid double-taps and tapping during animations; pressing `Run` mid-flow.
+- `prefers-reduced-motion` on; screen-reader pass over the live regions.
+- Duplicate/typo/renamed names in `species.json` (the pipeline behaviors listed in section 3).
+
+---
+
+## 11. Future Improvements
+
+### Known opportunities
+- **Multiple decks / filters:** let players choose a group (spiders, beetles, butterflies, "Gulf Coast"), driven by a field in `species.json` and a Pages CMS select.
+- **Better learning loop:** spaced repetition for missed species; "review mistakes" mode; show a diagnostic feature after each answer.
+- **Progress backup:** export/import of the Field guide (JSON) since it is only in `localStorage`.
+- **Maintainer feedback:** a PR-less way to see "which names failed" other than the red run email (for example, a generated `data/build-report.json` shown in Pages CMS).
+- **Installable app:** add PNG icons (192/512 and maskable) to the manifest; iOS ignores SVG-only icons.
+- **Content depth:** more species, plants/fungi, regional sets, common-name quiz mode.
+
+### Technical debt
+1. **No automated browser tests in the repo.** An end-to-end harness (Puppeteer driving headless Edge, which plays a full run and captures screenshots at phone/desktop/landscape) was used during development but lives outside the repo in a temp folder. Recommendation: add it as an optional `scripts/e2e.mjs` that does not add a dependency to the shipped site.
+2. **`check.mjs` does not verify `sw.js` `SHELL`** against real files, nor that HTML ids referenced in JS exist. A 15-line check would prevent a silent service-worker install failure.
+3. **Media filenames are not content-hashed** (cache-first trap in section 4). Use `<taxonId>-<hash>.<ext>` in the builder so refreshes cannot serve stale or mis-credited images.
+4. **No Content-Security-Policy.** Pages cannot set headers, but a `<meta http-equiv="Content-Security-Policy">` (`default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'` or stricter) is feasible; needs a test pass because backdrops use inline SVG styling.
+5. **`battle.js` is ~520 lines** mixing HUD updates, round flow, visual effects, keyboard and zoom. If it grows, split into `hud.js` and `effects.js`; do it as its own reviewed change with no behavior edits.
+6. **Builder is sequential and slow** (~20 s per species, ~20 min for 60). Fine for now; for large decks add bounded concurrency while keeping the API throttle, and cache taxon/ancestor lookups.
+7. **Decoy quality** depends on iNaturalist's "most observed" lists, so very obscure or recently renamed taxa can appear. Consider filtering by observation count and excluding inactive names.
+8. **English only,** strings are inline in JS/HTML. If localization is ever needed, extract them first.
+9. **Typos are only caught after the Action runs.** Pages CMS cannot validate names; the red-run email is the only signal.
+10. **Silhouette ranks** can fall back to family level and look generic; the builder records `silhouette.rank` so the UI could label or de-prioritize those.
+
+### Recommended refactors (in priority order)
+1. Content-hash media filenames + add the `sw.js` SHELL check (small, removes the two sharpest edges).
+2. Commit the e2e harness as `scripts/e2e.mjs`.
+3. Add the CSP meta tag after testing.
+4. Split `battle.js` only if you are adding features there.

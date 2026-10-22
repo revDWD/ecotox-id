@@ -21,7 +21,9 @@ A retro battle-screen game for learning to identify insects, spiders and other w
 
 1. Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open **wild-id-battle**.
 2. Edit **Species list**: one scientific name per line, two words, exactly as on iNaturalist (e.g. `Danaus plexippus`).
-3. Save. A GitHub Action fetches the photos, silhouettes and look-alike answers, then the site updates in a few minutes.
+3. Save. A GitHub Action fetches the photos, silhouettes and look-alike answers, then the site updates in a few minutes (about 20-30 seconds per new species).
+
+If a name can't be found (usually a typo, or iNaturalist renamed the species), the other species are still added, the run in the Actions tab turns red, GitHub emails you, and the log names the species to fix.
 
 Prefer GitHub directly? Edit `data/species.json`, or run the **Build deck** action from the Actions tab (tick *refresh* to re-pick every photo).
 
