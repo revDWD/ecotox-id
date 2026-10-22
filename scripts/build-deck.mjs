@@ -196,8 +196,14 @@ async function main() {
 
   const species = [];
   const problems = [];
+  const seen = new Set();
   for (const raw of wanted) {
     const name = raw.trim();
+    if (!name || seen.has(name.toLowerCase())) {
+      if (name) console.warn(`! ${name}: listed more than once, skipping the extra entry`);
+      continue;
+    }
+    seen.add(name.toLowerCase());
     if (only && name.toLowerCase() !== only) {
       const kept = byName.get(name.toLowerCase());
       if (kept) species.push(kept);
