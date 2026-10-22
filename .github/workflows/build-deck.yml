@@ -29,6 +29,8 @@ jobs:
         with:
           node-version: 22
       - name: Build the deck
+        id: build
+        continue-on-error: true
         run: node scripts/build-deck.mjs ${{ inputs.refresh && '--refresh' || '' }}
       - name: Check the deck
         run: node scripts/check.mjs
@@ -43,3 +45,9 @@ jobs:
             git commit -m "Update species deck"
             git push
           fi
+      # Valid species are saved above; this turns the run red (and emails you) if any name could not be found.
+      - name: Report names that could not be added
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "Some species names were not found on iNaturalist. Open the 'Build the deck' step for the list."
+          exit 1

@@ -231,7 +231,11 @@ async function main() {
   const deck = { generated: new Date().toISOString().slice(0, 10), count: species.length, species };
   await writeFile(deckPath, JSON.stringify(deck, null, 1) + '\n');
   console.log(`Deck: ${species.length} species, ${species.filter((e) => e.silhouette).length} with silhouettes.`);
-  if (problems.length) console.log(`Skipped:\n  ${problems.join('\n  ')}`);
+  if (problems.length) {
+    console.log(`Skipped:\n  ${problems.join('\n  ')}`);
+    for (const p of problems) console.log(`::error title=Species not added::${p}`);
+    process.exitCode = 2;
+  }
 }
 
 main().catch((err) => {
