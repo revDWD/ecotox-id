@@ -13,7 +13,8 @@ const PHOTOS = path.join(DATA, 'photos');
 const SILS = path.join(DATA, 'silhouettes');
 const INAT = 'https://api.inaturalist.org/v1';
 const PHYLOPIC = 'https://api.phylopic.org';
-const UA = 'wild-id-battle/1.0 (educational game; github.com/DWDyck/wild-id-battle)';
+const UA = 'ecotox-id-battle/1.0 (educational game; github.com/DWDyck/ecotox-id-battle)';
+const ROLES = ['pest', 'enemy', 'pollinator', 'test'];
 const PHOTO_LICENSES = ['cc0', 'cc-by', 'cc-by-sa', 'cc-by-nc', 'cc-by-nc-sa'];
 
 const args = process.argv.slice(2);
@@ -204,7 +205,16 @@ async function main() {
   const problems = [];
   const seen = new Set();
   for (const raw of wanted) {
-    const name = raw.trim();
+    const item = typeof raw === 'string' ? { name: raw } : raw || {};
+    const name = String(item.name || '').trim();
+    const role = String(item.role || '').trim();
+    const notes = (Array.isArray(item.notes) ? item.notes : [item.note])
+      .map((n) => String(n || '').trim().slice(0, 220)).filter(Boolean).slice(0, 6);
+    if (name && !ROLES.includes(role)) {
+      console.warn(`! ${name}: role must be one of ${ROLES.join(', ')} (got "${role}")`);
+      problems.push(`${name}: role must be one of ${ROLES.join(', ')}`);
+      continue;
+    }
     if (!name || seen.has(name.toLowerCase())) {
       if (name) console.warn(`! ${name}: listed more than once, skipping the extra entry`);
       continue;
@@ -212,17 +222,17 @@ async function main() {
     seen.add(name.toLowerCase());
     if (only && name.toLowerCase() !== only) {
       const kept = byName.get(name.toLowerCase());
-      if (kept) species.push(kept);
+      if (kept) species.push({ ...kept, role, notes });
       continue;
     }
     const kept = byName.get(name.toLowerCase());
     if (kept && (await exists(path.join(PHOTOS, kept.photo.file)))) {
-      species.push(kept);
+      species.push({ ...kept, role, notes });
       continue;
     }
     try {
       console.log(`+ ${name}`);
-      species.push(await buildEntry(name));
+      species.push({ ...(await buildEntry(name)), role, notes });
     } catch (err) {
       console.warn(`! ${name}: ${err.message}`);
       problems.push(`${name}: ${err.message}`);

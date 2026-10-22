@@ -1,8 +1,8 @@
-# Wild ID
+# Ecotox ID
 
 A retro battle-screen game for learning to identify insects, spiders and other wildlife. A real [iNaturalist](https://www.inaturalist.org) photo appears, you pick the scientific name from four choices, and every correct answer wins the round.
 
-**Play it:** https://dwdyck.github.io/wild-id-battle/
+**Play it:** https://dwdyck.github.io/ecotox-id-battle/
 
 ## How it plays
 
@@ -21,7 +21,7 @@ The deck has **174 organisms**: butterflies and moths, beetles, bees, wasps and 
 
 ## Add or remove species (no coding)
 
-1. Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open **wild-id-battle**.
+1. Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open **ecotox-id-battle**.
 2. Edit **Species list**: one scientific name per line, two words, exactly as on iNaturalist (e.g. `Danaus plexippus`).
 3. Save. A GitHub Action fetches the photos, silhouettes and look-alike answers, then the site updates in a few minutes (about 20-30 seconds per new species, so a batch of about 25-30 names takes roughly 12 minutes; adding in batches makes a typo easy to find).
 

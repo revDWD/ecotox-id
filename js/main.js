@@ -3,13 +3,14 @@ import { sound } from './sound.js';
 import { backdropSvg } from './sprites.js';
 import { Battle } from './battle.js';
 import { renderGuide, openCard } from './guide.js';
-import { MODES } from './game.js';
+import { MODES, ROLES, ROLE_ORDER } from './game.js';
 
 const $ = (id) => document.getElementById(id);
 const screens = ['title', 'battle', 'guide', 'credits'];
 let deck = [];
 let battle = null;
 let mode = MODES[store.settings.mode] ? store.settings.mode : 'genus';
+let group = 'all';
 
 function show(name, focusId) {
   for (const s of screens) $(`screen-${s}`).hidden = s !== name;
@@ -49,6 +50,19 @@ function renderTitle() {
   }
 }
 
+function renderGroups() {
+  const select = $('deck-group');
+  const counts = new Map();
+  deck.forEach((e) => counts.set(e.role, (counts.get(e.role) || 0) + 1));
+  if (!counts.has(store.settings.group)) group = 'all';
+  else group = store.settings.group;
+  select.textContent = '';
+  const add = (value, text) => select.append(Object.assign(document.createElement('option'), { value, textContent: text }));
+  add('all', `Everything (${deck.length})`);
+  for (const role of ROLE_ORDER) if (counts.has(role)) add(role, `${ROLES[role].group} (${counts.get(role)})`);
+  select.value = group;
+}
+
 function setMode(next) {
   mode = next;
   store.setSetting('mode', mode);
@@ -60,7 +74,7 @@ function bindTitle() {
     sound.set(store.settings.sound);
     sound.blip();
     show('battle');
-    battle.start(mode);
+    battle.start(mode, group);
   });
   const levels = [...document.querySelectorAll('.level')];
   levels.forEach((btn, i) => {
@@ -73,6 +87,10 @@ function bindTitle() {
       setMode(next.dataset.mode);
       next.focus();
     });
+  });
+  $('deck-group').addEventListener('change', (e) => {
+    group = e.target.value;
+    store.setSetting('group', group);
   });
   $('btn-guide').addEventListener('click', () => {
     renderGuide(deck, openCard);
@@ -103,6 +121,7 @@ async function boot() {
   }
   battle = new Battle({ deck, onExit: () => { renderTitle(); show('title', 'btn-start'); } });
   bindTitle();
+  renderGroups();
   renderTitle();
   show('title');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {

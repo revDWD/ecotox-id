@@ -327,6 +327,8 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
   padding: 1cqw; cursor: pointer; display: grid; gap: .8cqw; align-content: center; text-align: center;
   font-size: var(--fs-sm);
 }
+.deckpick { display: flex; align-items: center; gap: 2cqw; font-size: var(--fs-xs); color: var(--muted); }
+.deckpick select { flex: 1; min-width: 0; font-family: inherit; padding: 0 1.6cqw; }
 .level small { font-size: var(--fs-xs); color: var(--muted); line-height: 1.4; }
 .level b { font-weight: 400; }
 .level[aria-checked="true"] { background: #ffe9a3; box-shadow: inset 0 0 0 .5cqw var(--gold); }
@@ -386,6 +388,9 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 .card__body img { width: 100%; max-height: 52vh; object-fit: contain; background: #1b2442; display: block; margin-bottom: 10px; }
 .card__body p { margin: 0 0 6px; font-size: 11px; }
 .card__body i { font-style: italic; }
+.card__body .card__role { font-weight: 700; color: #1a4fb3; }
+.card__notes { margin: 0 0 8px; padding-left: 18px; font-size: 11px; line-height: 1.7; }
+.card__notes li { margin-bottom: 4px; }
 .card__body a { color: #1a4fb3; }
 .card__body .tool { margin-top: 10px; }
 

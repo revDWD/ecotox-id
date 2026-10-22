@@ -1,6 +1,6 @@
 import { Flow, TextBox, Cancelled, prefersReducedMotion } from './ui.js';
 import {
-  MODES, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, recentLimit, nextMode, expNeeded, expFor, pointsFor, addExp,
+  MODES, ROLES, poolFor, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, recentLimit, nextMode, expNeeded, expFor, pointsFor, addExp,
 } from './game.js';
 import { store } from './storage.js';
 import { sound } from './sound.js';
@@ -86,7 +86,7 @@ export class Battle {
     });
     $('zoom-close').addEventListener('click', () => $('zoom').close());
     $('zoom').addEventListener('click', (e) => { if (e.target === $('zoom')) $('zoom').close(); });
-    $('btn-again').addEventListener('click', () => this.start(this.s.startMode));
+    $('btn-again').addEventListener('click', () => this.start(this.s.startMode, this.s.group));
     $('btn-results-title').addEventListener('click', () => this.exit());
     this.el.soundBtn.addEventListener('click', () => {
       const on = !sound.enabled;
@@ -122,13 +122,13 @@ export class Battle {
     this.chosen = null;
   }
 
-  async start(mode) {
+  async start(mode, group = 'all') {
     this.stop();
     this.flow = new Flow();
     this.text = new TextBox(this.flow, { textEl: $('text'), liveEl: $('live'), moreEl: $('more') });
     this.active = true;
     this.s = {
-      mode, startMode: mode, hp: MAX_HP, level: 1, exp: 0, score: 0, streak: 0, bestStreak: 0, chain: 0,
+      mode, startMode: mode, group, pool: poolFor(this.deck, group), hp: MAX_HP, level: 1, exp: 0, score: 0, streak: 0, bestStreak: 0, chain: 0,
       recent: [], rounds: 0, correct: 0, discovered: 0,
     };
     sound.set(store.settings.sound);
@@ -349,7 +349,7 @@ export class Battle {
     this.renderPlayer(false);
     await this.flow.delay(700);
     el.player.classList.remove('is-entering');
-    await this.text.say(`Wild organisms are hiding in the grass! Name the *${MODES[s.mode].named.toLowerCase()}* to win each battle.`, { hold: true });
+    await this.text.say(`Organisms are hiding in the crop rows! Name the *${MODES[s.mode].named.toLowerCase()}* to win each battle.`, { hold: true });
 
     for (;;) {
       const challenge = s.chain >= CHAIN_GOAL;
@@ -368,7 +368,7 @@ export class Battle {
     let q;
     // A broken image should never end the game: try another species.
     for (let attempt = 0; attempt < 4; attempt++) {
-      entry = pickEntry(this.deck, s.recent, { needSilhouette: challenge });
+      entry = pickEntry(s.pool, s.recent, { needSilhouette: challenge });
       visual = !challenge ? 'photo' : entry.silhouette ? 'silhouette' : 'pixel';
       q = makeQuestion(entry, s.mode, this.deck);
       try {
@@ -387,7 +387,7 @@ export class Battle {
       }
     }
     s.recent.push(entry.id);
-    if (s.recent.length > recentLimit(this.deck.length)) s.recent.shift();
+    if (s.recent.length > recentLimit(s.pool.length)) s.recent.shift();
 
     this.setFoeBars(entry, { challenge, mode: s.mode });
     el.credit.textContent = '';
@@ -395,7 +395,7 @@ export class Battle {
     if (challenge) await this.wipe(false);
     await this.enterFoe();
 
-    await this.text.say(challenge ? 'Challenge! Something is lurking in the shadows!' : 'A wild organism appeared!');
+    await this.text.say(challenge ? 'Challenge! Something is lurking in the shadows!' : 'A field organism appeared!');
     await this.flow.delay(350);
     const prompt = {
       genus: challenge ? "Who's that organism? Pick the *genus*." : 'Which genus is it?',
@@ -454,6 +454,7 @@ export class Battle {
     }, () => {});
 
     await this.text.say(`Correct! It's ${fullName(entry)}!`, { hold: true });
+    await this.sayRole(entry);
 
     const gain = expFor(challenge);
     const leveled = addExp(s, gain);
@@ -463,7 +464,7 @@ export class Battle {
 
     if (leveled) {
       sound.levelUp();
-      await this.text.say(`NATURALIST grew to Lv${s.level}!`, { hold: true });
+      await this.text.say(`SCOUT grew to Lv${s.level}!`, { hold: true });
     }
     if (challenge) {
       s.chain = 0;
@@ -479,6 +480,12 @@ export class Battle {
     }
   }
 
+  async sayRole(entry) {
+    if (!entry.role || !entry.notes?.length) return;
+    const note = entry.notes[Math.floor(Math.random() * entry.notes.length)];
+    await this.text.say(`${ROLES[entry.role].single}: ${note}`, { hold: true });
+  }
+
   async onWrong(entry) {
     const { s, el } = this;
     sound.wrong();
@@ -489,6 +496,7 @@ export class Battle {
     s.chain = 0;
     this.renderPlayer();
     await this.text.say(`Oh no! It was ${fullName(entry)}.`, { hold: true });
+    await this.sayRole(entry);
     el.foe.classList.add('is-fainting');
     await this.flow.delay(s.hp > 0 ? 700 : 0);
   }
@@ -496,7 +504,7 @@ export class Battle {
   async gameOver() {
     const { s, el } = this;
     sound.faint();
-    await this.text.say('NATURALIST is out of HP!', { hold: true });
+    await this.text.say('SCOUT is out of HP!', { hold: true });
     const record = store.submitRun({ streak: s.bestStreak, score: s.score });
     el.resultsStats.innerHTML = '';
     const rows = [

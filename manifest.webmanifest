@@ -1,7 +1,7 @@
 {
-  "name": "Wild ID",
-  "short_name": "Wild ID",
-  "description": "Identify wild organisms from real photos in a retro battle screen.",
+  "name": "Ecotox ID",
+  "short_name": "Ecotox ID",
+  "description": "Identify crop pests, pollinators and ecotox test species in a retro battle screen.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

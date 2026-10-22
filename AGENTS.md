@@ -1,4 +1,6 @@
-# AGENTS.md - Wild ID
+# AGENTS.md - Ecotox ID
+
+> **Fork note.** Ecotox ID is a copy of Wild ID (`DWDyck/wild-id-battle`) refocused on ecotoxicology and crop science. Differences from the sections below: the deck is organised by **role** (`pest`, `enemy`, `pollinator`, `test`) instead of taxonomic group; each `data/species.json` entry is `{ name, role, notes[] }` (several one-line ecotox notes, one shown at random after each answer, all shown in the Field guide); the title screen has a **Deck** selector (all or one role, saved as `group` in settings); `GROUP_BY_ORDER` no longer exists (the guide filter uses `role`); the storage key is `ecotoxid.v1` and the service-worker cache prefix is `ecotoxid-` (so it can share the `dwdyck.github.io` origin with Wild ID). Wherever the text below says `wildid` or "Wild ID" read the Ecotox ID equivalent. The notes are brief general remarks written without a formal literature review; have a domain expert check them before the game is used for teaching.
 
 Guide for AI coding agents (and human contributors). Read it top to bottom once; it is written so you can be productive in about five minutes. Where this file and the code disagree, the code wins: fix this file in the same change.
 
@@ -9,13 +11,13 @@ npm run check     # validates deck + game rules; must say "All checks passed"
 npm start         # http://localhost:8123  (static server, no build step)
 ```
 
-Live site: https://dwdyck.github.io/wild-id-battle/ - Repo: `DWDyck/wild-id-battle` (public).
+Live site: https://dwdyck.github.io/ecotox-id-battle/ - Repo: `DWDyck/ecotox-id-battle` (public).
 
 ---
 
 ## 1. Project Overview
 
-**What it does.** Wild ID is a browser game styled as a retro creature-battle screen. A real iNaturalist photo of an insect, spider or other organism appears; the player picks its scientific name from four choices. Difficulty controls what you name: Easy = genus, Medium = species, Hard = genus + species. Three correct answers in a row trigger a **Challenge** round that shows only a silhouette. Progress is kept in a **Field guide** (a collection screen), stored in the browser.
+**What it does.** Ecotox ID is a browser game styled as a retro creature-battle screen. A real iNaturalist photo of an insect, spider or other organism appears; the player picks its scientific name from four choices. Difficulty controls what you name: Easy = genus, Medium = species, Hard = genus + species. Three correct answers in a row trigger a **Challenge** round that shows only a silhouette. Progress is kept in a **Field guide** (a collection screen), stored in the browser.
 
 **Primary users.**
 - *Players:* students, naturalists and curious people, mostly on phones. They want a quick, fun way to learn to recognize taxa. They are not expected to know taxonomy.
@@ -66,7 +68,7 @@ A **static site** plus an **offline content pipeline**. The browser only ever lo
 | Game rules (pure) | `js/game.js` | Modes, `makeQuestion`, `pickEntry`, `recentLimit` (size of the "don't repeat" window: `min(20, deck/2)`), scoring, EXP/levels. **No DOM**, unit-checked by `scripts/check.mjs` |
 | Field guide | `js/guide.js` | Collection grid, group filter (`GROUP_BY_ORDER` maps an iNaturalist order to a friendly group; unmapped orders fall into "Other arthropods"), entry-card dialog |
 | Async/text helpers | `js/ui.js` | `Flow` (cancellable timed steps), `TextBox` (typewriter dialogue, `*italic*` markup), `prefersReducedMotion` |
-| Persistence | `js/storage.js` | `localStorage` wrapper (key `wildid.v1`) |
+| Persistence | `js/storage.js` | `localStorage` wrapper (key `ecotoxid.v1`) |
 | Art | `js/sprites.js` | Original pixel-art player sprite and scene backdrops, as SVG strings |
 | Audio | `js/sound.js` | WebAudio chiptune effects, off by default |
 | Offline | `sw.js` | App shell cache + cache-first media |
@@ -151,10 +153,10 @@ AGENTS.md                  This file
 ### Areas that need special caution
 
 1. **`data/deck.json`, `data/photos/`, `data/silhouettes/`** are generated. Hand edits are overwritten and can break attribution. Change `species.json` or the builder instead.
-2. **`sw.js`.** Two rules: (a) bump `VERSION` on every app-file release; (b) keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`. A missing file makes `cache.addAll` fail and the *whole service worker install fails silently*. `check.mjs` now fails if `SHELL` differs from the real files or `VERSION` is not `wildid-v<number>`; it cannot tell whether you remembered to bump the number.
+2. **`sw.js`.** Two rules: (a) bump `VERSION` on every app-file release; (b) keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`. A missing file makes `cache.addAll` fail and the *whole service worker install fails silently*. `check.mjs` now fails if `SHELL` differs from the real files or `VERSION` is not `ecotoxid-v<number>`; it cannot tell whether you remembered to bump the number.
 3. **`.github/workflows/build-deck.yml`** has `contents: write` and pushes to `main`. See Security Rules.
 4. **`js/game.js`** is pure on purpose and validated by `check.mjs`. Keep it DOM-free.
-5. **`storage.js` key `wildid.v1`.** If you change the saved shape incompatibly, bump the key (e.g. `wildid.v2`) and migrate the old one; otherwise returning players lose their Field guide.
+5. **`storage.js` key `ecotoxid.v1`.** If you change the saved shape incompatibly, bump the key (e.g. `ecotoxid.v2`) and migrate the old one; otherwise returning players lose their Field guide.
 6. **`.pages.yml` field names** must match the JSON shape (`{"species": [...]}`). Renaming one without the other breaks the maintainer's only editing path.
 7. **Photo licensing.** The builder restricts to cc0, cc-by, cc-by-sa, cc-by-nc, cc-by-nc-sa. Do not widen this or drop the stored `credit`/`link`; both are displayed in the game.
 8. **Cache-first media (fixed by content hashing).** The SW serves `data/photos|silhouettes/*` cache-first by URL. The builder now saves new downloads as `<taxonId>-<first 8 hex of sha1>.<ext>` and records the name in `deck.json` (`photo.file`, `silhouette.file`), so a different image always gets a different URL and a returning player can never see a stale photo with a new credit. `deck.json` itself is network-first. Code must always read filenames from `deck.json`, never rebuild them from the taxon id. The original 60 entries keep their old `<taxonId>.<ext>` names until a `--refresh` re-downloads them (that is harmless: filenames only matter when the image changes).

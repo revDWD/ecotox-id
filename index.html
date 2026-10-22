@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Wild ID | Who's that organism?</title>
-  <meta name="description" content="A retro battle-screen quiz: identify wild organisms from real iNaturalist photos by genus and species.">
+  <title>Ecotox ID | Crop pests, pollinators and test species</title>
+  <meta name="description" content="A retro battle-screen quiz for ecotoxicology: identify crop pests, natural enemies, pollinators and test species from real iNaturalist photos, with ecotox notes.">
   <meta name="theme-color" content="#1b2a4a">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -13,14 +13,14 @@
 </head>
 <body>
   <a class="skip" href="#app">Skip to game</a>
-  <main class="game" id="app" aria-label="Wild ID game">
+  <main class="game" id="app" aria-label="Ecotox ID game">
 
     <!-- Title -->
     <section class="screen screen--title" id="screen-title" aria-labelledby="logo">
       <div class="scene scene--title" data-backdrop="wide">
         <div class="title__logo">
-          <h1 id="logo" class="logo">WILD <span>ID</span></h1>
-          <p class="logo__sub">Who's that organism?</p>
+          <h1 id="logo" class="logo">ECOTOX <span>ID</span></h1>
+          <p class="logo__sub">Crop pests, pollinators &amp; test species</p>
         </div>
         <div class="title__mystery" id="title-mystery" aria-hidden="true"></div>
       </div>
@@ -35,6 +35,7 @@
               <button type="button" role="radio" class="level" data-mode="both" aria-checked="false"><b>Hard</b><small>Genus + species</small></button>
             </div>
           </fieldset>
+          <label class="deckpick">Deck <select id="deck-group" class="tool"></select></label>
           <div class="menu-row">
             <button class="menu-item" id="btn-guide" type="button">Field guide</button>
             <button class="menu-item" id="btn-credits" type="button">Credits</button>
@@ -72,7 +73,7 @@
 
         <div class="infobox infobox--player" id="player-box">
           <div class="infobox__top">
-            <span class="infobox__name">NATURALIST</span>
+            <span class="infobox__name">SCOUT</span>
             <span class="infobox__lv" id="p-lv">Lv1</span>
           </div>
           <div class="hp">
@@ -112,7 +113,7 @@
 
       <div class="results" id="results" hidden role="dialog" aria-modal="true" aria-labelledby="results-title">
         <div class="box results__card">
-          <h2 id="results-title">The grass goes quiet...</h2>
+          <h2 id="results-title">The field goes quiet...</h2>
           <dl class="results__stats" id="results-stats"></dl>
           <div class="results__buttons">
             <button class="menu-item menu-item--primary" id="btn-again" type="button">Try again</button>
@@ -147,7 +148,7 @@
         <h3>Type</h3>
         <p>Press Start 2P by CodeMan38, SIL Open Font License 1.1.</p>
         <h3>About</h3>
-        <p>Wild ID is a free, ad-free hobby project. The battle layout is an homage to classic monster-collecting RPGs; all art here is original and the game is not affiliated with any game company.</p>
+        <p>Ecotox ID is a free, ad-free hobby project adapted from Wild ID. The ecotoxicology notes are brief, general educational remarks and are not regulatory or risk-assessment advice; check primary sources and test guidelines before relying on them. The battle layout is an homage to classic monster-collecting RPGs; all art here is original and the game is not affiliated with any game company.</p>
         <p id="deck-info"></p>
       </div>
     </section>
@@ -161,7 +162,7 @@
       <div class="box card__body" id="card-body"></div>
     </dialog>
   </main>
-  <noscript><p class="noscript">Wild ID needs JavaScript to run.</p></noscript>
+  <noscript><p class="noscript">Ecotox ID needs JavaScript to run.</p></noscript>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

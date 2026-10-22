@@ -1,9 +1,9 @@
 {
-  "name": "wild-id-battle",
+  "name": "ecotox-id-battle",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Wild ID: identify organisms from iNaturalist photos in a retro battle screen.",
+  "description": "Ecotox ID: identify crop pests, natural enemies, pollinators and test species in a retro battle screen, with ecotoxicology notes.",
   "scripts": {
     "start": "node scripts/serve.mjs",
     "build-deck": "node scripts/build-deck.mjs",

@@ -2,7 +2,7 @@
 import { readFile, readdir, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { MODE_ORDER, makeQuestion, labelFor, pickEntry, recentLimit, addExp, expNeeded, nextMode } from '../js/game.js';
+import { MODE_ORDER, ROLES, ROLE_ORDER, poolFor, makeQuestion, labelFor, pickEntry, recentLimit, addExp, expNeeded, nextMode } from '../js/game.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const deck = JSON.parse(await readFile(path.join(ROOT, 'data', 'deck.json'), 'utf8')).species;
@@ -27,6 +27,18 @@ for (const entry of deck) {
 }
 
 if (new Set(deck.map((e) => e.id)).size !== deck.length) fail('duplicate species ids in deck');
+for (const entry of deck) {
+  if (!ROLES[entry.role]) fail(`${entry.scientific}: bad role ${entry.role}`);
+  if (!Array.isArray(entry.notes) || entry.notes.length < 1) fail(`${entry.scientific}: no ecotox notes`);
+}
+for (const role of ROLE_ORDER) {
+  const pool = poolFor(deck, role);
+  if (pool.length < 4) fail(`role ${role} has too few species`);
+  for (const mode of MODE_ORDER) {
+    const q = makeQuestion(pool[0], mode, pool);
+    if (new Set(q.choices).size !== 4) fail(`role ${role}/${mode}: bad choices from the pool`);
+  }
+}
 const photoFiles = deck.map((e) => e.photo.file);
 if (new Set(photoFiles).size !== photoFiles.length) fail('two species share one photo file');
 const noLookAlikes = deck.filter((e) => !Object.values(e.decoys).some((list) => list.length)).map((e) => e.scientific);
@@ -45,7 +57,7 @@ else {
   for (const f of shell) await access(path.join(ROOT, f)).catch(() => fail(`sw.js SHELL lists a missing file: ${f}`));
   for (const f of wanted) if (!shell.includes(f)) fail(`sw.js SHELL is missing ${f}`);
 }
-if (!/const VERSION = 'wildid-v\d+'/.test(swSource)) fail('sw.js: VERSION should look like wildid-v<number>');
+if (!/const VERSION = 'ecotoxid-v\d+'/.test(swSource)) fail('sw.js: VERSION should look like ecotoxid-v<number>');
 
 // Picking: simulate long runs; nothing repeats within the recent window, and challenges get silhouettes.
 {

@@ -1,4 +1,5 @@
 import { store } from './storage.js';
+import { ROLES, ROLE_ORDER } from './game.js';
 
 const PHOTO_DIR = 'data/photos/';
 const SIL_DIR = 'data/silhouettes/';
@@ -9,39 +10,15 @@ const el = (tag, props = {}, ...kids) => {
   return node;
 };
 
-// Teaches taxonomy by grouping neighbours: order, then family, then genus.
+// Groups by role first (pests, enemies, pollinators, test species), then taxonomy: order, family, species.
 export function sortedDeck(deck) {
   return [...deck].sort((a, b) =>
-    (a.order || '').localeCompare(b.order || '') || a.family.localeCompare(b.family) || a.scientific.localeCompare(b.scientific));
+    ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role) || (a.order || '').localeCompare(b.order || '') ||
+    a.family.localeCompare(b.family) || a.scientific.localeCompare(b.scientific));
 }
 
-// Friendly filter groups, by iNaturalist order. Any order not listed falls into "Other arthropods".
-const GROUP_BY_ORDER = {
-  Lepidoptera: 'Butterflies & moths',
-  Coleoptera: 'Beetles',
-  Hymenoptera: 'Bees, wasps & ants',
-  Diptera: 'Flies',
-  Hemiptera: 'True bugs & cicadas',
-  Odonata: 'Dragonflies & damselflies',
-  Orthoptera: 'Grasshoppers & crickets',
-  Mantodea: 'Mantises',
-  Araneae: 'Spiders',
-  Phasmida: 'Other insects',
-  Neuroptera: 'Other insects',
-  Megaloptera: 'Other insects',
-  Blattodea: 'Other insects',
-  Dermaptera: 'Other insects',
-  Ephemeroptera: 'Other insects',
-  Trichoptera: 'Other insects',
-  Plecoptera: 'Other insects',
-  Siphonaptera: 'Other insects',
-  Thysanoptera: 'Other insects',
-};
-const GROUP_ORDER = [
-  'Butterflies & moths', 'Beetles', 'Bees, wasps & ants', 'Flies', 'True bugs & cicadas', 'Dragonflies & damselflies',
-  'Grasshoppers & crickets', 'Mantises', 'Other insects', 'Spiders', 'Other arthropods',
-];
-const groupOf = (entry) => GROUP_BY_ORDER[entry.order] || 'Other arthropods';
+// Filter groups are the ecotox roles (pest, natural enemy, pollinator, test species).
+const groupOf = (entry) => entry.role;
 let activeGroup = 'all';
 
 function fillFilter(select, list) {
@@ -50,8 +27,8 @@ function fillFilter(select, list) {
   if (!counts.has(activeGroup)) activeGroup = 'all';
   select.textContent = '';
   select.append(el('option', { value: 'all', textContent: `All (${list.length})` }));
-  for (const group of GROUP_ORDER) {
-    if (counts.has(group)) select.append(el('option', { value: group, textContent: `${group} (${counts.get(group)})` }));
+  for (const group of ROLE_ORDER) {
+    if (counts.has(group)) select.append(el('option', { value: group, textContent: `${ROLES[group].group} (${counts.get(group)})` }));
   }
   select.value = activeGroup;
 }
@@ -113,6 +90,10 @@ export function openCard(entry, status, number) {
     body.append(el('img', { src: PHOTO_DIR + entry.photo.file, alt: `Photo of ${entry.common || entry.scientific}` }));
     body.append(el('p', {}, el('i', { textContent: entry.scientific })));
     body.append(el('p', { textContent: `${entry.order ? entry.order + ' | ' : ''}${entry.family}` }));
+    if (entry.role) {
+      body.append(el('p', { className: 'card__role', textContent: ROLES[entry.role].single }));
+      if (entry.notes?.length) body.append(el('ul', { className: 'card__notes' }, ...entry.notes.map((n) => el('li', { textContent: n }))));
+    }
     const rec = store.entry(entry.id);
     body.append(el('p', { textContent: `Identified ${rec.correct} of ${rec.seen} times` }));
     body.append(el('p', {}, `Photo ${entry.photo.credit} `, el('a', { href: entry.photo.link, target: '_blank', rel: 'noopener', textContent: 'iNaturalist' })));

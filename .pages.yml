@@ -10,7 +10,27 @@ content:
     format: json
     fields:
       - name: species
-        label: Species (scientific names)
-        type: string
+        label: Species
+        type: object
         list: true
-        description: One per line, exactly as on iNaturalist, e.g. Danaus plexippus. Species only (two words), no common names.
+        fields:
+          - name: name
+            label: Scientific name
+            type: string
+            required: true
+            description: Exactly as on iNaturalist, e.g. Helicoverpa zea. Species only (two words), no common names.
+          - name: role
+            label: Role
+            type: select
+            required: true
+            options:
+              values:
+                - { value: pest, label: Crop pest }
+                - { value: enemy, label: Natural enemy }
+                - { value: pollinator, label: Pollinator }
+                - { value: test, label: Test and indicator species }
+          - name: notes
+            label: Ecotox notes (one line each)
+            type: string
+            list: true
+            description: Short one-line notes. One is shown at random after each answer, and all appear in the Field guide.

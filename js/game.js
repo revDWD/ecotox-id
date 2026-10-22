@@ -5,6 +5,19 @@ export const MODES = {
   species: { label: 'Medium', named: 'Species', short: 'SPECIES', multiplier: 2 },
   both: { label: 'Hard', named: 'Genus + species', short: 'BOTH', multiplier: 3 },
 };
+// Why each organism is in the deck: the group filter, the Field guide sections and the note after each answer.
+export const ROLES = {
+  pest: { group: 'Crop pests', single: 'Crop pest' },
+  enemy: { group: 'Natural enemies', single: 'Natural enemy' },
+  pollinator: { group: 'Pollinators', single: 'Pollinator' },
+  test: { group: 'Test & indicator species', single: 'Test species' },
+};
+export const ROLE_ORDER = ['pest', 'enemy', 'pollinator', 'test'];
+export const poolFor = (deck, group) => {
+  const pool = group === 'all' ? deck : deck.filter((e) => e.role === group);
+  return pool.length >= 4 ? pool : deck;
+};
+
 export const MODE_ORDER = ['genus', 'species', 'both'];
 export const CHAIN_GOAL = 3;
 export const MAX_HP = 5;
