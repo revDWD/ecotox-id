@@ -2,7 +2,7 @@
 
 A retro battle-screen game for learning to identify insects, spiders and other wildlife. A real [iNaturalist](https://www.inaturalist.org) photo appears, you pick the scientific name from four choices, and every correct answer wins the round.
 
-**Play it:** https://dwdike-maker.github.io/wild-id-battle/
+**Play it:** https://dwdyck.github.io/wild-id-battle/
 
 ## How it plays
 

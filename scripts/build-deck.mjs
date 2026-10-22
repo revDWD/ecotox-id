@@ -13,7 +13,7 @@ const PHOTOS = path.join(DATA, 'photos');
 const SILS = path.join(DATA, 'silhouettes');
 const INAT = 'https://api.inaturalist.org/v1';
 const PHYLOPIC = 'https://api.phylopic.org';
-const UA = 'wild-id-battle/1.0 (educational game; github.com/dwdike-maker/wild-id-battle)';
+const UA = 'wild-id-battle/1.0 (educational game; github.com/DWDyck/wild-id-battle)';
 const PHOTO_LICENSES = ['cc0', 'cc-by', 'cc-by-sa', 'cc-by-nc', 'cc-by-nc-sa'];
 
 const args = process.argv.slice(2);

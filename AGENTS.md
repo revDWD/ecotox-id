@@ -9,7 +9,7 @@ npm run check     # validates deck + game rules; must say "All checks passed"
 npm start         # http://localhost:8123  (static server, no build step)
 ```
 
-Live site: https://dwdike-maker.github.io/wild-id-battle/ - Repo: `dwdike-maker/wild-id-battle` (public).
+Live site: https://dwdyck.github.io/wild-id-battle/ - Repo: `DWDyck/wild-id-battle` (public).
 
 ---
 
