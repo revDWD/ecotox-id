@@ -63,8 +63,8 @@ A **static site** plus an **offline content pipeline**. The browser only ever lo
 |---|---|---|
 | Boot / router | `js/main.js` | Load `deck.json`, inject scene backdrops, show/hide the four screens (`title`, `battle`, `guide`, `credits`), bind title-screen controls, register the service worker |
 | Battle controller | `js/battle.js` (largest file, ~520 lines) | One run of the game: HUD, question flow, answer reveal, effects, challenge round, keyboard handling, photo zoom, results screen |
-| Game rules (pure) | `js/game.js` | Modes, `makeQuestion`, `pickEntry`, scoring, EXP/levels. **No DOM**, unit-checked by `scripts/check.mjs` |
-| Field guide | `js/guide.js` | Collection grid, entry-card dialog |
+| Game rules (pure) | `js/game.js` | Modes, `makeQuestion`, `pickEntry`, `recentLimit` (size of the "don't repeat" window: `min(20, deck/2)`), scoring, EXP/levels. **No DOM**, unit-checked by `scripts/check.mjs` |
+| Field guide | `js/guide.js` | Collection grid, group filter (`GROUP_BY_ORDER` maps an iNaturalist order to a friendly group; unmapped orders fall into "Other arthropods"), entry-card dialog |
 | Async/text helpers | `js/ui.js` | `Flow` (cancellable timed steps), `TextBox` (typewriter dialogue, `*italic*` markup), `prefersReducedMotion` |
 | Persistence | `js/storage.js` | `localStorage` wrapper (key `wildid.v1`) |
 | Art | `js/sprites.js` | Original pixel-art player sprite and scene backdrops, as SVG strings |
@@ -116,7 +116,7 @@ A **static site** plus an **offline content pipeline**. The browser only ever lo
 
 | Case | Result |
 |---|---|
-| New valid species | Built (about 20-30 s each; a full 60-species build takes about 20 min), committed by the bot, Pages redeploys |
+| New valid species | Built (about 20-30 s each; a batch of 29 took about 12 min, a full 174-species `refresh` would take over an hour), committed by the bot, Pages redeploys. Add species in batches of about 25-30 so a failure is easy to isolate |
 | Duplicate name in `species.json` | Skipped with a warning (the builder dedupes case-insensitively); build succeeds |
 | Unknown name / typo | Other species still build and commit; the run then ends **red** (annotated `Species not added`) and GitHub emails the owner |
 | Name removed from the list | Entry and its photo/silhouette files are pruned |
@@ -151,13 +151,13 @@ AGENTS.md                  This file
 ### Areas that need special caution
 
 1. **`data/deck.json`, `data/photos/`, `data/silhouettes/`** are generated. Hand edits are overwritten and can break attribution. Change `species.json` or the builder instead.
-2. **`sw.js`.** Two rules: (a) bump `VERSION` on every app-file release; (b) keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`. A missing file makes `cache.addAll` fail and the *whole service worker install fails silently*. Nothing in CI checks this today.
+2. **`sw.js`.** Two rules: (a) bump `VERSION` on every app-file release; (b) keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`. A missing file makes `cache.addAll` fail and the *whole service worker install fails silently*. `check.mjs` now fails if `SHELL` differs from the real files or `VERSION` is not `wildid-v<number>`; it cannot tell whether you remembered to bump the number.
 3. **`.github/workflows/build-deck.yml`** has `contents: write` and pushes to `main`. See Security Rules.
 4. **`js/game.js`** is pure on purpose and validated by `check.mjs`. Keep it DOM-free.
 5. **`storage.js` key `wildid.v1`.** If you change the saved shape incompatibly, bump the key (e.g. `wildid.v2`) and migrate the old one; otherwise returning players lose their Field guide.
 6. **`.pages.yml` field names** must match the JSON shape (`{"species": [...]}`). Renaming one without the other breaks the maintainer's only editing path.
 7. **Photo licensing.** The builder restricts to cc0, cc-by, cc-by-sa, cc-by-nc, cc-by-nc-sa. Do not widen this or drop the stored `credit`/`link`; both are displayed in the game.
-8. **Cache-first media (known trap).** The SW serves `data/photos|silhouettes/*` cache-first by filename, and filenames are `<taxonId>.<ext>`. A `--refresh` rebuild that picks a *different* photo with the same filename will show the old image (with the new credit) until `VERSION` is bumped. Bump it after any refresh/rebuild that replaces media.
+8. **Cache-first media (fixed by content hashing).** The SW serves `data/photos|silhouettes/*` cache-first by URL. The builder now saves new downloads as `<taxonId>-<first 8 hex of sha1>.<ext>` and records the name in `deck.json` (`photo.file`, `silhouette.file`), so a different image always gets a different URL and a returning player can never see a stale photo with a new credit. `deck.json` itself is network-first. Code must always read filenames from `deck.json`, never rebuild them from the taxon id. The original 60 entries keep their old `<taxonId>.<ext>` names until a `--refresh` re-downloads them (that is harmless: filenames only matter when the image changes).
 
 ---
 
@@ -243,7 +243,7 @@ Typical task recipes:
 - **No new frameworks or build tools** (React, Vite, TypeScript, Tailwind...). If you believe one is justified, stop and write up the problem, the alternatives and the cost to a non-developer owner *before* adding it.
 - **No new dependencies** (runtime or dev) without an explicit explanation of why the platform/Node built-ins are insufficient, the license, and the maintenance burden. Browser code must stay dependency-free.
 - **Prefer modifying existing code over rewriting.** Do not split `battle.js` or reorganize folders opportunistically; propose it first.
-- **Avoid premature optimization.** The deck is ~60 species and about 8.5 MB; the bottleneck is the human, not the CPU. Optimize only with a measured problem.
+- **Avoid premature optimization.** The deck is 174 species and about 33 MB in `data/` (about 180 KB per photo), but the first load is only about 370 KB because media is fetched lazily and cached as it is used. Do **not** precache media in `sw.js`. Optimize only with a measured problem (see thumbnails in section 11).
 - **Preserve the architecture** (static site + pre-built deck + Pages CMS + Action) unless the owner asks to change it.
 - **Do not hand-edit generated data,** do not widen photo licenses, do not add copyrighted/Nintendo assets, do not add tracking.
 - **Keep the owner's workflow non-technical.** Any new content type should be editable through Pages CMS (`.pages.yml`) and rebuilt by the Action.
@@ -255,7 +255,7 @@ Typical task recipes:
 
 ### What should be tested
 
-- **Automated, always:** `npm run check`. It verifies every deck entry has its files and credit, every species yields 4 unique choices with the correct one exactly once in all three modes, ids are unique, and the core rules (`nextMode`, `addExp`, `pickEntry`) behave. The Action runs it on every deck build.
+- **Automated, always:** `npm run check`. It verifies every deck entry has its files and credit, every species yields 4 unique choices with the correct one exactly once in all three modes, ids and photo filenames are unique, `sw.js` `SHELL` matches the real shipped files, and the core rules (`nextMode`, `addExp`, `pickEntry`) behave, including a 400-round simulation (no repeats inside the `recentLimit` window; challenge rounds always get a silhouette). It prints a warning (not a failure) for any entry with no look-alike decoys. The Action runs it on every deck build.
 - **Add checks to `check.mjs`** for any new rule in `game.js` or any new deck invariant.
 
 ### Manual verification (about 5 minutes)
@@ -266,7 +266,7 @@ Typical task recipes:
 4. Get 3 correct in a row: challenge round shows a silhouette (or pixelated photo), clearing it promotes the mode.
 5. Lose all HP: results overlay shows and `Try again` works.
 6. Photo zoom (+) opens and closes (button, backdrop, `Esc`).
-7. Field guide: tiles uniform, unknown entries are silhouettes, tapping an entry opens its card with credits.
+7. Field guide: tiles uniform, unknown entries are silhouettes (a "?" if the species has none), the "Show" filter counts match the tiles, no name breaks mid-word (check 360, 390 and 1280 px with every species identified), tapping an entry opens its card with credits.
 8. Reload: progress persists. Toggle Sound. Keyboard-only run (`1-4`, `Enter`).
 9. DevTools: no console errors, no failed requests, no horizontal scroll. Test offline after one load (service worker).
 10. After a release: open the live URL in a fresh profile and confirm the new version loads (SW `VERSION`).
@@ -288,7 +288,7 @@ Typical task recipes:
 ## 11. Future Improvements
 
 ### Known opportunities
-- **Multiple decks / filters:** let players choose a group (spiders, beetles, butterflies, "Gulf Coast"), driven by a field in `species.json` and a Pages CMS select.
+- **Multiple decks / filters:** the Field guide now has a "Show" group filter. Still open: let players *play* a chosen group (spiders, beetles, butterflies, "Gulf Coast"), driven by a field in `species.json` and a Pages CMS select.
 - **Better learning loop:** spaced repetition for missed species; "review mistakes" mode; show a diagnostic feature after each answer.
 - **Progress backup:** export/import of the Field guide (JSON) since it is only in `localStorage`.
 - **Maintainer feedback:** a PR-less way to see "which names failed" other than the red run email (for example, a generated `data/build-report.json` shown in Pages CMS).
@@ -297,18 +297,18 @@ Typical task recipes:
 
 ### Technical debt
 1. **No automated browser tests in the repo.** An end-to-end harness (Puppeteer driving headless Edge, which plays a full run and captures screenshots at phone/desktop/landscape) was used during development but lives outside the repo in a temp folder. Recommendation: add it as an optional `scripts/e2e.mjs` that does not add a dependency to the shipped site.
-2. **`check.mjs` does not verify `sw.js` `SHELL`** against real files, nor that HTML ids referenced in JS exist. A 15-line check would prevent a silent service-worker install failure.
-3. **Media filenames are not content-hashed** (cache-first trap in section 4). Use `<taxonId>-<hash>.<ext>` in the builder so refreshes cannot serve stale or mis-credited images.
+2. ~~`check.mjs` does not verify `sw.js` `SHELL`~~ **Done:** `check.mjs` verifies `SHELL` and `VERSION`. Still unchecked: that HTML ids referenced in JS exist.
+3. ~~Media filenames are not content-hashed~~ **Done:** see section 4, caution 8. Remaining wrinkle: the original 60 entries still carry unhashed names until the next `refresh`.
 4. **No Content-Security-Policy.** Pages cannot set headers, but a `<meta http-equiv="Content-Security-Policy">` (`default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'` or stricter) is feasible; needs a test pass because backdrops use inline SVG styling.
 5. **`battle.js` is ~520 lines** mixing HUD updates, round flow, visual effects, keyboard and zoom. If it grows, split into `hud.js` and `effects.js`; do it as its own reviewed change with no behavior edits.
-6. **Builder is sequential and slow** (~20 s per species, ~20 min for 60). Fine for now; for large decks add bounded concurrency while keeping the API throttle, and cache taxon/ancestor lookups.
+6. **Builder is sequential and slow** (~25 s per species, over an hour for a full 174-species `refresh`). Fine for now; for large decks add bounded concurrency while keeping the API throttle, and cache taxon/ancestor lookups.
 7. **Decoy quality** depends on iNaturalist's "most observed" lists, so very obscure or recently renamed taxa can appear. Consider filtering by observation count and excluding inactive names.
 8. **English only,** strings are inline in JS/HTML. If localization is ever needed, extract them first.
 9. **Typos are only caught after the Action runs.** Pages CMS cannot validate names; the red-run email is the only signal.
 10. **Silhouette ranks** can fall back to family level and look generic; the builder records `silhouette.rank` so the UI could label or de-prioritize those.
 
 ### Recommended refactors (in priority order)
-1. Content-hash media filenames + add the `sw.js` SHELL check (small, removes the two sharpest edges).
-2. Commit the e2e harness as `scripts/e2e.mjs`.
-3. Add the CSP meta tag after testing.
+1. Commit the e2e harness as `scripts/e2e.mjs`.
+2. Add the CSP meta tag after testing.
+3. Guide thumbnails: identified tiles load the ~150 KB 500 px photo into a ~130 px tile. A small thumbnail per species (built by the Action) would cut guide image weight a lot.
 4. Split `battle.js` only if you are adding features there.

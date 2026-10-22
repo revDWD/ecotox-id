@@ -15,22 +15,68 @@ export function sortedDeck(deck) {
     (a.order || '').localeCompare(b.order || '') || a.family.localeCompare(b.family) || a.scientific.localeCompare(b.scientific));
 }
 
-function tileImage(entry, status) {
-  const img = el('img', { loading: 'lazy', decoding: 'async', alt: '' });
-  if (status === 'unknown') {
-    if (entry.silhouette) img.src = SIL_DIR + entry.silhouette.file;
-    else img.src = PHOTO_DIR + entry.photo.file;
-  } else {
-    img.src = PHOTO_DIR + entry.photo.file;
+// Friendly filter groups, by iNaturalist order. Any order not listed falls into "Other arthropods".
+const GROUP_BY_ORDER = {
+  Lepidoptera: 'Butterflies & moths',
+  Coleoptera: 'Beetles',
+  Hymenoptera: 'Bees, wasps & ants',
+  Diptera: 'Flies',
+  Hemiptera: 'True bugs & cicadas',
+  Odonata: 'Dragonflies & damselflies',
+  Orthoptera: 'Grasshoppers & crickets',
+  Mantodea: 'Mantises',
+  Araneae: 'Spiders',
+  Phasmida: 'Other insects',
+  Neuroptera: 'Other insects',
+  Megaloptera: 'Other insects',
+  Blattodea: 'Other insects',
+  Dermaptera: 'Other insects',
+  Ephemeroptera: 'Other insects',
+  Trichoptera: 'Other insects',
+  Plecoptera: 'Other insects',
+  Siphonaptera: 'Other insects',
+  Thysanoptera: 'Other insects',
+};
+const GROUP_ORDER = [
+  'Butterflies & moths', 'Beetles', 'Bees, wasps & ants', 'Flies', 'True bugs & cicadas', 'Dragonflies & damselflies',
+  'Grasshoppers & crickets', 'Mantises', 'Other insects', 'Spiders', 'Other arthropods',
+];
+const groupOf = (entry) => GROUP_BY_ORDER[entry.order] || 'Other arthropods';
+let activeGroup = 'all';
+
+function fillFilter(select, list) {
+  const counts = new Map();
+  list.forEach((e) => counts.set(groupOf(e), (counts.get(groupOf(e)) || 0) + 1));
+  if (!counts.has(activeGroup)) activeGroup = 'all';
+  select.textContent = '';
+  select.append(el('option', { value: 'all', textContent: `All (${list.length})` }));
+  for (const group of GROUP_ORDER) {
+    if (counts.has(group)) select.append(el('option', { value: group, textContent: `${group} (${counts.get(group)})` }));
   }
+  select.value = activeGroup;
+}
+
+function tileImage(entry, status) {
+  // No silhouette and not yet identified: a "?" instead of the photo, which would otherwise show as a black box.
+  if (status === 'unknown' && !entry.silhouette) return el('span', { className: 'card-tile__mystery', textContent: '?' });
+  const img = el('img', { loading: 'lazy', decoding: 'async', alt: '' });
+  img.src = status === 'unknown' ? SIL_DIR + entry.silhouette.file : PHOTO_DIR + entry.photo.file;
   return img;
 }
 
 export function renderGuide(deck, onOpen) {
+  const list = sortedDeck(deck);
+  const select = document.getElementById('guide-filter');
+  fillFilter(select, list);
+  select.onchange = () => { activeGroup = select.value; renderGrid(list, onOpen); };
+  renderGrid(list, onOpen);
+}
+
+function renderGrid(list, onOpen) {
   const grid = document.getElementById('guide-grid');
   grid.textContent = '';
-  const list = sortedDeck(deck);
   list.forEach((entry, index) => {
+    if (activeGroup !== 'all' && groupOf(entry) !== activeGroup) return;
     const status = store.status(entry.id);
     const number = String(index + 1).padStart(3, '0');
     const known = status === 'identified';
@@ -50,7 +96,7 @@ export function renderGuide(deck, onOpen) {
     tile.addEventListener('click', () => onOpen(entry, status, number));
     grid.append(el('li', {}, tile));
   });
-  document.getElementById('guide-count').textContent = `Identified ${store.identifiedCount()} of ${deck.length}`;
+  document.getElementById('guide-count').textContent = `Identified ${store.identifiedCount()} of ${list.length}`;
 }
 
 export function openCard(entry, status, number) {

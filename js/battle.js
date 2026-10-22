@@ -1,6 +1,6 @@
 import { Flow, TextBox, Cancelled, prefersReducedMotion } from './ui.js';
 import {
-  MODES, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, nextMode, expNeeded, expFor, pointsFor, addExp,
+  MODES, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, recentLimit, nextMode, expNeeded, expFor, pointsFor, addExp,
 } from './game.js';
 import { store } from './storage.js';
 import { sound } from './sound.js';
@@ -387,7 +387,7 @@ export class Battle {
       }
     }
     s.recent.push(entry.id);
-    if (s.recent.length > 12) s.recent.shift();
+    if (s.recent.length > recentLimit(this.deck.length)) s.recent.shift();
 
     this.setFoeBars(entry, { challenge, mode: s.mode });
     el.credit.textContent = '';

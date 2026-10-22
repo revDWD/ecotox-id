@@ -89,6 +89,9 @@ export function makeQuestion(entry, mode, deck, rng = Math.random) {
   };
 }
 
+// How many recently shown organisms are skipped: long enough to feel varied, short enough for small decks.
+export const recentLimit = (deckSize) => Math.min(20, Math.floor(deckSize / 2));
+
 export function pickEntry(deck, recent, { needSilhouette = false } = {}, rng = Math.random) {
   let pool = deck.filter((e) => !recent.includes(e.id));
   if (needSilhouette) {
