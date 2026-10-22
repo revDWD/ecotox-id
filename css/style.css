@@ -375,6 +375,7 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 .prose h3:first-child { margin-top: 0; }
 .prose p { margin: 0 0 1cqw; }
 .prose a { color: #1a4fb3; }
+.byline { margin: 3cqw 0 1cqw; text-align: center; font-size: var(--fs-xs); color: var(--muted); }
 
 .card { border: 0; padding: 0; background: transparent; width: min(92vw, 560px); max-height: 92vh; overflow: auto; color: var(--ink); font-family: inherit; }
 .card::backdrop { background: rgba(8, 10, 24, .78); }
