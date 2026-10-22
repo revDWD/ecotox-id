@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Wild ID | Who's that organism?</title>
+  <meta name="description" content="A retro battle-screen quiz: identify wild organisms from real iNaturalist photos by genus and species.">
+  <meta name="theme-color" content="#1b2a4a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/PressStart2P-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#app">Skip to game</a>
+  <main class="game" id="app" aria-label="Wild ID game">
+
+    <!-- Title -->
+    <section class="screen screen--title" id="screen-title" aria-labelledby="logo">
+      <div class="scene scene--title" data-backdrop="wide">
+        <div class="title__logo">
+          <h1 id="logo" class="logo">WILD <span>ID</span></h1>
+          <p class="logo__sub">Who's that organism?</p>
+        </div>
+        <div class="title__mystery" id="title-mystery" aria-hidden="true"></div>
+      </div>
+      <div class="panel panel--title">
+        <div class="box menu-list">
+          <button class="menu-item menu-item--primary" id="btn-start" type="button">Start battle</button>
+          <fieldset class="levels">
+            <legend>What do you name?</legend>
+            <div class="levels__row" role="radiogroup" aria-label="Difficulty">
+              <button type="button" role="radio" class="level" data-mode="genus" aria-checked="true"><b>Easy</b><small>Genus</small></button>
+              <button type="button" role="radio" class="level" data-mode="species" aria-checked="false"><b>Medium</b><small>Species</small></button>
+              <button type="button" role="radio" class="level" data-mode="both" aria-checked="false"><b>Hard</b><small>Genus + species</small></button>
+            </div>
+          </fieldset>
+          <div class="menu-row">
+            <button class="menu-item" id="btn-guide" type="button">Field guide</button>
+            <button class="menu-item" id="btn-credits" type="button">Credits</button>
+          </div>
+        </div>
+        <div class="box stats" id="title-stats" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Battle -->
+    <section class="screen screen--battle" id="screen-battle" hidden aria-label="Battle">
+      <div class="scene" id="scene" data-backdrop="wide tall">
+        <div class="platform-shadow"></div>
+
+        <div class="foe" id="foe">
+          <div class="foe__frame" id="foe-frame">
+            <img id="foe-img" alt="" decoding="async">
+            <canvas id="foe-canvas" hidden></canvas>
+            <button class="foe__zoom" id="foe-zoom" type="button" aria-label="Enlarge photo" hidden></button>
+          </div>
+        </div>
+
+        <div class="player" id="player" aria-hidden="true"></div>
+
+        <div class="infobox infobox--foe" id="foe-box">
+          <div class="infobox__top">
+            <span class="infobox__name" id="foe-name">???</span>
+            <span class="infobox__lv" id="foe-lv">Lv?</span>
+          </div>
+          <div class="hp">
+            <span class="hp__label">HP</span>
+            <div class="hp__bar" role="img" id="foe-hp-label" aria-label="Mystery meter"><i id="foe-hp"></i></div>
+          </div>
+        </div>
+
+        <div class="infobox infobox--player" id="player-box">
+          <div class="infobox__top">
+            <span class="infobox__name">NATURALIST</span>
+            <span class="infobox__lv" id="p-lv">Lv1</span>
+          </div>
+          <div class="hp">
+            <span class="hp__label">HP</span>
+            <div class="hp__bar" role="img" id="p-hp-label" aria-label="Health"><i id="p-hp"></i></div>
+          </div>
+          <div class="infobox__nums"><span id="p-mode">GENUS</span><span id="p-hp-num">5/5</span></div>
+          <div class="exp"><span class="exp__label">EXP</span><div class="exp__bar" id="p-exp-label" role="img" aria-label="Experience"><i id="p-exp"></i></div></div>
+          <div class="streak" id="streak" role="img" aria-label="Streak 0 of 3"><i></i><i></i><i></i></div>
+        </div>
+
+        <div class="flash" id="flash" aria-hidden="true"></div>
+        <div class="wipe" id="wipe" aria-hidden="true"></div>
+      </div>
+
+      <div class="panel" id="panel">
+        <div class="box textbox" id="textbox">
+          <p class="textbox__text" id="text" aria-hidden="true"></p>
+          <p class="sr-only" id="live" role="status" aria-live="polite"></p>
+          <span class="textbox__more" id="more" hidden aria-hidden="true"></span>
+        </div>
+        <div class="box choices" id="menu" role="group" aria-label="Choose your answer">
+          <button class="choice" type="button" data-i="0" disabled><span class="choice__label"></span></button>
+          <button class="choice" type="button" data-i="1" disabled><span class="choice__label"></span></button>
+          <button class="choice" type="button" data-i="2" disabled><span class="choice__label"></span></button>
+          <button class="choice" type="button" data-i="3" disabled><span class="choice__label"></span></button>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <p class="credit" id="credit"></p>
+        <div class="toolbar__buttons">
+          <button class="tool" id="btn-sound" type="button" aria-pressed="false">Sound off</button>
+          <button class="tool" id="btn-run" type="button">Run</button>
+        </div>
+      </div>
+
+      <div class="results" id="results" hidden role="dialog" aria-modal="true" aria-labelledby="results-title">
+        <div class="box results__card">
+          <h2 id="results-title">The grass goes quiet...</h2>
+          <dl class="results__stats" id="results-stats"></dl>
+          <div class="results__buttons">
+            <button class="menu-item menu-item--primary" id="btn-again" type="button">Try again</button>
+            <button class="menu-item" id="btn-results-title" type="button">Title screen</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Field guide -->
+    <section class="screen screen--guide" id="screen-guide" hidden aria-labelledby="guide-title">
+      <header class="guide__head box">
+        <button class="tool" id="btn-guide-back" type="button">Back</button>
+        <h2 id="guide-title">Field guide</h2>
+        <p class="guide__count" id="guide-count" aria-live="polite"></p>
+      </header>
+      <ul class="guide__grid" id="guide-grid"></ul>
+    </section>
+
+    <!-- Credits -->
+    <section class="screen screen--credits" id="screen-credits" hidden aria-labelledby="credits-title">
+      <header class="guide__head box">
+        <button class="tool" id="btn-credits-back" type="button">Back</button>
+        <h2 id="credits-title">Credits</h2>
+      </header>
+      <div class="box prose">
+        <h3>Photos</h3>
+        <p>Every photo is a real <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> observation shared under a Creative Commons license. The photographer and a link to the observation are shown after each answer and in the field guide.</p>
+        <h3>Silhouettes</h3>
+        <p>Silhouettes come from <a href="https://www.phylopic.org" target="_blank" rel="noopener">PhyloPic</a>. Each artist is credited in the field guide.</p>
+        <h3>Type</h3>
+        <p>Press Start 2P by CodeMan38, SIL Open Font License 1.1.</p>
+        <h3>About</h3>
+        <p>Wild ID is a free, ad-free hobby project. The battle layout is an homage to classic monster-collecting RPGs; all art here is original and the game is not affiliated with any game company.</p>
+        <p id="deck-info"></p>
+      </div>
+    </section>
+
+    <dialog class="zoom" id="zoom" aria-label="Enlarged photo">
+      <img id="zoom-img" alt="">
+      <button class="tool" id="zoom-close" type="button">Close</button>
+    </dialog>
+
+    <dialog class="card" id="card" aria-labelledby="card-title">
+      <div class="box card__body" id="card-body"></div>
+    </dialog>
+  </main>
+  <noscript><p class="noscript">Wild ID needs JavaScript to run.</p></noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

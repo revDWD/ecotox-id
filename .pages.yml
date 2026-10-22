@@ -1,0 +1,16 @@
+# Pages CMS configuration: sign in at https://app.pagescms.org with GitHub and open this repository.
+# Add or remove species here; the "Build deck" Action then fetches photos, silhouettes and look-alike
+# answers automatically and the site updates a few minutes later.
+
+content:
+  - name: species
+    label: Species list
+    type: file
+    path: data/species.json
+    format: json
+    fields:
+      - name: species
+        label: Species (scientific names)
+        type: string
+        list: true
+        description: One per line, exactly as on iNaturalist, e.g. Danaus plexippus. Species only (two words), no common names.

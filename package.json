@@ -1,0 +1,13 @@
+{
+  "name": "wild-id-battle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Wild ID: identify organisms from iNaturalist photos in a retro battle screen.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build-deck": "node scripts/build-deck.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
