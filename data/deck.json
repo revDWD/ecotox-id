@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "count": 129,
+ "count": 130,
  "species": [
   {
    "id": 118492,
@@ -316,6 +316,85 @@
     "Beet armyworm: attacks vegetables and cotton and is often resistant to several insecticide classes.",
     "Resistance to both spinosyns and diamides has been reported.",
     "A nucleopolyhedrovirus is registered as a very selective biological control for it."
+   ]
+  },
+  {
+   "id": 231424,
+   "scientific": "Spodoptera eridania",
+   "genus": "Spodoptera",
+   "epithet": "eridania",
+   "common": "Southern Armyworm Moth",
+   "family": "Noctuidae",
+   "order": "Lepidoptera",
+   "level": 57,
+   "photo": {
+    "file": "231424-ceb52f31.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) R. Speaks, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/395533341"
+   },
+   "silhouette": {
+    "file": "231424-bdb1a5de.svg",
+    "rank": "genus",
+    "matched": "Spodoptera",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/577f5112-1873-4474-90b2-7fdf2dc2b6a7"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Acronicta",
+     "Noctua",
+     "Agrotis",
+     "Xestia",
+     "Autographa",
+     "Orthosia",
+     "Mythimna",
+     "Helicoverpa",
+     "Apamea",
+     "Lacinipolia"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais"
+    ],
+    "speciesGenus": [
+     "Spodoptera ornithogalli",
+     "Spodoptera frugiperda",
+     "Spodoptera exigua",
+     "Spodoptera litura",
+     "Spodoptera mauritia",
+     "Spodoptera latifascia",
+     "Spodoptera dolichos",
+     "Spodoptera cilium",
+     "Spodoptera littoralis",
+     "Spodoptera picta"
+    ],
+    "speciesFamily": [
+     "Noctua pronuba",
+     "Autographa gamma",
+     "Acronicta americana",
+     "Pseudaletia unipuncta",
+     "Agrotis ipsilon",
+     "Agrotis exclamationis",
+     "Acronicta rumicis",
+     "Xestia c-nigrum",
+     "Helicoverpa armigera",
+     "Galgula partita"
+    ]
+   },
+   "role": "pest",
+   "notes": [
+    "Southern armyworm: a polyphagous caterpillar that feeds on soybean, cotton, vegetables and ornamentals.",
+    "Larger caterpillars are harder to control with insecticides, so early scouting matters.",
+    "Reduced susceptibility to some insecticides has been reported in parts of the Americas, so rotating modes of action helps."
    ]
   },
   {
