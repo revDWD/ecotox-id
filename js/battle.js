@@ -370,7 +370,7 @@ export class Battle {
     for (let attempt = 0; attempt < 4; attempt++) {
       entry = pickEntry(s.pool, s.recent, { needSilhouette: challenge });
       visual = !challenge ? 'photo' : entry.silhouette ? 'silhouette' : 'pixel';
-      q = makeQuestion(entry, s.mode, this.deck);
+      q = makeQuestion(entry, s.mode, s.pool);
       try {
         if (challenge && attempt === 0) {
           sound.challenge();
