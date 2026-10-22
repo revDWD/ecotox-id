@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "count": 89,
+ "count": 118,
  "species": [
   {
    "id": 48662,
@@ -6381,6 +6381,2086 @@
      "Melolontha melolontha",
      "Cotinis mutabilis",
      "Phyllopertha horticola"
+    ]
+   }
+  },
+  {
+   "id": 228714,
+   "scientific": "Prionus imbricornis",
+   "genus": "Prionus",
+   "epithet": "imbricornis",
+   "common": "Tile-horned Prionus",
+   "family": "Cerambycidae",
+   "order": "Coleoptera",
+   "level": 57,
+   "photo": {
+    "file": "228714-9baf38f5.jpg",
+    "license": "cc-by",
+    "credit": "(c) John P Friel, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/13866187"
+   },
+   "silhouette": {
+    "file": "228714-f7326794.svg",
+    "rank": "family",
+    "matched": "Cerambycidae",
+    "credit": "C. Camilo Julián-Caballero",
+    "link": "https://www.phylopic.org/images/55645da5-65a0-4196-8364-0e1fccf3b9d3"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Monochamus",
+     "Tetraopes",
+     "Stictoleptura",
+     "Stenurella",
+     "Rutpela",
+     "Rhagium",
+     "Typocerus",
+     "Agapanthia",
+     "Megacyllene",
+     "Clytus"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Prionus coriarius",
+     "Prionus laticollis",
+     "Prionus californicus",
+     "Prionus pocularis",
+     "Prionus insularis",
+     "Prionus heroicus",
+     "Prionus fissicornis",
+     "Prionus lecontei",
+     "Prionus debilis",
+     "Prionus cuneatus"
+    ],
+    "speciesFamily": [
+     "Tetraopes tetrophthalmus",
+     "Monochamus scutellatus",
+     "Stictoleptura rubra",
+     "Rutpela maculata",
+     "Megacyllene robiniae",
+     "Stenurella melanura",
+     "Typocerus velutinus",
+     "Clytus arietis",
+     "Aromia moschata",
+     "Leptura quadrifasciata"
+    ]
+   }
+  },
+  {
+   "id": 52779,
+   "scientific": "Bombus bimaculatus",
+   "genus": "Bombus",
+   "epithet": "bimaculatus",
+   "common": "Two-spotted Bumble Bee",
+   "family": "Apidae",
+   "order": "Hymenoptera",
+   "level": 41,
+   "photo": {
+    "file": "52779-a838933f.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Zach Portman, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/230901784"
+   },
+   "silhouette": {
+    "file": "52779-d103a269.svg",
+    "rank": "genus",
+    "matched": "Bombus",
+    "credit": "Melissa Broussard",
+    "link": "https://www.phylopic.org/images/ccf32802-954f-433d-a5e7-d8a9d63098e5"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Apis",
+     "Xylocopa",
+     "Melissodes",
+     "Ceratina",
+     "Nomada",
+     "Anthophora",
+     "Amegilla",
+     "Trigona",
+     "Eucera",
+     "Diadasia"
+    ],
+    "genusOrder": [
+     "Polistes",
+     "Camponotus",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus",
+     "Formica",
+     "Vespa",
+     "Lasius"
+    ],
+    "speciesGenus": [
+     "Bombus impatiens",
+     "Bombus griseocollis",
+     "Bombus pascuorum",
+     "Bombus terrestris",
+     "Bombus pensylvanicus",
+     "Bombus vosnesenskii",
+     "Bombus lapidarius",
+     "Bombus ternarius",
+     "Bombus pratorum",
+     "Bombus melanopygus"
+    ],
+    "speciesFamily": [
+     "Apis mellifera",
+     "Xylocopa virginica",
+     "Apis cerana",
+     "Xylocopa violacea"
+    ]
+   }
+  },
+  {
+   "id": 133788,
+   "scientific": "Xylocopa micans",
+   "genus": "Xylocopa",
+   "epithet": "micans",
+   "common": "Southern Carpenter Bee",
+   "family": "Apidae",
+   "order": "Hymenoptera",
+   "level": 51,
+   "photo": {
+    "file": "133788-73c66f93.jpeg",
+    "license": "cc-by",
+    "credit": "(c) Richard Stovall, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/16534356"
+   },
+   "silhouette": {
+    "file": "133788-6f286c2c.svg",
+    "rank": "genus",
+    "matched": "Xylocopa",
+    "credit": "Markus Bautsch",
+    "link": "https://www.phylopic.org/images/d9a43501-4ac8-4b23-a8d7-96d52df253e2"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Bombus",
+     "Apis",
+     "Melissodes",
+     "Ceratina",
+     "Nomada",
+     "Anthophora",
+     "Amegilla",
+     "Trigona",
+     "Eucera",
+     "Diadasia"
+    ],
+    "genusOrder": [
+     "Polistes",
+     "Camponotus",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus",
+     "Formica",
+     "Vespa",
+     "Lasius"
+    ],
+    "speciesGenus": [
+     "Xylocopa virginica",
+     "Xylocopa violacea",
+     "Xylocopa sonorina",
+     "Xylocopa tabaniformis",
+     "Xylocopa californica",
+     "Xylocopa valga",
+     "Xylocopa latipes",
+     "Xylocopa appendiculata",
+     "Xylocopa caffra",
+     "Xylocopa pubescens"
+    ],
+    "speciesFamily": [
+     "Apis mellifera",
+     "Bombus impatiens",
+     "Bombus griseocollis",
+     "Bombus pascuorum",
+     "Bombus terrestris",
+     "Bombus bimaculatus",
+     "Bombus pensylvanicus",
+     "Bombus vosnesenskii",
+     "Bombus lapidarius",
+     "Bombus ternarius"
+    ]
+   }
+  },
+  {
+   "id": 82530,
+   "scientific": "Agapostemon virescens",
+   "genus": "Agapostemon",
+   "epithet": "virescens",
+   "common": "Bicolored Striped Sweat Bee",
+   "family": "Halictidae",
+   "order": "Hymenoptera",
+   "level": 46,
+   "photo": {
+    "file": "82530-13b6248b.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) sentraevant, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/303861352"
+   },
+   "silhouette": {
+    "file": "82530-019dc804.svg",
+    "rank": "family",
+    "matched": "Halictidae",
+    "credit": "Melissa Broussard",
+    "link": "https://www.phylopic.org/images/2a425db2-46b4-4c3f-91a1-ad30bed7acc8"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Lasioglossum",
+     "Halictus",
+     "Augochlora",
+     "Sphecodes",
+     "Augochlorella",
+     "Augochloropsis",
+     "Nomia",
+     "Lipotriches",
+     "Dufourea",
+     "Dieunomia"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Vespula",
+     "Megachile",
+     "Formica",
+     "Vespa"
+    ],
+    "speciesGenus": [
+     "Agapostemon subtilior",
+     "Agapostemon splendens",
+     "Agapostemon sericeus",
+     "Agapostemon melliventris",
+     "Agapostemon texanus",
+     "Agapostemon angelicus",
+     "Agapostemon nasutus",
+     "Agapostemon poeyi",
+     "Agapostemon femoratus",
+     "Agapostemon swainsonae"
+    ],
+    "speciesFamily": [
+     "Halictus ligatus",
+     "Augochlora pura",
+     "Halictus scabiosae",
+     "Halictus rubicundus",
+     "Halictus tripartitus",
+     "Halictus poeyi",
+     "Augochlorella aurata",
+     "Halictus confusus",
+     "Augochlorella pomoniella",
+     "Halictus subauratus"
+    ]
+   }
+  },
+  {
+   "id": 52785,
+   "scientific": "Megachile sculpturalis",
+   "genus": "Megachile",
+   "epithet": "sculpturalis",
+   "common": "Sculptured Resin Bee",
+   "family": "Megachilidae",
+   "order": "Hymenoptera",
+   "level": 52,
+   "photo": {
+    "file": "52785-661438f2.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Homemountain/Shan Gui, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/68717289"
+   },
+   "silhouette": {
+    "file": "52785-cda688a9.svg",
+    "rank": "genus",
+    "matched": "Megachile",
+    "credit": "Ferran Sayol",
+    "link": "https://www.phylopic.org/images/2a1fe723-1d40-4c24-a2aa-bf8ee4cb2872"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Osmia",
+     "Anthidium",
+     "Coelioxys",
+     "Heriades",
+     "Hoplitis",
+     "Chelostoma",
+     "Dianthidium",
+     "Stelis",
+     "Rhodanthidium",
+     "Lithurgopsis"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Halictus",
+     "Formica"
+    ],
+    "speciesGenus": [
+     "Megachile xylocopoides",
+     "Megachile mendica",
+     "Megachile rotundata",
+     "Megachile perihirta",
+     "Megachile centuncularis",
+     "Megachile latimanus",
+     "Megachile pugnata",
+     "Megachile policaris",
+     "Megachile texana",
+     "Megachile inermis"
+    ],
+    "speciesFamily": [
+     "Anthidium manicatum",
+     "Osmia bicornis",
+     "Osmia cornuta",
+     "Anthidium oblongatum",
+     "Anthidium florentinum",
+     "Osmia lignaria",
+     "Heriades truncorum",
+     "Osmia cornifrons",
+     "Osmia caerulescens"
+    ]
+   }
+  },
+  {
+   "id": 133791,
+   "scientific": "Polistes exclamans",
+   "genus": "Polistes",
+   "epithet": "exclamans",
+   "common": "Guinea Paper Wasp",
+   "family": "Vespidae",
+   "order": "Hymenoptera",
+   "level": 45,
+   "photo": {
+    "file": "133791-c4855249.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) jaden, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/187951017"
+   },
+   "silhouette": {
+    "file": "133791-4535bb33.svg",
+    "rank": "genus",
+    "matched": "Polistes",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/5b949e58-449a-4cec-830a-ba45f9f4cd3d"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Vespula",
+     "Vespa",
+     "Dolichovespula",
+     "Ancistrocerus",
+     "Eumenes",
+     "Polybia",
+     "Euodynerus",
+     "Ropalidia",
+     "Monobia",
+     "Mischocyttarus"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Megachile",
+     "Halictus",
+     "Formica",
+     "Lasius"
+    ],
+    "speciesGenus": [
+     "Polistes dominula",
+     "Polistes fuscatus",
+     "Polistes metricus",
+     "Polistes dorsalis",
+     "Polistes carolina",
+     "Polistes aurifer",
+     "Polistes annularis",
+     "Polistes apachus",
+     "Polistes nimpha",
+     "Polistes instabilis"
+    ],
+    "speciesFamily": [
+     "Vespa crabro",
+     "Dolichovespula maculata",
+     "Vespula germanica",
+     "Vespula maculifrons",
+     "Vespa velutina",
+     "Vespula vulgaris",
+     "Eumenes fraternus",
+     "Vespula pensylvanica",
+     "Monobia quadridens",
+     "Vespula squamosa"
+    ]
+   }
+  },
+  {
+   "id": 54327,
+   "scientific": "Vespa crabro",
+   "genus": "Vespa",
+   "epithet": "crabro",
+   "common": "European Hornet",
+   "family": "Vespidae",
+   "order": "Hymenoptera",
+   "level": 41,
+   "photo": {
+    "file": "54327-70b7d2f6.jpg",
+    "license": "cc-by",
+    "credit": "(c) katunchik, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/16484807"
+   },
+   "silhouette": {
+    "file": "54327-38497f8c.svg",
+    "rank": "species",
+    "matched": "Vespa crabro",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/ddfa0a49-bb7b-4bfd-8dd7-10529861553e"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Polistes",
+     "Vespula",
+     "Dolichovespula",
+     "Ancistrocerus",
+     "Eumenes",
+     "Polybia",
+     "Euodynerus",
+     "Ropalidia",
+     "Monobia",
+     "Mischocyttarus"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Megachile",
+     "Halictus",
+     "Formica",
+     "Lasius"
+    ],
+    "speciesGenus": [
+     "Vespa velutina",
+     "Vespa orientalis",
+     "Vespa affinis",
+     "Vespa tropica",
+     "Vespa mandarinia",
+     "Vespa bicolor",
+     "Vespa ducalis",
+     "Vespa basalis",
+     "Vespa analis",
+     "Vespa simillima"
+    ],
+    "speciesFamily": [
+     "Polistes dominula",
+     "Polistes fuscatus",
+     "Dolichovespula maculata",
+     "Vespula germanica",
+     "Vespula maculifrons",
+     "Polistes exclamans",
+     "Polistes metricus",
+     "Vespula vulgaris",
+     "Eumenes fraternus",
+     "Vespula pensylvanica"
+    ]
+   }
+  },
+  {
+   "id": 85362,
+   "scientific": "Sphex ichneumoneus",
+   "genus": "Sphex",
+   "epithet": "ichneumoneus",
+   "common": "Great Golden Digger Wasp",
+   "family": "Sphecidae",
+   "order": "Hymenoptera",
+   "level": 45,
+   "photo": {
+    "file": "85362-b5326460.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) krancmm, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/1973009"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Sceliphron",
+     "Ammophila",
+     "Chalybion",
+     "Isodontia",
+     "Eremnophila",
+     "Prionyx",
+     "Podalonia",
+     "Chlorion",
+     "Podium",
+     "Palmodes"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus"
+    ],
+    "speciesGenus": [
+     "Sphex pensylvanicus",
+     "Sphex funerarius",
+     "Sphex nudus",
+     "Sphex habenus",
+     "Sphex lucae",
+     "Sphex sericeus",
+     "Sphex subtruncatus",
+     "Sphex argentatus",
+     "Sphex dorsalis",
+     "Sphex diabolicus"
+    ],
+    "speciesFamily": [
+     "Sceliphron caementarium",
+     "Chalybion californicum",
+     "Eremnophila aureonotata",
+     "Isodontia mexicana",
+     "Ammophila procera",
+     "Sceliphron curvatum",
+     "Chlorion aerarium",
+     "Ammophila sabulosa",
+     "Ammophila pictipennis",
+     "Prionyx parkeri"
+    ]
+   }
+  },
+  {
+   "id": 121821,
+   "scientific": "Sceliphron caementarium",
+   "genus": "Sceliphron",
+   "epithet": "caementarium",
+   "common": "Yellow-legged Mud-dauber Wasp",
+   "family": "Sphecidae",
+   "order": "Hymenoptera",
+   "level": 44,
+   "photo": {
+    "file": "121821-4d8209b9.jpg",
+    "license": "cc-by",
+    "credit": "(c) JT Tomaschke, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/179717289"
+   },
+   "silhouette": null,
+   "decoys": {
+    "genusFamily": [
+     "Sphex",
+     "Ammophila",
+     "Chalybion",
+     "Isodontia",
+     "Eremnophila",
+     "Prionyx",
+     "Podalonia",
+     "Chlorion",
+     "Podium",
+     "Palmodes"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus"
+    ],
+    "speciesGenus": [
+     "Sceliphron curvatum",
+     "Sceliphron madraspatanum",
+     "Sceliphron spirifex",
+     "Sceliphron laetum",
+     "Sceliphron formosum",
+     "Sceliphron destillatorium",
+     "Sceliphron fistularium",
+     "Sceliphron deforme",
+     "Sceliphron asiaticum",
+     "Sceliphron assimile"
+    ],
+    "speciesFamily": [
+     "Sphex ichneumoneus",
+     "Sphex pensylvanicus",
+     "Chalybion californicum",
+     "Eremnophila aureonotata",
+     "Isodontia mexicana",
+     "Ammophila procera",
+     "Chlorion aerarium",
+     "Sphex funerarius",
+     "Ammophila sabulosa",
+     "Sphex nudus"
+    ]
+   }
+  },
+  {
+   "id": 67598,
+   "scientific": "Solenopsis invicta",
+   "genus": "Solenopsis",
+   "epithet": "invicta",
+   "common": "Red Imported Fire Ant",
+   "family": "Formicidae",
+   "order": "Hymenoptera",
+   "level": 45,
+   "photo": {
+    "file": "67598-d496d9ff.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Gift Galore, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/388638084"
+   },
+   "silhouette": {
+    "file": "67598-6e832417.svg",
+    "rank": "species",
+    "matched": "Solenopsis invicta",
+    "credit": "Richard J. Harris",
+    "link": "https://www.phylopic.org/images/0e6f41f2-7456-45d4-aa2c-9697c4b0efe5"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Camponotus",
+     "Formica",
+     "Lasius",
+     "Crematogaster",
+     "Pogonomyrmex",
+     "Polyrhachis",
+     "Pheidole",
+     "Tetramorium",
+     "Atta",
+     "Myrmecia"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus",
+     "Vespa"
+    ],
+    "speciesGenus": [
+     "Solenopsis geminata",
+     "Solenopsis xyloni",
+     "Solenopsis molesta",
+     "Solenopsis fugax",
+     "Solenopsis punctaticeps",
+     "Solenopsis gayi",
+     "Solenopsis richteri",
+     "Solenopsis amblychila",
+     "Solenopsis carolinensis",
+     "Solenopsis picta"
+    ],
+    "speciesFamily": [
+     "Camponotus pennsylvanicus",
+     "Oecophylla smaragdina",
+     "Prenolepis imparis",
+     "Linepithema humile",
+     "Tetramorium immigrans",
+     "Tapinoma sessile",
+     "Camponotus castaneus",
+     "Pogonomyrmex barbatus",
+     "Paratrechina longicornis",
+     "Camponotus chromaiodes"
+    ]
+   }
+  },
+  {
+   "id": 129902,
+   "scientific": "Camponotus pennsylvanicus",
+   "genus": "Camponotus",
+   "epithet": "pennsylvanicus",
+   "common": "Eastern Black Carpenter Ant",
+   "family": "Formicidae",
+   "order": "Hymenoptera",
+   "level": 42,
+   "photo": {
+    "file": "129902-8eda0f89.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Donna J. Parry, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/149521545"
+   },
+   "silhouette": {
+    "file": "129902-2bf83f25.svg",
+    "rank": "genus",
+    "matched": "Camponotus",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/3ae7cb42-8904-4775-87d6-968255913711"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Formica",
+     "Lasius",
+     "Crematogaster",
+     "Solenopsis",
+     "Pogonomyrmex",
+     "Polyrhachis",
+     "Pheidole",
+     "Tetramorium",
+     "Atta",
+     "Myrmecia"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus",
+     "Vespa"
+    ],
+    "speciesGenus": [
+     "Camponotus castaneus",
+     "Camponotus chromaiodes",
+     "Camponotus vagus",
+     "Camponotus floridanus",
+     "Camponotus modoc",
+     "Camponotus compressus",
+     "Camponotus sericeiventris",
+     "Camponotus ligniperda",
+     "Camponotus consobrinus",
+     "Camponotus americanus"
+    ],
+    "speciesFamily": [
+     "Solenopsis invicta",
+     "Oecophylla smaragdina",
+     "Prenolepis imparis",
+     "Linepithema humile",
+     "Tetramorium immigrans",
+     "Tapinoma sessile",
+     "Pogonomyrmex barbatus",
+     "Paratrechina longicornis",
+     "Crematogaster scutellaris",
+     "Lasius niger"
+    ]
+   }
+  },
+  {
+   "id": 117221,
+   "scientific": "Dasymutilla occidentalis",
+   "genus": "Dasymutilla",
+   "epithet": "occidentalis",
+   "common": "Common Eastern Velvet Ant",
+   "family": "Mutillidae",
+   "order": "Hymenoptera",
+   "level": 48,
+   "photo": {
+    "file": "117221-ba35170c.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) ben_1_c, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/129925153"
+   },
+   "silhouette": {
+    "file": "117221-1beb522c.svg",
+    "rank": "family",
+    "matched": "Mutillidae",
+    "credit": "Margot Michaud",
+    "link": "https://www.phylopic.org/images/4f616714-d7c9-41fa-963e-bac8c1932623"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Pseudomethoca",
+     "Timulla",
+     "Sphaeropthalma",
+     "Mutilla",
+     "Hoplomutilla",
+     "Traumatomutilla",
+     "Odontophotopsis",
+     "Ronisia",
+     "Myrmilla",
+     "Dasylabris"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus"
+    ],
+    "speciesGenus": [
+     "Dasymutilla aureola",
+     "Dasymutilla vestita",
+     "Dasymutilla klugii",
+     "Dasymutilla sackenii",
+     "Dasymutilla bioculata",
+     "Dasymutilla quadriguttata",
+     "Dasymutilla ursus",
+     "Dasymutilla magnifica",
+     "Dasymutilla californica",
+     "Dasymutilla erythrina"
+    ],
+    "speciesFamily": [
+     "Pseudomethoca simillima",
+     "Sphaeropthalma pensylvanica",
+     "Mutilla europaea",
+     "Timulla vagans",
+     "Tropidotilla litoralis",
+     "Mutilla marginata",
+     "Sphaeropthalma unicolor"
+    ]
+   }
+  },
+  {
+   "id": 228477,
+   "scientific": "Pogonomyrmex badius",
+   "genus": "Pogonomyrmex",
+   "epithet": "badius",
+   "common": "Florida Harvester Ant",
+   "family": "Formicidae",
+   "order": "Hymenoptera",
+   "level": 55,
+   "photo": {
+    "file": "228477-27d3da85.jpg",
+    "license": "cc-by",
+    "credit": "(c) Nash Turley, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/64001299"
+   },
+   "silhouette": {
+    "file": "228477-14fa5628.svg",
+    "rank": "family",
+    "matched": "Formicidae",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/f4d28481-3b28-4cdb-9877-9b9d4f07e5f2"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Camponotus",
+     "Formica",
+     "Lasius",
+     "Crematogaster",
+     "Solenopsis",
+     "Polyrhachis",
+     "Pheidole",
+     "Tetramorium",
+     "Atta",
+     "Myrmecia"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus",
+     "Vespa"
+    ],
+    "speciesGenus": [
+     "Pogonomyrmex barbatus",
+     "Pogonomyrmex rugosus",
+     "Pogonomyrmex californicus",
+     "Pogonomyrmex occidentalis",
+     "Pogonomyrmex maricopa",
+     "Pogonomyrmex comanche",
+     "Pogonomyrmex subnitidus",
+     "Pogonomyrmex bicolor",
+     "Pogonomyrmex salinus",
+     "Pogonomyrmex subdentatus"
+    ],
+    "speciesFamily": [
+     "Camponotus pennsylvanicus",
+     "Solenopsis invicta",
+     "Oecophylla smaragdina",
+     "Prenolepis imparis",
+     "Linepithema humile",
+     "Tetramorium immigrans",
+     "Tapinoma sessile",
+     "Camponotus castaneus",
+     "Paratrechina longicornis",
+     "Camponotus chromaiodes"
+    ]
+   }
+  },
+  {
+   "id": 63275,
+   "scientific": "Tremex columba",
+   "genus": "Tremex",
+   "epithet": "columba",
+   "common": "Pigeon Horntail",
+   "family": "Siricidae",
+   "order": "Hymenoptera",
+   "level": 52,
+   "photo": {
+    "file": "63275-e47d92d1.jpeg",
+    "license": "cc-by",
+    "credit": "(c) Jason Hill, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/37600192"
+   },
+   "silhouette": {
+    "file": "63275-8d426894.svg",
+    "rank": "family",
+    "matched": "Siricidae",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/056c4315-524e-44b0-ba67-65edc51e13ba"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Urocerus",
+     "Sirex",
+     "Xeris",
+     "Eriotremex",
+     "Xoanon",
+     "Teredon",
+     "Afrotremex"
+    ],
+    "genusOrder": [
+     "Bombus",
+     "Apis",
+     "Polistes",
+     "Camponotus",
+     "Xylocopa",
+     "Andrena",
+     "Lasioglossum",
+     "Vespula",
+     "Megachile",
+     "Halictus"
+    ],
+    "speciesGenus": [
+     "Tremex fuscicornis",
+     "Tremex longicollis",
+     "Tremex magus",
+     "Tremex apicalis",
+     "Tremex chujoi",
+     "Tremex nakanei",
+     "Tremex contractus",
+     "Tremex niger",
+     "Tremex bicinctus",
+     "Tremex okinawensis"
+    ],
+    "speciesFamily": [
+     "Urocerus gigas",
+     "Urocerus albicornis",
+     "Urocerus flavicornis",
+     "Urocerus californicus",
+     "Urocerus cressoni",
+     "Sirex juvencus",
+     "Eriotremex formosanus",
+     "Sirex noctilio",
+     "Xeris indecisus",
+     "Xeris spectrum"
+    ]
+   }
+  },
+  {
+   "id": 143338,
+   "scientific": "Milesia virginiensis",
+   "genus": "Milesia",
+   "epithet": "virginiensis",
+   "common": "Virginia Giant Hover Fly",
+   "family": "Syrphidae",
+   "order": "Diptera",
+   "level": 53,
+   "photo": {
+    "file": "143338-8ee264b4.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Thomas Shahan, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/122902520"
+   },
+   "silhouette": {
+    "file": "143338-095b4e87.svg",
+    "rank": "family",
+    "matched": "Syrphidae",
+    "credit": "Gareth Monger",
+    "link": "https://www.phylopic.org/images/fdd9c1c9-7391-4e2b-af4e-a0d289fa9466"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Eristalis",
+     "Toxomerus",
+     "Syrphus",
+     "Eupeodes",
+     "Episyrphus",
+     "Sphaerophoria",
+     "Helophilus",
+     "Volucella",
+     "Syritta",
+     "Eristalinus"
+    ],
+    "genusOrder": [
+     "Tipula",
+     "Lucilia",
+     "Condylostylus",
+     "Aedes",
+     "Nephrotoma",
+     "Tabanus",
+     "Bibio",
+     "Sarcophaga",
+     "Calliphora",
+     "Bombylius"
+    ],
+    "speciesGenus": [
+     "Milesia crabroniformis",
+     "Milesia semiluctifera",
+     "Milesia balteata",
+     "Milesia fissipennis",
+     "Milesia sinensis",
+     "Milesia scutellata",
+     "Milesia bella",
+     "Milesia fuscicosta",
+     "Milesia undulata",
+     "Milesia vespoides"
+    ],
+    "speciesFamily": [
+     "Eristalis tenax",
+     "Episyrphus balteatus",
+     "Toxomerus marginatus",
+     "Toxomerus geminatus",
+     "Myathropa florea",
+     "Syritta pipiens",
+     "Eristalis pertinax",
+     "Eristalis arbustorum",
+     "Sphaerophoria scripta",
+     "Helophilus pendulus"
+    ]
+   }
+  },
+  {
+   "id": 325509,
+   "scientific": "Spilomyia longicornis",
+   "genus": "Spilomyia",
+   "epithet": "longicornis",
+   "common": "Eastern Hornet Fly",
+   "family": "Syrphidae",
+   "order": "Diptera",
+   "level": 55,
+   "photo": {
+    "file": "325509-4299ec55.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Ron Butler, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/400695274"
+   },
+   "silhouette": {
+    "file": "325509-095b4e87.svg",
+    "rank": "family",
+    "matched": "Syrphidae",
+    "credit": "Gareth Monger",
+    "link": "https://www.phylopic.org/images/fdd9c1c9-7391-4e2b-af4e-a0d289fa9466"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Eristalis",
+     "Toxomerus",
+     "Syrphus",
+     "Eupeodes",
+     "Episyrphus",
+     "Sphaerophoria",
+     "Helophilus",
+     "Volucella",
+     "Syritta",
+     "Eristalinus"
+    ],
+    "genusOrder": [
+     "Tipula",
+     "Lucilia",
+     "Condylostylus",
+     "Aedes",
+     "Nephrotoma",
+     "Tabanus",
+     "Bibio",
+     "Sarcophaga",
+     "Calliphora",
+     "Bombylius"
+    ],
+    "speciesGenus": [
+     "Spilomyia fusca",
+     "Spilomyia sayi",
+     "Spilomyia alcimus",
+     "Spilomyia diophthalma",
+     "Spilomyia interrupta",
+     "Spilomyia liturata",
+     "Spilomyia saltuum",
+     "Spilomyia citima",
+     "Spilomyia manicata",
+     "Spilomyia texana"
+    ],
+    "speciesFamily": [
+     "Eristalis tenax",
+     "Episyrphus balteatus",
+     "Toxomerus marginatus",
+     "Toxomerus geminatus",
+     "Myathropa florea",
+     "Syritta pipiens",
+     "Eristalis pertinax",
+     "Eristalis arbustorum",
+     "Sphaerophoria scripta",
+     "Helophilus pendulus"
+    ]
+   }
+  },
+  {
+   "id": 116680,
+   "scientific": "Tabanus atratus",
+   "genus": "Tabanus",
+   "epithet": "atratus",
+   "common": "Black Horse Fly",
+   "family": "Tabanidae",
+   "order": "Diptera",
+   "level": 50,
+   "photo": {
+    "file": "116680-1ca5cb95.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) MC Barnhart, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/54514372"
+   },
+   "silhouette": {
+    "file": "116680-27347311.svg",
+    "rank": "species",
+    "matched": "Tabanus atratus",
+    "credit": "Caleb M. Gordon",
+    "link": "https://www.phylopic.org/images/b43c1f34-44d3-4fec-bb4d-e55b1871f4ce"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Chrysops",
+     "Hybomitra",
+     "Haematopota",
+     "Scaptia",
+     "Philipomyia",
+     "Diachlorus",
+     "Atylotus",
+     "Dasybasis",
+     "Stonemyia",
+     "Philoliche"
+    ],
+    "genusOrder": [
+     "Eristalis",
+     "Tipula",
+     "Toxomerus",
+     "Lucilia",
+     "Condylostylus",
+     "Syrphus",
+     "Aedes",
+     "Eupeodes",
+     "Nephrotoma",
+     "Episyrphus"
+    ],
+    "speciesGenus": [
+     "Tabanus lineola",
+     "Tabanus sudeticus",
+     "Tabanus sulcifrons",
+     "Tabanus punctifer",
+     "Tabanus calens",
+     "Tabanus bromius",
+     "Tabanus autumnalis",
+     "Tabanus americanus",
+     "Tabanus bovinus",
+     "Tabanus trimaculatus"
+    ],
+    "speciesFamily": [
+     "Haematopota pluvialis",
+     "Chrysops relictus",
+     "Chrysops vittatus",
+     "Chrysops caecutiens",
+     "Diachlorus ferrugatus",
+     "Hybomitra bimaculata",
+     "Philipomyia aprica",
+     "Scaptia auriflua",
+     "Chrysops viduatus",
+     "Chrysops niger"
+    ]
+   }
+  },
+  {
+   "id": 61651,
+   "scientific": "Promachus rufipes",
+   "genus": "Promachus",
+   "epithet": "rufipes",
+   "common": "Eastern Lion Fly",
+   "family": "Asilidae",
+   "order": "Diptera",
+   "level": 51,
+   "photo": {
+    "file": "61651-7b185905.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Adair McNear, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/3942080"
+   },
+   "silhouette": {
+    "file": "61651-faec32a7.svg",
+    "rank": "family",
+    "matched": "Asilidae",
+    "credit": "Richard J. Harris",
+    "link": "https://www.phylopic.org/images/d1d40c3b-34c3-4943-a100-1730615dfcbe"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Efferia",
+     "Laphria",
+     "Diogmites",
+     "Machimus",
+     "Dioctria",
+     "Tolmerus",
+     "Mallophora",
+     "Neoitamus",
+     "Atomosia",
+     "Ommatius"
+    ],
+    "genusOrder": [
+     "Eristalis",
+     "Tipula",
+     "Toxomerus",
+     "Lucilia",
+     "Condylostylus",
+     "Syrphus",
+     "Aedes",
+     "Eupeodes",
+     "Nephrotoma",
+     "Episyrphus"
+    ],
+    "speciesGenus": [
+     "Promachus hinei",
+     "Promachus bastardii",
+     "Promachus yesonicus",
+     "Promachus vertebratus",
+     "Promachus painteri",
+     "Promachus vexator",
+     "Promachus sackeni",
+     "Promachus latitarsatus",
+     "Promachus atrox",
+     "Promachus consanguineus"
+    ],
+    "speciesFamily": [
+     "Efferia aestuans",
+     "Dioctria hyalipennis",
+     "Diogmites neoternatus",
+     "Tolmerus atricapillus",
+     "Mallophora fautrix",
+     "Laphria thoracica",
+     "Atomosia puella",
+     "Efferia albibarbis",
+     "Triorla interrupta",
+     "Laphria flavicollis"
+    ]
+   }
+  },
+  {
+   "id": 51557,
+   "scientific": "Bombylius major",
+   "genus": "Bombylius",
+   "epithet": "major",
+   "common": "Greater Bee Fly",
+   "family": "Bombyliidae",
+   "order": "Diptera",
+   "level": 45,
+   "photo": {
+    "file": "51557-57c103f6.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Nadja Baumgartner, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/109300207"
+   },
+   "silhouette": {
+    "file": "51557-1fb971c0.svg",
+    "rank": "species",
+    "matched": "Bombylius major",
+    "credit": "Pascal Abel",
+    "link": "https://www.phylopic.org/images/bd09cc3f-4a57-4df4-b1b3-939aacd8d33c"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Villa",
+     "Xenox",
+     "Hemipenthes",
+     "Anthrax",
+     "Exoprosopa",
+     "Poecilanthrax",
+     "Geron",
+     "Systoechus",
+     "Poecilognathus",
+     "Conophorus"
+    ],
+    "genusOrder": [
+     "Eristalis",
+     "Tipula",
+     "Toxomerus",
+     "Lucilia",
+     "Condylostylus",
+     "Syrphus",
+     "Aedes",
+     "Eupeodes",
+     "Nephrotoma",
+     "Episyrphus"
+    ],
+    "speciesGenus": [
+     "Bombylius discolor",
+     "Bombylius cruciatus",
+     "Bombylius medius",
+     "Bombylius mexicanus",
+     "Bombylius pygmaeus",
+     "Bombylius minor",
+     "Bombylius venosus",
+     "Bombylius fimbriatus",
+     "Bombylius incanus",
+     "Bombylius comanche"
+    ],
+    "speciesFamily": [
+     "Xenox tigrinus",
+     "Villa lateralis",
+     "Poecilanthrax lucifer",
+     "Hemipenthes morio",
+     "Villa hottentotta",
+     "Hemipenthes sinuosa",
+     "Anthrax anthrax",
+     "Chrysanthrax cypris",
+     "Hemipenthes maura",
+     "Exoprosopa fascipennis"
+    ]
+   }
+  },
+  {
+   "id": 133764,
+   "scientific": "Trichopoda pennipes",
+   "genus": "Trichopoda",
+   "epithet": "pennipes",
+   "common": "Swift Feather-legged Fly",
+   "family": "Tachinidae",
+   "order": "Diptera",
+   "level": 51,
+   "photo": {
+    "file": "133764-00b4c461.jpg",
+    "license": "cc-by",
+    "credit": "(c) Ken-ichi Ueda, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/1791789"
+   },
+   "silhouette": {
+    "file": "133764-715c23df.svg",
+    "rank": "family",
+    "matched": "Tachinidae",
+    "credit": "collnell",
+    "link": "https://www.phylopic.org/images/7252c46a-6bf1-42dd-ac5a-1018f404dfc8"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Tachina",
+     "Archytas",
+     "Cylindromyia",
+     "Gymnosoma",
+     "Ectophasia",
+     "Phasia",
+     "Eriothrix",
+     "Juriniopsis",
+     "Epalpus",
+     "Gonia"
+    ],
+    "genusOrder": [
+     "Eristalis",
+     "Tipula",
+     "Toxomerus",
+     "Lucilia",
+     "Condylostylus",
+     "Syrphus",
+     "Aedes",
+     "Eupeodes",
+     "Nephrotoma",
+     "Episyrphus"
+    ],
+    "speciesGenus": [
+     "Trichopoda lanipes",
+     "Trichopoda pictipennis",
+     "Trichopoda plumipes",
+     "Trichopoda indivisa",
+     "Trichopoda gradata",
+     "Trichopoda elongata",
+     "Trichopoda subdivisa",
+     "Trichopoda arcuata",
+     "Trichopoda subalipes",
+     "Trichopoda ypiranga"
+    ],
+    "speciesFamily": [
+     "Tachina fera",
+     "Archytas apicifer",
+     "Ectophasia crassipennis",
+     "Eriothrix rufomaculata",
+     "Juriniopsis adusta",
+     "Epalpus signifer",
+     "Cylindromyia bicolor",
+     "Phasia hemiptera",
+     "Gymnosoma rotundatum",
+     "Hystricia abrupta"
+    ]
+   }
+  },
+  {
+   "id": 120156,
+   "scientific": "Musca domestica",
+   "genus": "Musca",
+   "epithet": "domestica",
+   "common": "Common House Fly",
+   "family": "Muscidae",
+   "order": "Diptera",
+   "level": 45,
+   "photo": {
+    "file": "120156-d5cf698b.jpg",
+    "license": "cc-by-nc-sa",
+    "credit": "(c) Alfredo Eloisa, some rights reserved (CC BY-NC-SA)",
+    "link": "https://www.inaturalist.org/observations/12944739"
+   },
+   "silhouette": {
+    "file": "120156-4e24fc93.svg",
+    "rank": "species",
+    "matched": "Musca domestica",
+    "credit": "Kamil S. Jaron",
+    "link": "https://www.phylopic.org/images/9eb63a96-ec96-4d51-8c2f-ec330d0b51b2"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Coenosia",
+     "Phaonia",
+     "Stomoxys",
+     "Mesembrina",
+     "Muscina",
+     "Helina",
+     "Lispe",
+     "Neomyia",
+     "Graphomya",
+     "Hydrotaea"
+    ],
+    "genusOrder": [
+     "Eristalis",
+     "Tipula",
+     "Toxomerus",
+     "Lucilia",
+     "Condylostylus",
+     "Syrphus",
+     "Aedes",
+     "Eupeodes",
+     "Nephrotoma",
+     "Episyrphus"
+    ],
+    "speciesGenus": [
+     "Musca autumnalis",
+     "Musca vetustissima",
+     "Musca osiris",
+     "Musca sorbens",
+     "Musca ventrosa",
+     "Musca larvipara",
+     "Musca tempestiva",
+     "Musca vitripennis",
+     "Musca terraereginae",
+     "Musca crassirostris"
+    ],
+    "speciesFamily": [
+     "Stomoxys calcitrans",
+     "Coenosia tigrina",
+     "Mesembrina meridiana",
+     "Graphomya maculata",
+     "Muscina stabulans",
+     "Neomyia cornicina",
+     "Phaonia subventa",
+     "Phaonia angelicae",
+     "Atherigona reversura",
+     "Eudasyphora cyanicolor"
+    ]
+   }
+  },
+  {
+   "id": 82177,
+   "scientific": "Hermetia illucens",
+   "genus": "Hermetia",
+   "epithet": "illucens",
+   "common": "Black Soldier Fly",
+   "family": "Stratiomyidae",
+   "order": "Diptera",
+   "level": 44,
+   "photo": {
+    "file": "82177-8ce46fa1.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) tjeerd, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/19799263"
+   },
+   "silhouette": {
+    "file": "82177-1960fb73.svg",
+    "rank": "species",
+    "matched": "Hermetia illucens",
+    "credit": "Edwin Price",
+    "link": "https://www.phylopic.org/images/8fa77803-7f94-4f0c-b2fd-66c2f70a03b4"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Chloromyia",
+     "Ptecticus",
+     "Sargus",
+     "Stratiomys",
+     "Odontomyia",
+     "Microchrysa",
+     "Exaireta",
+     "Hoplitimyia",
+     "Hedriodiscus",
+     "Nemotelus"
+    ],
+    "genusOrder": [
+     "Eristalis",
+     "Tipula",
+     "Toxomerus",
+     "Lucilia",
+     "Condylostylus",
+     "Syrphus",
+     "Aedes",
+     "Eupeodes",
+     "Nephrotoma",
+     "Episyrphus"
+    ],
+    "speciesGenus": [
+     "Hermetia comstocki",
+     "Hermetia sexmaculata",
+     "Hermetia chrysopila",
+     "Hermetia concinna",
+     "Hermetia relicta",
+     "Hermetia ryckmani",
+     "Hermetia albitarsis",
+     "Hermetia aurata",
+     "Hermetia subpellucida",
+     "Hermetia hunteri"
+    ],
+    "speciesFamily": [
+     "Chloromyia formosa",
+     "Ptecticus trivittatus",
+     "Exaireta spinigera",
+     "Sargus bipunctatus",
+     "Microchrysa polita",
+     "Ptecticus aurifer",
+     "Sargus fasciatus",
+     "Hoplitimyia mutabilis",
+     "Ptecticus testaceus",
+     "Microchrysa flaviventris"
+    ]
+   }
+  },
+  {
+   "id": 62984,
+   "scientific": "Aedes albopictus",
+   "genus": "Aedes",
+   "epithet": "albopictus",
+   "common": "Asian Tiger Mosquito",
+   "family": "Culicidae",
+   "order": "Diptera",
+   "level": 48,
+   "photo": {
+    "file": "62984-d4ab473b.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Thomas Shahan, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/42323188"
+   },
+   "silhouette": {
+    "file": "62984-30fb8e4b.svg",
+    "rank": "species",
+    "matched": "Aedes albopictus",
+    "credit": "Richard J. Harris",
+    "link": "https://www.phylopic.org/images/37fd37ec-5ac1-4429-bee9-ce66a3a2eca4"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Culex",
+     "Psorophora",
+     "Anopheles",
+     "Culiseta",
+     "Toxorhynchites",
+     "Coquillettidia",
+     "Armigeres",
+     "Mansonia",
+     "Uranotaenia",
+     "Wyeomyia"
+    ],
+    "genusOrder": [
+     "Eristalis",
+     "Tipula",
+     "Toxomerus",
+     "Lucilia",
+     "Condylostylus",
+     "Syrphus",
+     "Eupeodes",
+     "Nephrotoma",
+     "Episyrphus",
+     "Sphaerophoria"
+    ],
+    "speciesGenus": [
+     "Aedes aegypti",
+     "Aedes vexans",
+     "Aedes japonicus",
+     "Aedes notoscriptus",
+     "Aedes trivittatus",
+     "Aedes sollicitans",
+     "Aedes triseriatus",
+     "Aedes taeniorhynchus",
+     "Aedes canadensis",
+     "Aedes caspius"
+    ],
+    "speciesFamily": [
+     "Culex pipiens",
+     "Psorophora ciliata",
+     "Culex quinquefasciatus",
+     "Culiseta annulata",
+     "Toxorhynchites rutilus",
+     "Psorophora ferox",
+     "Coquillettidia perturbans",
+     "Anopheles punctipennis",
+     "Armigeres subalbatus",
+     "Psorophora columbiae"
+    ]
+   }
+  },
+  {
+   "id": 141725,
+   "scientific": "Nezara viridula",
+   "genus": "Nezara",
+   "epithet": "viridula",
+   "common": "Southern Green Stink Bug",
+   "family": "Pentatomidae",
+   "order": "Hemiptera",
+   "level": 42,
+   "photo": {
+    "file": "141725-a043fc84.jpeg",
+    "license": "cc-by-sa",
+    "credit": "(c) Robert Briggs, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/20957402"
+   },
+   "silhouette": {
+    "file": "141725-5b593f44.svg",
+    "rank": "species",
+    "matched": "Nezara viridula",
+    "credit": "Darrin Schultz",
+    "link": "https://www.phylopic.org/images/ac91eefb-7404-4748-b90e-08a0c5481d6b"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Halyomorpha",
+     "Graphosoma",
+     "Palomena",
+     "Chinavia",
+     "Euschistus",
+     "Dolycoris",
+     "Carpocoris",
+     "Pentatoma",
+     "Eurydema",
+     "Brochymena"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Zelus",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus",
+     "Lygus"
+    ],
+    "speciesGenus": [
+     "Nezara antennata",
+     "Nezara capicola",
+     "Nezara naspira",
+     "Nezara soror",
+     "Nezara robusta"
+    ],
+    "speciesFamily": [
+     "Halyomorpha halys",
+     "Palomena prasina",
+     "Graphosoma italicum",
+     "Chinavia hilaris",
+     "Dolycoris baccarum",
+     "Pentatoma rufipes",
+     "Rhaphigaster nebulosa",
+     "Murgantia histrionica",
+     "Carpocoris purpureipennis",
+     "Eurydema oleracea"
+    ]
+   }
+  },
+  {
+   "id": 56756,
+   "scientific": "Murgantia histrionica",
+   "genus": "Murgantia",
+   "epithet": "histrionica",
+   "common": "Harlequin Bug",
+   "family": "Pentatomidae",
+   "order": "Hemiptera",
+   "level": 48,
+   "photo": {
+    "file": "56756-8056d397.jpg",
+    "license": "cc0",
+    "credit": "no rights reserved",
+    "link": "https://www.inaturalist.org/observations/330481"
+   },
+   "silhouette": {
+    "file": "56756-45054b31.svg",
+    "rank": "family",
+    "matched": "Pentatomidae",
+    "credit": "Dave Angelini",
+    "link": "https://www.phylopic.org/images/e34da4f7-a8b9-4f97-af07-b60425e83f0b"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Halyomorpha",
+     "Graphosoma",
+     "Palomena",
+     "Chinavia",
+     "Nezara",
+     "Euschistus",
+     "Dolycoris",
+     "Carpocoris",
+     "Pentatoma",
+     "Eurydema"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Zelus",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus",
+     "Lygus"
+    ],
+    "speciesGenus": [
+     "Murgantia violascens",
+     "Murgantia varicolor",
+     "Murgantia bifasciata",
+     "Murgantia simulans",
+     "Murgantia truncatulata",
+     "Murgantia vicina",
+     "Murgantia angularis",
+     "Murgantia tessellata",
+     "Murgantia neotropicalis",
+     "Murgantia stenozygoides"
+    ],
+    "speciesFamily": [
+     "Halyomorpha halys",
+     "Palomena prasina",
+     "Graphosoma italicum",
+     "Chinavia hilaris",
+     "Nezara viridula",
+     "Dolycoris baccarum",
+     "Pentatoma rufipes",
+     "Rhaphigaster nebulosa",
+     "Carpocoris purpureipennis",
+     "Eurydema oleracea"
+    ]
+   }
+  },
+  {
+   "id": 142277,
+   "scientific": "Podisus maculiventris",
+   "genus": "Podisus",
+   "epithet": "maculiventris",
+   "common": "Spined Soldier Bug",
+   "family": "Pentatomidae",
+   "order": "Hemiptera",
+   "level": 52,
+   "photo": {
+    "file": "142277-005b4c35.jpg",
+    "license": "cc-by",
+    "credit": "(c) Bill Keim, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/6580572"
+   },
+   "silhouette": {
+    "file": "142277-45054b31.svg",
+    "rank": "family",
+    "matched": "Pentatomidae",
+    "credit": "Dave Angelini",
+    "link": "https://www.phylopic.org/images/e34da4f7-a8b9-4f97-af07-b60425e83f0b"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Halyomorpha",
+     "Graphosoma",
+     "Palomena",
+     "Chinavia",
+     "Nezara",
+     "Euschistus",
+     "Dolycoris",
+     "Carpocoris",
+     "Pentatoma",
+     "Eurydema"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Zelus",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus",
+     "Lygus"
+    ],
+    "speciesGenus": [
+     "Podisus placidus",
+     "Podisus serieventris",
+     "Podisus nigrispinus",
+     "Podisus congrex",
+     "Podisus sagitta",
+     "Podisus aenescens",
+     "Podisus brevispinus",
+     "Podisus fuscescens",
+     "Podisus tinctus",
+     "Podisus distinctus"
+    ],
+    "speciesFamily": [
+     "Halyomorpha halys",
+     "Palomena prasina",
+     "Graphosoma italicum",
+     "Chinavia hilaris",
+     "Nezara viridula",
+     "Dolycoris baccarum",
+     "Pentatoma rufipes",
+     "Rhaphigaster nebulosa",
+     "Murgantia histrionica",
+     "Carpocoris purpureipennis"
+    ]
+   }
+  },
+  {
+   "id": 143660,
+   "scientific": "Anasa tristis",
+   "genus": "Anasa",
+   "epithet": "tristis",
+   "common": "Squash Bug",
+   "family": "Coreidae",
+   "order": "Hemiptera",
+   "level": 51,
+   "photo": {
+    "file": "143660-21bc712d.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Karolina Fucikova, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/28297427"
+   },
+   "silhouette": {
+    "file": "143660-597dbe91.svg",
+    "rank": "species",
+    "matched": "Anasa tristis",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/2306336a-f21a-4c16-a617-e43a96388b7f"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Leptoglossus",
+     "Acanthocephala",
+     "Coreus",
+     "Gonocerus",
+     "Pachylis",
+     "Hypselonotus",
+     "Homoeocerus",
+     "Piezogaster",
+     "Chelinidea",
+     "Mictis"
+    ],
+    "genusOrder": [
+     "Halyomorpha",
+     "Zelus",
+     "Neotibicen",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus",
+     "Lygus",
+     "Graphosoma"
+    ],
+    "speciesGenus": [
+     "Anasa armigera",
+     "Anasa scorbutica",
+     "Anasa varicornis",
+     "Anasa bellator",
+     "Anasa repetita",
+     "Anasa trilineata",
+     "Anasa andresii",
+     "Anasa apicalis",
+     "Anasa guttifera",
+     "Anasa jucunda"
+    ],
+    "speciesFamily": [
+     "Leptoglossus occidentalis",
+     "Coreus marginatus",
+     "Acanthocephala terminalis",
+     "Leptoglossus phyllopus",
+     "Acanthocephala declivis",
+     "Leptoglossus oppositus",
+     "Gonocerus acuteangulatus",
+     "Leptoglossus zonatus",
+     "Euthochtha galeator",
+     "Leptoglossus clypealis"
+    ]
+   }
+  },
+  {
+   "id": 48957,
+   "scientific": "Arilus cristatus",
+   "genus": "Arilus",
+   "epithet": "cristatus",
+   "common": "North American Wheel Bug",
+   "family": "Reduviidae",
+   "order": "Hemiptera",
+   "level": 42,
+   "photo": {
+    "file": "48957-b1774a78.jpg",
+    "license": "cc-by",
+    "credit": "(c) Leila Dasher, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/27882270"
+   },
+   "silhouette": {
+    "file": "48957-abbc4aa8.svg",
+    "rank": "species",
+    "matched": "Arilus cristatus",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/92df0fcd-0dce-46a0-98e1-d4e2476f4f3b"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Zelus",
+     "Phymata",
+     "Apiomerus",
+     "Rhynocoris",
+     "Sinea",
+     "Reduvius",
+     "Pselliopus",
+     "Pristhesancus",
+     "Triatoma",
+     "Rasahus"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Halyomorpha",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus",
+     "Lygus"
+    ],
+    "speciesGenus": [
+     "Arilus carinatus",
+     "Arilus gallus",
+     "Arilus depresicollis"
+    ],
+    "speciesFamily": [
+     "Zelus luridus",
+     "Zelus renardii",
+     "Zelus longipes",
+     "Phymata americana",
+     "Reduvius personatus",
+     "Phymata pennsylvanica",
+     "Pristhesancus plagipennis",
+     "Zelus tetracanthus",
+     "Sinea spinipes",
+     "Rhynocoris iracundus"
+    ]
+   }
+  },
+  {
+   "id": 133826,
+   "scientific": "Zelus longipes",
+   "genus": "Zelus",
+   "epithet": "longipes",
+   "common": "Milkweed Assassin Bug",
+   "family": "Reduviidae",
+   "order": "Hemiptera",
+   "level": 48,
+   "photo": {
+    "file": "133826-3eefef90.jpg",
+    "license": "cc-by",
+    "credit": "(c) Sandra H Statner, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/31064369"
+   },
+   "silhouette": {
+    "file": "133826-18a66bdf.svg",
+    "rank": "family",
+    "matched": "Reduviidae",
+    "credit": "Richard J. Harris",
+    "link": "https://www.phylopic.org/images/5c459785-a305-42d7-a6a7-35a7e0be645d"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Arilus",
+     "Phymata",
+     "Apiomerus",
+     "Rhynocoris",
+     "Sinea",
+     "Reduvius",
+     "Pselliopus",
+     "Pristhesancus",
+     "Triatoma",
+     "Rasahus"
+    ],
+    "genusOrder": [
+     "Leptoglossus",
+     "Halyomorpha",
+     "Neotibicen",
+     "Acanthocephala",
+     "Pyrrhocoris",
+     "Oncopeltus",
+     "Lycorma",
+     "Aphis",
+     "Lygaeus",
+     "Lygus"
+    ],
+    "speciesGenus": [
+     "Zelus luridus",
+     "Zelus renardii",
+     "Zelus tetracanthus",
+     "Zelus cervicalis",
+     "Zelus leucogrammus",
+     "Zelus armillatus",
+     "Zelus laticornis",
+     "Zelus grassans",
+     "Zelus janus",
+     "Zelus versicolor"
+    ],
+    "speciesFamily": [
+     "Arilus cristatus",
+     "Phymata americana",
+     "Reduvius personatus",
+     "Phymata pennsylvanica",
+     "Pristhesancus plagipennis",
+     "Sinea spinipes",
+     "Rhynocoris iracundus",
+     "Pselliopus barberi",
+     "Phymata fasciata",
+     "Apiomerus spissipes"
     ]
    }
   }
