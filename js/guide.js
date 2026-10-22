@@ -10,6 +10,13 @@ const el = (tag, props = {}, ...kids) => {
   return node;
 };
 
+// Turns a trailing "doi:<id>" in a note into a link.
+const noteItem = (n) => {
+  const m = n.match(/^(.*?)\s*doi:(\S+)$/);
+  if (!m) return el('li', { textContent: n });
+  return el('li', {}, `${m[1]} `, el('a', { href: `https://doi.org/${encodeURI(m[2])}`, target: '_blank', rel: 'noopener', textContent: `doi:${m[2]}` }));
+};
+
 // Groups by role first (pests, enemies, pollinators, test species), then taxonomy: order, family, species.
 export function sortedDeck(deck) {
   return [...deck].sort((a, b) =>
@@ -92,7 +99,7 @@ export function openCard(entry, status, number) {
     body.append(el('p', { textContent: `${entry.order ? entry.order + ' | ' : ''}${entry.family}` }));
     if (entry.role) {
       body.append(el('p', { className: 'card__role', textContent: ROLES[entry.role].single }));
-      if (entry.notes?.length) body.append(el('ul', { className: 'card__notes' }, ...entry.notes.map((n) => el('li', { textContent: n }))));
+      if (entry.notes?.length) body.append(el('ul', { className: 'card__notes' }, ...entry.notes.map(noteItem)));
     }
     const rec = store.entry(entry.id);
     body.append(el('p', { textContent: `Identified ${rec.correct} of ${rec.seen} times` }));
