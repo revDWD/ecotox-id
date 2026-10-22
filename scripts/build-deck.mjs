@@ -15,6 +15,7 @@ const INAT = 'https://api.inaturalist.org/v1';
 const PHYLOPIC = 'https://api.phylopic.org';
 const UA = 'ecotox-id-battle/1.0 (educational game; github.com/DWDyck/ecotox-id-battle)';
 const ROLES = ['pest', 'enemy', 'pollinator', 'test'];
+const stripFlags = ({ rare, intro, ...rest }) => rest;
 const PHOTO_LICENSES = ['cc0', 'cc-by', 'cc-by-sa', 'cc-by-nc', 'cc-by-nc-sa'];
 
 const args = process.argv.slice(2);
@@ -210,6 +211,8 @@ async function main() {
     const role = String(item.role || '').trim();
     const notes = (Array.isArray(item.notes) ? item.notes : [item.note])
       .map((n) => String(n || '').trim().slice(0, 220)).filter(Boolean).slice(0, 6);
+    const intro = String(item.intro || '').trim().slice(0, 120);
+    const meta = { role, notes, ...(item.rare === true ? { rare: true, ...(intro ? { intro } : {}) } : {}) };
     if (name && !ROLES.includes(role)) {
       console.warn(`! ${name}: role must be one of ${ROLES.join(', ')} (got "${role}")`);
       problems.push(`${name}: role must be one of ${ROLES.join(', ')}`);
@@ -222,17 +225,17 @@ async function main() {
     seen.add(name.toLowerCase());
     if (only && name.toLowerCase() !== only) {
       const kept = byName.get(name.toLowerCase());
-      if (kept) species.push({ ...kept, role, notes });
+      if (kept) species.push({ ...stripFlags(kept), ...meta });
       continue;
     }
     const kept = byName.get(name.toLowerCase());
     if (kept && (await exists(path.join(PHOTOS, kept.photo.file)))) {
-      species.push({ ...kept, role, notes });
+      species.push({ ...stripFlags(kept), ...meta });
       continue;
     }
     try {
       console.log(`+ ${name}`);
-      species.push({ ...(await buildEntry(name)), role, notes });
+      species.push({ ...(await buildEntry(name)), ...meta });
     } catch (err) {
       console.warn(`! ${name}: ${err.message}`);
       problems.push(`${name}: ${err.message}`);

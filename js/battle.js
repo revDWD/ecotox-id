@@ -1,6 +1,6 @@
 import { Flow, TextBox, Cancelled, prefersReducedMotion } from './ui.js';
 import {
-  MODES, ROLES, poolFor, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, recentLimit, nextMode, expNeeded, expFor, pointsFor, addExp,
+  MODES, ROLES, poolFor, rarePoolFor, RARE_CHANCE, CHAIN_GOAL, MAX_HP, makeQuestion, pickEntry, recentLimit, nextMode, expNeeded, expFor, pointsFor, addExp,
 } from './game.js';
 import { store } from './storage.js';
 import { sound } from './sound.js';
@@ -128,7 +128,7 @@ export class Battle {
     this.text = new TextBox(this.flow, { textEl: $('text'), liveEl: $('live'), moreEl: $('more') });
     this.active = true;
     this.s = {
-      mode, startMode: mode, group, pool: poolFor(this.deck, group), hp: MAX_HP, level: 1, exp: 0, score: 0, streak: 0, bestStreak: 0, chain: 0,
+      mode, startMode: mode, group, pool: poolFor(this.deck, group), rare: rarePoolFor(this.deck, group), hp: MAX_HP, level: 1, exp: 0, score: 0, streak: 0, bestStreak: 0, chain: 0,
       recent: [], rounds: 0, correct: 0, discovered: 0,
     };
     sound.set(store.settings.sound);
@@ -366,9 +366,12 @@ export class Battle {
     let entry;
     let visual;
     let q;
+    const useRare = !challenge && s.rare.length > 0 && Math.random() < RARE_CHANCE;
     // A broken image should never end the game: try another species.
     for (let attempt = 0; attempt < 4; attempt++) {
-      entry = pickEntry(s.pool, s.recent, { needSilhouette: challenge });
+      entry = useRare && attempt === 0
+        ? s.rare[Math.floor(Math.random() * s.rare.length)]
+        : pickEntry(s.pool, s.recent, { needSilhouette: challenge });
       visual = !challenge ? 'photo' : entry.silhouette ? 'silhouette' : 'pixel';
       q = makeQuestion(entry, s.mode, s.pool);
       try {
@@ -395,7 +398,8 @@ export class Battle {
     if (challenge) await this.wipe(false);
     await this.enterFoe();
 
-    await this.text.say(challenge ? 'Challenge! Something is lurking in the shadows!' : 'A field organism appeared!');
+    const intro = entry.rare ? entry.intro || 'A RARE organism appeared!' : 'A field organism appeared!';
+    await this.text.say(challenge ? 'Challenge! Something is lurking in the shadows!' : intro);
     await this.flow.delay(350);
     const prompt = {
       genus: challenge ? "Who's that organism? Pick the *genus*." : 'Which genus is it?',

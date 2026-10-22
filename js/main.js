@@ -53,12 +53,13 @@ function renderTitle() {
 function renderGroups() {
   const select = $('deck-group');
   const counts = new Map();
-  deck.forEach((e) => counts.set(e.role, (counts.get(e.role) || 0) + 1));
+  const regular = deck.filter((e) => !e.rare);
+  regular.forEach((e) => counts.set(e.role, (counts.get(e.role) || 0) + 1));
   if (!counts.has(store.settings.group)) group = 'all';
   else group = store.settings.group;
   select.textContent = '';
   const add = (value, text) => select.append(Object.assign(document.createElement('option'), { value, textContent: text }));
-  add('all', `Everything (${deck.length})`);
+  add('all', `Everything (${regular.length})`);
   for (const role of ROLE_ORDER) if (counts.has(role)) add(role, `${ROLES[role].group} (${counts.get(role)})`);
   select.value = group;
 }

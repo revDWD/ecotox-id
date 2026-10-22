@@ -14,9 +14,13 @@ export const ROLES = {
 };
 export const ROLE_ORDER = ['pest', 'enemy', 'pollinator', 'test'];
 export const poolFor = (deck, group) => {
-  const pool = group === 'all' ? deck : deck.filter((e) => e.role === group);
-  return pool.length >= 4 ? pool : deck;
+  const regular = deck.filter((e) => !e.rare);
+  const pool = group === 'all' ? regular : regular.filter((e) => e.role === group);
+  return pool.length >= 4 ? pool : regular;
 };
+// Rare entries are kept out of the normal pool and drop in now and then as a surprise.
+export const RARE_CHANCE = 0.04;
+export const rarePoolFor = (deck, group) => deck.filter((e) => e.rare && (group === 'all' || e.role === group));
 
 export const MODE_ORDER = ['genus', 'species', 'both'];
 export const CHAIN_GOAL = 3;

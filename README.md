@@ -17,7 +17,9 @@ A retro battle-screen game for learning to identify insects, spiders and other w
 - Every organism you meet is added to your **Field guide** (progress is saved in your browser). Use the **Show** menu in the guide to look at one group at a time (butterflies, beetles, spiders and so on).
 - Works on phones and desktops, with keyboard play (1-4 or arrow keys + Enter), and offline once loaded.
 
-The deck has **174 organisms**: butterflies and moths, beetles, bees, wasps and ants, flies, true bugs, dragonflies, grasshoppers, mantises, spiders and other arthropods, with a focus on commonly seen North American species including the Gulf Coast. Together the photos weigh about 33 MB, but the game only downloads what it shows (about 370 KB on first load) and remembers it for offline play.
+The deck has **130 organisms** plus one rare surprise, grouped by role: **crop pests** (caterpillars, beetles, aphids, mites and other pests of corn, soybean, cotton, vegetables and orchards), **natural enemies** (ladybirds, parasitoid wasps, predatory bugs, mites and spiders), **pollinators** (honey bees, bumble bees, native bees, hoverflies) and **test and indicator species** (organisms used in ecotoxicology tests, such as *Daphnia*, *Chironomus* and *Eisenia*). Pick a deck on the title screen, or play everything. After every answer you get a one-line ecotox note about the organism, and the Field guide lists all of its notes. The notes are brief general remarks, not regulatory advice, so check them against primary sources before relying on them.
+
+**Rare encounter:** an entry marked `"rare": true` in `data/species.json` stays out of the normal rotation and appears in about 1 of 25 battles, with an optional `"intro"` line (the current one is a bombardier beetle, *Brachinus fumans*).
 
 ## Add or remove species (no coding)
 

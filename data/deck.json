@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "count": 130,
+ "count": 131,
  "species": [
   {
    "id": 118492,
@@ -10049,6 +10049,87 @@
     "In bioaccumulation tests, worms are exposed to contaminated sediment for 28 days.",
     "It reproduces by fragmenting, so cultures are easy to maintain."
    ]
+  },
+  {
+   "id": 215345,
+   "scientific": "Brachinus fumans",
+   "genus": "Brachinus",
+   "epithet": "fumans",
+   "common": "American Bombardier Beetle",
+   "family": "Carabidae",
+   "order": "Coleoptera",
+   "level": 86,
+   "photo": {
+    "file": "215345-4856bc0a.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Brady Weigandt, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/408148059"
+   },
+   "silhouette": {
+    "file": "215345-fb75ab50.svg",
+    "rank": "genus",
+    "matched": "Brachinus",
+    "credit": "Udo Schmidt",
+    "link": "https://www.phylopic.org/images/dd6a79cb-1c36-458f-b210-b12f8f27bad1"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Carabus",
+     "Harpalus",
+     "Pterostichus",
+     "Calosoma",
+     "Amara",
+     "Scarites",
+     "Chlaenius",
+     "Stenolophus",
+     "Bembidion",
+     "Nebria"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus",
+     "Diabrotica"
+    ],
+    "speciesGenus": [
+     "Brachinus crepitans",
+     "Brachinus adustipennis",
+     "Brachinus sclopeta",
+     "Brachinus explodens",
+     "Brachinus scotomedes",
+     "Brachinus geniculatus",
+     "Brachinus incomptus",
+     "Brachinus elongatulus",
+     "Brachinus tenuicollis",
+     "Brachinus stenoderus"
+    ],
+    "speciesFamily": [
+     "Carabus nemoralis",
+     "Carabus coriaceus",
+     "Scarites subterraneus",
+     "Harpalus rufipes",
+     "Carabus granulatus",
+     "Calosoma scrutator",
+     "Nebria brevicollis",
+     "Harpalus pensylvanicus",
+     "Harpalus affinis",
+     "Amara aenea"
+    ]
+   },
+   "role": "enemy",
+   "notes": [
+    "Bombardier beetle: when threatened it mixes hydroquinones and hydrogen peroxide with enzymes in a chamber and sprays a hot benzoquinone defense.",
+    "The spray is released in rapid pulses at close to boiling temperature, so it really does fire back at predators.",
+    "Ground beetles like this are often used as indicators of how farm practices affect non-target insects."
+   ],
+   "rare": true,
+   "intro": "A RARE fire-breather appeared! Stand back..."
   }
  ]
 }

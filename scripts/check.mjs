@@ -34,6 +34,7 @@ for (const entry of deck) {
 for (const role of ROLE_ORDER) {
   const pool = poolFor(deck, role);
   if (pool.length < 4) fail(`role ${role} has too few species`);
+  if (pool.some((e) => e.rare)) fail(`role ${role}: rare entries must stay out of the normal pool`);
   for (const mode of MODE_ORDER) {
     const q = makeQuestion(pool[0], mode, pool);
     if (new Set(q.choices).size !== 4) fail(`role ${role}/${mode}: bad choices from the pool`);

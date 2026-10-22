@@ -34,3 +34,11 @@ content:
             type: string
             list: true
             description: Short one-line notes. One is shown at random after each answer, and all appear in the Field guide.
+          - name: rare
+            label: Rare surprise encounter
+            type: boolean
+            description: Tick for a rare easter egg. It stays out of the normal rotation and shows up in about 1 of 25 battles.
+          - name: intro
+            label: Rare intro line
+            type: string
+            description: Optional line shown when a rare organism appears, e.g. A RARE fire-breather appeared!
