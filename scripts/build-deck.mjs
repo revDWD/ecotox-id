@@ -5,6 +5,7 @@
 import { readFile, writeFile, mkdir, access, rm, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
@@ -45,10 +46,15 @@ async function getJson(url, { inat = false } = {}) {
   throw new Error(`Gave up on ${url}`);
 }
 
-async function download(url, file) {
+// Saves the file as <taxonId>-<hash of its bytes>.<ext> and returns that name. The hash changes whenever
+// the picture changes, so the service worker's cache-first media can never serve a stale image.
+async function download(url, dir, taxonId, ext) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } });
   if (!res.ok) throw new Error(`Download failed (${res.status}): ${url}`);
-  await writeFile(file, Buffer.from(await res.arrayBuffer()));
+  const bytes = Buffer.from(await res.arrayBuffer());
+  const name = `${taxonId}-${createHash('sha1').update(bytes).digest('hex').slice(0, 8)}${ext}`;
+  await writeFile(path.join(dir, name), bytes);
+  return name;
 }
 
 const poolCache = new Map();
@@ -144,15 +150,15 @@ async function buildEntry(name) {
 
   const photo = await pickPhoto(taxon.id);
   if (!photo) throw new Error('no suitable CC-licensed photo');
-  const ext = path.extname(new URL(photo.sourceUrl).pathname) || '.jpg';
-  const photoFile = `${taxon.id}${ext}`;
-  await download(photo.sourceUrl, path.join(PHOTOS, photoFile));
+  const urlExt = path.extname(new URL(photo.sourceUrl).pathname).toLowerCase();
+  const ext = ['.jpg', '.jpeg', '.png', '.webp'].includes(urlExt) ? urlExt : '.jpg';
+  const photoFile = await download(photo.sourceUrl, PHOTOS, taxon.id, ext);
 
   let silhouette = null;
   const sil = await findSilhouette([['species', taxon.name], ['genus', genus.name], ['family', family.name]]);
   if (sil) {
-    await download(sil.sourceUrl, path.join(SILS, `${taxon.id}.svg`));
-    silhouette = { file: `${taxon.id}.svg`, rank: sil.rank, matched: sil.matched, credit: sil.credit, link: sil.link };
+    const silFile = await download(sil.sourceUrl, SILS, taxon.id, '.svg');
+    silhouette = { file: silFile, rank: sil.rank, matched: sil.matched, credit: sil.credit, link: sil.link };
   }
 
   const [genusFam, genusOrder, speciesGenus, speciesFam] = await Promise.all([
