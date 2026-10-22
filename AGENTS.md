@@ -208,7 +208,7 @@ This is a **public repository and public site**. Treat everything committed as w
   - Render all dynamic text with `textContent` / `el()`; **never `innerHTML` with data**. The existing `innerHTML`/`insertAdjacentHTML` uses insert only static, app-authored SVG strings (`sprites.js`, wipe cells). Keep it that way.
   - Links are *constructed by the builder* from numeric ids (`inaturalist.org/observations/<id>`, `phylopic.org/images/<uuid>`), opened with `rel="noopener"`. Do not pass through API-provided URLs unchanged.
   - Silhouettes are loaded as `<img src>` (scripts in SVG do not run in `<img>`). **Never inline downloaded SVGs into the DOM, and never `fetch`+`innerHTML` them.**
-  - Downloaded filenames are `<numeric taxonId>.<ext>`; never build file paths from species text or API strings.
+  - Downloaded filenames are `<numeric taxonId>.<ext>` (original 60) or `<numeric taxonId>-<8 hex sha1>.<ext>` (new); the extension is whitelisted to jpg/jpeg/png/webp. Never build file paths from species text or API strings.
   - The species name is the one free-text input: it is only used inside `encodeURIComponent` in API URLs and as a lookup key. Keep it that way.
 - **Least privilege.** The workflow's `permissions` is `contents: write`; do not widen it. Use only first-party pinned-major actions (`actions/checkout@v4`, `actions/setup-node@v4`). Do not add `pull_request_target`, third-party actions, or steps that interpolate untrusted text into `run:` scripts (the only input is the boolean `refresh`). Only the bot should write `data/`.
 - **No third-party requests from the browser.** No CDNs, fonts, trackers or embeds; this also keeps the offline/PWA behavior valid.
@@ -231,9 +231,9 @@ When making any change, follow this order:
 
 Typical task recipes:
 
-- **Add or remove species:** edit `data/species.json` only (the Action does the rest). Names must be exact two-word binomials as on iNaturalist; check for renamed taxa (e.g. `Papilio cresphontes` is now `Heraclides cresphontes`; `Agraulis vanillae` is now `Dione vanillae`).
+- **Add or remove species:** edit `data/species.json` only (the Action does the rest). Names must be exact two-word binomials as on iNaturalist; check for renamed taxa (e.g. `Papilio cresphontes` is now `Heraclides cresphontes`; `Agraulis vanillae` is now `Dione vanillae`; `Abaeis nicippe` is now `Eurema nicippe`; `Speyeria cybele` is now `Argynnis cybele`; `Uca pugilator` is now `Leptuca pugilator`). Before adding, look each name up at `https://api.inaturalist.org/v1/taxa?q=<name>&rank=species&is_active=true` and confirm it is the accepted name with a CC-licensed photo of at least 600 px. Add about 25-30 names per push, `git pull` first, then `gh run watch` the build; a red run names the species to fix. Keep to about 4 species per genus and aim for look-alike groups so decoys stay meaningful. If a new iNaturalist *order* appears, add it to `GROUP_BY_ORDER` in `js/guide.js` (otherwise it lands in "Other arthropods").
 - **Change a rule or score:** edit `game.js`, extend `check.mjs` for it, then update this file's rules summary: Easy x1, Medium x2, Hard x3 points (base 100, x3 for challenges), EXP 10 per correct / 30 per challenge, 5 HP, wrong answer = -1 HP and chain reset, challenge after 3 in a row (+2 HP, promotes difficulty).
-- **Change layout/CSS:** test at ~390x844, ~1280x800 and a short landscape phone (~844x390). Check: photo frame fully inside the scene, no infobox/photo overlap, no horizontal scroll, labels not broken mid-word, tiles uniform.
+- **Change layout/CSS:** test at ~390x844, ~1280x800 and a short landscape phone (~844x390). Check: photo frame fully inside the scene, no infobox/photo overlap, no horizontal scroll, labels not broken mid-word, tiles uniform. Guide tile names (`.card-tile__name`) use container-query font sizes (smaller under 350 px, larger over 560 px) tuned so the longest word (12 letters: Subterranean, Yellowjacket, Walkingstick, Calligrapher) fits; re-test with every species identified if you touch them.
 - **Ship a release:** `npm run check` -> bump `sw.js` `VERSION` -> `git pull` -> commit (include the `Co-authored-by` trailer when an AI assisted) -> push -> wait for Pages -> hard-refresh and smoke-test the live URL.
 
 ---
@@ -312,3 +312,19 @@ Typical task recipes:
 2. Add the CSP meta tag after testing.
 3. Guide thumbnails: identified tiles load the ~150 KB 500 px photo into a ~130 px tile. A small thumbnail per species (built by the Action) would cut guide image weight a lot.
 4. Split `battle.js` only if you are adding features there.
+
+---
+
+## 12. Project Status (as of release `wildid-v2`, 2026-10-22)
+
+**State:** complete and live. 174 species (164 with silhouettes; the 10 without are *Sphex ichneumoneus*, *Sceliphron caementarium*, *Diapheromera femorata*, *Anisomorpha buprestoides*, *Climaciella brunnea*, *Reticulitermes flavipes*, *Dolomedes tenebrosus*, *Loxosceles reclusa*, *Peucetia viridans*, *Apheloria virginiensis*). Guide groups: Butterflies & moths 38, Beetles 24, Bees/wasps/ants 21, Flies 11, True bugs & cicadas 15, Dragonflies & damselflies 15, Grasshoppers & crickets 8, Mantises 3, Other insects 9, Spiders 16, Other arthropods 14. Only *Papilio* and *Bombus* reach the 4-per-genus cap.
+
+**Measured numbers:** `data/` is about 33 MB (photos about 31 MB, silhouettes 1.9 MB, `deck.json` 276 KB). First load is about 370 KB over 14 requests (shell + `deck.json` + one silhouette); media is cached lazily by the service worker and must **not** be precached. App shell is about 86 KB.
+
+**How the deck grew 60 -> 174:** 114 names were verified against the iNaturalist API (accepted name, CC photo of at least 600 px, PhyloPic silhouette at species, genus or family rank) and added in four batches (29, 29, 29, 28). Names that failed and were replaced: *Abaeis nicippe* -> *Eurema nicippe*, *Speyeria cybele* -> *Argynnis cybele*, *Uca pugilator* -> *Leptuca pugilator*; *Narceus americanus* had no usable photo and became *Apheloria virginiensis*.
+
+**Verified at 390x844, 1280x800 and 844x390 (and guide widths 360/430/1920):** 20-round runs with 0 repeats and 5 challenges each, uniform guide tiles, no mid-word breaks, no horizontal overflow, filter counts equal tile counts, offline reload works, no console errors or failed requests; the same on the live site in a fresh profile. The e2e harness (Puppeteer driving headless Edge) is not in the repo because it would need a dependency; if you rebuild it, the id regex for media files must allow hashed names: `(\d+)(?:-[0-9a-f]+)?\.\w+$`. The title/battle intro waits for a tap or `Enter` before the question appears.
+
+**Known limitations:** Pages CMS saving has never been exercised; decoys are iNaturalist look-alikes topped up from the rest of the deck, so some are taxonomically distant (e.g. a dragonfly genus among moth choices); identified guide tiles load the ~150 KB photo into a ~130 px tile; the original 60 entries keep unhashed filenames until a `refresh`.
+
+**Not implemented (owner's call):** play-by-group decks, review-mistakes/spaced repetition, guide thumbnails, progress export/import, a build-report file for the CMS, PNG icons for iOS install, a CSP meta tag, name search in the guide, a committed e2e script.
