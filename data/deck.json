@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "count": 60,
+ "count": 89,
  "species": [
   {
    "id": 48662,
@@ -4307,6 +4307,2080 @@
      "Nephilengys papuana",
      "Herennia tsoi",
      "Nephila vitiana"
+    ]
+   }
+  },
+  {
+   "id": 58525,
+   "scientific": "Papilio troilus",
+   "genus": "Papilio",
+   "epithet": "troilus",
+   "common": "Spicebush Swallowtail",
+   "family": "Papilionidae",
+   "order": "Lepidoptera",
+   "level": 42,
+   "photo": {
+    "file": "58525-f5b13103.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) James Louderman, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/18528323"
+   },
+   "silhouette": {
+    "file": "58525-fac7f77e.svg",
+    "rank": "species",
+    "matched": "Papilio troilus",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/a350ca90-b7fc-44d9-a277-550a3b6b56fc"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Battus",
+     "Heraclides",
+     "Graphium",
+     "Iphiclides",
+     "Eurytides",
+     "Parnassius",
+     "Zerynthia",
+     "Pachliopta",
+     "Parides",
+     "Troides"
+    ],
+    "genusOrder": [
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais"
+    ],
+    "speciesGenus": [
+     "Papilio glaucus",
+     "Papilio polyxenes",
+     "Papilio machaon",
+     "Papilio rutulus",
+     "Papilio polytes",
+     "Papilio demoleus",
+     "Papilio canadensis",
+     "Papilio zelicaon",
+     "Papilio multicaudata",
+     "Papilio eurymedon"
+    ],
+    "speciesFamily": [
+     "Battus philenor",
+     "Heraclides cresphontes",
+     "Iphiclides podalirius",
+     "Eurytides marcellus",
+     "Heraclides rumiko",
+     "Graphium sarpedon",
+     "Graphium agamemnon"
+    ]
+   }
+  },
+  {
+   "id": 68232,
+   "scientific": "Papilio palamedes",
+   "genus": "Papilio",
+   "epithet": "palamedes",
+   "common": "Palamedes Swallowtail",
+   "family": "Papilionidae",
+   "order": "Lepidoptera",
+   "level": 50,
+   "photo": {
+    "file": "68232-ec82b2e9.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Zach Cava, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/9060348"
+   },
+   "silhouette": {
+    "file": "68232-98a434ff.svg",
+    "rank": "genus",
+    "matched": "Papilio",
+    "credit": "Mattia Menchetti",
+    "link": "https://www.phylopic.org/images/f21829d7-6dfc-4b2f-991c-e16181c24d29"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Battus",
+     "Heraclides",
+     "Graphium",
+     "Iphiclides",
+     "Eurytides",
+     "Parnassius",
+     "Zerynthia",
+     "Pachliopta",
+     "Parides",
+     "Troides"
+    ],
+    "genusOrder": [
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais"
+    ],
+    "speciesGenus": [
+     "Papilio glaucus",
+     "Papilio polyxenes",
+     "Papilio machaon",
+     "Papilio troilus",
+     "Papilio rutulus",
+     "Papilio polytes",
+     "Papilio demoleus",
+     "Papilio canadensis",
+     "Papilio zelicaon",
+     "Papilio multicaudata"
+    ],
+    "speciesFamily": [
+     "Battus philenor",
+     "Heraclides cresphontes",
+     "Iphiclides podalirius",
+     "Eurytides marcellus",
+     "Heraclides rumiko",
+     "Graphium sarpedon",
+     "Graphium agamemnon"
+    ]
+   }
+  },
+  {
+   "id": 83086,
+   "scientific": "Eurytides marcellus",
+   "genus": "Eurytides",
+   "epithet": "marcellus",
+   "common": "Zebra Swallowtail",
+   "family": "Papilionidae",
+   "order": "Lepidoptera",
+   "level": 47,
+   "photo": {
+    "file": "83086-9b24e0f0.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) cbyrne1157, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/299249364"
+   },
+   "silhouette": {
+    "file": "83086-a2ba2932.svg",
+    "rank": "species",
+    "matched": "Eurytides marcellus",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/ff384d0a-c7e7-4e97-b380-3ea5989eb969"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Papilio",
+     "Battus",
+     "Heraclides",
+     "Graphium",
+     "Iphiclides",
+     "Parnassius",
+     "Zerynthia",
+     "Pachliopta",
+     "Parides",
+     "Troides"
+    ],
+    "genusOrder": [
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais"
+    ],
+    "speciesGenus": [
+     "Eurytides philolaus",
+     "Eurytides epidaus",
+     "Eurytides thymbraeus",
+     "Eurytides agesilaus",
+     "Eurytides lysithous",
+     "Eurytides protesilaus",
+     "Eurytides dolicaon",
+     "Eurytides telesilaus",
+     "Eurytides ilus",
+     "Eurytides phaon"
+    ],
+    "speciesFamily": [
+     "Papilio glaucus",
+     "Papilio polyxenes",
+     "Battus philenor",
+     "Papilio machaon",
+     "Papilio troilus",
+     "Heraclides cresphontes",
+     "Iphiclides podalirius",
+     "Papilio rutulus",
+     "Papilio polytes",
+     "Papilio demoleus"
+    ]
+   }
+  },
+  {
+   "id": 129362,
+   "scientific": "Zerene cesonia",
+   "genus": "Zerene",
+   "epithet": "cesonia",
+   "common": "Southern Dogface",
+   "family": "Pieridae",
+   "order": "Lepidoptera",
+   "level": 50,
+   "photo": {
+    "file": "129362-db9621bb.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Blake A. Mann, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/241341558"
+   },
+   "silhouette": {
+    "file": "129362-e2ea6e82.svg",
+    "rank": "family",
+    "matched": "Pieridae",
+    "credit": "Prespa Research Group",
+    "link": "https://www.phylopic.org/images/7c15898f-a80c-4f2b-bac5-07a187782879"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Pieris",
+     "Colias",
+     "Eurema",
+     "Phoebis",
+     "Gonepteryx",
+     "Pontia",
+     "Anthocharis",
+     "Catopsilia",
+     "Delias",
+     "Nathalis"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais"
+    ],
+    "speciesGenus": [
+     "Zerene eurydice"
+    ],
+    "speciesFamily": [
+     "Pieris rapae",
+     "Pieris napi",
+     "Colias eurytheme",
+     "Gonepteryx rhamni",
+     "Pieris brassicae",
+     "Phoebis sennae",
+     "Colias philodice",
+     "Anthocharis cardamines",
+     "Colias crocea",
+     "Pontia protodice"
+    ]
+   }
+  },
+  {
+   "id": 58579,
+   "scientific": "Polygonia interrogationis",
+   "genus": "Polygonia",
+   "epithet": "interrogationis",
+   "common": "Question Mark",
+   "family": "Nymphalidae",
+   "order": "Lepidoptera",
+   "level": 43,
+   "photo": {
+    "file": "58579-65321a51.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Paweł Pieluszyński, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/27231118"
+   },
+   "silhouette": {
+    "file": "58579-af79a30a.svg",
+    "rank": "genus",
+    "matched": "Polygonia",
+    "credit": "Gareth Monger",
+    "link": "https://www.phylopic.org/images/6e796c9a-b7b2-4534-91b8-6f843dce041e"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Danaus",
+     "Vanessa",
+     "Junonia",
+     "Argynnis",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais",
+     "Dione",
+     "Nymphalis",
+     "Pararge"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Pieris",
+     "Idaea",
+     "Acronicta",
+     "Polyommatus",
+     "Colias",
+     "Noctua",
+     "Eurema",
+     "Eupithecia",
+     "Lycaena"
+    ],
+    "speciesGenus": [
+     "Polygonia c-album",
+     "Polygonia comma",
+     "Polygonia faunus",
+     "Polygonia satyrus",
+     "Polygonia gracilis",
+     "Polygonia c-aureum",
+     "Polygonia progne",
+     "Polygonia egea",
+     "Polygonia oreas",
+     "Polygonia haroldii"
+    ],
+    "speciesFamily": [
+     "Danaus plexippus",
+     "Vanessa atalanta",
+     "Vanessa cardui",
+     "Dione vanillae",
+     "Pararge aegeria",
+     "Aglais io",
+     "Limenitis arthemis",
+     "Maniola jurtina",
+     "Phyciodes tharos",
+     "Junonia coenia"
+    ]
+   }
+  },
+  {
+   "id": 56832,
+   "scientific": "Nymphalis antiopa",
+   "genus": "Nymphalis",
+   "epithet": "antiopa",
+   "common": "Mourning Cloak",
+   "family": "Nymphalidae",
+   "order": "Lepidoptera",
+   "level": 40,
+   "photo": {
+    "file": "56832-82344f4d.jpeg",
+    "license": "cc-by",
+    "credit": "(c) Matt Muir, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/135437627"
+   },
+   "silhouette": {
+    "file": "56832-9f044717.svg",
+    "rank": "species",
+    "matched": "Nymphalis antiopa",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/ec822d7d-ef19-4652-b81d-0de952369fbd"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Danaus",
+     "Vanessa",
+     "Junonia",
+     "Argynnis",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais",
+     "Polygonia",
+     "Dione",
+     "Pararge"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Pieris",
+     "Idaea",
+     "Acronicta",
+     "Polyommatus",
+     "Colias",
+     "Noctua",
+     "Eurema",
+     "Eupithecia",
+     "Lycaena"
+    ],
+    "speciesGenus": [
+     "Nymphalis californica",
+     "Nymphalis l-album",
+     "Nymphalis polychloros",
+     "Nymphalis xanthomelas",
+     "Nymphalis cyanomelas"
+    ],
+    "speciesFamily": [
+     "Danaus plexippus",
+     "Vanessa atalanta",
+     "Vanessa cardui",
+     "Dione vanillae",
+     "Pararge aegeria",
+     "Aglais io",
+     "Limenitis arthemis",
+     "Maniola jurtina",
+     "Phyciodes tharos",
+     "Junonia coenia"
+    ]
+   }
+  },
+  {
+   "id": 60607,
+   "scientific": "Limenitis arthemis",
+   "genus": "Limenitis",
+   "epithet": "arthemis",
+   "common": "Red-spotted Admiral",
+   "family": "Nymphalidae",
+   "order": "Lepidoptera",
+   "level": 39,
+   "photo": {
+    "file": "60607-d48b2afc.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) sillyanimals, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/135666602"
+   },
+   "silhouette": {
+    "file": "60607-29b34651.svg",
+    "rank": "species",
+    "matched": "Limenitis arthemis",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/5ab9e12f-94df-4af1-b42f-09c0c823c4fd"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Danaus",
+     "Vanessa",
+     "Junonia",
+     "Argynnis",
+     "Phyciodes",
+     "Aglais",
+     "Polygonia",
+     "Dione",
+     "Nymphalis",
+     "Pararge"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Pieris",
+     "Idaea",
+     "Acronicta",
+     "Polyommatus",
+     "Colias",
+     "Noctua",
+     "Eurema",
+     "Eupithecia",
+     "Lycaena"
+    ],
+    "speciesGenus": [
+     "Limenitis archippus",
+     "Limenitis lorquini",
+     "Limenitis reducta",
+     "Limenitis camilla",
+     "Limenitis weidemeyerii",
+     "Limenitis populi",
+     "Limenitis sulpitia",
+     "Limenitis dudu",
+     "Limenitis helmanni",
+     "Limenitis asura"
+    ],
+    "speciesFamily": [
+     "Danaus plexippus",
+     "Vanessa atalanta",
+     "Vanessa cardui",
+     "Dione vanillae",
+     "Pararge aegeria",
+     "Aglais io",
+     "Maniola jurtina",
+     "Phyciodes tharos",
+     "Junonia coenia",
+     "Nymphalis antiopa"
+    ]
+   }
+  },
+  {
+   "id": 49761,
+   "scientific": "Anartia jatrophae",
+   "genus": "Anartia",
+   "epithet": "jatrophae",
+   "common": "White Peacock",
+   "family": "Nymphalidae",
+   "order": "Lepidoptera",
+   "level": 43,
+   "photo": {
+    "file": "49761-03d29e6a.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Mark + Holly Salvato, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/56989159"
+   },
+   "silhouette": {
+    "file": "49761-c15d8a63.svg",
+    "rank": "family",
+    "matched": "Nymphalidae",
+    "credit": "Mattia Menchetti",
+    "link": "https://www.phylopic.org/images/0c391d43-30a5-4077-bdcb-fbb80f5d13e6"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Danaus",
+     "Vanessa",
+     "Junonia",
+     "Argynnis",
+     "Phyciodes",
+     "Limenitis",
+     "Aglais",
+     "Polygonia",
+     "Dione",
+     "Nymphalis"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Pieris",
+     "Idaea",
+     "Acronicta",
+     "Polyommatus",
+     "Colias",
+     "Noctua",
+     "Eurema",
+     "Eupithecia",
+     "Lycaena"
+    ],
+    "speciesGenus": [
+     "Anartia fatima",
+     "Anartia amathea",
+     "Anartia chrysopelea",
+     "Anartia lytrea"
+    ],
+    "speciesFamily": [
+     "Danaus plexippus",
+     "Vanessa atalanta",
+     "Vanessa cardui",
+     "Dione vanillae",
+     "Pararge aegeria",
+     "Aglais io",
+     "Limenitis arthemis",
+     "Maniola jurtina",
+     "Phyciodes tharos",
+     "Junonia coenia"
+    ]
+   }
+  },
+  {
+   "id": 50931,
+   "scientific": "Strymon melinus",
+   "genus": "Strymon",
+   "epithet": "melinus",
+   "common": "Gray Hairstreak",
+   "family": "Lycaenidae",
+   "order": "Lepidoptera",
+   "level": 40,
+   "photo": {
+    "file": "50931-1cebc9c9.jpg",
+    "license": "cc-by",
+    "credit": "(c) dhasdf, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/216356415"
+   },
+   "silhouette": {
+    "file": "50931-afea26a1.svg",
+    "rank": "family",
+    "matched": "Lycaenidae",
+    "credit": "Mattia Menchetti",
+    "link": "https://www.phylopic.org/images/5aeaf558-3c48-4173-83b4-dbf2846f8d75"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Polyommatus",
+     "Lycaena",
+     "Celastrina",
+     "Everes",
+     "Callophrys",
+     "Satyrium",
+     "Leptotes",
+     "Plebejus",
+     "Icaricia",
+     "Calycopis"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Strymon istapa",
+     "Strymon eurytulus",
+     "Strymon bazochii",
+     "Strymon rufofusca",
+     "Strymon bubastus",
+     "Strymon astiocha",
+     "Strymon mulucha",
+     "Strymon yojoa",
+     "Strymon cestri",
+     "Strymon ziba"
+    ],
+    "speciesFamily": [
+     "Polyommatus icarus",
+     "Lycaena phlaeas",
+     "Everes comyntas",
+     "Celastrina argiolus",
+     "Zizina otis",
+     "Celastrina neglecta",
+     "Calycopis cecrops",
+     "Hemiargus ceraunus",
+     "Lampides boeticus",
+     "Aricia agestis"
+    ]
+   }
+  },
+  {
+   "id": 81559,
+   "scientific": "Epargyreus clarus",
+   "genus": "Epargyreus",
+   "epithet": "clarus",
+   "common": "Silver-spotted Skipper",
+   "family": "Hesperiidae",
+   "order": "Lepidoptera",
+   "level": 40,
+   "photo": {
+    "file": "81559-c341fdc8.jpg",
+    "license": "cc-by",
+    "credit": "(c) Jason Hill, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/37370597"
+   },
+   "silhouette": {
+    "file": "81559-bd907fac.svg",
+    "rank": "family",
+    "matched": "Hesperiidae",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/54029a7d-6c5c-48a6-bd91-189b679e690e"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Erynnis",
+     "Hylephila",
+     "Burnsius",
+     "Lon",
+     "Atalopedes",
+     "Ochlodes",
+     "Polites",
+     "Thymelicus",
+     "Cecropterus",
+     "Euphyes"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Epargyreus tmolis",
+     "Epargyreus cruza",
+     "Epargyreus socus",
+     "Epargyreus exadeus",
+     "Epargyreus orizaba",
+     "Epargyreus aspina",
+     "Epargyreus barisses",
+     "Epargyreus clavicornis",
+     "Epargyreus spina",
+     "Epargyreus zestos"
+    ],
+    "speciesFamily": [
+     "Hylephila phyleus",
+     "Atalopedes huron",
+     "Ochlodes sylvanus",
+     "Lon zabulon",
+     "Polites peckius",
+     "Thymelicus lineola",
+     "Erynnis horatius",
+     "Lerema accius",
+     "Euphyes vestris",
+     "Burnsius communis"
+    ]
+   }
+  },
+  {
+   "id": 67435,
+   "scientific": "Urbanus proteus",
+   "genus": "Urbanus",
+   "epithet": "proteus",
+   "common": "Long-tailed Skipper",
+   "family": "Hesperiidae",
+   "order": "Lepidoptera",
+   "level": 46,
+   "photo": {
+    "file": "67435-7f5e8564.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Ken Janes, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/69716978"
+   },
+   "silhouette": {
+    "file": "67435-bd907fac.svg",
+    "rank": "family",
+    "matched": "Hesperiidae",
+    "credit": "Unknown",
+    "link": "https://www.phylopic.org/images/54029a7d-6c5c-48a6-bd91-189b679e690e"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Erynnis",
+     "Hylephila",
+     "Epargyreus",
+     "Burnsius",
+     "Lon",
+     "Atalopedes",
+     "Ochlodes",
+     "Polites",
+     "Thymelicus",
+     "Cecropterus"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Urbanus esmeraldus",
+     "Urbanus esta",
+     "Urbanus pronta",
+     "Urbanus viterboana",
+     "Urbanus velinus",
+     "Urbanus evona",
+     "Urbanus elmina",
+     "Urbanus alva",
+     "Urbanus tucuti",
+     "Urbanus belli"
+    ],
+    "speciesFamily": [
+     "Hylephila phyleus",
+     "Epargyreus clarus",
+     "Atalopedes huron",
+     "Ochlodes sylvanus",
+     "Lon zabulon",
+     "Polites peckius",
+     "Thymelicus lineola",
+     "Erynnis horatius",
+     "Lerema accius",
+     "Euphyes vestris"
+    ]
+   }
+  },
+  {
+   "id": 81590,
+   "scientific": "Eacles imperialis",
+   "genus": "Eacles",
+   "epithet": "imperialis",
+   "common": "Imperial Moth",
+   "family": "Saturniidae",
+   "order": "Lepidoptera",
+   "level": 46,
+   "photo": {
+    "file": "81590-6fbe91a1.png",
+    "license": "cc-by-sa",
+    "credit": "(c) Alie / C.A. Kratzer, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/54937895"
+   },
+   "silhouette": {
+    "file": "81590-6f496f69.svg",
+    "rank": "species",
+    "matched": "Eacles imperialis",
+    "credit": "Lauren Otolski",
+    "link": "https://www.phylopic.org/images/db83e712-f735-40b0-94f4-a5db2c3ee0b7"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Antheraea",
+     "Actias",
+     "Automeris",
+     "Anisota",
+     "Dryocampa",
+     "Hyalophora",
+     "Hemileuca",
+     "Saturnia",
+     "Callosamia",
+     "Rothschildia"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Eacles pini",
+     "Eacles approximans",
+     "Eacles ducalis",
+     "Eacles penelope",
+     "Eacles ormondei",
+     "Eacles oslari",
+     "Eacles guianensis",
+     "Eacles barnesi",
+     "Eacles silkae",
+     "Eacles masoni"
+    ],
+    "speciesFamily": [
+     "Antheraea polyphemus",
+     "Actias luna",
+     "Dryocampa rubicunda",
+     "Automeris io",
+     "Hyalophora cecropia",
+     "Callosamia promethea",
+     "Saturnia pyri",
+     "Callosamia angulifera",
+     "Saturnia pavonia",
+     "Citheronia regalis"
+    ]
+   }
+  },
+  {
+   "id": 82279,
+   "scientific": "Automeris io",
+   "genus": "Automeris",
+   "epithet": "io",
+   "common": "Io Moth",
+   "family": "Saturniidae",
+   "order": "Lepidoptera",
+   "level": 46,
+   "photo": {
+    "file": "82279-ee51be17.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Anita, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/230923"
+   },
+   "silhouette": {
+    "file": "82279-33181c70.svg",
+    "rank": "family",
+    "matched": "Saturniidae",
+    "credit": "Mali'o Kodis, photograph by Jim Vargo",
+    "link": "https://www.phylopic.org/images/c6781aa0-c13e-4c78-955f-f891abbb5e5e"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Antheraea",
+     "Actias",
+     "Anisota",
+     "Eacles",
+     "Dryocampa",
+     "Hyalophora",
+     "Hemileuca",
+     "Saturnia",
+     "Callosamia",
+     "Rothschildia"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Automeris naranja",
+     "Automeris illustris",
+     "Automeris cecrops",
+     "Automeris zugana",
+     "Automeris metzli",
+     "Automeris postalbida",
+     "Automeris liberia",
+     "Automeris zephyria",
+     "Automeris excreta",
+     "Automeris melanops"
+    ],
+    "speciesFamily": [
+     "Antheraea polyphemus",
+     "Actias luna",
+     "Dryocampa rubicunda",
+     "Eacles imperialis",
+     "Hyalophora cecropia",
+     "Callosamia promethea",
+     "Saturnia pyri",
+     "Callosamia angulifera",
+     "Saturnia pavonia",
+     "Citheronia regalis"
+    ]
+   }
+  },
+  {
+   "id": 61505,
+   "scientific": "Manduca sexta",
+   "genus": "Manduca",
+   "epithet": "sexta",
+   "common": "Carolina Sphinx",
+   "family": "Sphingidae",
+   "order": "Lepidoptera",
+   "level": 46,
+   "photo": {
+    "file": "61505-4caa233e.jpg",
+    "license": "cc-by",
+    "credit": "(c) Clifton Ladd, C.W.B., some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/56380345"
+   },
+   "silhouette": {
+    "file": "61505-f7468527.svg",
+    "rank": "family",
+    "matched": "Sphingidae",
+    "credit": "Gareth Monger",
+    "link": "https://www.phylopic.org/images/6b9f52e9-3f9d-49b8-865b-9f2718f91ee6"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Hyles",
+     "Hemaris",
+     "Macroglossum",
+     "Sphinx",
+     "Eumorpha",
+     "Ceratomia",
+     "Deilephila",
+     "Agrius",
+     "Paonias",
+     "Xylophanes"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Manduca rustica",
+     "Manduca quinquemaculatus",
+     "Manduca florestan",
+     "Manduca paphus",
+     "Manduca jasminearum",
+     "Manduca schausi",
+     "Manduca occulta",
+     "Manduca muscosa",
+     "Manduca pellenia",
+     "Manduca diffissa"
+    ],
+    "speciesFamily": [
+     "Hyles lineata",
+     "Macroglossum stellatarum",
+     "Hemaris diffinis",
+     "Hemaris thysbe",
+     "Deilephila elpenor",
+     "Agrius convolvuli",
+     "Darapsa myron",
+     "Paonias excaecata",
+     "Ceratomia undulosa",
+     "Mimas tiliae"
+    ]
+   }
+  },
+  {
+   "id": 82379,
+   "scientific": "Hemaris thysbe",
+   "genus": "Hemaris",
+   "epithet": "thysbe",
+   "common": "Hummingbird Clearwing",
+   "family": "Sphingidae",
+   "order": "Lepidoptera",
+   "level": 46,
+   "photo": {
+    "file": "82379-343396a7.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Heather A. Wise, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/94335170"
+   },
+   "silhouette": {
+    "file": "82379-1f5d7abf.svg",
+    "rank": "species",
+    "matched": "Hemaris thysbe",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/b9eff92e-c95b-40e6-b504-0e27f6ebdd76"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Hyles",
+     "Macroglossum",
+     "Manduca",
+     "Sphinx",
+     "Eumorpha",
+     "Ceratomia",
+     "Deilephila",
+     "Agrius",
+     "Paonias",
+     "Xylophanes"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Hemaris diffinis",
+     "Hemaris fuciformis",
+     "Hemaris thetis",
+     "Hemaris tityus",
+     "Hemaris aethra",
+     "Hemaris gracilis",
+     "Hemaris affinis",
+     "Hemaris croatica",
+     "Hemaris radians",
+     "Hemaris ottonis"
+    ],
+    "speciesFamily": [
+     "Hyles lineata",
+     "Macroglossum stellatarum",
+     "Manduca sexta",
+     "Deilephila elpenor",
+     "Agrius convolvuli",
+     "Darapsa myron",
+     "Paonias excaecata",
+     "Ceratomia undulosa",
+     "Mimas tiliae",
+     "Hyles gallii"
+    ]
+   }
+  },
+  {
+   "id": 67440,
+   "scientific": "Utetheisa ornatrix",
+   "genus": "Utetheisa",
+   "epithet": "ornatrix",
+   "common": "Ornate Bella Moth",
+   "family": "Erebidae",
+   "order": "Lepidoptera",
+   "level": 52,
+   "photo": {
+    "file": "67440-ba19103e.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Edward Perry IV, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/27625752"
+   },
+   "silhouette": {
+    "file": "67440-2c270900.svg",
+    "rank": "family",
+    "matched": "Erebidae",
+    "credit": "Zyoute (modified)",
+    "link": "https://www.phylopic.org/images/59587051-70a0-46d9-9953-78b1b39592b9"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Hypena",
+     "Catocala",
+     "Spilosoma",
+     "Orgyia",
+     "Lophocampa",
+     "Halysidota",
+     "Lymantria",
+     "Pyrrharctia",
+     "Idia",
+     "Hyphantria"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Utetheisa pulchella",
+     "Utetheisa pulchelloides",
+     "Utetheisa lotrix",
+     "Utetheisa inconstans",
+     "Utetheisa aegrotum",
+     "Utetheisa elata",
+     "Utetheisa varians",
+     "Utetheisa abraxoides",
+     "Utetheisa cruentata",
+     "Utetheisa salomonis"
+    ],
+    "speciesFamily": [
+     "Pyrrharctia isabella",
+     "Lymantria dispar",
+     "Hyphantria cunea",
+     "Spilosoma virginica",
+     "Estigmene acrea",
+     "Halysidota tessellaris",
+     "Lophocampa caryae",
+     "Hypena scabra",
+     "Hypercompe scribonia",
+     "Euchaetes egle"
+    ]
+   }
+  },
+  {
+   "id": 121612,
+   "scientific": "Estigmene acrea",
+   "genus": "Estigmene",
+   "epithet": "acrea",
+   "common": "Salt Marsh Moth",
+   "family": "Erebidae",
+   "order": "Lepidoptera",
+   "level": 41,
+   "photo": {
+    "file": "121612-b9917a3b.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) sebert, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/5519433"
+   },
+   "silhouette": {
+    "file": "121612-2c270900.svg",
+    "rank": "family",
+    "matched": "Erebidae",
+    "credit": "Zyoute (modified)",
+    "link": "https://www.phylopic.org/images/59587051-70a0-46d9-9953-78b1b39592b9"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Hypena",
+     "Catocala",
+     "Spilosoma",
+     "Orgyia",
+     "Lophocampa",
+     "Halysidota",
+     "Lymantria",
+     "Pyrrharctia",
+     "Idia",
+     "Hyphantria"
+    ],
+    "genusOrder": [
+     "Papilio",
+     "Danaus",
+     "Vanessa",
+     "Pieris",
+     "Junonia",
+     "Argynnis",
+     "Idaea",
+     "Acronicta",
+     "Phyciodes",
+     "Limenitis"
+    ],
+    "speciesGenus": [
+     "Estigmene albida",
+     "Estigmene unilinea",
+     "Estigmene multivittata",
+     "Estigmene trivitta",
+     "Estigmene tenuistrigata",
+     "Estigmene internigralis",
+     "Estigmene sabulosa",
+     "Estigmene tilkiani",
+     "Estigmene neuriastis",
+     "Estigmene ansorgei"
+    ],
+    "speciesFamily": [
+     "Pyrrharctia isabella",
+     "Lymantria dispar",
+     "Hyphantria cunea",
+     "Spilosoma virginica",
+     "Halysidota tessellaris",
+     "Lophocampa caryae",
+     "Hypena scabra",
+     "Hypercompe scribonia",
+     "Euchaetes egle",
+     "Euplagia quadripunctaria"
+    ]
+   }
+  },
+  {
+   "id": 48987,
+   "scientific": "Hippodamia convergens",
+   "genus": "Hippodamia",
+   "epithet": "convergens",
+   "common": "Convergent Lady Beetle",
+   "family": "Coccinellidae",
+   "order": "Coleoptera",
+   "level": 42,
+   "photo": {
+    "file": "48987-3f4d548c.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) pmmcnaturalist1, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/19523462"
+   },
+   "silhouette": {
+    "file": "48987-40d8c068.svg",
+    "rank": "family",
+    "matched": "Coccinellidae",
+    "credit": "Melissa Broussard",
+    "link": "https://www.phylopic.org/images/984448b7-2ada-4e49-aaf1-3dcb7b056532"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Harmonia",
+     "Coccinella",
+     "Cycloneda",
+     "Psyllobora",
+     "Propylea",
+     "Adalia",
+     "Coleomegilla",
+     "Chilocorus",
+     "Cheilomenes",
+     "Calvia"
+    ],
+    "genusOrder": [
+     "Cicindela",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus",
+     "Diabrotica",
+     "Popillia",
+     "Chrysolina"
+    ],
+    "speciesGenus": [
+     "Hippodamia variegata",
+     "Hippodamia tredecimpunctata",
+     "Hippodamia parenthesis",
+     "Hippodamia quinquesignata",
+     "Hippodamia caseyi",
+     "Hippodamia glacialis",
+     "Hippodamia sinuata",
+     "Hippodamia oregonensis",
+     "Hippodamia apicalis",
+     "Hippodamia septemmaculata"
+    ],
+    "speciesFamily": [
+     "Harmonia axyridis",
+     "Coccinella septempunctata",
+     "Propylea quatuordecimpunctata",
+     "Cycloneda sanguinea",
+     "Psyllobora vigintiduopunctata",
+     "Adalia bipunctata",
+     "Coleomegilla maculata",
+     "Cheilomenes sexmaculata",
+     "Halyzia sedecimguttata",
+     "Olla v-nigrum"
+    ]
+   }
+  },
+  {
+   "id": 126267,
+   "scientific": "Coleomegilla maculata",
+   "genus": "Coleomegilla",
+   "epithet": "maculata",
+   "common": "Spotted Pink Lady Beetle",
+   "family": "Coccinellidae",
+   "order": "Coleoptera",
+   "level": 46,
+   "photo": {
+    "file": "126267-1ce0ae31.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Dusty, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/89354203"
+   },
+   "silhouette": {
+    "file": "126267-40d8c068.svg",
+    "rank": "family",
+    "matched": "Coccinellidae",
+    "credit": "Melissa Broussard",
+    "link": "https://www.phylopic.org/images/984448b7-2ada-4e49-aaf1-3dcb7b056532"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Harmonia",
+     "Coccinella",
+     "Hippodamia",
+     "Cycloneda",
+     "Psyllobora",
+     "Propylea",
+     "Adalia",
+     "Chilocorus",
+     "Cheilomenes",
+     "Calvia"
+    ],
+    "genusOrder": [
+     "Cicindela",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus",
+     "Diabrotica",
+     "Popillia",
+     "Chrysolina"
+    ],
+    "speciesGenus": [
+     "Coleomegilla quadrifasciata",
+     "Coleomegilla occulta",
+     "Coleomegilla cubensis",
+     "Coleomegilla innotata"
+    ],
+    "speciesFamily": [
+     "Harmonia axyridis",
+     "Coccinella septempunctata",
+     "Hippodamia convergens",
+     "Propylea quatuordecimpunctata",
+     "Hippodamia variegata",
+     "Cycloneda sanguinea",
+     "Psyllobora vigintiduopunctata",
+     "Adalia bipunctata",
+     "Cheilomenes sexmaculata",
+     "Halyzia sedecimguttata"
+    ]
+   }
+  },
+  {
+   "id": 118559,
+   "scientific": "Tetraopes tetrophthalmus",
+   "genus": "Tetraopes",
+   "epithet": "tetrophthalmus",
+   "common": "Red Milkweed Beetle",
+   "family": "Cerambycidae",
+   "order": "Coleoptera",
+   "level": 43,
+   "photo": {
+    "file": "118559-92d0fbad.jpg",
+    "license": "cc-by-sa",
+    "credit": "(c) Judy Gallagher, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/4105426"
+   },
+   "silhouette": {
+    "file": "118559-f7326794.svg",
+    "rank": "family",
+    "matched": "Cerambycidae",
+    "credit": "C. Camilo Julián-Caballero",
+    "link": "https://www.phylopic.org/images/55645da5-65a0-4196-8364-0e1fccf3b9d3"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Monochamus",
+     "Prionus",
+     "Stictoleptura",
+     "Stenurella",
+     "Rutpela",
+     "Rhagium",
+     "Typocerus",
+     "Agapanthia",
+     "Megacyllene",
+     "Clytus"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Tetraopes femoratus",
+     "Tetraopes melanurus",
+     "Tetraopes texanus",
+     "Tetraopes annulatus",
+     "Tetraopes basalis",
+     "Tetraopes discoideus",
+     "Tetraopes thermophilus",
+     "Tetraopes quinquemaculatus",
+     "Tetraopes pilosus",
+     "Tetraopes batesi"
+    ],
+    "speciesFamily": [
+     "Monochamus scutellatus",
+     "Stictoleptura rubra",
+     "Rutpela maculata",
+     "Megacyllene robiniae",
+     "Stenurella melanura",
+     "Typocerus velutinus",
+     "Clytus arietis",
+     "Aromia moschata",
+     "Prionus coriarius",
+     "Prionus laticollis"
+    ]
+   }
+  },
+  {
+   "id": 83929,
+   "scientific": "Phanaeus vindex",
+   "genus": "Phanaeus",
+   "epithet": "vindex",
+   "common": "Rainbow Scarab",
+   "family": "Scarabaeidae",
+   "order": "Coleoptera",
+   "level": 54,
+   "photo": {
+    "file": "83929-6915a8e8.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Thomas Shahan, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/206260913"
+   },
+   "silhouette": {
+    "file": "83929-2d157c6b.svg",
+    "rank": "family",
+    "matched": "Scarabaeidae",
+    "credit": "C. Camilo Julián-Caballero",
+    "link": "https://www.phylopic.org/images/f33beb49-f71a-4bd6-94e6-b1e6558d1a25"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Popillia",
+     "Oxythyrea",
+     "Cetonia",
+     "Cotinis",
+     "Protaetia",
+     "Euphoria",
+     "Cyclocephala",
+     "Melolontha",
+     "Phyllophaga",
+     "Pelidnota"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Phanaeus igneus",
+     "Phanaeus difformis",
+     "Phanaeus texensis",
+     "Phanaeus amithaon",
+     "Phanaeus triangularis",
+     "Phanaeus quadridens",
+     "Phanaeus palliatus",
+     "Phanaeus furiosus",
+     "Phanaeus demon",
+     "Phanaeus daphnis"
+    ],
+    "speciesFamily": [
+     "Popillia japonica",
+     "Cetonia aurata",
+     "Oxythyrea funesta",
+     "Cotinis nitida",
+     "Exomala orientalis",
+     "Pelidnota punctata",
+     "Oryctes nasicornis",
+     "Melolontha melolontha",
+     "Cotinis mutabilis",
+     "Phyllopertha horticola"
+    ]
+   }
+  },
+  {
+   "id": 48259,
+   "scientific": "Pelidnota punctata",
+   "genus": "Pelidnota",
+   "epithet": "punctata",
+   "common": "Grapevine Beetle",
+   "family": "Scarabaeidae",
+   "order": "Coleoptera",
+   "level": 47,
+   "photo": {
+    "file": "48259-2344d877.jpg",
+    "license": "cc-by",
+    "credit": "(c) Zachary Dankowicz, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/127085925"
+   },
+   "silhouette": {
+    "file": "48259-2d157c6b.svg",
+    "rank": "family",
+    "matched": "Scarabaeidae",
+    "credit": "C. Camilo Julián-Caballero",
+    "link": "https://www.phylopic.org/images/f33beb49-f71a-4bd6-94e6-b1e6558d1a25"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Popillia",
+     "Oxythyrea",
+     "Cetonia",
+     "Cotinis",
+     "Protaetia",
+     "Euphoria",
+     "Cyclocephala",
+     "Melolontha",
+     "Phyllophaga",
+     "Anomala"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Pelidnota virescens",
+     "Pelidnota notata",
+     "Pelidnota prasina",
+     "Pelidnota strigosa",
+     "Pelidnota sordida",
+     "Pelidnota semiaurata",
+     "Pelidnota cyanipes",
+     "Pelidnota pulchella",
+     "Pelidnota sumptuosa",
+     "Pelidnota lugubris"
+    ],
+    "speciesFamily": [
+     "Popillia japonica",
+     "Cetonia aurata",
+     "Oxythyrea funesta",
+     "Cotinis nitida",
+     "Exomala orientalis",
+     "Oryctes nasicornis",
+     "Melolontha melolontha",
+     "Cotinis mutabilis",
+     "Phyllopertha horticola",
+     "Amphimallon solstitiale"
+    ]
+   }
+  },
+  {
+   "id": 122214,
+   "scientific": "Odontotaenius disjunctus",
+   "genus": "Odontotaenius",
+   "epithet": "disjunctus",
+   "common": "Horned Passalus Beetle",
+   "family": "Passalidae",
+   "order": "Coleoptera",
+   "level": 46,
+   "photo": {
+    "file": "122214-9c3b045a.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) The Leach, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/137658403"
+   },
+   "silhouette": {
+    "file": "122214-39471333.svg",
+    "rank": "species",
+    "matched": "Odontotaenius disjunctus",
+    "credit": "Wesley Rhinehart",
+    "link": "https://www.phylopic.org/images/57c09235-87d7-4159-85af-c77b500e0404"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Passalus",
+     "Veturius",
+     "Ptichopus",
+     "Aulacocyclus",
+     "Aceraius",
+     "Verres",
+     "Pharochilus",
+     "Mastachilus",
+     "Didimus",
+     "Leptaulax"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Odontotaenius striatopunctatus",
+     "Odontotaenius floridanus",
+     "Odontotaenius zodiacus",
+     "Odontotaenius cerastes",
+     "Odontotaenius cuspidatus"
+    ],
+    "speciesFamily": [
+     "Ptichopus angulatus",
+     "Aceraius grandis",
+     "Aulacocyclus edentulus",
+     "Pharochilus rugiceps",
+     "Passalus punctatostriatus",
+     "Passalus punctiger",
+     "Mastachilus australasicus",
+     "Aulacocyclus kaupii",
+     "Passalus interstitialis",
+     "Veturius standfussi"
+    ]
+   }
+  },
+  {
+   "id": 118855,
+   "scientific": "Calosoma scrutator",
+   "genus": "Calosoma",
+   "epithet": "scrutator",
+   "common": "Fiery Searcher",
+   "family": "Carabidae",
+   "order": "Coleoptera",
+   "level": 52,
+   "photo": {
+    "file": "118855-39898be2.jpeg",
+    "license": "cc-by-nc",
+    "credit": "(c) Kevin Firth, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/63960630"
+   },
+   "silhouette": {
+    "file": "118855-86e9e7d4.svg",
+    "rank": "genus",
+    "matched": "Calosoma",
+    "credit": "Yves Bousquet",
+    "link": "https://www.phylopic.org/images/1505fbbc-847b-480b-b795-18cf4b8916c3"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Carabus",
+     "Harpalus",
+     "Pterostichus",
+     "Amara",
+     "Scarites",
+     "Chlaenius",
+     "Stenolophus",
+     "Bembidion",
+     "Nebria",
+     "Lebia"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus",
+     "Diabrotica"
+    ],
+    "speciesGenus": [
+     "Calosoma sayi",
+     "Calosoma sycophanta",
+     "Calosoma inquisitor",
+     "Calosoma marginale",
+     "Calosoma schayeri",
+     "Calosoma peregrinator",
+     "Calosoma frigidum",
+     "Calosoma maderae",
+     "Calosoma angulatum",
+     "Calosoma alternans"
+    ],
+    "speciesFamily": [
+     "Carabus nemoralis",
+     "Carabus coriaceus",
+     "Scarites subterraneus",
+     "Harpalus rufipes",
+     "Carabus granulatus",
+     "Nebria brevicollis",
+     "Harpalus pensylvanicus",
+     "Harpalus affinis",
+     "Amara aenea",
+     "Pterostichus melanarius"
+    ]
+   }
+  },
+  {
+   "id": 183193,
+   "scientific": "Chalcophora virginiensis",
+   "genus": "Chalcophora",
+   "epithet": "virginiensis",
+   "common": "Sculptured Pine Borer",
+   "family": "Buprestidae",
+   "order": "Coleoptera",
+   "level": 54,
+   "photo": {
+    "file": "183193-b243c5f3.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Alice Karakachian, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/47437799"
+   },
+   "silhouette": {
+    "file": "183193-07523a34.svg",
+    "rank": "family",
+    "matched": "Buprestidae",
+    "credit": "Crystal Maier",
+    "link": "https://www.phylopic.org/images/46b14f9a-5bca-4248-9a07-41eae7031f10"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Acmaeodera",
+     "Anthaxia",
+     "Agrilus",
+     "Buprestis",
+     "Dicerca",
+     "Chrysobothris",
+     "Castiarina",
+     "Capnodis",
+     "Trachys",
+     "Euchroma"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Chalcophora mariana",
+     "Chalcophora angulicollis",
+     "Chalcophora japonica",
+     "Chalcophora georgiana",
+     "Chalcophora fortis",
+     "Chalcophora detrita",
+     "Chalcophora mexicana",
+     "Chalcophora intermedia",
+     "Chalcophora liberta",
+     "Chalcophora hondurasica"
+    ],
+    "speciesFamily": [
+     "Agrilus planipennis",
+     "Buprestis aurulenta",
+     "Capnodis tenebrionis",
+     "Anthaxia nitidula",
+     "Anthaxia hungarica",
+     "Anthaxia quadripunctata",
+     "Euchroma giganteum",
+     "Acmaeodera tubulus",
+     "Acmaeodera mixta",
+     "Agrilus ruficollis"
+    ]
+   }
+  },
+  {
+   "id": 84162,
+   "scientific": "Chrysochus auratus",
+   "genus": "Chrysochus",
+   "epithet": "auratus",
+   "common": "Dogbane Leaf Beetle",
+   "family": "Chrysomelidae",
+   "order": "Coleoptera",
+   "level": 48,
+   "photo": {
+    "file": "84162-0fcdbc64.jpg",
+    "license": "cc-by-sa",
+    "credit": "(c) Jimmy Dee, some rights reserved (CC BY-SA)",
+    "link": "https://www.inaturalist.org/observations/30687580"
+   },
+   "silhouette": {
+    "file": "84162-2df34554.svg",
+    "rank": "species",
+    "matched": "Chrysochus auratus",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/7c72a017-e297-4867-ac96-8a2e05ad8ba7"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Diabrotica",
+     "Chrysolina",
+     "Cryptocephalus",
+     "Leptinotarsa",
+     "Chrysomela",
+     "Calligrapha",
+     "Cassida",
+     "Altica",
+     "Labidomera",
+     "Agelastica"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Chrysochus cobaltinus",
+     "Chrysochus chinensis",
+     "Chrysochus asclepiadeus",
+     "Chrysochus goniostoma",
+     "Chrysochus globicollis"
+    ],
+    "speciesFamily": [
+     "Diabrotica undecimpunctata",
+     "Labidomera clivicollis",
+     "Agelastica alni",
+     "Leptinotarsa decemlineata",
+     "Chrysomela populi",
+     "Chrysolina bankii",
+     "Chrysolina americana",
+     "Fasta fastuosa",
+     "Lilioceris lilii",
+     "Xanthogaleruca luteola"
+    ]
+   }
+  },
+  {
+   "id": 81746,
+   "scientific": "Necrophila americana",
+   "genus": "Necrophila",
+   "epithet": "americana",
+   "common": "American Carrion Beetle",
+   "family": "Staphylinidae",
+   "order": "Coleoptera",
+   "level": 47,
+   "photo": {
+    "file": "81746-3fd67cbd.jpg",
+    "license": "cc-by",
+    "credit": "(c) Katja Schulz, some rights reserved (CC BY)",
+    "link": "https://www.inaturalist.org/observations/15065918"
+   },
+   "silhouette": {
+    "file": "81746-ccb53d95.svg",
+    "rank": "species",
+    "matched": "Necrophila americana",
+    "credit": "Andy Wilson",
+    "link": "https://www.phylopic.org/images/8577daf1-b6e5-404e-bca5-44064298253c"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Nicrophorus",
+     "Ocypus",
+     "Platydracus",
+     "Paederus",
+     "Silpha",
+     "Oiceoptoma",
+     "Phosphuga",
+     "Philonthus",
+     "Stenus",
+     "Tachyporus"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Necrophila brunnicollis",
+     "Necrophila cyaneocephala",
+     "Necrophila rufithorax",
+     "Necrophila formosa",
+     "Necrophila renatae",
+     "Necrophila viridis",
+     "Necrophila ioptera",
+     "Necrophila luciae",
+     "Necrophila cyaniventris"
+    ],
+    "speciesFamily": [
+     "Ocypus olens",
+     "Phosphuga atrata",
+     "Oiceoptoma thoracicum",
+     "Nicrophorus vespilloides",
+     "Nicrophorus orbicollis",
+     "Nicrophorus tomentosus",
+     "Platydracus maculosus",
+     "Nicrophorus vespillo",
+     "Silpha obscura",
+     "Silpha tristis"
+    ]
+   }
+  },
+  {
+   "id": 81706,
+   "scientific": "Alaus oculatus",
+   "genus": "Alaus",
+   "epithet": "oculatus",
+   "common": "Eastern Eyed Click Beetle",
+   "family": "Elateridae",
+   "order": "Coleoptera",
+   "level": 47,
+   "photo": {
+    "file": "81706-fdd3a125.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Sean P. Myers, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/3466631"
+   },
+   "silhouette": {
+    "file": "81706-d89052c4.svg",
+    "rank": "genus",
+    "matched": "Alaus",
+    "credit": "Edwin Price",
+    "link": "https://www.phylopic.org/images/1c7b0610-e0a7-4f37-9828-5629967aca38"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Monocrepidius",
+     "Athous",
+     "Agrypnus",
+     "Ampedus",
+     "Melanotus",
+     "Hemicrepidius",
+     "Agriotes",
+     "Selatosomus",
+     "Aeolus",
+     "Chalcolepidius"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Alaus lusciosus",
+     "Alaus myops",
+     "Alaus melanops",
+     "Alaus zunianus",
+     "Alaus plebejus",
+     "Alaus haroldi",
+     "Alaus patricius",
+     "Alaus vollenhovenii",
+     "Alaus montraveli",
+     "Alaus latipennis"
+    ],
+    "speciesFamily": [
+     "Agrypnus murinus",
+     "Athous haemorrhoidalis",
+     "Monocrepidius lividus",
+     "Aeolus mellillus",
+     "Sylvanelater cylindriformis",
+     "Hemicrepidius niger",
+     "Prosternon tessellatum",
+     "Monocrepidius exsul",
+     "Hemicrepidius memnonius",
+     "Cidnopus pilosus"
+    ]
+   }
+  },
+  {
+   "id": 53340,
+   "scientific": "Euphoria sepulcralis",
+   "genus": "Euphoria",
+   "epithet": "sepulcralis",
+   "common": "Dark Flower Scarab",
+   "family": "Scarabaeidae",
+   "order": "Coleoptera",
+   "level": 51,
+   "photo": {
+    "file": "53340-31da7818.jpg",
+    "license": "cc-by-nc",
+    "credit": "(c) Thomas Shahan, some rights reserved (CC BY-NC)",
+    "link": "https://www.inaturalist.org/observations/224524819"
+   },
+   "silhouette": {
+    "file": "53340-2d157c6b.svg",
+    "rank": "family",
+    "matched": "Scarabaeidae",
+    "credit": "C. Camilo Julián-Caballero",
+    "link": "https://www.phylopic.org/images/f33beb49-f71a-4bd6-94e6-b1e6558d1a25"
+   },
+   "decoys": {
+    "genusFamily": [
+     "Popillia",
+     "Oxythyrea",
+     "Cetonia",
+     "Cotinis",
+     "Protaetia",
+     "Cyclocephala",
+     "Melolontha",
+     "Phyllophaga",
+     "Pelidnota",
+     "Anomala"
+    ],
+    "genusOrder": [
+     "Harmonia",
+     "Coccinella",
+     "Cicindela",
+     "Hippodamia",
+     "Carabus",
+     "Chauliognathus",
+     "Oedemera",
+     "Photinus",
+     "Cantharis",
+     "Lucanus"
+    ],
+    "speciesGenus": [
+     "Euphoria kernii",
+     "Euphoria basalis",
+     "Euphoria inda",
+     "Euphoria fulgida",
+     "Euphoria leucographa",
+     "Euphoria yucateca",
+     "Euphoria herbacea",
+     "Euphoria lurida",
+     "Euphoria biguttata",
+     "Euphoria dimidiata"
+    ],
+    "speciesFamily": [
+     "Popillia japonica",
+     "Cetonia aurata",
+     "Oxythyrea funesta",
+     "Cotinis nitida",
+     "Exomala orientalis",
+     "Pelidnota punctata",
+     "Oryctes nasicornis",
+     "Melolontha melolontha",
+     "Cotinis mutabilis",
+     "Phyllopertha horticola"
     ]
    }
   }
