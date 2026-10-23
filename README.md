@@ -2,7 +2,7 @@
 
 A retro battle-screen game for learning to identify insects, spiders and other wildlife. A real [iNaturalist](https://www.inaturalist.org) photo appears, you pick the scientific name from four choices, and every correct answer wins the round.
 
-**Play it:** https://dwdyck.github.io/ecotox-id-battle/
+**Play it:** (https://revdwd.github.io/ecotox-id-battle/)
 
 **143 organisms to discover:** Meet 140 in the standard battle rotation, plus 3 rare encounters, across crop pests, natural enemies, pollinators, and ecotoxicology test species.
 
