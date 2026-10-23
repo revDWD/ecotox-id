@@ -9,7 +9,7 @@ A retro battle-screen game for learning to identify insects, spiders and other w
 | Difficulty | You name | Example |
 |---|---|---|
 | Easy | the genus | *Danaus* |
-| Medium | the species | *Danaus plexippus* |
+| Medium | the specific epithet (genus shown) | *plexippus* (genus: *Danaus*) |
 | Hard | genus and species | *Danaus plexippus* (no hints from the genus) |
 
 - Pick one of four answers. Right answers drain the wild organism's HP and earn EXP; a wrong answer costs you 1 of your 5 HP and breaks your streak.
@@ -23,7 +23,23 @@ The deck has **140 organisms** plus three rare surprises, grouped by role: **cro
 
 **Legendary encounter:** an entry marked `"legendary": true` (the golden soybean looper, honoring the game's creator, DWD) stays in the normal deck but also appears in a gold-glow encounter in about 1 of 65 battles.
 
-**Fun facts:** `data/facts.json` maps a scientific name to light-hearted "Fun fact:" lines, which the build appends to that species' notes (shown in battle and in the Field guide). Like the other notes, they are general knowledge and should be reviewed by an expert. Some reference notes name co-authors from Bayer/Monsanto (taken from the papers' author lists).
+**Fun facts:** `data/facts.json` maps a scientific name to concise, engaging "Fun fact:" lines, which the build appends to that species' notes (shown in battle and in the Field guide). Facts aim to connect surprising species behavior to crop protection, beneficial insects, pollinators, or ecotoxicology test organisms; they are educational context, not product claims or regulatory advice. DOI paper references remain separate research notes. New or reviewed facts can include a source URL and ISO review date; cited sources are shown in the Field guide. Existing string facts are retained for compatibility but have no structured provenance yet. Facts are general knowledge and should be reviewed by an expert.
+
+To add a sourced fact, use an object in the species' facts array:
+
+```json
+{
+  "Danaus plexippus": [
+    {
+      "text": "Monarch caterpillars feed on milkweed.",
+      "source": "https://example.org/verified-reference",
+      "reviewedOn": "2026-10-23"
+    }
+  ]
+}
+```
+
+Replace the example URL with a source you have checked. `reviewedOn` must be the date the fact and source were last verified.
 
 ## Add or remove species (no coding)
 

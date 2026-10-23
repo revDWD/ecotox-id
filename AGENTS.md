@@ -11,12 +11,12 @@ npm start         # http://localhost:8123 (static server, no build step)
 
 ## 1. What it is
 
-A retro creature-battle quiz. A real iNaturalist photo appears; the player picks the scientific name from four choices (Easy = genus, Medium = species, Hard = both). Three correct answers in a row trigger a silhouette **Challenge** round. Progress is kept in a **Field guide** in `localStorage` (key `ecotoxid.v1`).
+A retro creature-battle quiz. A real iNaturalist photo appears; the player picks the scientific name from four choices (Easy = genus, Medium = specific epithet with genus shown, Hard = both). Three correct answers in a row trigger a silhouette **Challenge** round. Progress is kept in a **Field guide** in `localStorage` (key `ecotoxid.v1`).
 
 - **Deck:** about 143 organisms in four **roles**: `pest`, `enemy`, `pollinator`, `test`. The title screen has a Deck selector (all or one role, saved as `group` in settings); the Field guide filters by role. Each species has several one-line ecotox notes (one shown after each answer, all shown in the guide).
 - **Rare encounters:** `"rare": true` entries stay out of the normal pool (`poolFor`) and appear with probability `RARE_CHANCE` in non-challenge rounds, with an optional `intro` line.
 - **Legendary:** `"legendary": true` entries stay in the normal pool and also appear in a gold-glow encounter (`LEGEND_CHANCE`, CSS class `is-legend`). Today: the soybean looper, honoring the creator, DWD.
-- **Fun facts:** `data/facts.json` maps a scientific name to light-hearted lines; the builder prefixes "Fun fact:" and appends them (max 8 notes per species).
+- **Fun facts:** `data/facts.json` maps a scientific name to engaging, concise lines; the builder prefixes "Fun fact:" and appends them (max 8 notes per species). Prefer a surprising behavior or ecological connection that helps explain crop pests, beneficials, pollinators, or test organisms. Keep peer-reviewed DOI citations as separate reference notes; don't turn every fun fact into a paper summary. Be accurate and accessible, avoid Bayer/product claims or promotional language, and do not present a general fact as regulatory advice. Structured sourced facts may use `{ "text", "source", "reviewedOn" }`; only set `reviewedOn` after checking the source and claim. Legacy strings remain supported but lack structured provenance.
 - **Reference notes:** about 57 notes cite peer-reviewed papers with Bayer or Monsanto (now Bayer) co-authors, found via PubMed affiliations. Format: `Bayer co-authored: <First> et al. <year>, <journal> - <paraphrased title>; co-authors incl. <names>. doi:<doi>`. `guide.js` turns a trailing `doi:` into a link. Keep each note at 220 characters or less (the builder truncates silently, which would cut the DOI). Only add a reference after checking its authors and affiliation in PubMed; never invent citations or people.
 - **Not authoritative:** the notes and facts come from general knowledge and have had no formal review. Have a domain expert check them before teaching use. The app states it is an unofficial personal project, not endorsed by Bayer.
 
@@ -93,4 +93,4 @@ Public repo and site. No secrets exist or are needed (both APIs are keyless).
 
 ## 8. Status (2026-10-22)
 
-Complete and live: 143 species (136 with silhouettes), 3 rare entries, 1 legendary, about 57 reference notes, fun facts for nearly every species, service worker `ecotoxid-v8`.
+Complete and live: 143 species (136 with silhouettes), 3 rare entries, 1 legendary, about 57 reference notes, fun facts for nearly every species, service worker `ecotoxid-v9`.
