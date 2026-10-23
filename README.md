@@ -4,6 +4,15 @@ A retro battle-screen game for learning to identify insects, spiders and other w
 
 **Play it:** https://dwdyck.github.io/ecotox-id-battle/
 
+**143 organisms to discover:** Meet 140 in the standard battle rotation, plus 3 rare encounters, across crop pests, natural enemies, pollinators, and ecotoxicology test species.
+
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/title-screen.png" alt="Ecotox ID title screen with difficulty and organism deck choices" width="320">
+  <img src="screenshots/battle-screen.png" alt="Ecotox ID battle screen with a real organism photo and four genus choices" width="320">
+</p>
+
 ## How it plays
 
 | Difficulty | You name | Example |
