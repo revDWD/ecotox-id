@@ -2,12 +2,47 @@
 import { readFile, readdir, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { MODE_ORDER, ROLES, ROLE_ORDER, poolFor, makeQuestion, labelFor, pickEntry, recentLimit, addExp, expNeeded, nextMode } from '../js/game.js';
+import { MODE_ORDER, ROLES, ROLE_ORDER, MODES, poolFor, makeQuestion, labelFor, pickEntry, recentLimit, addExp, expNeeded, nextMode } from '../js/game.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const deck = JSON.parse(await readFile(path.join(ROOT, 'data', 'deck.json'), 'utf8')).species;
+const facts = JSON.parse(await readFile(path.join(ROOT, 'data', 'facts.json'), 'utf8'));
 let failures = 0;
 const fail = (msg) => { failures++; console.error(`FAIL: ${msg}`); };
+const validHttpUrl = (value) => {
+  if (typeof value !== 'string') return false;
+  try {
+    return ['http:', 'https:'].includes(new URL(value).protocol);
+  } catch {
+    return false;
+  }
+};
+
+if (labelFor('species', 'Danaus plexippus') !== 'plexippus') fail('medium mode should ask for the specific epithet');
+if (!MODES.species.named.includes('epithet') || !MODES.species.named.includes('genus shown')) {
+  fail('medium mode instructions should explain that the genus is shown');
+}
+
+let legacyFacts = 0;
+for (const [name, value] of Object.entries(facts)) {
+  const entries = Array.isArray(value) ? value : [value];
+  for (const [index, fact] of entries.entries()) {
+    if (typeof fact === 'string') {
+      if (!fact.trim()) fail(`facts.json: ${name}[${index}] is empty`);
+      legacyFacts++;
+      continue;
+    }
+    const date = typeof fact?.reviewedOn === 'string' ? new Date(`${fact.reviewedOn}T00:00:00Z`) : null;
+    if (
+      !fact || typeof fact !== 'object' || typeof fact.text !== 'string' || !fact.text.trim() ||
+      !validHttpUrl(fact.source) ||
+      !date || Number.isNaN(date.valueOf()) || date.toISOString().slice(0, 10) !== fact.reviewedOn
+    ) {
+      fail(`facts.json: ${name}[${index}] must have non-empty text, an http(s) source URL, and a valid reviewedOn date`);
+    }
+  }
+}
+if (legacyFacts) console.warn(`note: ${legacyFacts} legacy fact(s) have no structured source or review date`);
 
 for (const entry of deck) {
   for (const f of [`data/photos/${entry.photo.file}`, entry.silhouette && `data/silhouettes/${entry.silhouette.file}`].filter(Boolean)) {
@@ -30,6 +65,22 @@ if (new Set(deck.map((e) => e.id)).size !== deck.length) fail('duplicate species
 for (const entry of deck) {
   if (!ROLES[entry.role]) fail(`${entry.scientific}: bad role ${entry.role}`);
   if (!Array.isArray(entry.notes) || entry.notes.length < 1) fail(`${entry.scientific}: no ecotox notes`);
+  if (entry.factSources !== undefined && !Array.isArray(entry.factSources)) {
+    fail(`${entry.scientific}: factSources must be an array`);
+  }
+  for (const fact of Array.isArray(entry.factSources) ? entry.factSources : []) {
+    if (!fact || typeof fact !== 'object') {
+      fail(`${entry.scientific}: malformed fact source metadata`);
+      continue;
+    }
+    const date = typeof fact.reviewedOn === 'string' ? new Date(`${fact.reviewedOn}T00:00:00Z`) : null;
+    if (
+      typeof fact.note !== 'string' || !fact.note.trim() || !validHttpUrl(fact.source) ||
+      !date || Number.isNaN(date.valueOf()) || date.toISOString().slice(0, 10) !== fact.reviewedOn
+    ) {
+      fail(`${entry.scientific}: malformed fact source metadata`);
+    }
+  }
 }
 for (const role of ROLE_ORDER) {
   const pool = poolFor(deck, role);

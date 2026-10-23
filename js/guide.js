@@ -101,6 +101,23 @@ export function openCard(entry, status, number) {
       body.append(el('p', { className: 'card__role', textContent: ROLES[entry.role].single }));
       if (entry.notes?.length) body.append(el('ul', { className: 'card__notes' }, ...entry.notes.map(noteItem)));
     }
+    if (entry.factSources?.length) {
+      const sources = entry.factSources.map((fact) => {
+        const note = typeof fact?.note === 'string' ? fact.note : 'an unknown fact';
+        let source;
+        try {
+          source = new URL(fact?.source);
+        } catch {
+          return el('li', { textContent: `Invalid source URL for "${note}".` });
+        }
+        if (!['http:', 'https:'].includes(source.protocol)) {
+          return el('li', { textContent: `Unsupported source URL for "${note}".` });
+        }
+        return el('li', {}, `Source for "${note}" (reviewed ${fact.reviewedOn}): `,
+          el('a', { href: source.href, target: '_blank', rel: 'noopener', textContent: 'reference' }));
+      });
+      if (sources.length) body.append(el('ul', { className: 'card__notes card__sources' }, ...sources));
+    }
     const rec = store.entry(entry.id);
     body.append(el('p', { textContent: `Identified ${rec.correct} of ${rec.seen} times` }));
     body.append(el('p', {}, `Photo ${entry.photo.credit} `, el('a', { href: entry.photo.link, target: '_blank', rel: 'noopener', textContent: 'iNaturalist' })));

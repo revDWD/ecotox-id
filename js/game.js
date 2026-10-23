@@ -2,7 +2,7 @@
 
 export const MODES = {
   genus: { label: 'Easy', named: 'Genus', short: 'GENUS', multiplier: 1 },
-  species: { label: 'Medium', named: 'Species', short: 'SPECIES', multiplier: 2 },
+  species: { label: 'Medium', named: 'specific epithet (genus shown)', short: 'EPITHET', multiplier: 2 },
   both: { label: 'Hard', named: 'Genus + species', short: 'BOTH', multiplier: 3 },
 };
 // Why each organism is in the deck: the group filter, the Field guide sections and the note after each answer.

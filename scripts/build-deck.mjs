@@ -15,8 +15,16 @@ const INAT = 'https://api.inaturalist.org/v1';
 const PHYLOPIC = 'https://api.phylopic.org';
 const UA = 'ecotox-id-battle/1.0 (educational game; github.com/DWDyck/ecotox-id-battle)';
 const ROLES = ['pest', 'enemy', 'pollinator', 'test'];
-const stripFlags = ({ rare, legendary, intro, ...rest }) => rest;
+const stripFlags = ({ rare, legendary, intro, factSources, ...rest }) => rest;
 const PHOTO_LICENSES = ['cc0', 'cc-by', 'cc-by-sa', 'cc-by-nc', 'cc-by-nc-sa'];
+const validHttpUrl = (value) => {
+  if (typeof value !== 'string') return false;
+  try {
+    return ['http:', 'https:'].includes(new URL(value).protocol);
+  } catch {
+    return false;
+  }
+};
 
 const args = process.argv.slice(2);
 const refresh = args.includes('--refresh');
@@ -200,6 +208,28 @@ async function main() {
   const wanted = JSON.parse(await readFile(path.join(DATA, 'species.json'), 'utf8')).species;
   const factsPath = path.join(DATA, 'facts.json');
   const facts = (await exists(factsPath)) ? JSON.parse(await readFile(factsPath, 'utf8')) : {};
+  let legacyFactCount = 0;
+  for (const [name, value] of Object.entries(facts)) {
+    const entries = Array.isArray(value) ? value : [value];
+    for (const [index, fact] of entries.entries()) {
+      if (typeof fact === 'string') {
+        if (!fact.trim()) throw new Error(`facts.json: ${name}[${index}] must not be empty`);
+        legacyFactCount++;
+        continue;
+      }
+      const date = typeof fact?.reviewedOn === 'string' ? new Date(`${fact.reviewedOn}T00:00:00Z`) : null;
+      if (
+        !fact || typeof fact !== 'object' || typeof fact.text !== 'string' || !fact.text.trim() ||
+        !validHttpUrl(fact.source) ||
+        !date || Number.isNaN(date.valueOf()) || date.toISOString().slice(0, 10) !== fact.reviewedOn
+      ) {
+        throw new Error(`facts.json: ${name}[${index}] must have non-empty text, an http(s) source URL, and a valid reviewedOn date (YYYY-MM-DD)`);
+      }
+    }
+  }
+  if (legacyFactCount) {
+    console.warn(`! facts.json: ${legacyFactCount} legacy fact(s) have no structured source or review date`);
+  }
   const listed = new Set(wanted.map((w) => String(typeof w === 'string' ? w : w?.name || '').trim()));
   for (const k of Object.keys(facts)) if (!listed.has(k)) console.warn(`! facts.json: "${k}" is not in species.json`);
   const deckPath = path.join(DATA, 'deck.json');
@@ -213,12 +243,18 @@ async function main() {
     const item = typeof raw === 'string' ? { name: raw } : raw || {};
     const name = String(item.name || '').trim();
     const role = String(item.role || '').trim();
-    const fun = [].concat(facts[name] || []).map((f) => `Fun fact: ${String(f).trim()}`.slice(0, 220));
+    const factEntries = [].concat(facts[name] || []);
+    const fun = factEntries.map((fact) => `Fun fact: ${String(typeof fact === 'string' ? fact : fact.text).trim()}`.slice(0, 220));
+    const factSources = factEntries.filter((fact) => typeof fact !== 'string').map((fact) => ({
+      note: `Fun fact: ${fact.text.trim()}`.slice(0, 220),
+      source: fact.source,
+      reviewedOn: fact.reviewedOn,
+    }));
     const notes = [...(Array.isArray(item.notes) ? item.notes : [item.note])
       .map((n) => String(n || '').trim().slice(0, 220)).filter(Boolean).slice(0, 6), ...fun].slice(0, 8);
     const intro = String(item.intro || '').trim().slice(0, 120);
     const flags = { ...(item.rare === true ? { rare: true } : {}), ...(item.legendary === true ? { legendary: true } : {}) };
-    const meta = { role, notes, ...flags, ...(intro && Object.keys(flags).length ? { intro } : {}) };
+    const meta = { role, notes, factSources, ...flags, ...(intro && Object.keys(flags).length ? { intro } : {}) };
     if (name && !ROLES.includes(role)) {
       console.warn(`! ${name}: role must be one of ${ROLES.join(', ')} (got "${role}")`);
       problems.push(`${name}: role must be one of ${ROLES.join(', ')}`);
