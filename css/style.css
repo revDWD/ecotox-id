@@ -410,7 +410,7 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 
 .scene > .backdrop { transition: filter .3s; }
 .scene.is-challenge > .backdrop { filter: sepia(.45) hue-rotate(-35deg) brightness(.78) saturate(1.4); }
-.scene.is-legend .foe__frame { filter: sepia(.55) saturate(2.2) brightness(1.1); box-shadow: 0 0 2.6cqw .8cqw #ffd23f, inset 0 0 2cqw #fff3a0; }
+.scene.is-legend .foe__frame { box-shadow: 0 0 4cqw 1.6cqw #ffd23f, inset 0 0 3cqw #fff3a0; border-color: #ffd23f; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
