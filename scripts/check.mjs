@@ -3,6 +3,7 @@ import { readFile, readdir, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { MODE_ORDER, ROLES, ROLE_ORDER, MODES, poolFor, makeQuestion, labelFor, pickEntry, recentLimit, addExp, expNeeded, nextMode } from '../js/game.js';
+import { SCOUT_PALETTES, playerSprite } from '../js/sprites.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const deck = JSON.parse(await readFile(path.join(ROOT, 'data', 'deck.json'), 'utf8')).species;
@@ -21,6 +22,17 @@ const validHttpUrl = (value) => {
 if (labelFor('species', 'Danaus plexippus') !== 'plexippus') fail('medium mode should ask for the specific epithet');
 if (!MODES.species.named.includes('epithet') || !MODES.species.named.includes('genus shown')) {
   fail('medium mode instructions should explain that the genus is shown');
+}
+if (new Set(SCOUT_PALETTES.map((palette) => palette.id)).size !== SCOUT_PALETTES.length) {
+  fail('scout palette ids must be unique');
+}
+if (SCOUT_PALETTES.length < 2 || new Set(SCOUT_PALETTES.map((palette) => playerSprite(palette.id))).size !== SCOUT_PALETTES.length) {
+  fail('each scout palette should render a distinct sprite');
+}
+const appHtml = await readFile(path.join(ROOT, 'index.html'), 'utf8');
+const answerIndexes = [...appHtml.matchAll(/class="choice"[^>]*data-i="(\d+)"/g)].map((match) => Number(match[1]));
+if (answerIndexes.length !== 6 || answerIndexes.some((index, position) => index !== position)) {
+  fail('index.html should define six answer buttons indexed 0 through 5');
 }
 
 let legacyFacts = 0;
@@ -53,7 +65,8 @@ for (const entry of deck) {
     for (let i = 0; i < 25; i++) {
       const q = makeQuestion(entry, mode, deck);
       const unique = new Set(q.choices);
-      if (q.choices.length !== 4) fail(`${entry.scientific}/${mode}: ${q.choices.length} choices`);
+      const expectedChoices = mode === 'both' ? 6 : 4;
+      if (q.choices.length !== expectedChoices) fail(`${entry.scientific}/${mode}: expected ${expectedChoices} choices, got ${q.choices.length}`);
       if (unique.size !== q.choices.length) fail(`${entry.scientific}/${mode}: duplicate choices ${q.choices}`);
       if (q.choices[q.correctIndex] !== labelFor(mode, entry.scientific)) fail(`${entry.scientific}/${mode}: wrong correctIndex`);
       if (q.choices.filter((c) => c === labelFor(mode, entry.scientific)).length !== 1) fail(`${entry.scientific}/${mode}: correct answer repeated`);
@@ -88,7 +101,10 @@ for (const role of ROLE_ORDER) {
   if (pool.some((e) => e.rare)) fail(`role ${role}: rare entries must stay out of the normal pool`);
   for (const mode of MODE_ORDER) {
     const q = makeQuestion(pool[0], mode, pool);
-    if (new Set(q.choices).size !== 4) fail(`role ${role}/${mode}: bad choices from the pool`);
+    const expectedChoices = mode === 'both' ? 6 : 4;
+    if (q.choices.length !== expectedChoices || new Set(q.choices).size !== expectedChoices) {
+      fail(`role ${role}/${mode}: expected ${expectedChoices} unique choices from the pool`);
+    }
   }
 }
 const photoFiles = deck.map((e) => e.photo.file);

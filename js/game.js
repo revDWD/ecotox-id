@@ -75,6 +75,7 @@ function fill(sources, count, taken, toLabel, rng) {
 export function makeQuestion(entry, mode, deck, rng = Math.random) {
   const others = deck.filter((e) => e.id !== entry.id);
   const correct = labelFor(mode, entry.scientific);
+  const choiceCount = mode === 'both' ? 6 : 4;
   const taken = new Set([correct]);
   const d = entry.decoys;
   let sources;
@@ -96,7 +97,7 @@ export function makeQuestion(entry, mode, deck, rng = Math.random) {
   }
 
   // genus sources hold bare genus names; species and both sources hold full binomials
-  const decoys = fill(sources, 3, taken, mode === 'genus' ? (v) => v : (v) => labelFor(mode, v), rng);
+  const decoys = fill(sources, choiceCount - 1, taken, mode === 'genus' ? (v) => v : (v) => labelFor(mode, v), rng);
 
   const labels = shuffle([correct, ...decoys], rng);
   return {

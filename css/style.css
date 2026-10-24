@@ -222,6 +222,7 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 }
 
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4cqw; padding: 1.6cqw; }
+.choices.is-hard { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .choice {
   position: relative;
   container-type: inline-size;
@@ -332,6 +333,17 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 .level small { font-size: var(--fs-xs); color: var(--muted); line-height: 1.4; }
 .level b { font-weight: 400; }
 .level[aria-checked="true"] { background: #ffe9a3; box-shadow: inset 0 0 0 .5cqw var(--gold); }
+.scout-picker {
+  display: flex; align-items: center; gap: 2cqw; width: 100%; min-height: max(56px, 11cqw);
+  padding: 1cqw 2cqw; border: .45cqw solid var(--frame); border-radius: 1cqw;
+  background: #fff; text-align: left; cursor: pointer; color: var(--ink);
+}
+.scout-picker:hover { background: #fff8d6; }
+.scout-picker__avatar { flex: 0 0 12cqw; width: 12cqw; height: 12cqw; max-width: 56px; max-height: 56px; }
+.scout-picker__avatar svg { display: block; width: 100%; height: 100%; }
+.scout-picker__label { display: grid; gap: .6cqw; font-size: var(--fs-xs); line-height: 1.5; }
+.scout-picker__label b { font-weight: 400; color: #b0560e; }
+.scout-picker__label small { color: var(--muted); font-size: inherit; }
 
 .stats { font-size: var(--fs-xs); line-height: 1.9; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1cqw 3cqw; }
 .stats span b { font-weight: 400; color: #b0560e; }

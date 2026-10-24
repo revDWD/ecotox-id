@@ -53,7 +53,7 @@ export class Battle {
     this.text = null;
     this.s = null;
 
-    this.el.player.innerHTML = playerSprite();
+    this.setScout(store.settings.scout);
     this.el.wipe.innerHTML = '<i></i>'.repeat(8);
     this.bind();
   }
@@ -69,7 +69,7 @@ export class Battle {
         e.preventDefault();
         advance();
       }
-      if (/^[1-4]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      if (/^[1-6]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
         const btn = this.choiceButtons[Number(e.key) - 1];
         if (btn && !btn.disabled) btn.click();
       }
@@ -101,7 +101,8 @@ export class Battle {
   moveFocus(e) {
     const i = this.choiceButtons.indexOf(document.activeElement);
     if (i < 0) return;
-    const delta = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -2, ArrowDown: 2 }[e.key];
+    const columns = this.el.menu.classList.contains('is-hard') ? 3 : 2;
+    const delta = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -columns, ArrowDown: columns }[e.key];
     const target = this.choiceButtons[i + delta];
     if (target && !target.disabled) { target.focus(); e.preventDefault(); }
   }
@@ -312,14 +313,22 @@ export class Battle {
   setChoices(labels) {
     const longest = labels ? Math.max(...labels.flatMap((l) => l.split(' ').map((w) => w.length))) : 0;
     this.el.menu.style.setProperty('--n', String(longest + 0.4));
+    this.el.menu.classList.toggle('is-hard', Boolean(labels && labels.length === 6));
+    this.el.menu.setAttribute('aria-label', labels?.length === 6
+      ? 'Choose your answer. Use keys 1 through 6 to select an answer.'
+      : 'Choose your answer. Use keys 1 through 4 to select an answer.');
     this.choiceButtons.forEach((btn, i) => {
       btn.classList.remove('is-correct', 'is-wrong');
       const label = btn.querySelector('.choice__label');
       label.textContent = labels ? labels[i] : '';
-      btn.disabled = !labels;
-      btn.setAttribute('aria-label', labels ? `Answer ${i + 1}: ${labels[i]}` : '');
-      if (!labels) btn.removeAttribute('aria-label');
+      btn.disabled = !labels || i >= labels.length;
+      if (labels && labels[i]) btn.setAttribute('aria-label', `Answer ${i + 1}: ${labels[i]}`);
+      else btn.removeAttribute('aria-label');
     });
+  }
+
+  setScout(palette) {
+    this.el.player.innerHTML = playerSprite(palette);
   }
 
   ask(q) {

@@ -3,7 +3,7 @@ const DEFAULTS = {
   discovered: {},
   best: { streak: 0, score: 0 },
   stats: { rounds: 0, correct: 0 },
-  settings: { sound: false, mode: 'genus', group: 'all' },
+  settings: { sound: false, mode: 'genus', group: 'all', scout: 'classic' },
 };
 
 function load() {

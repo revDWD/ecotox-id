@@ -1,6 +1,6 @@
 # Ecotox ID
 
-A retro battle-screen game for learning to identify insects, spiders and other wildlife. A real [iNaturalist](https://www.inaturalist.org) photo appears, you pick the scientific name from four choices, and every correct answer wins the round.
+A retro battle-screen game for learning to identify insects, spiders and other wildlife. A real [iNaturalist](https://www.inaturalist.org) photo appears, you pick the scientific name from four choices (six on Hard), and every correct answer wins the round.
 
 **Play it:** (https://revdwd.github.io/ecotox-id-battle/)
 
@@ -19,12 +19,13 @@ A retro battle-screen game for learning to identify insects, spiders and other w
 |---|---|---|
 | Easy | the genus | *Danaus* |
 | Medium | the specific epithet (genus shown) | *plexippus* (genus: *Danaus*) |
-| Hard | genus and species | *Danaus plexippus* (no hints from the genus) |
+| Hard | genus and species, from six choices | *Danaus plexippus* (no hints from the genus) |
 
-- Pick one of four answers. Right answers drain the wild organism's HP and earn EXP; a wrong answer costs you 1 of your 5 HP and breaks your streak.
+- Pick one of four answers (six on Hard). Right answers drain the wild organism's HP and earn EXP; a wrong answer costs you 1 of your 5 HP and breaks your streak.
 - After 3 correct in a row a **Challenge** round shows only a silhouette. Clear it for bonus points, +2 HP and a step up in difficulty.
 - Every organism you meet is added to your **Field guide** (progress is saved in your browser). Use the **Show** menu in the guide to look at one group at a time (butterflies, beetles, spiders and so on).
-- Works on phones and desktops, with keyboard play (1-4 or arrow keys + Enter), and offline once loaded.
+- Choose from four scout color palettes on the title screen. Your selection is saved on this device.
+- Works on phones and desktops, with keyboard play (1-4, or 1-6 on Hard; arrow keys + Enter), and offline once loaded.
 
 The deck has **140 organisms** plus three rare surprises, grouped by role: **crop pests** (caterpillars, beetles, aphids, mites and other pests of corn, soybean, cotton, vegetables and orchards), **natural enemies** (ladybirds, parasitoid wasps, predatory bugs, mites and spiders), **pollinators** (honey bees, bumble bees, native bees, hoverflies) and **test and indicator species** (organisms used in ecotoxicology tests, such as *Daphnia*, *Chironomus* and *Eisenia*). Pick a deck on the title screen, or play everything. After every answer you get a one-line ecotox note about the organism, and the Field guide lists all of its notes. The notes are brief general remarks, not regulatory advice, so check them against primary sources before relying on them. About 40 species also carry a reference to a peer-reviewed paper with Bayer or Monsanto (now Bayer) co-authors, found by PubMed affiliation search; the Field guide links each to its DOI.
 

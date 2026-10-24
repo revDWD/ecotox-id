@@ -32,9 +32,14 @@
             <div class="levels__row" role="radiogroup" aria-label="Difficulty">
               <button type="button" role="radio" class="level" data-mode="genus" aria-checked="true"><b>Easy</b><small>Genus</small></button>
               <button type="button" role="radio" class="level" data-mode="species" aria-checked="false"><b>Medium</b><small>Specific epithet</small></button>
-              <button type="button" role="radio" class="level" data-mode="both" aria-checked="false"><b>Hard</b><small>Genus + species</small></button>
+              <button type="button" role="radio" class="level" data-mode="both" aria-checked="false"><b>Hard</b><small>Genus + species; 6 choices</small></button>
             </div>
           </fieldset>
+          <button class="scout-picker" id="btn-scout" type="button" aria-label="Scout appearance: Classic. Select next color palette.">
+            <span class="scout-picker__avatar" id="scout-preview" aria-hidden="true"></span>
+            <span class="scout-picker__label">Scout colors <b id="scout-name">Classic</b><small>Activate to change</small></span>
+          </button>
+          <span class="sr-only" id="scout-status" role="status" aria-live="polite"></span>
           <label class="deckpick">Deck <select id="deck-group" class="tool"></select></label>
           <div class="menu-row">
             <button class="menu-item" id="btn-guide" type="button">Field guide</button>
@@ -100,6 +105,8 @@
           <button class="choice" type="button" data-i="1" disabled><span class="choice__label"></span></button>
           <button class="choice" type="button" data-i="2" disabled><span class="choice__label"></span></button>
           <button class="choice" type="button" data-i="3" disabled><span class="choice__label"></span></button>
+          <button class="choice" type="button" data-i="4" disabled><span class="choice__label"></span></button>
+          <button class="choice" type="button" data-i="5" disabled><span class="choice__label"></span></button>
         </div>
       </div>
 

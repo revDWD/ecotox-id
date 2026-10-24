@@ -50,12 +50,16 @@ const PLAYER_ROWS = [
   '.....kggk..kggk........',
   '.....kkkk..kkkk........',
 ];
-const PLAYER_PALETTE = {
-  k: '#232042', h: '#f0cd6a', H: '#c99a36', s: '#f2bd94', r: '#6b4430', t: '#6fb7a2', T: '#4d927f',
-  p: '#3d4c8c', b: '#c9803d', B: '#9a5a26', g: '#5a463a', n: '#c4a062', m: '#eef0ff',
-};
+export const SCOUT_PALETTES = [
+  { id: 'classic', name: 'Classic', colors: { h: '#f0cd6a', H: '#c99a36', r: '#6b4430', t: '#6fb7a2', T: '#4d927f', p: '#3d4c8c', b: '#c9803d', B: '#9a5a26' } },
+  { id: 'field', name: 'Field greens', colors: { h: '#e8c66d', H: '#b48b36', r: '#694b36', t: '#8cbf62', T: '#5e9142', p: '#506c49', b: '#bd8b4f', B: '#8d6035' } },
+  { id: 'sunset', name: 'Sunset', colors: { h: '#f4bd70', H: '#d8874c', r: '#6e3f3b', t: '#e58c78', T: '#b85e67', p: '#73518e', b: '#d78654', B: '#a9573f' } },
+  { id: 'ocean', name: 'Ocean blue', colors: { h: '#f2d486', H: '#c6a34c', r: '#614b43', t: '#65b7cf', T: '#3886a9', p: '#426bb0', b: '#61a0b9', B: '#39718e' } },
+];
+const OUTLINE_PALETTE = { k: '#232042', s: '#f2bd94', g: '#5a463a', n: '#c4a062', m: '#eef0ff' };
 
-export const playerSprite = () => gridToSvg(PLAYER_ROWS, PLAYER_PALETTE);
+export const scoutPalette = (id) => SCOUT_PALETTES.find((palette) => palette.id === id) || SCOUT_PALETTES[0];
+export const playerSprite = (id) => gridToSvg(PLAYER_ROWS, { ...OUTLINE_PALETTE, ...scoutPalette(id).colors });
 
 function ellipse(cx, cy, rx, ry, color) {
   let out = '';

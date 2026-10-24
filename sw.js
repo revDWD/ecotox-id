@@ -1,5 +1,5 @@
 // Offline support: the app shell is cached up front; photos and silhouettes are cached as they are used.
-const VERSION = 'ecotoxid-v9';
+const VERSION = 'ecotoxid-v10';
 const SHELL = [
   './', 'index.html', 'css/style.css', 'fonts/PressStart2P-latin.woff2', 'icon.svg', 'manifest.webmanifest',
   'js/main.js', 'js/battle.js', 'js/game.js', 'js/guide.js', 'js/sound.js', 'js/sprites.js', 'js/storage.js', 'js/ui.js',

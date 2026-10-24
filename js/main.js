@@ -1,6 +1,6 @@
 import { store } from './storage.js';
 import { sound } from './sound.js';
-import { backdropSvg } from './sprites.js';
+import { backdropSvg, playerSprite, SCOUT_PALETTES, scoutPalette } from './sprites.js';
 import { Battle } from './battle.js';
 import { renderGuide, openCard } from './guide.js';
 import { MODES, ROLES, ROLE_ORDER } from './game.js';
@@ -11,6 +11,7 @@ let deck = [];
 let battle = null;
 let mode = MODES[store.settings.mode] ? store.settings.mode : 'genus';
 let group = 'all';
+let scout = scoutPalette(store.settings.scout).id;
 
 function show(name, focusId) {
   for (const s of screens) $(`screen-${s}`).hidden = s !== name;
@@ -38,6 +39,7 @@ function renderTitle() {
     btn.setAttribute('aria-checked', String(on));
     btn.tabIndex = on ? 0 : -1;
   });
+  renderScout();
   const withSil = deck.filter((e) => e.silhouette);
   const mystery = $('title-mystery');
   mystery.textContent = '';
@@ -48,6 +50,14 @@ function renderTitle() {
     img.alt = '';
     mystery.append(img);
   }
+}
+
+function renderScout() {
+  const palette = scoutPalette(scout);
+  $('scout-preview').innerHTML = playerSprite(palette.id);
+  $('scout-name').textContent = palette.name;
+  $('scout-status').textContent = `Scout palette: ${palette.name}`;
+  $('btn-scout').setAttribute('aria-label', `Scout appearance: ${palette.name}. Select next color palette.`);
 }
 
 function renderGroups() {
@@ -71,6 +81,13 @@ function setMode(next) {
 }
 
 function bindTitle() {
+  $('btn-scout').addEventListener('click', () => {
+    const current = SCOUT_PALETTES.findIndex((palette) => palette.id === scout);
+    scout = SCOUT_PALETTES[(current + 1) % SCOUT_PALETTES.length].id;
+    store.setSetting('scout', scout);
+    renderScout();
+    battle.setScout(scout);
+  });
   $('btn-start').addEventListener('click', () => {
     sound.set(store.settings.sound);
     sound.blip();
