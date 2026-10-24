@@ -31,13 +31,14 @@
             <legend>What do you name?</legend>
             <div class="levels__row" role="radiogroup" aria-label="Difficulty">
               <button type="button" role="radio" class="level" data-mode="genus" aria-checked="true"><b>Easy</b><small>Genus</small></button>
-              <button type="button" role="radio" class="level" data-mode="species" aria-checked="false"><b>Medium</b><small>Specific epithet</small></button>
+              <button type="button" role="radio" class="level" data-mode="species" aria-checked="false"><b>Medium</b><small>Species</small></button>
               <button type="button" role="radio" class="level" data-mode="both" aria-checked="false"><b>Hard</b><small>Genus + species; 6 choices</small></button>
             </div>
           </fieldset>
-          <button class="scout-picker" id="btn-scout" type="button" aria-label="Scout appearance: Classic. Select next color palette.">
+          <button class="menu-item scout-picker" id="btn-scout" type="button" aria-label="Scout appearance: Classic. Select next color palette.">
             <span class="scout-picker__avatar" id="scout-preview" aria-hidden="true"></span>
             <span class="scout-picker__label">Scout colors <b id="scout-name">Classic</b><small>Activate to change</small></span>
+            <span class="scout-picker__swatches" id="scout-swatches" aria-hidden="true"></span>
           </button>
           <span class="sr-only" id="scout-status" role="status" aria-live="polite"></span>
           <label class="deckpick">Deck <select id="deck-group" class="tool"></select></label>

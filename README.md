@@ -18,7 +18,7 @@ A retro battle-screen game for learning to identify insects, spiders and other w
 | Difficulty | You name | Example |
 |---|---|---|
 | Easy | the genus | *Danaus* |
-| Medium | the specific epithet (genus shown) | *plexippus* (genus: *Danaus*) |
+| Medium | the species (genus shown) | *plexippus* (genus: *Danaus*) |
 | Hard | genus and species, from six choices | *Danaus plexippus* (no hints from the genus) |
 
 - Pick one of four answers (six on Hard). Right answers drain the wild organism's HP and earn EXP; a wrong answer costs you 1 of your 5 HP and breaks your streak.

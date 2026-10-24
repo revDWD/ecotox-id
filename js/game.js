@@ -1,9 +1,9 @@
 // Pure game rules: no DOM, so it can be unit-tested in Node.
 
 export const MODES = {
-  genus: { label: 'Easy', named: 'Genus', short: 'GENUS', multiplier: 1 },
-  species: { label: 'Medium', named: 'specific epithet (genus shown)', short: 'EPITHET', multiplier: 2 },
-  both: { label: 'Hard', named: 'Genus + species', short: 'BOTH', multiplier: 3 },
+  genus: { label: 'Easy', named: 'Genus', short: 'GENUS', multiplier: 1, choiceCount: 4 },
+  species: { label: 'Medium', named: 'species', short: 'SPECIES', multiplier: 2, choiceCount: 4 },
+  both: { label: 'Hard', named: 'Genus + species', short: 'BOTH', multiplier: 3, choiceCount: 6 },
 };
 // Why each organism is in the deck: the group filter, the Field guide sections and the note after each answer.
 export const ROLES = {
@@ -75,7 +75,7 @@ function fill(sources, count, taken, toLabel, rng) {
 export function makeQuestion(entry, mode, deck, rng = Math.random) {
   const others = deck.filter((e) => e.id !== entry.id);
   const correct = labelFor(mode, entry.scientific);
-  const choiceCount = mode === 'both' ? 6 : 4;
+  const choiceCount = MODES[mode].choiceCount;
   const taken = new Set([correct]);
   const d = entry.decoys;
   let sources;

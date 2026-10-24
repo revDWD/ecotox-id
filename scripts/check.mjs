@@ -19,17 +19,21 @@ const validHttpUrl = (value) => {
   }
 };
 
-if (labelFor('species', 'Danaus plexippus') !== 'plexippus') fail('medium mode should ask for the specific epithet');
-if (!MODES.species.named.includes('epithet') || !MODES.species.named.includes('genus shown')) {
-  fail('medium mode instructions should explain that the genus is shown');
+if (labelFor('species', 'Danaus plexippus') !== 'plexippus') fail('medium mode should keep its existing answer labels');
+if (MODES.genus.choiceCount !== 4 || MODES.species.choiceCount !== 4 || MODES.both.choiceCount !== 6) {
+  fail('difficulty modes should independently configure 4, 4, and 6 choices');
 }
 if (new Set(SCOUT_PALETTES.map((palette) => palette.id)).size !== SCOUT_PALETTES.length) {
   fail('scout palette ids must be unique');
 }
-if (SCOUT_PALETTES.length < 2 || new Set(SCOUT_PALETTES.map((palette) => playerSprite(palette.id))).size !== SCOUT_PALETTES.length) {
-  fail('each scout palette should render a distinct sprite');
+if (SCOUT_PALETTES.length !== 4 || new Set(SCOUT_PALETTES.map((palette) => playerSprite(palette.id))).size !== 4) {
+  fail('the four scout palettes should render distinct sprites');
 }
 const appHtml = await readFile(path.join(ROOT, 'index.html'), 'utf8');
+if (!/data-mode="species"[^>]*>[\s\S]*?<small>Species<\/small>/.test(appHtml)) {
+  fail('medium difficulty subtitle should be exactly "Species"');
+}
+if (/specific epithet/i.test(appHtml)) fail('medium difficulty subtitle should not say "specific epithet"');
 const answerIndexes = [...appHtml.matchAll(/class="choice"[^>]*data-i="(\d+)"/g)].map((match) => Number(match[1]));
 if (answerIndexes.length !== 6 || answerIndexes.some((index, position) => index !== position)) {
   fail('index.html should define six answer buttons indexed 0 through 5');
@@ -65,7 +69,7 @@ for (const entry of deck) {
     for (let i = 0; i < 25; i++) {
       const q = makeQuestion(entry, mode, deck);
       const unique = new Set(q.choices);
-      const expectedChoices = mode === 'both' ? 6 : 4;
+      const expectedChoices = MODES[mode].choiceCount;
       if (q.choices.length !== expectedChoices) fail(`${entry.scientific}/${mode}: expected ${expectedChoices} choices, got ${q.choices.length}`);
       if (unique.size !== q.choices.length) fail(`${entry.scientific}/${mode}: duplicate choices ${q.choices}`);
       if (q.choices[q.correctIndex] !== labelFor(mode, entry.scientific)) fail(`${entry.scientific}/${mode}: wrong correctIndex`);
@@ -101,9 +105,12 @@ for (const role of ROLE_ORDER) {
   if (pool.some((e) => e.rare)) fail(`role ${role}: rare entries must stay out of the normal pool`);
   for (const mode of MODE_ORDER) {
     const q = makeQuestion(pool[0], mode, pool);
-    const expectedChoices = mode === 'both' ? 6 : 4;
+    const expectedChoices = MODES[mode].choiceCount;
     if (q.choices.length !== expectedChoices || new Set(q.choices).size !== expectedChoices) {
       fail(`role ${role}/${mode}: expected ${expectedChoices} unique choices from the pool`);
+    }
+    if (/specific epithet/i.test(`${MODES.species.named} ${MODES.species.short}`)) {
+      fail('medium mode prompts and status terminology should use "species"');
     }
   }
 }

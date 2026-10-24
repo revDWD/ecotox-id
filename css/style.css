@@ -333,17 +333,30 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 .level small { font-size: var(--fs-xs); color: var(--muted); line-height: 1.4; }
 .level b { font-weight: 400; }
 .level[aria-checked="true"] { background: #ffe9a3; box-shadow: inset 0 0 0 .5cqw var(--gold); }
-.scout-picker {
-  display: flex; align-items: center; gap: 2cqw; width: 100%; min-height: max(56px, 11cqw);
-  padding: 1cqw 2cqw; border: .45cqw solid var(--frame); border-radius: 1cqw;
-  background: #fff; text-align: left; cursor: pointer; color: var(--ink);
-}
-.scout-picker:hover { background: #fff8d6; }
+.scout-picker { display: flex; align-items: center; gap: 2cqw; width: 100%; }
 .scout-picker__avatar { flex: 0 0 12cqw; width: 12cqw; height: 12cqw; max-width: 56px; max-height: 56px; }
 .scout-picker__avatar svg { display: block; width: 100%; height: 100%; }
 .scout-picker__label { display: grid; gap: .6cqw; font-size: var(--fs-xs); line-height: 1.5; }
 .scout-picker__label b { font-weight: 400; color: #b0560e; }
 .scout-picker__label small { color: var(--muted); font-size: inherit; }
+.scout-picker__swatches { display: flex; gap: .8cqw; margin-left: auto; }
+.scout-picker__swatch { width: 3.4cqw; height: 3.4cqw; min-width: 12px; min-height: 12px; border: .3cqw solid var(--frame); border-radius: .4cqw; }
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .game { width: min(100%, 680px); }
+  .screen--battle {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "scene panel" "toolbar toolbar";
+    align-items: start;
+    gap: var(--gap);
+  }
+  .screen--battle > .scene { grid-area: scene; aspect-ratio: 3 / 2; }
+  .screen--battle > .scene > .backdrop--wide { display: block; }
+  .screen--battle > .scene > .backdrop--tall { display: none; }
+  .screen--battle > .panel { grid-area: panel; margin-top: 0; }
+  .screen--battle > .toolbar { grid-area: toolbar; margin-top: 0; }
+}
 
 .stats { font-size: var(--fs-xs); line-height: 1.9; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1cqw 3cqw; }
 .stats span b { font-weight: 400; color: #b0560e; }

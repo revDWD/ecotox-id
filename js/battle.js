@@ -321,6 +321,7 @@ export class Battle {
       btn.classList.remove('is-correct', 'is-wrong');
       const label = btn.querySelector('.choice__label');
       label.textContent = labels ? labels[i] : '';
+      btn.hidden = !labels || i >= labels.length;
       btn.disabled = !labels || i >= labels.length;
       if (labels && labels[i]) btn.setAttribute('aria-label', `Answer ${i + 1}: ${labels[i]}`);
       else btn.removeAttribute('aria-label');
@@ -333,6 +334,10 @@ export class Battle {
 
   ask(q) {
     this.setChoices(q.choices);
+    const menuBounds = this.el.menu.getBoundingClientRect();
+    if (menuBounds.top < 0 || menuBounds.bottom > window.innerHeight) {
+      this.el.menu.scrollIntoView({ block: 'nearest' });
+    }
     if (this.keyboard) this.choiceButtons[0].focus();
     return this.flow.wait((done) => {
       this.chosen = (index) => {

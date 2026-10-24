@@ -57,6 +57,14 @@ function renderScout() {
   $('scout-preview').innerHTML = playerSprite(palette.id);
   $('scout-name').textContent = palette.name;
   $('scout-status').textContent = `Scout palette: ${palette.name}`;
+  const swatches = $('scout-swatches');
+  swatches.replaceChildren();
+  for (const color of ['h', 't', 'p', 'b']) {
+    const swatch = document.createElement('span');
+    swatch.className = 'scout-picker__swatch';
+    swatch.style.backgroundColor = palette.colors[color];
+    swatches.append(swatch);
+  }
   $('btn-scout').setAttribute('aria-label', `Scout appearance: ${palette.name}. Select next color palette.`);
 }
 

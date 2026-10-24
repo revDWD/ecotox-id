@@ -11,7 +11,7 @@ npm start         # http://localhost:8123 (static server, no build step)
 
 ## 1. What it is
 
-A retro creature-battle quiz. A real iNaturalist photo appears; the player picks the scientific name from four choices (Easy = genus, Medium = specific epithet with genus shown, Hard = both from six choices). Three correct answers in a row trigger a silhouette **Challenge** round. Progress is kept in a **Field guide** in `localStorage` (key `ecotoxid.v1`).
+A retro creature-battle quiz. A real iNaturalist photo appears; the player picks the scientific name from four choices (Easy = genus, Medium = species with genus shown, Hard = both from six choices). Three correct answers in a row trigger a silhouette **Challenge** round. Progress is kept in a **Field guide** in `localStorage` (key `ecotoxid.v1`).
 
 - **Deck:** about 143 organisms in four **roles**: `pest`, `enemy`, `pollinator`, `test`. The title screen has a Deck selector (all or one role, saved as `group` in settings) and a scout color picker; the selected palette is saved in settings. The Field guide filters by role. Each species has several one-line ecotox notes (one shown after each answer, all shown in the guide).
 - **Rare encounters:** `"rare": true` entries stay out of the normal pool (`poolFor`) and appear with probability `RARE_CHANCE` in non-challenge rounds, with an optional `intro` line.
@@ -93,4 +93,4 @@ Public repo and site. No secrets exist or are needed (both APIs are keyless).
 
 ## 8. Status (2026-10-22)
 
-Complete and live: 143 species (136 with silhouettes), 3 rare entries, 1 legendary, about 57 reference notes, fun facts for nearly every species, service worker `ecotoxid-v9`.
+Complete and live: 143 species (136 with silhouettes), 3 rare entries, 1 legendary, about 57 reference notes, fun facts for nearly every species, service worker `ecotoxid-v10`.
