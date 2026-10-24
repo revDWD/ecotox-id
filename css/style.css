@@ -399,6 +399,7 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 .prose h3 { margin: 2.4cqw 0 .6cqw; font-size: var(--fs-sm); font-weight: 400; color: #b0560e; }
 .prose h3:first-child { margin-top: 0; }
 .prose p { margin: 0 0 1cqw; }
+.prose .version { margin: 2cqw 0 0; color: var(--muted); font-size: var(--fs-xs); line-height: 1.5; text-align: right; }
 .prose a { color: #1a4fb3; }
 .byline { margin: 3cqw 0 1cqw; text-align: center; font-size: var(--fs-xs); color: var(--muted); }
 

@@ -59,8 +59,10 @@ export function renderGuide(deck, onOpen) {
 function renderGrid(list, onOpen) {
   const grid = document.getElementById('guide-grid');
   grid.textContent = '';
-  list.forEach((entry, index) => {
-    if (activeGroup !== 'all' && groupOf(entry) !== activeGroup) return;
+  const visibleList = list
+    .map((entry, index) => ({ entry, index }))
+    .filter(({ entry }) => activeGroup === 'all' || groupOf(entry) === activeGroup);
+  visibleList.forEach(({ entry, index }) => {
     const status = store.status(entry.id);
     const number = String(index + 1).padStart(3, '0');
     const known = status === 'identified';
@@ -80,7 +82,8 @@ function renderGrid(list, onOpen) {
     tile.addEventListener('click', () => onOpen(entry, status, number));
     grid.append(el('li', {}, tile));
   });
-  document.getElementById('guide-count').textContent = `Identified ${store.identifiedCount()} of ${list.length}`;
+  const identified = visibleList.filter(({ entry }) => store.status(entry.id) === 'identified').length;
+  document.getElementById('guide-count').textContent = `Identified ${identified} of ${visibleList.length}`;
 }
 
 export function openCard(entry, status, number) {

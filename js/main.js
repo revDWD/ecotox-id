@@ -68,6 +68,21 @@ function renderScout() {
   $('btn-scout').setAttribute('aria-label', `Scout appearance: ${palette.name}. Select next color palette.`);
 }
 
+async function renderVersion() {
+  try {
+    const res = await fetch('package.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`Could not load app version (${res.status})`);
+    const { version } = await res.json();
+    if (typeof version !== 'string' || !/^\d+\.\d+\.\d+$/.test(version)) {
+      throw new Error('package.json has an invalid app version');
+    }
+    $('app-version').textContent = `v${version}`;
+  } catch (err) {
+    console.error(err);
+    $('app-version').textContent = 'Version unavailable';
+  }
+}
+
 function renderGroups() {
   const select = $('deck-group');
   const counts = new Map();
@@ -129,6 +144,7 @@ function bindTitle() {
 }
 
 async function boot() {
+  renderVersion();
   document.querySelectorAll('[data-backdrop]').forEach((scene) => {
     const html = scene.dataset.backdrop.split(' ').map(backdropSvg).join('');
     scene.insertAdjacentHTML('afterbegin', html);

@@ -51,7 +51,7 @@ data/species.json (+ data/facts.json)  --push-->  Action "Build deck": scripts/b
 
 ## 3. Rules to keep
 
-- **Service worker:** bump `VERSION` in `sw.js` (`ecotoxid-v<number>`) on every release of app files, and keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`. A missing file makes the whole install fail silently. `check.mjs` checks the list and the name format, not that you bumped the number. The cache prefix `ecotoxid-` keeps it separate from Wild ID on the shared `dwdyck.github.io` origin.
+- **Service worker:** bump `VERSION` in `sw.js` (`ecotoxid-v<number>`) on every release of app files, and keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`, and `package.json`. A missing file makes the whole install fail silently. `package.json` is the single source for the visible app version in Credits. `check.mjs` checks the shell list and version format, not that you bumped the cache number. The cache prefix `ecotoxid-` keeps it separate from Wild ID on the shared `dwdyck.github.io` origin.
 - **Storage:** if the saved shape changes incompatibly, bump the key (`ecotoxid.v2`) and migrate.
 - **Media:** read filenames from `deck.json` (they are content-hashed); never rebuild them from the taxon id. Do not precache media.
 - **Licences and credits:** the builder only accepts cc0, cc-by, cc-by-sa, cc-by-nc and cc-by-nc-sa photos and stores `credit` and `link`. Do not widen this or drop the credits. NC licences matter if the app is ever used commercially.
@@ -93,4 +93,4 @@ Public repo and site. No secrets exist or are needed (both APIs are keyless).
 
 ## 8. Status (2026-10-22)
 
-Complete and live: 143 species (136 with silhouettes), 3 rare entries, 1 legendary, about 57 reference notes, fun facts for nearly every species, service worker `ecotoxid-v10`.
+Complete and live: 143 species (136 with silhouettes), 3 rare entries, 1 legendary, about 57 reference notes, fun facts for nearly every species, service worker `ecotoxid-v12`.

@@ -30,6 +30,9 @@ if (SCOUT_PALETTES.length !== 4 || new Set(SCOUT_PALETTES.map((palette) => playe
   fail('the four scout palettes should render distinct sprites');
 }
 const appHtml = await readFile(path.join(ROOT, 'index.html'), 'utf8');
+const packageJson = JSON.parse(await readFile(path.join(ROOT, 'package.json'), 'utf8'));
+if (!/^\d+\.\d+\.\d+$/.test(packageJson.version)) fail('package.json: version should use major.minor.patch format');
+if (!/id="app-version"/.test(appHtml)) fail('Credits should include an app version display');
 if (!/data-mode="species"[^>]*>[\s\S]*?<small>Species<\/small>/.test(appHtml)) {
   fail('medium difficulty subtitle should be exactly "Species"');
 }
@@ -125,7 +128,7 @@ const shellMatch = swSource.match(/const SHELL = \[([\s\S]*?)\];/);
 if (!shellMatch) fail('sw.js: could not find the SHELL list');
 else {
   const shell = [...shellMatch[1].matchAll(/'([^']+)'/g)].map((m) => m[1]).filter((f) => f !== './');
-  const wanted = ['index.html', 'icon.svg', 'manifest.webmanifest'];
+  const wanted = ['index.html', 'package.json', 'icon.svg', 'manifest.webmanifest'];
   for (const dir of ['css', 'js', 'fonts']) {
     for (const f of await readdir(path.join(ROOT, dir))) if (/\.(css|js|woff2)$/.test(f)) wanted.push(`${dir}/${f}`);
   }
