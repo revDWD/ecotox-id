@@ -1,83 +1,100 @@
 # Ecotox ID
 
-A retro battle-screen game for learning to identify insects, spiders and other wildlife. A real [iNaturalist](https://www.inaturalist.org) photo appears, you pick the scientific name from four choices (six on Hard), and every correct answer wins the round.
+Ecotox ID is a free, offline-friendly organism-identification quiz with a retro battle-screen presentation. Players identify real organisms from iNaturalist photos, learn brief ecotoxicology and ecology notes, and build a persistent Field guide.
 
-**Play it:** (https://revdwd.github.io/ecotox-id-battle/)
+**Play:** [revdwd.github.io/ecotox-id-battle](https://revdwd.github.io/ecotox-id-battle/)
 
-**143 organisms to discover:** Meet 140 in the standard battle rotation, plus 3 rare encounters, across crop pests, natural enemies, pollinators, and ecotoxicology test species.
+**Current version:** shown on the Credits screen and sourced from `package.json`.
 
-## Screenshots
+The game is an unofficial personal project. Its notes are general educational context, not authoritative scientific, regulatory, or risk-assessment advice. Have a domain expert verify material before using it for teaching or decisions.
 
-<p align="center">
-  <img src="screenshots/title-screen.png" alt="Ecotox ID title screen with difficulty and organism deck choices" width="320">
-  <img src="screenshots/battle-screen.png" alt="Ecotox ID battle screen with a real organism photo and four genus choices" width="320">
-</p>
+## For players
 
-## How it plays
+### Gameplay
 
-| Difficulty | You name | Example |
-|---|---|---|
-| Easy | the genus | *Danaus* |
-| Medium | the species (genus shown) | *plexippus* (genus: *Danaus*) |
-| Hard | genus and species, from six choices | *Danaus plexippus* (no hints from the genus) |
+Choose an answer from the organism photo. A correct answer damages the opponent, earns points and experience, and records the organism in your Field guide. A wrong answer costs one of your five health points and breaks your streak. The battle continues until your health runs out; you can then start another run.
 
-- Pick one of four answers (six on Hard). Right answers drain the wild organism's HP and earn EXP; a wrong answer costs you 1 of your 5 HP and breaks your streak.
-- After 3 correct in a row a **Challenge** round shows only a silhouette. Clear it for bonus points, +2 HP and a step up in difficulty.
-- Every organism you meet is added to your **Field guide** (progress is saved in your browser). Browse visible organism names, search common or scientific names, and use the **Show** menu to filter by role.
-- Choose from four scout color palettes on the title screen. Your selection is saved on this device.
-- Works on phones and desktops, with keyboard play (1-4, or 1-6 on Hard; arrow keys + Enter), and offline once loaded.
+| Mode | Identification task | Choices |
+|---|---|---:|
+| Easy | Name the genus | 4 |
+| Medium | Name the species; the genus is shown | 4 |
+| Hard | Name the complete genus and species | 6 |
 
-The deck has **140 organisms** plus three rare surprises, grouped by role: **crop pests** (caterpillars, beetles, aphids, mites and other pests of corn, soybean, cotton, vegetables and orchards), **natural enemies** (ladybirds, parasitoid wasps, predatory bugs, mites and spiders), **pollinators** (honey bees, bumble bees, native bees, hoverflies) and **test and indicator species** (organisms used in ecotoxicology tests, such as *Daphnia*, *Chironomus* and *Eisenia*). Pick a deck on the title screen, or play everything. After every answer you get a one-line ecotox note about the organism, and the Field guide lists all of its notes. The notes are brief general remarks, not regulatory advice, so check them against primary sources before relying on them. About 40 species also carry a reference to a peer-reviewed paper with Bayer or Monsanto (now Bayer) co-authors, found by PubMed affiliation search; the Field guide links each to its DOI.
+After three consecutive correct answers, a Challenge round presents a silhouette. Winning gives bonus points and experience, restores some health, and raises the identification difficulty when another mode is available. Challenge encounters prefer organisms with silhouettes.
 
-**Rare encounter:** an entry marked `"rare": true` in `data/species.json` stays out of the normal rotation and appears in about 1 of 25 battles, with an optional `"intro"` line (the current one is a bombardier beetle, *Brachinus fumans*; also the Varroa mite and a firefly).
+Rare organisms are kept out of the normal pool and can appear unexpectedly in non-challenge rounds (4% chance). The soybean looper is both in the regular pool and eligible for a special gold-glow legendary encounter (1.5% chance in non-challenge rounds).
 
-**Legendary encounter:** an entry marked `"legendary": true` (the golden soybean looper, honoring the game's creator, DWD) stays in the normal deck but also appears in a gold-glow encounter in about 1 of 65 battles.
+### Controls
 
-**Fun facts:** `data/facts.json` maps a scientific name to concise, engaging "Fun fact:" lines, which the build appends to that species' notes (shown in battle and in the Field guide). Facts aim to connect surprising species behavior to crop protection, beneficial insects, pollinators, or ecotoxicology test organisms; they are educational context, not product claims or regulatory advice. DOI paper references remain separate research notes. New or reviewed facts can include a source URL and ISO review date; cited sources are shown in the Field guide. Existing string facts are retained for compatibility but have no structured provenance yet. Facts are general knowledge and should be reviewed by an expert.
+- Select a difficulty with the mouse, touch, or keyboard arrow keys.
+- Press **1–4** to answer in Easy and Medium; **1–6** in Hard.
+- Press **Enter** or **Space** to advance/skip battle dialogue.
+- Use **Escape** to close an open dialog.
+- Use **Tab**, **Shift+Tab**, and **Enter** to navigate interface controls.
 
-To add a sourced fact, use an object in the species' facts array:
+### Field guide
 
-```json
-{
-  "Danaus plexippus": [
-    {
-      "text": "Monarch caterpillars feed on milkweed.",
-      "source": "https://example.org/verified-reference",
-      "reviewedOn": "2026-10-23"
-    }
-  ]
-}
+The Field guide includes all organisms in the deck, not only those already identified. Cards show the common name where available, otherwise the scientific name. Unknown organisms retain their silhouette/mystery-image reveal behavior; identified cards show the photo and organism details. Search by common or scientific name, or filter by role. Your discovery progress is saved locally in your browser.
+
+The title screen also lets you select a role-based battle deck and change the scout palette. These preferences and discovery progress are stored in `localStorage`; they are not sent to a server.
+
+## Organism deck
+
+There are **143 unique organisms**: 140 regular encounters and three rare encounters. The deck covers crop pests, natural enemies, pollinators, and test/indicator species. All 143 are present in the Field guide. Seven regular organisms have no silhouette asset, so they do not appear in the silhouette-based Challenge pool while eligible silhouettes are available.
+
+The deck and generated media are committed to the repository. The game itself loads only same-origin files and does not make runtime requests to iNaturalist, PhyloPic, or other third parties. Photo and silhouette credits and links are available in the game.
+
+## Run and develop locally
+
+### Requirements
+
+- Node.js 20 or newer
+- npm
+
+```powershell
+npm ci
+npm start
 ```
 
-Replace the example URL with a source you have checked. `reviewedOn` must be the date the fact and source were last verified.
+Open <http://localhost:8123>. There is no bundler or build step for the web app.
 
-## Add or remove species (no coding)
+### Checks and browser tests
 
-1. Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open **ecotox-id-battle**.
-2. Edit **Species list**: one scientific name per line, two words, exactly as on iNaturalist (e.g. `Danaus plexippus`).
-3. Save. A GitHub Action fetches the photos, silhouettes and look-alike answers, then the site updates in a few minutes (about 20-30 seconds per new species, so a batch of about 25-30 names takes roughly 12 minutes; adding in batches makes a typo easy to find).
-
-If a name can't be found (usually a typo, or iNaturalist renamed the species), the other species are still added, the run in the Actions tab turns red, GitHub emails you, and the log names the species to fix.
-
-Prefer GitHub directly? Edit `data/species.json`, or run the **Build deck** action from the Actions tab (tick *refresh* to re-pick every photo).
-
-## Run locally
-
-Requires Node 20+.
-
-```
-npm start            # http://localhost:8123
-npm run build-deck   # fetch new photos/silhouettes for species.json
-npm run check        # validate the deck, the game rules and the offline file list
-npm run test:smoke   # run automated browser smoke tests (Playwright)
+```powershell
+npm run check
+npx playwright install chromium   # one-time browser setup
+npm run test:smoke
 ```
 
-The first browser-test run needs Playwright's Chromium browser: `npx playwright install chromium`.
+`npm run check` validates generated deck/media, credits, quiz-choice rules, role pools, service-worker shell, and gameplay simulations. `npm run test:smoke` uses Playwright to test difficulty counts, keyboard selection and battle progression, Field guide search/filter/cards, Credits, and responsive layouts. The GitHub Actions Check workflow runs both.
 
-## Credits
+For a browser test failure, Playwright keeps traces in `test-results/` when configured to retain on failure; these local artifacts are ignored by Git.
 
-Photos come from iNaturalist observers under Creative Commons licenses; the photographer and license are shown in the game and in the Field guide. Silhouettes come from [PhyloPic](https://www.phylopic.org). Font: Press Start 2P (OFL). Sprites and scenes are original pixel art.
+### Organism content
 
-Wild ID is an unaffiliated, non-commercial homage to classic creature-battle games and is not connected to Nintendo, Game Freak or The Pokemon Company.
+- Edit `data/species.json` for the organism list and role-specific notes. Edit `data/facts.json` for additional facts. Do not hand-edit generated `data/deck.json` or media.
+- To rebuild generated content after editing the list, run `npm run build-deck`. The builder queries iNaturalist and PhyloPic during development/build time, selects photos with supported Creative Commons licenses, and writes generated deck/media files.
+- New entries need accepted two-word scientific names, usable iNaturalist photos, a valid role, and enough regular organisms per role to support question generation. The build can take time and may fail when external services or suitable licensed media are unavailable.
+- Structured facts can include a checked source URL and ISO review date. Do not claim a fact was reviewed unless its claim and source were actually checked.
 
-Developer notes for humans and AI agents: see [AGENTS.md](AGENTS.md).
+To edit content without coding, use Pages CMS as configured in `.pages.yml`, or edit the source JSON in GitHub. The “Build deck” workflow updates generated files when source content changes.
+
+## Version, credits, and licensing
+
+The visible app version is `package.json`'s `version` field, prefixed with `v` on the Credits screen. Increment it for a release. When changing app-shell files for a release, also bump the cache `VERSION` in `sw.js` and keep its `SHELL` file list accurate.
+
+Organism photos come from iNaturalist and are used under supported Creative Commons licenses; individual photographers and observation links are credited in the app. Silhouettes are sourced from PhyloPic and artists are credited. The font is Press Start 2P by CodeMan38 (SIL Open Font License). Sprites and scenes are original project art.
+
+Some educational notes cite peer-reviewed papers with Bayer or Monsanto co-authors. This project is not a Bayer product and is not endorsed by Bayer. Ecotoxicology notes and general facts have not received formal expert review.
+
+## Known limitations and deferred ideas
+
+- Content notes and facts need expert review; most legacy facts do not yet have structured source/review metadata.
+- Seven regular organisms lack silhouette assets and are omitted from silhouette challenges when other silhouettes are available.
+- The deck builder depends on live iNaturalist/PhyloPic APIs and usable licensed media; Pages CMS has not been tested end-to-end.
+- The project has no Content Security Policy and no automated offline/browser installation test.
+- Deferred ideas include collection statistics, a post-game review/study mode, progress export, broader learning tools, and an approximate region-based organism map. A map should use broad, sourced regions rather than imply precise distributions.
+
+## For contributors and AI coding agents
+
+Read [AGENTS.md](AGENTS.md) before making changes. It documents architecture, gameplay decisions, dataset audit results, safety/licensing rules, testing expectations, and deferred roadmap items.

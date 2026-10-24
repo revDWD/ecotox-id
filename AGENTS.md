@@ -1,98 +1,134 @@
-# AGENTS.md - Ecotox ID
+# AGENTS.md — Ecotox ID
 
-Guide for AI coding agents and human contributors. Where this file and the code disagree, the code wins: fix this file in the same change.
+Quick-start guide for contributors and AI agents. Read this before changing code. When this guide disagrees with the implementation, the code is authoritative; update this document with relevant behavior changes.
 
-Ecotox ID is a fork of Wild ID (`DWDyck/wild-id-battle`) refocused on ecotoxicology and crop science. Live: https://dwdyck.github.io/ecotox-id-battle/ - Repo: `DWDyck/ecotox-id-battle` (public).
+**Live site:** https://revdwd.github.io/ecotox-id-battle/
+**Repository:** `revDWD/ecotox-id-battle` (public)
+**App version:** `package.json` (`0.1.0` currently); visible in Credits.
 
-```
-npm run check     # validates deck + game rules; must say "All checks passed"
-npm run test:smoke # runs browser smoke tests with Playwright
-npm start         # http://localhost:8123 (static server, no build step)
-```
-
-## 1. What it is
-
-A retro creature-battle quiz. A real iNaturalist photo appears; the player picks the scientific name from four choices (Easy = genus, Medium = species with genus shown, Hard = both from six choices). Three correct answers in a row trigger a silhouette **Challenge** round. Progress is kept in a **Field guide** in `localStorage` (key `ecotoxid.v1`).
-
-- **Deck:** about 143 organisms in four **roles**: `pest`, `enemy`, `pollinator`, `test`. The title screen has a Deck selector (all or one role, saved as `group` in settings) and a scout color picker; the selected palette is saved in settings. The Field guide filters by role. Each species has several one-line ecotox notes (one shown after each answer, all shown in the guide).
-- **Rare encounters:** `"rare": true` entries stay out of the normal pool (`poolFor`) and appear with probability `RARE_CHANCE` in non-challenge rounds, with an optional `intro` line.
-- **Legendary:** `"legendary": true` entries stay in the normal pool and also appear in a gold-glow encounter (`LEGEND_CHANCE`, CSS class `is-legend`). Today: the soybean looper, honoring the creator, DWD.
-- **Fun facts:** `data/facts.json` maps a scientific name to engaging, concise lines; the builder prefixes "Fun fact:" and appends them (max 8 notes per species). Prefer a surprising behavior or ecological connection that helps explain crop pests, beneficials, pollinators, or test organisms. Keep peer-reviewed DOI citations as separate reference notes; don't turn every fun fact into a paper summary. Be accurate and accessible, avoid Bayer/product claims or promotional language, and do not present a general fact as regulatory advice. Structured sourced facts may use `{ "text", "source", "reviewedOn" }`; only set `reviewedOn` after checking the source and claim. Legacy strings remain supported but lack structured provenance.
-- **Reference notes:** about 57 notes cite peer-reviewed papers with Bayer or Monsanto (now Bayer) co-authors, found via PubMed affiliations. Format: `Bayer co-authored: <First> et al. <year>, <journal> - <paraphrased title>; co-authors incl. <names>. doi:<doi>`. `guide.js` turns a trailing `doi:` into a link. Keep each note at 220 characters or less (the builder truncates silently, which would cut the DOI). Only add a reference after checking its authors and affiliation in PubMed; never invent citations or people.
-- **Not authoritative:** the notes and facts come from general knowledge and have had no formal review. Have a domain expert check them before teaching use. The app states it is an unofficial personal project, not endorsed by Bayer.
-
-**Goals:** play-first learning, zero running cost, no accounts or tracking, content edits by non-coders (the species list), phone-friendly and offline, keyboard and screen-reader usable.
-**Non-goals:** accounts, leaderboards, analytics, ads, runtime third-party calls, frameworks or bundlers, Nintendo/Pokemon assets (the look is an unaffiliated homage with original art).
-
-## 2. Architecture
-
-A static site plus an offline content pipeline. The browser only loads files from its own origin.
-
-```
-data/species.json (+ data/facts.json)  --push-->  Action "Build deck": scripts/build-deck.mjs
-   -> iNaturalist + PhyloPic APIs -> data/deck.json + data/photos/* + data/silhouettes/*
-   -> committed by github-actions[bot] -> GitHub Pages -> browser (index.html, js/*, css, sw.js)
+```powershell
+npm ci
+npm run check
+npx playwright install chromium   # one-time browser setup
+npm run test:smoke
+npm start                          # http://localhost:8123
 ```
 
-| File | Responsibility |
+## Purpose and audience
+
+Ecotox ID is a static, phone-friendly organism identification quiz with a retro battle interface. Its intended audience is curious learners, players, and educators interested in crop pests, natural enemies, pollinators, and ecotoxicology test organisms.
+
+The educational goal is play-first familiarity with organism names and brief ecology/ecotoxicology context. Notes are not authoritative, have not had formal expert review, and must not be presented as regulatory or risk-assessment advice. The project is an unofficial personal project, not endorsed by Bayer.
+
+Product priorities: no accounts, tracking, ads, or runtime third-party calls; offline support; accessible keyboard and screen-reader interaction; lightweight static assets; content edits approachable to non-coders.
+
+## Gameplay and product decisions
+
+- **Easy:** identify genus; four answer choices.
+- **Medium:** identify the species with genus shown; four answer choices. Player-facing terminology is “species,” not “specific epithet.” The answer label is still the epithet internally, with the genus shown in the prompt.
+- **Hard:** identify full genus and species; exactly six answer choices.
+- Choice counts are explicit, independent `MODES.*.choiceCount` values in `js/game.js`. Preserve 4/4/6 and unique randomized choices.
+- Correct answers award points/experience and record discovery. Incorrect answers reduce player health and break streaks.
+- Three correct answers in a row trigger a silhouette Challenge. Victory restores some health, grants bonus rewards, and steps difficulty upward. Challenges prefer entries with silhouettes.
+- Rare entries (`rare: true`) are excluded from the regular pool and can appear with 4% probability in non-challenge rounds. The legendary soybean looper remains in the regular pool and has a 1.5% gold-glow encounter chance.
+- Field guide cards always show an organism name (common name when present; scientific-name fallback). Unknown/seen/identified image reveal states, card dialogs, and detail workflows remain intact. Search matches common and scientific names; role filters and visible-subset progress counts are supported.
+- The Field guide contains all organisms, including rare organisms. Discovery progress, best scores, settings, and preferences are stored locally using `ecotoxid.v1`.
+- The Home screen supports a role-based battle deck and four saved scout palettes.
+- App version shown in Credits comes from `package.json`; do not duplicate the version string in UI source. Bump the service-worker cache version on app releases.
+
+## Dataset audit (2026-10-24)
+
+- 143 source organisms and 143 generated deck entries.
+- 143 unique scientific names and unique IDs; no duplicates.
+- No source/deck mismatches and no invalid binomial/genus/epithet mismatches were found.
+- No unusable quiz entries; all 143 appear in the Field guide.
+- 140 regular organisms and 3 rare organisms.
+- Seven regular organisms have no silhouette asset. They are skipped for silhouette Challenges when other eligible silhouettes are available; they still appear in regular rounds and the Field guide.
+- 133 entries have a common name; 10 display their scientific name instead.
+- Most legacy facts lack structured source and review-date metadata. Content needs domain-expert review.
+
+## Architecture
+
+No framework or bundler. Browser loads static first-party files. The build/content pipeline is separate from runtime:
+
+```text
+data/species.json + data/facts.json
+    -> scripts/build-deck.mjs (iNaturalist + PhyloPic build-time APIs)
+    -> data/deck.json + data/photos/ + data/silhouettes/
+    -> GitHub Pages -> browser app
+```
+
+| File or folder | Responsibility |
 |---|---|
-| `js/main.js` | Load `deck.json`, show/hide screens (`title`, `battle`, `guide`, `credits`), title controls, register the service worker |
-| `js/battle.js` (~540 lines) | One run: HUD, question flow, reveal, effects, challenge/rare/legendary rounds, keyboard, zoom, results |
-| `js/game.js` | Pure rules (no DOM): modes, `makeQuestion`, `pickEntry`, `poolFor`, `rarePoolFor`, chances, scoring |
-| `js/guide.js` | Field guide grid, role filter and search, card dialog, DOI links |
-| `js/ui.js` | `Flow` (cancellable timed steps), `TextBox` (typewriter), reduced-motion helper |
-| `js/storage.js`, `sprites.js`, `sound.js` | `localStorage` wrapper, SVG pixel art, WebAudio effects (off by default) |
-| `sw.js` | App-shell cache + cache-first media |
-| `scripts/build-deck.mjs`, `check.mjs`, `serve.mjs` | Deck builder, validator, local server |
-| `tests/browser/`, `playwright.config.js` | Browser smoke tests for gameplay and responsive UI |
-| `.pages.yml` | Pages CMS form for `data/species.json` |
+| `index.html` | Screens, controls, semantic structure |
+| `js/main.js` | Load deck; screen flow; title controls; version display; service worker |
+| `js/battle.js` | Battle lifecycle, HUD, questions, reveals, effects, controls, results |
+| `js/game.js` | Pure game rules and mode/pool/question/scoring helpers; no DOM |
+| `js/guide.js` | Sorted Field guide, role filtering, name search, card details |
+| `js/ui.js` | Cancellable `Flow`, dialogue `TextBox`, reduced-motion helper |
+| `js/storage.js` | Local persistence wrapper (`ecotoxid.v1`) |
+| `js/sprites.js`, `js/sound.js` | Original SVG art and opt-in WebAudio effects |
+| `css/style.css` | Responsive layouts, pixel-art styling, reduced motion |
+| `data/species.json` | Editable source organism list |
+| `data/facts.json` | Supplemental facts keyed by scientific name |
+| `data/deck.json` | Generated runtime organism deck; never edit manually |
+| `data/photos/`, `data/silhouettes/` | Generated, content-hashed media |
+| `scripts/build-deck.mjs` | Build deck/media; requires live external APIs |
+| `scripts/check.mjs` | Deck, media, rule, file-list, and simulation checks |
+| `scripts/serve.mjs` | Minimal local static server |
+| `tests/browser/`, `playwright.config.js` | Playwright browser smoke tests |
+| `.github/workflows/check.yml` | CI runs project checks and browser smoke tests |
+| `.github/workflows/build-deck.yml` | Rebuild generated deck on source-content changes |
+| `sw.js` | App-shell offline cache and cache-first media |
 
-**Data shape.** `data/species.json` is `{ "species": [ { name, role, notes[], rare?, legendary?, intro? } ] }`. `deck.json` and the media are generated; never hand-edit them.
+### Data conventions
 
-**State.** No framework. Persistent state in `storage.js`; run state is a plain object in `Battle` mutated via `game.js` helpers; UI state is the DOM (`hidden`, `aria-*`). Every timed step in a battle goes through `Flow` (`flow.delay()` / `flow.wait()`), so "Run" cancels everything. Do not use bare `setTimeout` in battle logic.
+- Source file shape: `{ "species": [{ "name", "role", "notes", "rare?", "legendary?", "intro?" }] }`. Valid roles: `pest`, `enemy`, `pollinator`, `test`.
+- Scientific names are two-word binomials accepted by iNaturalist. Deck stores scientific name, genus, epithet, common name, taxonomy, role, notes, photo/silhouette credits, and decoy pools.
+- Media paths come from generated `deck.json`; never reconstruct filenames from taxon IDs or species names.
+- Only supported CC photo licenses are allowed: `cc0`, `cc-by`, `cc-by-sa`, `cc-by-nc`, `cc-by-nc-sa`. Preserve attribution and source links.
+- Structured fact objects may contain `text`, `source`, and `reviewedOn`; only use a review date after verifying both claim and source. Legacy fact strings remain supported.
+- Keep notes concise. Reference notes must be checked against PubMed affiliations and remain within the builder’s 220-character limit, including DOI.
 
-## 3. Rules to keep
+## Project conventions and UX requirements
 
-- **Service worker:** bump `VERSION` in `sw.js` (`ecotoxid-v<number>`) on every release of app files, and keep `SHELL` in sync with the real files in `js/`, `css/`, `fonts/`, `icon.svg`, `manifest.webmanifest`, and `package.json`. A missing file makes the whole install fail silently. `package.json` is the single source for the visible app version in Credits. `check.mjs` checks the shell list and version format, not that you bumped the cache number. The cache prefix `ecotoxid-` keeps it separate from Wild ID on the shared `dwdyck.github.io` origin.
-- **Storage:** if the saved shape changes incompatibly, bump the key (`ecotoxid.v2`) and migrate.
-- **Media:** read filenames from `deck.json` (they are content-hashed); never rebuild them from the taxon id. Do not precache media.
-- **Licences and credits:** the builder only accepts cc0, cc-by, cc-by-sa, cc-by-nc and cc-by-nc-sa photos and stores `credit` and `link`. Do not widen this or drop the credits. NC licences matter if the app is ever used commercially.
-- **`game.js` stays pure** and is covered by `check.mjs`; extend the check for any new rule.
-- **`.pages.yml` field names** must match the JSON shape.
-- **Windows/PowerShell:** no `&&`/`||`; use `;`. `git push` writes progress to stderr (not an error).
+- One concern per change; inspect existing patterns first. Prefer pure rules in `game.js`, DOM operations in screen modules, and `Flow` for timed battle actions.
+- Keep `game.js` DOM-free and extend `scripts/check.mjs` when game rules change.
+- Use DOM `textContent`/element helpers for dynamic content. `innerHTML` is limited to static, app-authored SVG. Never inline downloaded SVG; load it as an image.
+- Preserve semantic controls, visible focus, keyboard support, `aria-live` messages, and `prefers-reduced-motion`.
+- Test responsive changes at approximately **390×844**, **1280×800**, and **844×390**. Avoid horizontal overflow and mid-word breaks.
+- Keep interactions and presentation consistent across title, battle, guide, and credits. Names should improve discoverability without exposing unknown photos or changing discovery progression.
+- No runtime third-party resources, trackers, accounts, or new frameworks. Playwright is a development-only dependency for browser tests.
+- Do not split `battle.js` or reorganize the project opportunistically. If a larger refactor is justified, keep it separately scoped and tested.
 
-## 4. Security
+## Testing expectations
 
-Public repo and site. No secrets exist or are needed (both APIs are keyless).
-- Render dynamic text with `textContent` / `el()`. `innerHTML` is allowed only for static app-authored SVG (`sprites.js`, wipe cells). Never inline downloaded SVGs; silhouettes load via `<img src>`.
-- Links to iNaturalist/PhyloPic are built from numeric ids or UUIDs with `rel="noopener"`; DOI links use `https://doi.org/` + `encodeURI`.
-- Never build file paths from species text or API strings.
-- Workflow: `contents: write` only, first-party actions (`actions/checkout@v4`, `actions/setup-node@v4`), no `pull_request_target`.
-- No third-party requests from the browser (no CDNs, fonts or trackers).
-- Accepted risk: no Content-Security-Policy yet (see section 7).
+1. `npm run check` — required after data/rule changes.
+2. `npm run test:smoke` — required after UI/gameplay changes; installs Playwright Chromium once via `npx playwright install chromium`.
+3. CI in `.github/workflows/check.yml` runs `npm ci`, `npm run check`, installs Chromium, and runs smoke tests.
+4. Smoke coverage includes difficulty selection and answer counts, keyboard answers and battle progression, Field guide names/search/filters/card details, Credits version, and mobile portrait/landscape plus desktop layout.
+5. For layout or interaction changes, manually verify additional affected paths when appropriate: correct/wrong answer, Challenge, Run/retry, zoom, guide reveal, persistence, offline reload, and browser console.
 
-## 5. How to work
+## Release and safety rules
 
-1. Run `npm run check` and play a round before editing. Reuse existing patterns (pure rules in `game.js`, DOM in the screen modules, delays in `Flow`). One concern per change.
-2. **Add or remove species:** edit `data/species.json` (and optionally `data/facts.json`), then `node scripts/build-deck.mjs` (about 25 s per new species) and `npm run check`. Names must be accepted two-word binomials on iNaturalist with a CC photo of at least 600 px; a name with no photo is dropped with a warning and the run exits non-zero. Facts keys that match no species also warn. Each role needs at least 4 species in the normal pool.
-3. **Ship:** `npm run check` -> bump `sw.js` -> `git pull` -> commit (include the `Co-authored-by` trailer for AI-assisted commits) -> push -> `git pull --rebase` after the Action's bot commit -> hard-refresh the live site.
-4. **Layout changes:** test about 390x844, 1280x800 and 844x390; no horizontal scroll, no mid-word breaks. Keep keyboard use (`1-4`, or `1-6` on Hard, `Enter`, `Esc`), focus outlines, `aria-live` regions and `prefers-reduced-motion` working.
-5. **Constraints:** no new frameworks or dependencies (explain first if you think one is needed); do not split `battle.js` or reorganize folders opportunistically; do not add tracking.
+- Update `package.json` version for a release. Bump `VERSION` in `sw.js` (`ecotoxid-v<number>`) whenever app-shell files change.
+- Keep `sw.js` `SHELL` synchronized with actual app-shell files. Missing files can make offline installation fail.
+- The `ecotoxid-` cache prefix isolates this app from Wild ID on the shared GitHub Pages origin. Never precache media.
+- Keep saved-state compatibility; if the `ecotoxid.v1` shape changes incompatibly, bump the key and provide a migration.
+- Preserve `contents: read` for checks and `contents: write` only where the build-deck action needs it. Use first-party Actions only; do not add `pull_request_target`.
+- `git push` may write progress to stderr; inspect exit status rather than treating stderr itself as failure. AI-assisted commits include `Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>`.
 
-## 6. Testing
+## Deferred roadmap
 
-- `npm run check` (also run by the Action) verifies deck files and credits, 4 unique choices for every species in all modes, unique ids and filenames, the `SHELL` list and `VERSION`, role pool sizes, rare entries kept out of pools, and a 400-round simulation.
-- Manual smoke test (about 5 minutes): title and difficulty, a right and a wrong answer, a challenge round, game over and retry, photo zoom, Field guide filter and cards, reload persistence, offline reload, no console errors.
-- The legendary encounter was verified in Edge at 390x844 by forcing `Math.random` low: intro line, gold frame, correct species and reveal note, no console errors. It is random in production (about 1 in 65 battles).
+Do not implement these without a focused user request:
 
-## 7. Known gaps and ideas
+- Collection progress statistics and progress export/import.
+- Post-game review mode, missed-question practice, and other study tools.
+- Organism distribution map and broad geographic-region metadata. If pursued, favor approximate, sourced regions over detailed GIS distributions.
+- Additional browser coverage for offline install/reload, accessibility audits, and broader battle states.
+- Expert review and structured provenance for legacy facts.
+- Optional deduplication of identical silhouette files and eventual `battle.js` modularization if feature work warrants it.
 
-- No committed browser test; no Content-Security-Policy (a `<meta>` tag is feasible but needs a test pass because backdrops use inline SVG styles).
-- About 55 silhouette files are byte-identical copies shared by species in the same family (roughly 1 MB); storing one file per taxon would remove them.
-- `battle.js` is the largest file; split only if features are added there.
-- The builder is sequential and depends on live iNaturalist/PhyloPic; Pages CMS saving has not been exercised end to end.
-- Ideas: play-by-role already exists; spaced repetition, progress export, guide thumbnails, a "featured authors" credits screen.
+## Current project status
 
-## 8. Status (2026-10-22)
-
-Complete and live: 143 species (136 with silhouettes), 3 rare entries, 1 legendary, about 57 reference notes, fun facts for nearly every species, service worker `ecotoxid-v12`.
+Version `0.1.0`; service-worker cache `ecotoxid-v12`. The latest deployed app includes scout palettes, per-mode 4/4/6 choices, Medium “species” wording, Field guide names/search/role filters, Credits version, and browser smoke tests. Data totals and caveats are recorded above.
