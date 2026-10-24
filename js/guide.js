@@ -27,6 +27,7 @@ export function sortedDeck(deck) {
 // Filter groups are the ecotox roles (pest, natural enemy, pollinator, test species).
 const groupOf = (entry) => entry.role;
 let activeGroup = 'all';
+let activeSearch = '';
 
 function fillFilter(select, list) {
   const counts = new Map();
@@ -51,8 +52,11 @@ function tileImage(entry, status) {
 export function renderGuide(deck, onOpen) {
   const list = sortedDeck(deck);
   const select = document.getElementById('guide-filter');
+  const search = document.getElementById('guide-search');
   fillFilter(select, list);
+  search.value = activeSearch;
   select.onchange = () => { activeGroup = select.value; renderGrid(list, onOpen); };
+  search.oninput = () => { activeSearch = search.value.trim().toLowerCase(); renderGrid(list, onOpen); };
   renderGrid(list, onOpen);
 }
 
@@ -61,7 +65,9 @@ function renderGrid(list, onOpen) {
   grid.textContent = '';
   const visibleList = list
     .map((entry, index) => ({ entry, index }))
-    .filter(({ entry }) => activeGroup === 'all' || groupOf(entry) === activeGroup);
+    .filter(({ entry }) =>
+      (activeGroup === 'all' || groupOf(entry) === activeGroup) &&
+      (!activeSearch || `${entry.common || ''} ${entry.scientific}`.toLowerCase().includes(activeSearch)));
   visibleList.forEach(({ entry, index }) => {
     const status = store.status(entry.id);
     const number = String(index + 1).padStart(3, '0');
@@ -69,12 +75,7 @@ function renderGrid(list, onOpen) {
     const tile = el('button', { type: 'button', className: `card-tile is-${status}` });
     tile.setAttribute('aria-label', known ? `Number ${index + 1}, ${entry.common || entry.scientific}` : `Number ${index + 1}, not yet identified`);
     const name = el('span', { className: 'card-tile__name' });
-    if (known) {
-      if (entry.common) name.append(entry.common);
-      else name.append(el('i', { textContent: entry.scientific }));
-    } else {
-      name.append('???');
-    }
+    name.append(entry.common || el('i', { textContent: entry.scientific }));
     tile.append(
       el('span', { className: 'card-tile__img' }, tileImage(entry, status), el('span', { className: 'card-tile__no', textContent: number })),
       name,
@@ -82,6 +83,7 @@ function renderGrid(list, onOpen) {
     tile.addEventListener('click', () => onOpen(entry, status, number));
     grid.append(el('li', {}, tile));
   });
+  if (!visibleList.length) grid.append(el('li', { className: 'guide__empty', textContent: 'No organisms match this search.' }));
   const identified = visibleList.filter(({ entry }) => store.status(entry.id) === 'identified').length;
   document.getElementById('guide-count').textContent = `Identified ${identified} of ${visibleList.length}`;
 }

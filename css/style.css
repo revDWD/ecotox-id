@@ -376,6 +376,9 @@ button:focus-visible, a:focus-visible, .card-tile:focus-visible {
 .guide__count { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
 .guide__filter { flex-basis: 100%; display: flex; align-items: center; gap: 2cqw; font-size: var(--fs-xs); color: var(--muted); }
 .guide__filter select { flex: 1; min-width: 0; font-family: inherit; padding: 0 1.6cqw; }
+.guide__search { flex-basis: 100%; display: flex; align-items: center; gap: 2cqw; font-size: var(--fs-xs); color: var(--muted); }
+.guide__search input { flex: 1; min-width: 0; font-family: inherit; padding: 1.2cqw 1.6cqw; }
+.guide__empty { grid-column: 1 / -1; padding: 3cqw; text-align: center; color: var(--muted); font-size: var(--fs-xs); }
 .guide__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6cqw; }
 @container (min-width: 560px) { .guide__grid { grid-template-columns: repeat(4, 1fr); } }
 .card-tile {

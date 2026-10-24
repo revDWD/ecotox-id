@@ -23,7 +23,7 @@ A retro battle-screen game for learning to identify insects, spiders and other w
 
 - Pick one of four answers (six on Hard). Right answers drain the wild organism's HP and earn EXP; a wrong answer costs you 1 of your 5 HP and breaks your streak.
 - After 3 correct in a row a **Challenge** round shows only a silhouette. Clear it for bonus points, +2 HP and a step up in difficulty.
-- Every organism you meet is added to your **Field guide** (progress is saved in your browser). Use the **Show** menu in the guide to look at one group at a time (butterflies, beetles, spiders and so on).
+- Every organism you meet is added to your **Field guide** (progress is saved in your browser). Browse visible organism names, search common or scientific names, and use the **Show** menu to filter by role.
 - Choose from four scout color palettes on the title screen. Your selection is saved on this device.
 - Works on phones and desktops, with keyboard play (1-4, or 1-6 on Hard; arrow keys + Enter), and offline once loaded.
 
@@ -69,7 +69,10 @@ Requires Node 20+.
 npm start            # http://localhost:8123
 npm run build-deck   # fetch new photos/silhouettes for species.json
 npm run check        # validate the deck, the game rules and the offline file list
+npm run test:smoke   # run automated browser smoke tests (Playwright)
 ```
+
+The first browser-test run needs Playwright's Chromium browser: `npx playwright install chromium`.
 
 ## Credits
 

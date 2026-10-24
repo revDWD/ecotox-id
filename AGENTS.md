@@ -6,6 +6,7 @@ Ecotox ID is a fork of Wild ID (`DWDyck/wild-id-battle`) refocused on ecotoxicol
 
 ```
 npm run check     # validates deck + game rules; must say "All checks passed"
+npm run test:smoke # runs browser smoke tests with Playwright
 npm start         # http://localhost:8123 (static server, no build step)
 ```
 
@@ -38,11 +39,12 @@ data/species.json (+ data/facts.json)  --push-->  Action "Build deck": scripts/b
 | `js/main.js` | Load `deck.json`, show/hide screens (`title`, `battle`, `guide`, `credits`), title controls, register the service worker |
 | `js/battle.js` (~540 lines) | One run: HUD, question flow, reveal, effects, challenge/rare/legendary rounds, keyboard, zoom, results |
 | `js/game.js` | Pure rules (no DOM): modes, `makeQuestion`, `pickEntry`, `poolFor`, `rarePoolFor`, chances, scoring |
-| `js/guide.js` | Field guide grid, role filter, card dialog, DOI links |
+| `js/guide.js` | Field guide grid, role filter and search, card dialog, DOI links |
 | `js/ui.js` | `Flow` (cancellable timed steps), `TextBox` (typewriter), reduced-motion helper |
 | `js/storage.js`, `sprites.js`, `sound.js` | `localStorage` wrapper, SVG pixel art, WebAudio effects (off by default) |
 | `sw.js` | App-shell cache + cache-first media |
 | `scripts/build-deck.mjs`, `check.mjs`, `serve.mjs` | Deck builder, validator, local server |
+| `tests/browser/`, `playwright.config.js` | Browser smoke tests for gameplay and responsive UI |
 | `.pages.yml` | Pages CMS form for `data/species.json` |
 
 **Data shape.** `data/species.json` is `{ "species": [ { name, role, notes[], rare?, legendary?, intro? } ] }`. `deck.json` and the media are generated; never hand-edit them.
