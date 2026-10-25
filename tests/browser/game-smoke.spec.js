@@ -5,7 +5,7 @@ async function startBattle(page, mode) {
   await page.getByRole('button', { name: 'Start battle' }).click();
   await expect(page.locator('#more')).toBeVisible();
   await page.keyboard.press('Enter');
-  await expect(page.locator('.choice').first()).toBeVisible();
+  await expect(page.locator('.choice').first()).toBeEnabled();
 }
 
 test.beforeEach(async ({ page }) => {
@@ -46,6 +46,25 @@ test('keyboard answer works and battle advances to the next encounter', async ({
   await expect(page.locator('#foe-img')).not.toHaveAttribute('src', firstPhoto);
 });
 
+test('battle choices render immediately while the opening encounter prepares', async ({ page }) => {
+  await page.getByRole('button', { name: 'Start battle' }).click();
+  const choices = page.locator('.choice:visible');
+  await expect(choices).toHaveCount(4);
+  const initialLabels = await choices.locator('.choice__label').allTextContents();
+  expect(initialLabels.every((label) => label.trim())).toBe(true);
+  await expect(choices.first()).toBeDisabled();
+  const initialBounds = await choices.first().boundingBox();
+  await expect(page.locator('#more')).toBeVisible();
+  await page.locator('#textbox').click();
+  await expect(choices.first()).toBeEnabled();
+  const readyBounds = await choices.first().boundingBox();
+  expect(readyBounds).toMatchObject({
+    x: initialBounds.x,
+    width: initialBounds.width,
+    height: initialBounds.height,
+  });
+});
+
 test('Field guide shows names and preserves card details, search, and role filters', async ({ page }) => {
   const deck = await page.evaluate(async () => (await (await fetch('data/deck.json')).json()).species);
   await page.getByRole('button', { name: 'Field guide' }).click();
@@ -76,6 +95,12 @@ test('Field guide shows names and preserves card details, search, and role filte
   await page.locator('#guide-search').fill('no-organism-matches-this');
   await expect(page.locator('#guide-count')).toHaveText('Identified 0 of 0');
   await expect(page.locator('.guide__empty')).toHaveText('No organisms match this search.');
+  await page.locator('#guide-search').fill('');
+  await page.locator('#guide-filter').selectOption('all');
+  await page.locator('#guide-status').selectOption('unknown');
+  await expect(cards).toHaveCount(143);
+  await page.locator('#guide-status').selectOption('seen');
+  await expect(cards).toHaveCount(0);
 });
 
 test('Credits displays the app version', async ({ page }) => {
@@ -132,6 +157,10 @@ test('identified Field guide cards retain their photo and organism details', asy
   await expect(page.locator('#card-body')).toContainText(entry.scientific);
   await expect(page.locator('#card-body')).toContainText(`Regions: ${entry.regions.join(', ')}`);
   await expect(page.locator('#card-body .card__notes li').first()).not.toBeEmpty();
+  await page.locator('#card').getByRole('button', { name: 'Close' }).click();
+  await page.locator('#guide-status').selectOption('identified');
+  await expect(page.locator('.card-tile')).toHaveCount(1);
+  await expect(page.locator('#guide-count')).toHaveText('Identified 1 of 1');
 });
 
 test('Hard answers fit phone portrait, desktop, and short landscape layouts', async ({ page }) => {
