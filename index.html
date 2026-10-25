@@ -46,6 +46,7 @@
             <button class="menu-item" id="btn-guide" type="button">Field guide</button>
             <button class="menu-item" id="btn-credits" type="button">Credits</button>
           </div>
+          <button class="menu-item" id="btn-map" type="button">Distribution map</button>
         </div>
         <div class="box stats" id="title-stats" aria-live="polite"></div>
       </div>
@@ -128,6 +129,51 @@
             <button class="menu-item" id="btn-results-title" type="button">Title screen</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Distribution map -->
+    <section class="screen screen--map" id="screen-map" hidden aria-labelledby="map-title">
+      <header class="guide__head box">
+        <button class="tool" id="btn-map-back" type="button">Back</button>
+        <h2 id="map-title">Species by region</h2>
+        <p class="guide__count" id="region-count" aria-live="polite"></p>
+      </header>
+      <div class="box map-panel">
+        <p class="map-panel__note">Choose a broad region to explore organisms. Regions are approximate, may include introduced populations, and are not verified range maps.</p>
+        <svg class="region-map" id="distribution-map" viewBox="0 0 760 360" role="group" aria-label="Interactive world map. Choose a region.">
+          <rect class="region-map__ocean" width="760" height="360" rx="8"></rect>
+          <g class="region-map__area" data-region="North America" role="button" tabindex="0" aria-pressed="false">
+            <title></title><path d="M55 72 92 44 147 51 176 70 194 98 176 121 159 141 134 149 121 177 101 164 94 139 70 129 56 105Z"></path>
+            <text x="114" y="102">NA</text><text class="region-map__count" x="114" y="117">0</text>
+          </g>
+          <g class="region-map__area" data-region="Central America" role="button" tabindex="0" aria-pressed="false">
+            <title></title><path d="M154 139 174 143 185 157 197 167 203 182 192 190 179 177 170 163 158 158Z"></path>
+            <text x="180" y="157">CA</text><text class="region-map__count" x="180" y="169">0</text>
+          </g>
+          <g class="region-map__area" data-region="South America" role="button" tabindex="0" aria-pressed="false">
+            <title></title><path d="M201 184 226 185 247 204 258 232 247 257 239 286 222 325 210 304 207 275 194 248 190 219Z"></path>
+            <text x="222" y="228">SA</text><text class="region-map__count" x="222" y="240">0</text>
+          </g>
+          <g class="region-map__area" data-region="Europe" role="button" tabindex="0" aria-pressed="false">
+            <title></title><path d="M339 93 357 75 382 73 397 84 389 101 370 109 351 106Z"></path>
+            <text x="368" y="88">EU</text><text class="region-map__count" x="368" y="100">0</text>
+          </g>
+          <g class="region-map__area" data-region="Africa" role="button" tabindex="0" aria-pressed="false">
+            <title></title><path d="M355 119 382 111 405 124 414 153 403 181 392 208 378 236 365 218 357 187 345 157Z"></path>
+            <text x="380" y="153">AF</text><text class="region-map__count" x="380" y="165">0</text>
+          </g>
+          <g class="region-map__area" data-region="Asia" role="button" tabindex="0" aria-pressed="false">
+            <title></title><path d="M396 78 427 58 468 54 507 65 547 68 590 84 626 105 612 128 579 136 555 154 520 147 496 163 463 152 434 140 409 126 390 105Z"></path>
+            <text x="501" y="100">AS</text><text class="region-map__count" x="501" y="112">0</text>
+          </g>
+          <g class="region-map__area" data-region="Oceania" role="button" tabindex="0" aria-pressed="false">
+            <title></title><path d="M594 211 621 198 648 207 667 224 655 244 633 249 609 238Z M679 260 692 257 699 265 692 273 681 270Z"></path>
+            <text x="632" y="220">OC</text><text class="region-map__count" x="632" y="232">0</text>
+          </g>
+        </svg>
+        <div class="region-options" id="region-options" role="group" aria-label="Filter by region"></div>
+        <ul class="region-results" id="region-results" aria-label="Organisms in selected region"></ul>
       </div>
     </section>
 

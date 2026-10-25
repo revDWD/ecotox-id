@@ -4,9 +4,12 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { MODE_ORDER, ROLES, ROLE_ORDER, MODES, poolFor, makeQuestion, labelFor, pickEntry, recentLimit, addExp, expNeeded, nextMode } from '../js/game.js';
 import { SCOUT_PALETTES, playerSprite } from '../js/sprites.js';
+import { REGIONS } from '../js/regions.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const deck = JSON.parse(await readFile(path.join(ROOT, 'data', 'deck.json'), 'utf8')).species;
+const sourceSpecies = JSON.parse(await readFile(path.join(ROOT, 'data', 'species.json'), 'utf8')).species;
+const sourceByName = new Map(sourceSpecies.map((entry) => [entry.name, entry]));
 const facts = JSON.parse(await readFile(path.join(ROOT, 'data', 'facts.json'), 'utf8'));
 let failures = 0;
 const fail = (msg) => { failures++; console.error(`FAIL: ${msg}`); };
@@ -41,6 +44,10 @@ const answerIndexes = [...appHtml.matchAll(/class="choice"[^>]*data-i="(\d+)"/g)
 if (answerIndexes.length !== 6 || answerIndexes.some((index, position) => index !== position)) {
   fail('index.html should define six answer buttons indexed 0 through 5');
 }
+const mapRegions = [...appHtml.matchAll(/class="region-map__area" data-region="([^"]+)"/g)].map((match) => match[1]);
+if (JSON.stringify(mapRegions) !== JSON.stringify(REGIONS)) {
+  fail('index.html map areas should match the shared region list');
+}
 
 let legacyFacts = 0;
 for (const [name, value] of Object.entries(facts)) {
@@ -64,6 +71,15 @@ for (const [name, value] of Object.entries(facts)) {
 if (legacyFacts) console.warn(`note: ${legacyFacts} legacy fact(s) have no structured source or review date`);
 
 for (const entry of deck) {
+  if (!Array.isArray(entry.regions) || !entry.regions.length || new Set(entry.regions).size !== entry.regions.length ||
+    entry.regions.some((region) => !REGIONS.includes(region))) {
+    fail(`${entry.scientific}: regions must be a non-empty array of unique supported regions`);
+  }
+  const source = sourceByName.get(entry.scientific);
+  if (!source) fail(`${entry.scientific}: missing from species.json`);
+  else if (JSON.stringify(entry.regions) !== JSON.stringify(source.regions)) {
+    fail(`${entry.scientific}: deck regions do not match species.json`);
+  }
   for (const f of [`data/photos/${entry.photo.file}`, entry.silhouette && `data/silhouettes/${entry.silhouette.file}`].filter(Boolean)) {
     await access(path.join(ROOT, f)).catch(() => fail(`${entry.scientific}: missing file ${f}`));
   }
@@ -79,6 +95,14 @@ for (const entry of deck) {
       if (q.choices.filter((c) => c === labelFor(mode, entry.scientific)).length !== 1) fail(`${entry.scientific}/${mode}: correct answer repeated`);
     }
   }
+}
+
+for (const entry of sourceSpecies) {
+  if (!Array.isArray(entry.regions) || !entry.regions.length || new Set(entry.regions).size !== entry.regions.length ||
+    entry.regions.some((region) => !REGIONS.includes(region))) {
+    fail(`${entry.name}: species.json regions must be a non-empty array of unique supported regions`);
+  }
+  if (!deck.some((species) => species.scientific === entry.name)) fail(`${entry.name}: species.json entry is missing from deck.json`);
 }
 
 if (new Set(deck.map((e) => e.id)).size !== deck.length) fail('duplicate species ids in deck');

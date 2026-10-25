@@ -36,6 +36,8 @@ Rare organisms are kept out of the normal pool and can appear unexpectedly in no
 
 The Field guide includes all organisms in the deck, not only those already identified. Cards show the common name where available, otherwise the scientific name. Unknown organisms retain their silhouette/mystery-image reveal behavior; identified cards show the photo and organism details. Search by common or scientific name, or filter by role. Your discovery progress is saved locally in your browser.
 
+The **Distribution map** lets you explore the deck by broad geographic region. Select a map area or region button to filter organisms, then open an organism to see its Field guide details. These region labels are approximate, may include introduced populations, and are not verified range maps or ecological advice.
+
 The title screen also lets you select a role-based battle deck and change the scout palette. These preferences and discovery progress are stored in `localStorage`; they are not sent to a server.
 
 ## Organism deck
@@ -66,13 +68,13 @@ npx playwright install chromium   # one-time browser setup
 npm run test:smoke
 ```
 
-`npm run check` validates generated deck/media, credits, quiz-choice rules, role pools, service-worker shell, and gameplay simulations. `npm run test:smoke` uses Playwright to test difficulty counts, keyboard selection and battle progression, Field guide search/filter/cards, Credits, and responsive layouts. The GitHub Actions Check workflow runs both.
+`npm run check` validates generated deck/media, region metadata, credits, quiz-choice rules, role pools, service-worker shell, and gameplay simulations. `npm run test:smoke` uses Playwright to test difficulty counts, keyboard selection and battle progression, Field guide search/filter/cards, region selection, Credits, and responsive layouts. The GitHub Actions Check workflow runs both.
 
 For a browser test failure, Playwright keeps traces in `test-results/` when configured to retain on failure; these local artifacts are ignored by Git.
 
 ### Organism content
 
-- Edit `data/species.json` for the organism list and role-specific notes. Edit `data/facts.json` for additional facts. Do not hand-edit generated `data/deck.json` or media.
+- Edit `data/species.json` for the organism list, role-specific notes, and each organism's broad `regions` array. Choose one or more supported regions. Edit `data/facts.json` for additional facts. Do not hand-edit generated `data/deck.json` or media.
 - To rebuild generated content after editing the list, run `npm run build-deck`. The builder queries iNaturalist and PhyloPic during development/build time, selects photos with supported Creative Commons licenses, and writes generated deck/media files.
 - New entries need accepted two-word scientific names, usable iNaturalist photos, a valid role, and enough regular organisms per role to support question generation. The build can take time and may fail when external services or suitable licensed media are unavailable.
 - Structured facts can include a checked source URL and ISO review date. Do not claim a fact was reviewed unless its claim and source were actually checked.
@@ -93,7 +95,8 @@ Some educational notes cite peer-reviewed papers with Bayer or Monsanto co-autho
 - Seven regular organisms lack silhouette assets and are omitted from silhouette challenges when other silhouettes are available.
 - The deck builder depends on live iNaturalist/PhyloPic APIs and usable licensed media; Pages CMS has not been tested end-to-end.
 - The project has no Content Security Policy and no automated offline/browser installation test.
-- Deferred ideas include collection statistics, a post-game review/study mode, progress export, broader learning tools, and an approximate region-based organism map. A map should use broad, sourced regions rather than imply precise distributions.
+- Broad region assignments are preliminary approximations and need domain-expert review before being treated as distribution data.
+- Other deferred ideas include collection statistics, a post-game review/study mode, progress export, and broader learning tools.
 
 ## For contributors and AI coding agents
 

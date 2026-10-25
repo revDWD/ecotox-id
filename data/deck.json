@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23",
+ "generated": "2026-10-25",
  "count": 143,
  "species": [
   {
@@ -84,6 +84,11 @@
     "Bayer co-authored: Esquivel et al. 2025, Sci Rep – insecticidal spectrum of proteins in MON 89151 cotton; first author C. Esquivel De Palma, co-authors incl. F. Stubbins, C. Brown. doi:10.1038/s41598-025-23841-y",
     "Fun fact: One caterpillar, several crop names: corn earworm, tomato fruitworm, cotton bollworm. Its host-hopping makes crop context part of the ID story."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -165,6 +170,14 @@
     "Resistance management relies on refuges and rotating modes of action.",
     "Bayer co-authored: Zambon et al. 2026, Pest Manag Sci – resistance to Cry1Ac soybean in Brazil: inheritance, cross-resistance and fitness costs. doi:10.1002/ps.71154",
     "Fun fact: This caterpillar has a menu of 100+ host plants. A pest with that many options can connect very different cropping systems."
+   ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -250,6 +263,14 @@
     "Bayer co-authored: Horikoshi et al. 2021, Pest Manag Sci – a new generation of Bt maize for fall armyworm; co-authors incl. P. Asiimwe and J. Tan. doi:10.1002/ps.6334",
     "Fun fact: Fall armyworm larvae can eat one another when crowded in a corn whorl. Even a pest outbreak has a food-web story."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -331,6 +352,15 @@
     "A nucleopolyhedrovirus is registered as a very selective biological control for it.",
     "Bayer co-authored: Zuo et al. 2020, Insect Sci – the ryanodine receptor mutation I4743M and its contribution to diamide resistance. doi:10.1111/1744-7917.12695",
     "Fun fact: The beet armyworm is no beet specialist: it feeds on many vegetable and field crops, so the crop name alone won't tell you where it can turn up."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -414,6 +444,11 @@
     "Bayer co-authored: Horikoshi et al. 2025, J Insect Sci – population genetic structure and demography of this species. doi:10.1093/jisesa/ieaf092",
     "Fun fact: Young southern armyworms feed in groups, then spread out as they grow. The same pest can change its footprint within a crop."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -495,6 +530,11 @@
     "Bt corn aimed at this borer sparked the monarch pollen debate over non-target effects.",
     "Bayer co-authored: Dwyer et al. 2026, Pest Manag Sci – inheritance and stability of Cry2Ab2 resistance in a European corn borer strain. doi:10.1002/ps.71336",
     "Fun fact: The European corn borer likely reached the US around 1910 hidden in imported broomcorn."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
    ],
    "factSources": []
   },
@@ -578,6 +618,15 @@
     "Monsanto (now Bayer) co-authored: Donovan et al. 2001, J Invertebr Pathol – gene knockout shows vip3A contributes to Bt pathogenesis toward black cutworm and beet armyworm. doi:10.1006/jipa.2001.5037",
     "Fun fact: Black cutworm moths can ride spring storm winds north from the Gulf states into the Corn Belt."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -653,6 +702,15 @@
     "The parasitoid wasps that help control it are easily killed by broad-spectrum sprays.",
     "Bayer co-authored: Steinbach et al. 2015, Insect Biochem Mol Biol – geographic spread and genetics of ryanodine receptor target-site resistance to diamides. doi:10.1016/j.ibmb.2015.05.001",
     "Fun fact: Diamondback moth has evolved resistance to many insecticides: a vivid reminder that pest control is an evolutionary arms race, not a one-and-done fix."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -734,6 +792,15 @@
     "Cell lines from this moth are widely used in labs to make baculovirus-expressed proteins.",
     "Fun fact: Cabbage looper cells in the lab can manufacture proteins. A crop pest can also become a useful tool for biotechnology."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -814,6 +881,15 @@
     "Bt-based sprays are selective for caterpillars and spare most beneficial insects.",
     "Sprays on flowering brassicas and weeds nearby can expose visiting pollinators.",
     "Fun fact: The small white butterfly reached Quebec in the 1860s and now follows cabbage across North America."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -899,6 +975,11 @@
     "Legendary status: this is the favorite crop pest of the game's creator, DWD, so it sometimes appears as a golden looper.",
     "Fun fact: Soybean loopers walk by looping: they arch their backs like tiny green inchworms."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": [],
    "legendary": true,
    "intro": "A LEGENDARY encounter! DWD's golden Soybean Looper has appeared!"
@@ -983,6 +1064,11 @@
     "Bayer co-authored: Levine et al. 2019, Environ Entomol – interaction in insecticidal activity between MON 87751 × MON 87701 soybean; co-author J. Uffman. doi:10.1093/ee/nvz082",
     "Fun fact: A disturbed velvetbean caterpillar may thrash about and drop off the plant."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -1064,6 +1150,11 @@
     "Hornworms covered in wasp cocoons are best left alone, because the wasps keep future hornworms down.",
     "Fun fact: Hornworm moths hover at flowers like hummingbirds, and the caterpillar is a lab model for insect biology."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -1138,6 +1229,15 @@
     "Monsanto (now Bayer) co-authored: Mohan et al. 2016, Pest Manag Sci – field resistance to Cry1Ac in Bollgard hybrid cotton in pink bollworm populations in India. doi:10.1002/ps.4047",
     "Bayer co-authored: Bal et al. 2025, Transgenic Res – ecological risk assessment of MON 89151 cotton proteins; co-authors incl. D. Dyck, C. Esquivel De Palma, F. Stubbins, J. Tan. doi:10.1007/s11248-025-00460-x",
     "Fun fact: Pink bollworm larvae feed hidden inside cotton bolls, out of easy sight. The US declared it eradicated from cotton in 2018 after a major area-wide campaign."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -1221,6 +1321,14 @@
     "Bayer co-authored: Lösel et al. 2002, Pest Manag Sci – factors affecting the field performance of an attracticide against codling moth. doi:10.1002/ps.577",
     "Fun fact: That 'worm in the apple' is often a codling moth caterpillar."
    ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -1302,6 +1410,14 @@
     "Macrocentrus wasps help keep it in check.",
     "Fun fact: Orchards can be filled with synthetic female scent so male moths get confused and cannot find mates."
    ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -1379,6 +1495,15 @@
     "Predatory mirid bugs are used against it in greenhouse tomato.",
     "Bayer co-authored: Roditakis et al. 2017, Insect Biochem Mol Biol – ryanodine receptor point mutations confer diamide resistance in tomato leafminer. doi:10.1016/j.ibmb.2016.11.003",
     "Fun fact: The tomato leafminer was reported in Spain in 2006 and has since traveled across Africa and Asia."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -1463,6 +1588,12 @@
     "Monsanto (now Bayer) co-authored: Grimi et al. 2018, Pest Manag Sci – field-evolved resistance to Bt maize in sugarcane borer in Argentina. doi:10.1002/ps.4783",
     "Fun fact: In Brazil, tiny parasitoid wasps are released against sugarcane borer. Pest management can recruit a natural enemy instead of relying on one control tactic."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -1544,6 +1675,13 @@
     "Insecticide use on rice affects aquatic life in paddies, so borer control is an ecotoxicology topic.",
     "Bayer co-authored: Sun et al. 2024, Insect Sci – risk assessment, fitness cost, cross-resistance and mechanism of tetraniliprole resistance in the rice stem borer. doi:10.1111/1744-7917.13282",
     "Fun fact: Rice stem borer damage has a dramatic name: 'deadheart', when the central shoot of a young rice plant dies."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -1627,6 +1765,12 @@
     "Bayer co-authored: Mishra et al. 2024, Pest Manag Sci – larvae resistant to dsRNA remain susceptible to small-molecule pesticides. doi:10.1002/ps.7825",
     "Monsanto (now Bayer) co-authored: Levine et al. 2015, PLoS One – independent action of DvSnf7 RNA and Cry3Bb1 in southern corn rootworm and this beetle. doi:10.1371/journal.pone.0118622",
     "Fun fact: The Colorado potato beetle switched from a wild nightshade to potatoes in the 1800s, then went on a world tour."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia"
    ],
    "factSources": []
   },
@@ -1712,6 +1856,10 @@
     "Bayer co-authored: Bowen et al. 2021, Appl Environ Microbiol – Cry75Aa (Mpp75Aa) proteins for rootworm control; co-authors incl. B. Werner. doi:10.1128/AEM.02507-20",
     "Fun fact: Some western corn rootworm populations lay eggs in soybean fields, dodging the classic corn-soybean rotation. Pest behavior can reshape a management plan."
    ],
+   "regions": [
+    "North America",
+    "Europe"
+   ],
    "factSources": []
   },
   {
@@ -1794,6 +1942,10 @@
     "Monsanto (now Bayer) co-authored: Levine et al. 2015, PLoS One – independent action of DvSnf7 RNA and Cry3Bb1 protein in southern corn rootworm. doi:10.1371/journal.pone.0118622",
     "Fun fact: Its Latin name says 'eleven-spotted', but the adult actually has twelve spots."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -1875,6 +2027,11 @@
     "Pheromone-baited traps are used to monitor it.",
     "Fun fact: A boll weevil monument in Enterprise, Alabama thanks the pest for pushing local farming to diversify. Sometimes a pest changes the whole agricultural story."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -1952,6 +2109,9 @@
     "Scouting thresholds are used to limit sprays against it.",
     "Seed treatments are sometimes used against early-season beetles.",
     "Fun fact: Bean leaf beetles come in several colors and spot patterns, which makes ID a good challenge."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -2034,6 +2194,10 @@
     "Unlike most lady beetles, it eats plants rather than aphids.",
     "Fun fact: This bean-eating beetle is a lady beetle relative, but unlike many lady beetles it feeds on plants. Family resemblance is no guarantee of ecological role."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -2114,6 +2278,13 @@
     "Neonicotinoid seed treatments on Canadian canola are aimed mainly at flea beetles.",
     "Concern about neonicotinoids and bees has put seed-treated brassica crops in the spotlight.",
     "Fun fact: Flea beetles jump like fleas thanks to enlarged hind legs."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -2197,6 +2368,12 @@
     "Bayer co-authored: Zimmer et al. 2014, Pestic Biochem Physiol – target-site resistance to pyrethroids in German populations. doi:10.1016/j.pestbp.2013.11.005",
     "Fun fact: Despite the 'flea' in its name it is a beetle, and it jumps with big hind legs."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -2271,6 +2448,11 @@
     "Pyrethroid resistance is widespread, so growers rely on thresholds and other modes of action.",
     "Spraying oilseed rape in flower can expose bees, so label rules restrict timing.",
     "Fun fact: Pollen beetles love yellow: an oilseed rape field can host thousands."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
    ],
    "factSources": []
   },
@@ -2353,6 +2535,13 @@
     "Non-chemical options include trap crops and field-edge management.",
     "Fun fact: Pea leaf weevils leave scalloped notches on leaf edges, like someone with tiny scissors."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -2433,6 +2622,11 @@
     "The wasp Tetrastichus julis was released in the US from the 1960s and now suppresses it.",
     "Broad-spectrum sprays can disrupt that biocontrol wasp.",
     "Fun fact: Cereal leaf beetle larvae wear a coat of their own droppings. The crop-damaging stage can be surprisingly hard to spot."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
    ],
    "factSources": []
   },
@@ -2515,6 +2709,10 @@
     "Water holding periods after rice insecticide use protect downstream aquatic life.",
     "Fun fact: Rice water weevil larvae live in flooded paddies, getting air from rice roots."
    ],
+   "regions": [
+    "North America",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -2595,6 +2793,11 @@
     "Soil neonicotinoid use on lawns can reach flowering clover and affect bees.",
     "The milky spore bacterium is a biological control for its grubs.",
     "Fun fact: Japanese beetles were first found in the US in 1916, in a New Jersey nursery."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
    ],
    "factSources": []
   },
@@ -2677,6 +2880,9 @@
     "Entomopathogenic nematodes can control its soil-dwelling larvae.",
     "Fun fact: Plum curculio females cut a little crescent-shaped scar in fruit to lay an egg."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -2758,6 +2964,11 @@
     "Pheromone traps are used to monitor adults.",
     "Fun fact: Wireworms become click beetles, which flip themselves into the air with a click when upside down."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -2836,6 +3047,15 @@
     "Phosphine fumigation is the main grain treatment, and resistance to it is increasing.",
     "Diatomaceous earth is a low-toxicity grain protectant.",
     "Fun fact: A rice weevil lays an egg inside a grain and plugs the tiny hole. The next generation develops where a quick surface check can't see it."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -2919,6 +3139,15 @@
     "Bayer co-authored: Buer et al. 2025, Pest Manag Sci – superior target genes and pathways for RNAi pest control from genome-wide analysis. doi:10.1002/ps.8505",
     "Fun fact: The red flour beetle was the first beetle to have its genome sequenced (2008)."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -2999,6 +3228,10 @@
     "Lady beetles and Orius bugs can hold it below threshold when sprays spare them.",
     "Pyrethroid resistance has been reported in Midwestern populations.",
     "Fun fact: After its North American discovery in 2000, soybean aphid spread across the soybean belt within years. Early detection matters when a tiny sap-feeder multiplies fast."
+   ],
+   "regions": [
+    "North America",
+    "Asia"
    ],
    "factSources": []
   },
@@ -3082,6 +3315,15 @@
     "Bayer co-authored: Benting et al. 2004, Pest Manag Sci – an S431F acetylcholinesterase-1 mutation mediates resistance to pirimicarb and omethoate. doi:10.1002/ps.971",
     "Fun fact: Cotton aphids range from pale yellow to nearly black depending on conditions."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -3164,6 +3406,15 @@
     "Bayer co-authored: Yuan et al. 2026, Insect Biochem Mol Biol – the P450s CYP6CY3 and CYP6CY4 confer resistance to flupyradifurone. doi:10.1016/j.ibmb.2026.104487",
     "Fun fact: Green peach aphids can transmit more than 100 plant viruses. Their crop impact can travel in a mouthpart-sized package."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -3244,6 +3495,15 @@
     "Parasitoids and hoverflies are important natural enemies of it in cereals.",
     "Fun fact: Bird cherry-oat aphids have two homes: bird cherry trees in winter, cereals in summer."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -3323,6 +3583,15 @@
     "Natural enemies often keep it below economic levels in maize.",
     "It is a vector of maize dwarf mosaic virus.",
     "Fun fact: Aphid daughters can already carry embryos of the next generation. Under good conditions, population growth can become a generational relay."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -3405,6 +3674,15 @@
     "Pyrethroid resistance (kdr) has been found in UK populations.",
     "Fun fact: Ants sometimes guard aphids for their sugary honeydew. A crop pest can be part of a surprisingly cooperative food-web partnership."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -3485,6 +3763,15 @@
     "Bacterial symbionts can protect pea aphids against parasitoid wasps.",
     "Its genome was among the first sequenced for a hemipteran.",
     "Fun fact: Pea aphids can be red or green, and some pigment genes have fungal origins. Even a familiar field pest has an unexpected evolutionary backstory."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -3568,6 +3855,15 @@
     "Bayer co-authored: Nauen et al. 2013, Pest Manag Sci – pymetrozine is hydroxylated by CYP6CM1, a P450 conferring neonicotinoid resistance. doi:10.1002/ps.3460",
     "Fun fact: The name Bemisia tabaci covers a complex of look-alike whiteflies. Getting the identity right is the first step before comparing biology or risk."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -3650,6 +3946,15 @@
     "Bayer co-authored: Kapantaidaki et al. 2018, Pest Manag Sci – insecticide resistance in populations and novel diagnostics for kdr mutations. doi:10.1002/ps.4674",
     "Fun fact: Tap a greenhouse tomato and clouds of greenhouse whiteflies may rise. A disturbance can reveal what a still leaf was hiding."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -3731,6 +4036,13 @@
     "The parasitoid wasp Tamarixia radiata is released against it.",
     "Fun fact: Adult Asian citrus psyllids feed with their rear ends tilted up in the air."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Africa",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -3808,6 +4120,10 @@
     "Resistance to imidacloprid is widespread in Asia.",
     "Bayer co-authored: Zeng et al. 2025, Insect Biochem Mol Biol – differentially spliced CYP419A1 contributes to ethiprole resistance. doi:10.1016/j.ibmb.2025.104260",
     "Fun fact: A brown planthopper outbreak can leave rice patches looking scorched, a symptom farmers call hopperburn. The damage pattern tells a field story."
+   ],
+   "regions": [
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -3889,6 +4205,9 @@
     "Alfalfa varieties with hairy leaves reduce damage.",
     "Spray timing around alfalfa bloom matters for bees.",
     "Fun fact: Potato leafhoppers walk sideways, like tiny crabs."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -3972,6 +4291,9 @@
     "Monsanto (now Bayer) co-authored: Jerga et al. 2016, Arch Biochem Biophys – mechanistic insights into the first Lygus-active pore-forming protein. doi:10.1016/j.abb.2016.03.016",
     "Fun fact: The tarnished plant bug is named for its mottled look, like an old silver spoon."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -4054,6 +4376,9 @@
     "Monsanto (now Bayer) co-authored: Jerga et al. 2016, Arch Biochem Biophys – mechanistic insights into the first Lygus-active pore-forming protein. doi:10.1016/j.abb.2016.03.016",
     "Fun fact: Lygus feeding can leave strawberries lumpy and misshapen, a symptom called cat-facing. Tiny feeding marks can have a very visible crop outcome."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -4135,6 +4460,11 @@
     "Sprays against it can flare secondary pests such as mites and scale.",
     "Fun fact: In autumn, brown marmorated stink bugs gather on house walls looking for a warm place to overwinter."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -4211,6 +4541,15 @@
     "It feeds on many hosts, so sprays in one crop can push it into neighboring crops.",
     "Bayer co-authored: Riga et al. 2020, Arch Insect Biochem Physiol – development of efficient RNAi in the southern green stink bug for insecticide target discovery. doi:10.1002/arch.21650",
     "Fun fact: The southern green stink bug can turn brownish in cooler months."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -4293,6 +4632,9 @@
     "Trap crops at field edges can concentrate it before spraying.",
     "Fun fact: Stink bugs 'stink' because of defensive chemicals released from scent glands."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -4373,6 +4715,10 @@
     "An egg parasitoid from Asia, Paratelenomus saccharalis, now attacks it in the US.",
     "Pyrethroid sprays on soybean can suppress natural enemies.",
     "Fun fact: The kudzu bug was first found in Georgia in 2009 and spread across the Southeast within a few years."
+   ],
+   "regions": [
+    "North America",
+    "Asia"
    ],
    "factSources": []
   },
@@ -4455,6 +4801,10 @@
     "Egg parasitoid wasps help limit it.",
     "Fun fact: The harlequin bug wears a flashy orange-and-black costume."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -4535,6 +4885,9 @@
     "Squash flowers heavily, so sprays during bloom can harm pollinators such as squash bees.",
     "Hand-picking egg masses and trapping under boards reduce the need to spray.",
     "Fun fact: Squash bug eggs sit in neat bronze clusters on the undersides of leaves."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -4617,6 +4970,11 @@
     "Egg parasitoid wasps are among its natural enemies.",
     "Fun fact: 'Leaf-footed' refers to the flattened, leaf-like expansions on the hind legs."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -4690,6 +5048,10 @@
     "Systemic insecticides applied to trees against it raise pollinator exposure concerns.",
     "Its honeydew supports sooty mold on vines and fruit.",
     "Fun fact: Spotted lanternfly is neither a fly nor a lantern: it's a planthopper. Common names can mislead, so field monitoring starts with a reliable ID."
+   ],
+   "regions": [
+    "North America",
+    "Asia"
    ],
    "factSources": []
   },
@@ -4772,6 +5134,15 @@
     "Predatory mites and Orius bugs are released to control it in greenhouses.",
     "Fun fact: 'Thrips' is both singular and plural: one thrips, two thrips."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -4852,6 +5223,15 @@
     "Some populations reproduce without males, which speeds the spread of resistance.",
     "Insecticide programs in onion rotate modes of action to slow resistance.",
     "Fun fact: Onion thrips are only 1-2 mm long, but their silvery feeding scars are easy to spot."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -4936,6 +5316,15 @@
     "Monsanto (now Bayer) co-authored: Liu et al. 2016, Exp Appl Acarol – site-specific tactics using bifenazate and Neoseiulus californicus for spider mite management. doi:10.1007/s10493-016-0073-y",
     "Fun fact: Two-spotted spider mites are arachnids, not insects, and can web a leaf like a miniature tent. The pest you miss at first can leave a very visible trace."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -5018,6 +5407,14 @@
     "Bayer co-authored: Leskey et al. 2026, Environ Entomol – evaluation of deployment strategies for attracticidal spheres against the invasive spotted wing drosophila. doi:10.1093/ee/nvag047",
     "Fun fact: Unlike many fruit flies associated with overripe fruit, spotted-wing drosophila can lay eggs in ripening fruit. That timing changes the crop-protection challenge."
    ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -5098,6 +5495,15 @@
     "The sterile insect technique releases sterilized males with no insecticide on the crop.",
     "Protein-bait sprays with spinosad use relatively little insecticide.",
     "Fun fact: Medfly programs have released sterile males by the millions. Here, control works by interrupting reproduction rather than spraying the adult population."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -5180,6 +5586,11 @@
     "It has been the target of large eradication campaigns in California and Florida.",
     "Fun fact: Male oriental fruit flies are strongly attracted to methyl eugenol, a plant compound used in monitoring traps. A scent can turn an invisible population into a count."
    ],
+   "regions": [
+    "Asia",
+    "Africa",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -5260,6 +5671,13 @@
     "Organophosphate soil insecticides once widely used against it have been restricted in many regions.",
     "Fine insect netting is a non-chemical option.",
     "Fun fact: Gardeners put little collars around cabbage seedlings to stop this fly laying eggs."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -5342,6 +5760,9 @@
     "US western grasshopper control programs use diflubenzuron, an insect growth regulator.",
     "Fun fact: The differential grasshopper has black herringbone marks on its hind legs."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -5411,6 +5832,12 @@
     "Outbreak control uses sprays such as fipronil, and effects on non-target arthropods are monitored.",
     "The biopesticide Metarhizium acridum is a lower-impact alternative.",
     "Fun fact: Crowding can change locust color, shape and behavior: solitary grasshoppers can become swarmers. Population density itself can change the risk picture."
+   ],
+   "regions": [
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -5493,6 +5920,10 @@
     "Insect growth regulators and Metarhizium are used for barrier treatments.",
     "Fun fact: A desert locust can eat roughly its own weight in plants each day."
    ],
+   "regions": [
+    "Africa",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -5573,6 +6004,13 @@
     "Baits containing insect growth regulators avoid broadcast sprays.",
     "Phorid fly parasitoids have been released as biocontrol.",
     "Fun fact: Fire ants survive floods by linking together into living rafts."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -5655,6 +6093,11 @@
     "It migrates to mountains to overwinter, and wild-collected beetles are sold.",
     "Fun fact: This lady beetle's name points to two white lines that meet on its thorax. A quick field mark can help distinguish a helpful predator from a crop pest."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -5735,6 +6178,15 @@
     "It is used as a test species in studies of pesticide and Bt-crop effects on predators.",
     "It makes harmonine, a defensive alkaloid.",
     "Fun fact: When threatened, Asian lady beetles 'reflex bleed' a smelly yellow fluid from their leg joints."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -5817,6 +6269,13 @@
     "Its spread in North America coincided with declines of some native lady beetles.",
     "Fun fact: Seven spots make this lady beetle easy to recognize, but its larvae are predators too. Beneficial insects don't stay in their adult form forever."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -5895,6 +6354,11 @@
     "It eats aphids, scales and psyllids in orchards.",
     "Fun fact: The two-spot ladybird comes as red with black spots or black with red spots, same species."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -5970,6 +6434,10 @@
     "It also eats Colorado potato beetle eggs.",
     "Monsanto (now Bayer) co-authored: Ahmad et al. 2016, Transgenic Res – non-target arthropod field data for dsRNA maize risk assessment; co-authors incl. C. Brown, P. Asiimwe. doi:10.1007/s11248-015-9907-3",
     "Fun fact: This lady beetle eats pollen as well as aphids and insect eggs. A flexible diet can keep a beneficial predator in the field between pest meals."
+   ],
+   "regions": [
+    "North America",
+    "Central America"
    ],
    "factSources": []
   },
@@ -6052,6 +6520,15 @@
     "Pesticide-tolerant strains have been selected for use in sprayed crops.",
     "Fun fact: Green lacewing larvae are called aphid lions; adults also use pollen and nectar. The same beneficial species can have very different diets at different life stages."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -6133,6 +6610,10 @@
     "Adults feed on honeydew and pollen, so flowering margins help them.",
     "Fun fact: Lacewing eggs sit on tiny silk stalks, away from hungry siblings."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -6208,6 +6689,11 @@
     "Commercial Orius are released for thrips control in greenhouses.",
     "Monsanto (now Bayer) co-authored: Duan et al. 2007, Environ Entomol – development of tier-I toxicity assays for Orius insidiosus. doi:10.1603/0046-225x(2007)36[982:dottaf]2.0.co;2",
     "Fun fact: Minute pirate bugs hunt thrips, mites and insect eggs. A predator's broad menu can make it a useful ally—and a species worth recognizing in crop assessments."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
    ],
    "factSources": []
   },
@@ -6285,6 +6771,11 @@
     "In cotton, sprays against bollworm can reduce its numbers.",
     "Fun fact: Big-eyed bugs hunt eggs and small insects. Look closely before calling every insect on a crop a pest."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -6358,6 +6849,9 @@
     "Foliar sprays often reduce damsel bugs, letting pests rebound.",
     "It eats alfalfa weevil larvae, aphids and caterpillars.",
     "Fun fact: Damsel bugs ambush prey with grasping front legs, despite the delicate name."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -6440,6 +6934,10 @@
     "Some insecticides that spare it are chosen precisely for that reason.",
     "Fun fact: The spined soldier bug is a predatory stink bug that attacks caterpillars. A familiar pest-shaped silhouette can belong to a beneficial species."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -6516,6 +7014,10 @@
     "Resistance to insecticides in potato beetles makes predators like this one more valuable.",
     "It is reared commercially in some countries for release.",
     "Fun fact: This predatory stink bug feeds on Colorado potato beetle larvae. In a crop, the identity of the stink bug matters."
+   ],
+   "regions": [
+    "North America",
+    "Central America"
    ],
    "factSources": []
   },
@@ -6598,6 +7100,11 @@
     "Sticky secretions on the forelegs of some Zelus help hold prey.",
     "Fun fact: Assassin bugs inject saliva that liquefies prey from the inside."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -6678,6 +7185,10 @@
     "Adults and larvae both eat caterpillars.",
     "It is large and long-lived, so repeated spray exposure is a concern.",
     "Fun fact: Its common name is 'fiery searcher': a glittering caterpillar-hunting ground beetle."
+   ],
+   "regions": [
+    "North America",
+    "Central America"
    ],
    "factSources": []
   },
@@ -6760,6 +7271,12 @@
     "It eats slugs, which are pests in cereals and oilseed rape.",
     "Fun fact: This ground beetle works the night shift, eating slugs, weed seeds and insects."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -6840,6 +7357,11 @@
     "Carabid tests often use larvae because they live in treated soil.",
     "It eats aphids, fly larvae and seeds in cereal fields.",
     "Fun fact: 'Cupreus' means coppery, and it gleams like a new penny."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
    ],
    "factSources": []
   },
@@ -6922,6 +7444,9 @@
     "Feeding on seeds can expose it to treated seed coats.",
     "Fun fact: Its species name spells Pennsylvania with one 'n', an older spelling."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -7002,6 +7527,12 @@
     "Larvae parasitize fly pupae in the soil, so soil insecticides can harm the next generation.",
     "It appears in EU non-target arthropod testing guidance.",
     "Fun fact: Aleochara larvae hunt cabbage root fly pupae and develop inside the fly's puparium. A natural enemy can target a pest while it is hidden underground."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -7084,6 +7615,10 @@
     "Parasitized caterpillars eat less and stop damaging the crop.",
     "Fun fact: Hornworms covered in white cocoons look sprinkled with rice; those are wasp cocoons."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -7164,6 +7699,12 @@
     "Mummies are tan, bloated aphids with a round exit hole.",
     "Banker plants maintain these wasps in greenhouses.",
     "Fun fact: A parasitized aphid becomes a golden mummy, then the tiny wasp cuts a round exit hole. Biological control can leave its own field evidence."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -7246,6 +7787,11 @@
     "Parasitized bugs often carry white eggs behind the head.",
     "Fun fact: Feather-legged flies glue eggs onto stink bugs, which then carry them around."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -7326,6 +7872,10 @@
     "Adults feed on corn pollen, so they are exposed to anything expressed in it.",
     "Larvae eat corn leaf aphids and other small insects.",
     "Fun fact: Hover flies mimic wasps but cannot sting; their larvae can eat aphids. One insect can look like a threat as an adult and act as a crop ally as a larva."
+   ],
+   "regions": [
+    "North America",
+    "Central America"
    ],
    "factSources": []
   },
@@ -7408,6 +7958,11 @@
     "Hoverfly larvae are sensitive to many insecticides and are often missing from sprayed crops.",
     "Fun fact: Hover flies can hover in place and even fly backward. Their larvae can be aphid predators, while adults visit flowers."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -7488,6 +8043,14 @@
     "Hoverfly larvae can eat hundreds of aphids before they pupate.",
     "Adults migrate across Europe in large numbers.",
     "Fun fact: Marmalade hoverflies migrate across Europe in huge numbers. A beneficial insect can move across landscapes, not just between neighboring rows."
+   ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -7570,6 +8133,14 @@
     "As an omnivore, it is both an orchard predator and a soft-fruit pest.",
     "Fun fact: Despite the ear myth, earwig mothers guard their eggs and tend their young."
    ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -7651,6 +8222,9 @@
     "Sublethal doses of some insecticides have been reported to change their hunting and mating behavior.",
     "Fun fact: Wolf spider mothers carry their egg sacs, then their spiderlings on their backs."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -7720,6 +8294,11 @@
     "Lynx spiders hunt on plants, so foliar sprays reach them directly.",
     "It eats bollworm eggs and larvae in cotton.",
     "Fun fact: Lynx spiders pounce on prey like tiny cats."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
    ],
    "factSources": []
   },
@@ -7802,6 +8381,10 @@
     "Spiders in field crops can suffer from broad-spectrum sprays, which lowers natural pest control.",
     "Fun fact: Jumping spiders have excellent vision for their size, and bold jumpers will stare right back."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -7874,6 +8457,15 @@
     "It specializes on spider mites, so sprays that kill it can bring the mites back.",
     "Pesticide compatibility tables are published for commercial biocontrol users.",
     "Fun fact: Predatory mites can arrive in a bottle and be released onto crops to hunt spider mites. Biological control can be small enough to pour."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -7956,6 +8548,15 @@
     "Strains tolerant of some insecticides have been selected for use in sprayed crops.",
     "Monsanto (now Bayer) co-authored: Liu et al. 2016, Exp Appl Acarol – site-specific tactics using bifenazate and this predatory mite for spider mite management. doi:10.1007/s10493-016-0073-y",
     "Fun fact: This predatory mite can switch to pollen when spider mites are scarce. That alternative food may help a natural enemy persist between pest outbreaks."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -8040,6 +8641,15 @@
     "Monsanto (now Bayer) co-authored: Tan et al. 2016, Environ Toxicol Chem – no impact of DvSnf7 RNA on honey bee adults and larvae in dietary feeding tests. doi:10.1002/etc.3075",
     "Fun fact: A worker honey bee's lifetime honey contribution is tiny—often estimated at about 1/12 teaspoon. Pollination, not an individual bee's honey, is the bigger field service."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -8116,6 +8726,9 @@
     "Neonicotinoid exposure has been shown to reduce bumble bee colony growth.",
     "Bayer co-authored: Krueger et al. 2021, Environ Entomol – the utility of a bumble bee brood test for evaluating the effects of pesticides. doi:10.1093/ee/nvab072",
     "Fun fact: Bumble bees buzz-pollinate by vibrating flowers to shake pollen loose, which helps tomatoes set fruit. A flower visit can be a specialized tool, not just a stop for nectar."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -8194,6 +8807,12 @@
     "Bayer co-authored: Reid et al. 2020, Pestic Biochem Physiol – assessing the acute toxicity of insecticides to the buff-tailed bumblebee. doi:10.1016/j.pestbp.2020.104562",
     "Fun fact: Bumble bees warm their flight muscles by shivering, letting them forage on cool days. Pollinator activity depends on more than whether flowers are present."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -8270,6 +8889,9 @@
     "Surveys have found pesticide residues in pollen collected by bumble bees in agricultural areas.",
     "Fun fact: The yellow-faced bumble bee is a native western pollinator. Its field-margin and crop-foraging story is a reminder that exposure can extend beyond the planted field."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -8344,6 +8966,9 @@
     "Queens emerge early and visit fruit bloom.",
     "Nests are in the ground or in cavities, so soil residues can reach them.",
     "Fun fact: Each spring, one bumble bee queen starts a colony from scratch. The timing of a pollinator's life cycle matters when thinking about seasonal exposure."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -8427,6 +9052,9 @@
     "Bayer co-authored: Cabrera et al. 2024, Environ Entomol – a test method for chronic oral toxicity of a pesticide to solitary orchard bees (Osmia spp.). doi:10.1093/ee/nvae098",
     "Fun fact: Blue orchard bees nest in hollow tunnels and seal each brood cell with mud. Their offspring develop in a built environment, not in the open air."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -8508,6 +9136,11 @@
     "EFSA bee guidance includes solitary bees such as Osmia in risk assessment.",
     "Bayer co-authored: Beadle et al. 2019, PLoS Genet – genomic insights into neonicotinoid sensitivity in the solitary bee Osmia bicornis. doi:10.1371/journal.pgen.1007903",
     "Fun fact: Red mason bees nest in hollow tubes and provision separate brood cells. A pollinator's nesting habitat can be part of its exposure story."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
    ],
    "factSources": []
   },
@@ -8591,6 +9224,10 @@
     "Bayer co-authored: Cabrera et al. 2024, Environ Entomol – a test method for chronic oral toxicity of a pesticide to solitary orchard bees (Osmia spp.). doi:10.1093/ee/nvae098",
     "Fun fact: Hornfaced bees have been managed in Japanese apple orchards for decades. This small native bee can be a working part of an orchard's pollination system."
    ],
+   "regions": [
+    "North America",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -8671,6 +9308,14 @@
     "Residues in leaf pieces and pollen are studied as exposure routes.",
     "Bayer co-authored: Hayward et al. 2019, Nat Ecol Evol – the leafcutter bee is more sensitive to N-cyanoamidine neonicotinoid and butenolide insecticides than other managed bees. doi:10.1038/s41559-019-1011-2",
     "Fun fact: Alfalfa leafcutting bees punch neat circles from leaves to line their nests. The crop pollinator also interacts directly with plant tissue."
+   ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -8753,6 +9398,9 @@
     "Managed nesting beds are protected with spray timing rules on alfalfa.",
     "Fun fact: Alkali bees nest in dense underground 'bee cities'. A field's bare soil can be habitat, not empty space."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -8833,6 +9481,9 @@
     "Females emerge at dawn to visit squash flowers.",
     "Soil-applied systemic insecticides can reach squash pollen, so exposure has been studied.",
     "Fun fact: Squash bees visit squash flowers at dawn, and males may sleep inside them. If you only look at midday, you can miss a pollinator's schedule."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -8915,6 +9566,9 @@
     "Females buzz flowers to shake loose pollen.",
     "Fun fact: The blueberry bee is a specialist pollinator of blueberry flowers. Crop and wild pollinators don't all visit the same plants in the same way."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -8995,6 +9649,10 @@
     "Ground-nesting bees may encounter soil residues.",
     "Its metallic green color makes it easy to spot in surveys.",
     "Fun fact: Some sweat bees visit flowers and are also attracted to salt in sweat. Pollinator behavior can be more varied than a simple flower-to-flower loop."
+   ],
+   "regions": [
+    "North America",
+    "Central America"
    ],
    "factSources": []
   },
@@ -9077,6 +9735,10 @@
     "Long-horned bees are important for sunflower seed production.",
     "Fun fact: Male longhorn bees sleep while gripping plant stems with their jaws. A field after dark can still be pollinator habitat."
    ],
+   "regions": [
+    "North America",
+    "Central America"
+   ],
    "factSources": []
   },
   {
@@ -9157,6 +9819,15 @@
     "Larvae live in polluted standing water, so they tolerate organic pollution.",
     "Adults are among the most common flower visitors in crop fields.",
     "Fun fact: The drone fly's aquatic larva breathes through a telescopic snorkel. A familiar flower visitor has a very different, water-dwelling early life stage."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -9239,6 +9910,15 @@
     "Milkweed loss in crop fields is a leading hypothesis for monarch declines.",
     "Fun fact: Monarch migration spans generations: no single butterfly makes the whole round trip. Protecting a migratory pollinator means thinking beyond one field and one season."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -9316,6 +9996,12 @@
     "Monsanto (now Bayer) co-authored: Levine et al. 2015, Environ Toxicol Chem – aminomethylphosphonic acid has low chronic toxicity to Daphnia magna and fathead minnow. doi:10.1002/etc.2940",
     "Fun fact: Water fleas are transparent enough to see a heartbeat under a microscope. In ecotoxicology, the test animal is small—but the response is visible."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -9390,6 +10076,11 @@
     "It detects fish chemicals and grows protective helmets.",
     "Its sequenced genome supports toxicogenomics.",
     "Fun fact: Daphnia pulex was among the first crustaceans to have its genome sequenced. This tiny freshwater animal has a big place in aquatic biology."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
    ],
    "factSources": []
   },
@@ -9473,6 +10164,13 @@
     "Bayer co-authored: Klagkou et al. 2024, Insects – modeling the bioenergetics and life history traits of Chironomus riparius: consequences of food limitation. doi:10.3390/insects15110848",
     "Fun fact: Chironomid larvae are called bloodworms because hemoglobin turns them red. They live in sediment, making the bottom of a water body part of their story."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -9547,6 +10245,9 @@
     "Scuds shred leaf litter, so harm to them ripples through stream food webs.",
     "Amphipods are sensitive to many insecticides, including pyrethroids.",
     "Fun fact: This scud is an amphipod, a small crustacean—not a shrimp or an insect. Its place in freshwater food webs makes the group useful to know."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -9629,6 +10330,9 @@
     "Growth and survival over about 10 to 20 days are typical endpoints.",
     "Fun fact: The familiar adult midge is brief; much of its life is spent as an aquatic larva. For sediment-dwelling species, the life stage can determine the exposure route."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": []
   },
   {
@@ -9704,6 +10408,11 @@
     "Its decline signals insecticide contamination in streams.",
     "Fun fact: Freshwater shrimp shred fallen leaves into smaller pieces that feed stream food webs. A small crustacean helps move energy through the ecosystem."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -9776,6 +10485,9 @@
     "Nymphs burrow in soft sediment and need good oxygen.",
     "Mass emergences in the Great Lakes region mark improved water quality.",
     "Fun fact: Hexagenia mayfly hatches can be so immense they appear on weather radar. A pulse of insects can move aquatic production onto land in a single night."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -9859,6 +10571,13 @@
     "Bayer co-authored: Classen et al. 2026, Environ Toxicol Chem – developing a chronic test for field-collected mayflies. doi:10.1093/etojnl/vgag110",
     "Fun fact: Unlike most mayflies, this species can give birth to live young. Even familiar indicator groups can break the textbook pattern."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -9915,6 +10634,9 @@
     "Nymphs need cold, well-oxygenated streams.",
     "Its absence can signal metal or sediment pollution.",
     "Fun fact: The salmonfly hatch is a feast for trout—and a seasonal event anglers plan around. Mayflies connect stream health to the food above the water, too."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -9992,6 +10714,15 @@
     "Earthworm reproduction tests count cocoons and juveniles.",
     "A closely related species, Eisenia andrei, is also used under the same name.",
     "Fun fact: Tiger worms turn food scraps into compost. As soil recyclers, they make a memorable ambassador for why ecotoxicology looks below ground."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -10071,6 +10802,12 @@
     "Its burrows improve water infiltration, which affects pesticide transport.",
     "Field studies measure worm abundance after pesticide application.",
     "Fun fact: Darwin's last book celebrated earthworms. Their burrowing reshapes soil, so a worm is more than a small animal in a test dish."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -10153,6 +10890,12 @@
     "Springtails are sensitive to some insecticides and fungicides.",
     "Fun fact: This tiny springtail is white, eyeless and reproduces without males. It is also a soil-dweller—an easy reminder that ecotoxicology isn't only about water."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -10224,6 +10967,14 @@
     "It is a terrestrial crustacean, not an insect.",
     "It accumulates metals in its hepatopancreas.",
     "Fun fact: Pill bugs are land-living crustaceans, not insects. They feed among damp leaf litter, where soil and decomposing material meet."
+   ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -10307,6 +11058,15 @@
     "Bayer co-authored: Giang et al. 2025, Pestic Biochem Physiol – the role of Cyp6g1 and Cyp6g2 in neonicotinoid metabolism in Drosophila melanogaster. doi:10.1016/j.pestbp.2025.106451",
     "Fun fact: Fruit flies have flown in space and helped answer big biology questions. A familiar lab model can make complex effects easier to study."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -10367,6 +11127,12 @@
     "In bioaccumulation tests, worms are exposed to contaminated sediment for 28 days.",
     "It reproduces by fragmenting, so cultures are easy to maintain.",
     "Fun fact: Blackworms can regrow after injury. Their remarkable biology is a reminder that survival alone doesn't describe every effect on an organism."
+   ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -10439,6 +11205,9 @@
     "Field-evolved resistance to the Cry1F protein in Bt corn has been reported, so trait choice and scouting both matter.",
     "Females lay egg masses on the upper leaves of corn, so scouting around moth flight peaks improves control timing.",
     "Fun fact: Despite its name, corn is a main host of the western bean cutworm in much of the Corn Belt."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -10517,6 +11286,14 @@
     "Thresholds guide spray timing, and lady beetles and parasitoids help hold numbers down, so sparing them matters.",
     "Fun fact: Sugarcane aphids can reproduce without mating, so a few founders can become a fast-growing colony. Population growth is part of the crop-risk story."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -10594,6 +11371,13 @@
     "Feeding on pods and seed can shrivel seed and delay maturity, a problem often called stay-green.",
     "Pyrethroids are widely used against stink bugs, so resistance monitoring and natural-enemy conservation are part of IPM.",
     "Fun fact: The reddish band across its back is the redbanded stink bug's giveaway."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Africa",
+    "Asia"
    ],
    "factSources": []
   },
@@ -10676,6 +11460,11 @@
     "Its numbers have fallen in US cotton since Bt cotton was adopted, while corn earworm persists.",
     "Fun fact: The tobacco budworm is also called the geranium budworm for its taste in flowers."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -10757,6 +11546,15 @@
     "Broad-spectrum sprays in some groves later killed the beetle and let scale outbreaks return.",
     "Fun fact: The vedalia beetle helped control cottony cushion scale in citrus. It is a classic reminder that natural enemies can change the outcome of a pest problem."
    ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
+   ],
    "factSources": []
   },
   {
@@ -10831,6 +11629,10 @@
     "Populations were found in the US without a planned release, and it is also studied as a classical biocontrol agent.",
     "Host-range testing asks which native stink bugs' eggs it might also attack.",
     "Fun fact: The samurai wasp is only millimeters long and attacks stink bug eggs. A beneficial insect can act before a crop pest ever hatches."
+   ],
+   "regions": [
+    "North America",
+    "Asia"
    ],
    "factSources": []
   },
@@ -10913,6 +11715,9 @@
     "Colonies nest in tree hollows and are active in the warmer parts of Brazil.",
     "Fun fact: Stingless bees cannot sting, but some will crawl into your hair and bite."
    ],
+   "regions": [
+    "South America"
+   ],
    "factSources": []
   },
   {
@@ -10981,6 +11786,9 @@
     "Breeding males develop dark bands and head tubercles, which makes endocrine effects visible in some tests.",
     "Its wide use means a deep database of toxicity values to compare against.",
     "Fun fact: Male fathead minnows guard their eggs. Reproduction and parental behavior are part of fish biology—not just whether an adult survives."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": []
   },
@@ -11055,6 +11863,15 @@
     "Frond counts over about 7 days measure growth inhibition.",
     "It multiplies within days under good conditions, so effects show up fast.",
     "Fun fact: Duckweed mostly multiplies by cloning, even though it is a flowering plant. Its rapid growth makes changes in a tiny floating plant easy to notice."
+   ],
+   "regions": [
+    "North America",
+    "Central America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": []
   },
@@ -11131,6 +11948,11 @@
     "Healthy, well-fed cultures matter, so lab conditions are tightly standardized.",
     "Fun fact: Water flea mothers can produce clonal young without mating. That can make lab populations more uniform, while reminding us that real populations also vary."
    ],
+   "regions": [
+    "North America",
+    "Europe",
+    "Asia"
+   ],
    "factSources": []
   },
   {
@@ -11204,6 +12026,14 @@
     "It feeds on the fat body of bees and spreads viruses such as deformed wing virus.",
     "Miticide resistance has been documented in some regions, so beekeepers monitor mite counts and rotate treatments.",
     "Fun fact: Varroa is named after the Roman author Varro, who wrote about bees."
+   ],
+   "regions": [
+    "North America",
+    "South America",
+    "Europe",
+    "Africa",
+    "Asia",
+    "Oceania"
    ],
    "factSources": [],
    "rare": true,
@@ -11288,6 +12118,9 @@
     "Lawn and turf insecticides can expose soil-dwelling firefly larvae.",
     "Fun fact: 'Femme fatale' fireflies (Photuris) mimic its flashes to lure and eat the males."
    ],
+   "regions": [
+    "North America"
+   ],
    "factSources": [],
    "rare": true,
    "intro": "A RARE glow-bug flickers at dusk! Make a wish... and an ID!"
@@ -11370,6 +12203,9 @@
     "The spray is released in rapid pulses at close to boiling temperature, so it really does fire back at predators.",
     "Ground beetles like this are often used as indicators of how farm practices affect non-target insects.",
     "Fun fact: Bombardier beetles fire a hot, pulsing chemical spray: a tiny jet engine."
+   ],
+   "regions": [
+    "North America"
    ],
    "factSources": [],
    "rare": true,

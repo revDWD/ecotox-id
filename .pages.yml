@@ -29,6 +29,21 @@ content:
                 - { value: enemy, label: Natural enemy }
                 - { value: pollinator, label: Pollinator }
                 - { value: test, label: Test and indicator species }
+          - name: regions
+            label: Geographic regions
+            type: select
+            list: true
+            required: true
+            description: Broad approximate regions, not verified range maps.
+            options:
+              values:
+                - { value: North America, label: North America }
+                - { value: Central America, label: Central America }
+                - { value: South America, label: South America }
+                - { value: Europe, label: Europe }
+                - { value: Africa, label: Africa }
+                - { value: Asia, label: Asia }
+                - { value: Oceania, label: Oceania }
           - name: notes
             label: Ecotox notes (one line each)
             type: string

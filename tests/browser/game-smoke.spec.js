@@ -83,6 +83,37 @@ test('Credits displays the app version', async ({ page }) => {
   await expect(page.locator('#app-version')).toHaveText('v0.1.0');
 });
 
+test('distribution map filters organisms by region and opens Field guide details', async ({ page }) => {
+  const deck = await page.evaluate(async () => (await (await fetch('data/deck.json')).json()).species);
+  expect(deck.every((entry) => Array.isArray(entry.regions) && entry.regions.length > 0)).toBe(true);
+  await page.getByRole('button', { name: 'Distribution map' }).click();
+  await expect(page.locator('#screen-map')).toBeVisible();
+  await expect(page.locator('#region-results li')).toHaveCount(143);
+  const northAmerica = deck.filter((entry) => entry.regions.includes('North America'));
+  const area = page.locator('.region-map__area[data-region="North America"]');
+  await expect(area).toHaveAttribute('aria-label', `North America: ${northAmerica.length} organisms`);
+  await area.focus();
+  await page.keyboard.press('Enter');
+  await expect(area).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#region-results li')).toHaveCount(northAmerica.length);
+  await page.locator('#region-results button').first().click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.getByRole('button', { name: 'Close' }).click();
+  await page.getByRole('button', { name: 'All regions' }).click();
+  await expect(page.locator('#region-results li')).toHaveCount(143);
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1280, height: 800 },
+    { width: 844, height: 390 },
+  ]) {
+    await page.setViewportSize(viewport);
+    const noHorizontalOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+    expect(noHorizontalOverflow, `Distribution map ${viewport.width}x${viewport.height}: horizontal overflow`).toBe(true);
+  }
+  await page.locator('#btn-map-back').click();
+  await expect(page.locator('#screen-title')).toBeVisible();
+});
+
 test('identified Field guide cards retain their photo and organism details', async ({ page }) => {
   const entry = await page.evaluate(async () => {
     const deck = (await (await fetch('data/deck.json')).json()).species;
@@ -99,6 +130,7 @@ test('identified Field guide cards retain their photo and organism details', asy
   await page.locator('.card-tile').click();
   await expect(page.locator('#card-body img')).toHaveAttribute('src', `data/photos/${entry.photo.file}`);
   await expect(page.locator('#card-body')).toContainText(entry.scientific);
+  await expect(page.locator('#card-body')).toContainText(`Regions: ${entry.regions.join(', ')}`);
   await expect(page.locator('#card-body .card__notes li').first()).not.toBeEmpty();
 });
 

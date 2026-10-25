@@ -101,6 +101,7 @@ export function openCard(entry, status, number) {
   if (known) {
     body.append(el('img', { src: PHOTO_DIR + entry.photo.file, alt: `Photo of ${entry.common || entry.scientific}` }));
     body.append(el('p', {}, el('i', { textContent: entry.scientific })));
+    if (entry.regions?.length) body.append(el('p', { className: 'card__regions', textContent: `Regions: ${entry.regions.join(', ')}` }));
     body.append(el('p', { textContent: `${entry.order ? entry.order + ' | ' : ''}${entry.family}` }));
     if (entry.role) {
       body.append(el('p', { className: 'card__role', textContent: ROLES[entry.role].single }));

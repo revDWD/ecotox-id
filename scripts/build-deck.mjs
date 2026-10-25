@@ -6,6 +6,7 @@ import { readFile, writeFile, mkdir, access, rm, readdir } from 'node:fs/promise
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { REGIONS } from '../js/regions.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
@@ -243,6 +244,22 @@ async function main() {
     const item = typeof raw === 'string' ? { name: raw } : raw || {};
     const name = String(item.name || '').trim();
     const role = String(item.role || '').trim();
+    if (name && !ROLES.includes(role)) {
+      console.warn(`! ${name}: role must be one of ${ROLES.join(', ')} (got "${role}")`);
+      problems.push(`${name}: role must be one of ${ROLES.join(', ')}`);
+      continue;
+    }
+    if (!name || seen.has(name.toLowerCase())) {
+      if (name) console.warn(`! ${name}: listed more than once, skipping the extra entry`);
+      continue;
+    }
+    if (!Array.isArray(item.regions) || !item.regions.length || new Set(item.regions).size !== item.regions.length ||
+      item.regions.some((region) => !REGIONS.includes(region))) {
+      const message = `${name}: regions must be a non-empty array of unique supported regions`;
+      console.warn(`! ${message}`);
+      problems.push(message);
+      continue;
+    }
     const factEntries = [].concat(facts[name] || []);
     const fun = factEntries.map((fact) => `Fun fact: ${String(typeof fact === 'string' ? fact : fact.text).trim()}`.slice(0, 220));
     const factSources = factEntries.filter((fact) => typeof fact !== 'string').map((fact) => ({
@@ -254,16 +271,7 @@ async function main() {
       .map((n) => String(n || '').trim().slice(0, 220)).filter(Boolean).slice(0, 6), ...fun].slice(0, 8);
     const intro = String(item.intro || '').trim().slice(0, 120);
     const flags = { ...(item.rare === true ? { rare: true } : {}), ...(item.legendary === true ? { legendary: true } : {}) };
-    const meta = { role, notes, factSources, ...flags, ...(intro && Object.keys(flags).length ? { intro } : {}) };
-    if (name && !ROLES.includes(role)) {
-      console.warn(`! ${name}: role must be one of ${ROLES.join(', ')} (got "${role}")`);
-      problems.push(`${name}: role must be one of ${ROLES.join(', ')}`);
-      continue;
-    }
-    if (!name || seen.has(name.toLowerCase())) {
-      if (name) console.warn(`! ${name}: listed more than once, skipping the extra entry`);
-      continue;
-    }
+    const meta = { role, notes, factSources, regions: item.regions, ...flags, ...(intro && Object.keys(flags).length ? { intro } : {}) };
     seen.add(name.toLowerCase());
     if (only && name.toLowerCase() !== only) {
       const kept = byName.get(name.toLowerCase());

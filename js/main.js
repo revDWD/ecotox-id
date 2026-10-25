@@ -3,10 +3,11 @@ import { sound } from './sound.js';
 import { backdropSvg, playerSprite, SCOUT_PALETTES, scoutPalette } from './sprites.js';
 import { Battle } from './battle.js';
 import { renderGuide, openCard } from './guide.js';
+import { renderMap } from './map.js';
 import { MODES, ROLES, ROLE_ORDER } from './game.js';
 
 const $ = (id) => document.getElementById(id);
-const screens = ['title', 'battle', 'guide', 'credits'];
+const screens = ['title', 'battle', 'guide', 'map', 'credits'];
 let deck = [];
 let battle = null;
 let mode = MODES[store.settings.mode] ? store.settings.mode : 'genus';
@@ -137,6 +138,11 @@ function bindTitle() {
     renderGuide(deck, openCard);
     show('guide', 'btn-guide-back');
   });
+  $('btn-map').addEventListener('click', () => {
+    renderMap(deck, openCard);
+    show('map', 'btn-map-back');
+  });
+  $('btn-map-back').addEventListener('click', () => { renderTitle(); show('title', 'btn-map'); });
   $('btn-credits').addEventListener('click', () => show('credits', 'btn-credits-back'));
   $('btn-guide-back').addEventListener('click', () => { renderTitle(); show('title', 'btn-guide'); });
   $('btn-credits-back').addEventListener('click', () => show('title', 'btn-credits'));
