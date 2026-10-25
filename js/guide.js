@@ -28,6 +28,7 @@ export function sortedDeck(deck) {
 const groupOf = (entry) => entry.role;
 let activeGroup = 'all';
 let activeSearch = '';
+let activeStatus = 'all';
 
 function fillFilter(select, list) {
   const counts = new Map();
@@ -41,6 +42,10 @@ function fillFilter(select, list) {
   select.value = activeGroup;
 }
 
+function fillStatusFilter(select) {
+  select.value = activeStatus;
+}
+
 function tileImage(entry, status) {
   // No silhouette and not yet identified: a "?" instead of the photo, which would otherwise show as a black box.
   if (status === 'unknown' && !entry.silhouette) return el('span', { className: 'card-tile__mystery', textContent: '?' });
@@ -49,13 +54,31 @@ function tileImage(entry, status) {
   return img;
 }
 
+export function createCardTile(entry, status, number, onOpen) {
+  const known = status === 'identified';
+  const tile = el('button', { type: 'button', className: `card-tile is-${status}` });
+  const ordinal = Number.parseInt(number, 10);
+  tile.setAttribute('aria-label', known ? `Number ${ordinal}, ${entry.common || entry.scientific}` : `Number ${ordinal}, not yet identified`);
+  const name = el('span', { className: 'card-tile__name' });
+  name.append(entry.common || el('i', { textContent: entry.scientific }));
+  tile.append(
+    el('span', { className: 'card-tile__img' }, tileImage(entry, status), el('span', { className: 'card-tile__no', textContent: number })),
+    name,
+  );
+  tile.addEventListener('click', () => onOpen(entry, status, number));
+  return el('li', {}, tile);
+}
+
 export function renderGuide(deck, onOpen) {
   const list = sortedDeck(deck);
   const select = document.getElementById('guide-filter');
+  const status = document.getElementById('guide-status');
   const search = document.getElementById('guide-search');
   fillFilter(select, list);
+  fillStatusFilter(status);
   search.value = activeSearch;
   select.onchange = () => { activeGroup = select.value; renderGrid(list, onOpen); };
+  status.onchange = () => { activeStatus = status.value; renderGrid(list, onOpen); };
   search.oninput = () => { activeSearch = search.value.trim().toLowerCase(); renderGrid(list, onOpen); };
   renderGrid(list, onOpen);
 }
@@ -67,21 +90,12 @@ function renderGrid(list, onOpen) {
     .map((entry, index) => ({ entry, index }))
     .filter(({ entry }) =>
       (activeGroup === 'all' || groupOf(entry) === activeGroup) &&
+      (activeStatus === 'all' || store.status(entry.id) === activeStatus) &&
       (!activeSearch || `${entry.common || ''} ${entry.scientific}`.toLowerCase().includes(activeSearch)));
   visibleList.forEach(({ entry, index }) => {
     const status = store.status(entry.id);
     const number = String(index + 1).padStart(3, '0');
-    const known = status === 'identified';
-    const tile = el('button', { type: 'button', className: `card-tile is-${status}` });
-    tile.setAttribute('aria-label', known ? `Number ${index + 1}, ${entry.common || entry.scientific}` : `Number ${index + 1}, not yet identified`);
-    const name = el('span', { className: 'card-tile__name' });
-    name.append(entry.common || el('i', { textContent: entry.scientific }));
-    tile.append(
-      el('span', { className: 'card-tile__img' }, tileImage(entry, status), el('span', { className: 'card-tile__no', textContent: number })),
-      name,
-    );
-    tile.addEventListener('click', () => onOpen(entry, status, number));
-    grid.append(el('li', {}, tile));
+    grid.append(createCardTile(entry, status, number, onOpen));
   });
   if (!visibleList.length) grid.append(el('li', { className: 'guide__empty', textContent: 'No organisms match this search.' }));
   const identified = visibleList.filter(({ entry }) => store.status(entry.id) === 'identified').length;

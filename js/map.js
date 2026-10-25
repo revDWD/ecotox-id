@@ -1,6 +1,5 @@
 import { store } from './storage.js';
-import { ROLES } from './game.js';
-import { sortedDeck } from './guide.js';
+import { createCardTile, sortedDeck } from './guide.js';
 import { REGIONS } from './regions.js';
 
 const el = (tag, props = {}, ...kids) => {
@@ -35,13 +34,7 @@ export function renderMap(deck, onOpen) {
       : `All regions: ${visible.length} organisms`;
     results.replaceChildren(...visible.map((entry) => {
       const status = store.status(entry.id);
-      const name = entry.common || entry.scientific;
-      const button = el('button', { type: 'button', className: 'region-result' },
-        el('span', { className: 'region-result__name', textContent: name }),
-        el('span', { className: 'region-result__detail', textContent: `${entry.scientific} · ${ROLES[entry.role].single}` }),
-      );
-      button.addEventListener('click', () => onOpen(entry, status, guideNumbers.get(entry.id)));
-      return el('li', {}, button);
+      return createCardTile(entry, status, guideNumbers.get(entry.id), onOpen);
     }));
   };
 

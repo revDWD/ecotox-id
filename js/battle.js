@@ -130,12 +130,22 @@ export class Battle {
     this.active = true;
     this.s = {
       mode, startMode: mode, group, pool: poolFor(this.deck, group), rare: rarePoolFor(this.deck, group), legend: poolFor(this.deck, group).filter((e) => e.legendary), hp: MAX_HP, level: 1, exp: 0, score: 0, streak: 0, bestStreak: 0, chain: 0,
-      recent: [], rounds: 0, correct: 0, discovered: 0,
+      recent: [], rounds: 0, correct: 0, discovered: 0, pendingEncounter: null,
     };
     sound.set(store.settings.sound);
     this.syncSoundButton();
     this.resetScene();
     this.renderPlayer(false);
+    const { s } = this;
+    const useLegend = s.legend.length > 0 && Math.random() < LEGEND_CHANCE;
+    const useRare = !useLegend && s.rare.length > 0 && Math.random() < RARE_CHANCE;
+    const entry = useLegend
+      ? s.legend[Math.floor(Math.random() * s.legend.length)]
+      : useRare
+        ? s.rare[Math.floor(Math.random() * s.rare.length)]
+        : pickEntry(s.pool, s.recent);
+    s.pendingEncounter = { entry, visual: 'photo', q: makeQuestion(entry, s.mode, s.pool), legend: useLegend };
+    this.setChoices(s.pendingEncounter.q.choices, { locked: true, preparing: true });
     try {
       await this.run();
     } catch (err) {
@@ -310,10 +320,11 @@ export class Battle {
   }
 
   // ----- Menu -----
-  setChoices(labels) {
+  setChoices(labels, { locked = false, preparing = false } = {}) {
     const longest = labels ? Math.max(...labels.flatMap((l) => l.split(' ').map((w) => w.length))) : 0;
     this.el.menu.style.setProperty('--n', String(longest + 0.4));
     this.el.menu.classList.toggle('is-hard', Boolean(labels && labels.length === 6));
+    this.el.menu.classList.toggle('is-preparing', preparing);
     this.el.menu.setAttribute('aria-label', labels?.length === 6
       ? 'Choose your answer. Use keys 1 through 6 to select an answer.'
       : 'Choose your answer. Use keys 1 through 4 to select an answer.');
@@ -322,7 +333,7 @@ export class Battle {
       const label = btn.querySelector('.choice__label');
       label.textContent = labels ? labels[i] : '';
       btn.hidden = !labels || i >= labels.length;
-      btn.disabled = !labels || i >= labels.length;
+      btn.disabled = !labels || locked || i >= labels.length;
       if (labels && labels[i]) btn.setAttribute('aria-label', `Answer ${i + 1}: ${labels[i]}`);
       else btn.removeAttribute('aria-label');
     });
@@ -377,22 +388,28 @@ export class Battle {
 
   async round(challenge) {
     const { s, el } = this;
+    const pending = challenge ? null : s.pendingEncounter;
+    if (pending) s.pendingEncounter = null;
     let entry;
     let visual;
     let q;
-    const useLegend = !challenge && s.legend.length > 0 && Math.random() < LEGEND_CHANCE;
-    const useRare = !useLegend && !challenge && s.rare.length > 0 && Math.random() < RARE_CHANCE;
+    const useLegend = pending ? pending.legend : !challenge && s.legend.length > 0 && Math.random() < LEGEND_CHANCE;
+    const useRare = pending ? pending.entry.rare && !pending.legend : !useLegend && !challenge && s.rare.length > 0 && Math.random() < RARE_CHANCE;
     let legend = false;
     // A broken image should never end the game: try another species.
     for (let attempt = 0; attempt < 4; attempt++) {
-      legend = useLegend && attempt === 0;
-      entry = legend
-        ? s.legend[Math.floor(Math.random() * s.legend.length)]
-        : useRare && attempt === 0
-          ? s.rare[Math.floor(Math.random() * s.rare.length)]
-          : pickEntry(s.pool, s.recent, { needSilhouette: challenge });
-      visual = !challenge ? 'photo' : entry.silhouette ? 'silhouette' : 'pixel';
-      q = makeQuestion(entry, s.mode, s.pool);
+      if (pending && attempt === 0) {
+        ({ entry, visual, q, legend } = pending);
+      } else {
+        legend = useLegend && attempt === 0;
+        entry = legend
+          ? s.legend[Math.floor(Math.random() * s.legend.length)]
+          : useRare && attempt === 0
+            ? s.rare[Math.floor(Math.random() * s.rare.length)]
+            : pickEntry(s.pool, s.recent, { needSilhouette: challenge });
+        visual = !challenge ? 'photo' : entry.silhouette ? 'silhouette' : 'pixel';
+        q = makeQuestion(entry, s.mode, s.pool);
+      }
       try {
         if (challenge && attempt === 0) {
           sound.challenge();
@@ -400,7 +417,7 @@ export class Battle {
           el.scene.classList.add('is-challenge');
         }
         this.hideFoe();
-        this.setChoices(null);
+        if (!pending || attempt > 0) this.setChoices(null);
         el.scene.classList.toggle('is-legend', legend);
         await this.prepareFoe(entry, visual);
         break;

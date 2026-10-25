@@ -184,6 +184,12 @@
         <h2 id="guide-title">Field guide</h2>
         <p class="guide__count" id="guide-count" aria-live="polite"></p>
         <label class="guide__filter">Show <select id="guide-filter" class="tool"></select></label>
+        <label class="guide__filter">Discovery <select id="guide-status" class="tool">
+          <option value="all">All organisms</option>
+          <option value="unknown">Not yet seen</option>
+          <option value="seen">Seen, not identified</option>
+          <option value="identified">Identified</option>
+        </select></label>
         <label class="guide__search">Search organisms <input id="guide-search" class="tool" type="search" placeholder="Common or scientific name" autocomplete="off"></label>
       </header>
       <ul class="guide__grid" id="guide-grid"></ul>

@@ -31,9 +31,10 @@ Product priorities: no accounts, tracking, ads, or runtime third-party calls; of
 - Correct answers award points/experience and record discovery. Incorrect answers reduce player health and break streaks.
 - Three correct answers in a row trigger a silhouette Challenge. Victory restores some health, grants bonus rewards, and steps difficulty upward. Challenges prefer entries with silhouettes.
 - Rare entries (`rare: true`) are excluded from the regular pool and can appear with 4% probability in non-challenge rounds. The legendary soybean looper remains in the regular pool and has a 1.5% gold-glow encounter chance.
-- Field guide cards always show an organism name (common name when present; scientific-name fallback). Unknown/seen/identified image reveal states, card dialogs, and detail workflows remain intact. Search matches common and scientific names; role filters and visible-subset progress counts are supported.
+- Field guide cards always show an organism name (common name when present; scientific-name fallback). The Field guide and Distribution map share the same card component and unknown/seen/identified image reveal states. Card dialogs and detail workflows remain intact. Search matches common and scientific names; role and discovery-status filters and visible-subset progress counts are supported.
+- Battle answer labels render on screen entry and remain disabled until the opening encounter and prompt are ready, avoiding a late menu pop-in without allowing premature answers.
 - The Field guide contains all organisms, including rare organisms. Discovery progress, best scores, settings, and preferences are stored locally using `ecotoxid.v1`.
-- The Distribution map filters organisms by broad geographic region. Its preliminary approximations may include introduced populations and are not verified range maps; each organism’s multi-region labels are stored as `regions` in `data/species.json` and copied into the generated deck.
+- The Distribution map filters organisms by broad geographic region. Its preliminary approximations may include introduced populations and are not verified range maps; each organism’s multi-region labels are stored as `regions` in `data/species.json` and copied into the generated deck. It shares the Field guide card renderer and reveal states.
 - The Home screen supports a role-based battle deck and four saved scout palettes.
 - App version shown in Credits comes from `package.json`; do not duplicate the version string in UI source. Bump the service-worker cache version on app releases.
 
@@ -41,6 +42,7 @@ Product priorities: no accounts, tracking, ads, or runtime third-party calls; of
 
 - 143 source organisms and 143 generated deck entries.
 - All 143 organisms now have one or more preliminary region labels from seven broad regions; these labels are approximate and need expert review.
+- The collection intentionally includes Common Duckweed (`Lemna minor`) as an ecotoxicology test plant (OECD Test Guideline 221), alongside animal test organisms.
 - 143 unique scientific names and unique IDs; no duplicates.
 - No source/deck mismatches and no invalid binomial/genus/epithet mismatches were found.
 - No unusable quiz entries; all 143 appear in the Field guide.
@@ -66,7 +68,7 @@ data/species.json + data/facts.json
 | `js/main.js` | Load deck; screen flow; title controls; version display; service worker |
 | `js/battle.js` | Battle lifecycle, HUD, questions, reveals, effects, controls, results |
 | `js/game.js` | Pure game rules and mode/pool/question/scoring helpers; no DOM |
-| `js/guide.js` | Sorted Field guide, role filtering, name search, card details |
+| `js/guide.js` | Shared organism cards, sorted Field guide, role/status filtering, name search, card details |
 | `js/map.js`, `js/regions.js` | Interactive broad-region map and shared region names |
 | `js/ui.js` | Cancellable `Flow`, dialogue `TextBox`, reduced-motion helper |
 | `js/storage.js` | Local persistence wrapper (`ecotoxid.v1`) |
@@ -109,7 +111,7 @@ data/species.json + data/facts.json
 1. `npm run check` — required after data/rule changes.
 2. `npm run test:smoke` — required after UI/gameplay changes; installs Playwright Chromium once via `npx playwright install chromium`.
 3. CI in `.github/workflows/check.yml` runs `npm ci`, `npm run check`, installs Chromium, and runs smoke tests.
-4. Smoke coverage includes difficulty selection and answer counts, keyboard answers and battle progression, Field guide names/search/filters/card details, region map selection and results, Credits version, and mobile portrait/landscape plus desktop layout.
+4. Smoke coverage includes difficulty selection and answer counts, immediate battle choice rendering, keyboard answers and battle progression, Field guide names/search/role/status filters/card details, region map selection and results, Credits version, and mobile portrait/landscape plus desktop layout.
 5. For layout or interaction changes, manually verify additional affected paths when appropriate: correct/wrong answer, Challenge, Run/retry, zoom, guide reveal, persistence, offline reload, and browser console.
 
 ## Release and safety rules
@@ -133,4 +135,4 @@ Do not implement these without a focused user request:
 
 ## Current project status
 
-Version `0.1.0`; service-worker cache `ecotoxid-v12`. The latest deployed app includes scout palettes, per-mode 4/4/6 choices, Medium “species” wording, Field guide names/search/role filters, Credits version, and browser smoke tests. Data totals and caveats are recorded above.
+Version `0.1.0`; service-worker cache `ecotoxid-v13` on the last deployed release. The latest deployed app includes scout palettes, per-mode 4/4/6 choices, Medium “species” wording, Field guide names/search/role filters, broad region map, Credits version, and browser smoke tests. Data totals and caveats are recorded above.

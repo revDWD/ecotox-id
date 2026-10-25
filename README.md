@@ -34,7 +34,7 @@ Rare organisms are kept out of the normal pool and can appear unexpectedly in no
 
 ### Field guide
 
-The Field guide includes all organisms in the deck, not only those already identified. Cards show the common name where available, otherwise the scientific name. Unknown organisms retain their silhouette/mystery-image reveal behavior; identified cards show the photo and organism details. Search by common or scientific name, or filter by role. Your discovery progress is saved locally in your browser.
+The Field guide includes all organisms in the deck, not only those already identified. Cards show the common name where available, otherwise the scientific name. Unknown organisms retain their silhouette/mystery-image reveal behavior; identified cards show the photo and organism details. Search by common or scientific name, or filter by role and discovery status. Your discovery progress is saved locally in your browser. The Distribution map reuses the same organism cards and reveal states.
 
 The **Distribution map** lets you explore the deck by broad geographic region. Select a map area or region button to filter organisms, then open an organism to see its Field guide details. These region labels are approximate, may include introduced populations, and are not verified range maps or ecological advice.
 
@@ -42,7 +42,7 @@ The title screen also lets you select a role-based battle deck and change the sc
 
 ## Organism deck
 
-There are **143 unique organisms**: 140 regular encounters and three rare encounters. The deck covers crop pests, natural enemies, pollinators, and test/indicator species. All 143 are present in the Field guide. Seven regular organisms have no silhouette asset, so they do not appear in the silhouette-based Challenge pool while eligible silhouettes are available.
+There are **143 unique organisms**: 140 regular encounters and three rare encounters. The deck covers crop pests, natural enemies, pollinators, and test/indicator species. The test organisms intentionally include non-animal species such as Common Duckweed (*Lemna minor*), used in standardized aquatic-plant ecotoxicity testing ([OECD Test No. 221](https://www.oecd.org/en/publications/test-no-221-lemna-sp-growth-inhabition-test_9789264016194-en.html)). All 143 are present in the Field guide. Seven regular organisms have no silhouette asset, so they do not appear in the silhouette-based Challenge pool while eligible silhouettes are available.
 
 The deck and generated media are committed to the repository. The game itself loads only same-origin files and does not make runtime requests to iNaturalist, PhyloPic, or other third parties. Photo and silhouette credits and links are available in the game.
 
@@ -68,7 +68,7 @@ npx playwright install chromium   # one-time browser setup
 npm run test:smoke
 ```
 
-`npm run check` validates generated deck/media, region metadata, credits, quiz-choice rules, role pools, service-worker shell, and gameplay simulations. `npm run test:smoke` uses Playwright to test difficulty counts, keyboard selection and battle progression, Field guide search/filter/cards, region selection, Credits, and responsive layouts. The GitHub Actions Check workflow runs both.
+`npm run check` validates generated deck/media, region metadata, credits, quiz-choice rules, role pools, service-worker shell, and gameplay simulations. `npm run test:smoke` uses Playwright to test difficulty counts, immediate battle choice rendering, keyboard selection and battle progression, Field guide search/filter/cards, region selection, Credits, and responsive layouts. The GitHub Actions Check workflow runs both.
 
 For a browser test failure, Playwright keeps traces in `test-results/` when configured to retain on failure; these local artifacts are ignored by Git.
 
