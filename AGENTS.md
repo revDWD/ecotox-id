@@ -31,8 +31,8 @@ Product priorities: no accounts, tracking, ads, or runtime third-party calls; of
 - Correct answers award points/experience and record discovery. Incorrect answers reduce player health and break streaks.
 - Three correct answers in a row trigger a silhouette Challenge. Victory restores some health, grants bonus rewards, and steps difficulty upward. Challenges prefer entries with silhouettes.
 - Rare entries (`rare: true`) are excluded from the regular pool and can appear with 4% probability in non-challenge rounds. The legendary soybean looper remains in the regular pool and has a 1.5% gold-glow encounter chance.
-- Field guide cards always show an organism name (common name when present; scientific-name fallback). The Field guide and Distribution map share the same card component and unknown/seen/identified image reveal states. Card dialogs and detail workflows remain intact. Search matches common and scientific names; role and discovery-status filters and visible-subset progress counts are supported.
-- Battle answer labels render on screen entry and remain disabled until the opening encounter and prompt are ready, avoiding a late menu pop-in without allowing premature answers.
+- Field guide cards always show an organism name (common name when present; scientific-name fallback). The Field guide and Distribution map share the same card component, responsive grid, and unknown/seen/identified image reveal states. Card dialogs and detail workflows remain intact. Search matches common and scientific names; role and discovery-status filters and visible-subset progress counts are supported.
+- Battle answer labels render immediately for every encounter and remain disabled until that encounter and its prompt are ready, avoiding a late menu pop-in without allowing premature answers.
 - The Field guide contains all organisms, including rare organisms. Discovery progress, best scores, settings, and preferences are stored locally using `ecotoxid.v1`.
 - The Distribution map filters organisms by broad geographic region. Its preliminary approximations may include introduced populations and are not verified range maps; each organism’s multi-region labels are stored as `regions` in `data/species.json` and copied into the generated deck. It shares the Field guide card renderer and reveal states.
 - The Home screen supports a role-based battle deck and four saved scout palettes.
@@ -135,4 +135,4 @@ Do not implement these without a focused user request:
 
 ## Current project status
 
-Version `0.1.0`; service-worker cache `ecotoxid-v13` on the last deployed release. The latest deployed app includes scout palettes, per-mode 4/4/6 choices, Medium “species” wording, Field guide names/search/role filters, broad region map, Credits version, and browser smoke tests. Data totals and caveats are recorded above.
+Version `0.1.0`; service-worker cache `ecotoxid-v14` on the last deployed release (`ecotoxid-v15` in the current changes). The latest deployed app includes scout palettes, per-mode 4/4/6 choices, Medium “species” wording, Field guide names/search/role filters, broad region map, Credits version, and browser smoke tests. Data totals and caveats are recorded above.

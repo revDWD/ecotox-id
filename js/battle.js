@@ -411,13 +411,13 @@ export class Battle {
         q = makeQuestion(entry, s.mode, s.pool);
       }
       try {
+        this.setChoices(q.choices, { locked: true, preparing: true });
         if (challenge && attempt === 0) {
           sound.challenge();
           await this.wipe(true);
           el.scene.classList.add('is-challenge');
         }
         this.hideFoe();
-        if (!pending || attempt > 0) this.setChoices(null);
         el.scene.classList.toggle('is-legend', legend);
         await this.prepareFoe(entry, visual);
         break;
@@ -469,7 +469,6 @@ export class Battle {
       await this.wipe(true);
       el.scene.classList.remove('is-challenge');
       this.hideFoe();
-      this.setChoices(null);
       await this.wipe(false);
     } else {
       this.hideFoe();
