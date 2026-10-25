@@ -46,6 +46,71 @@ test('keyboard answer works and battle advances to the next encounter', async ({
   await expect(page.locator('#foe-img')).not.toHaveAttribute('src', firstPhoto);
 });
 
+test('answer choices stay visible and stable across successive encounters', async ({ page }) => {
+  const deck = await page.evaluate(async () => (await (await fetch('data/deck.json')).json()).species);
+  await startBattle(page, 'genus');
+
+  const choiceButtons = page.locator('.choice:visible');
+  await expect(choiceButtons).toHaveCount(4);
+  const originalBounds = await page.locator('#menu').evaluate((menu) => {
+    const rect = menu.getBoundingClientRect();
+    return { x: rect.x + scrollX, y: rect.y + scrollY, width: rect.width, height: rect.height };
+  });
+  await page.locator('#menu').evaluate((menu) => {
+    window.choiceSnapshots = [];
+    const record = () => {
+      if (document.querySelector('#screen-battle').hidden) return;
+      const choices = [...menu.querySelectorAll('.choice')].filter((button) => !button.hidden);
+      window.choiceSnapshots.push({
+        count: choices.length,
+        labeled: choices.every((button) => button.querySelector('.choice__label').textContent.trim()),
+      });
+    };
+    new MutationObserver(record).observe(menu, {
+      attributes: true,
+      childList: true,
+      characterData: true,
+      subtree: true,
+    });
+  });
+
+  for (let round = 0; round < 2; round++) {
+    await expect(page.locator('.choice:visible:not(:disabled)')).toHaveCount(4);
+    const photo = await page.locator('#foe-img').getAttribute('src');
+    const entry = deck.find((candidate) => photo.endsWith(candidate.photo.file));
+    expect(entry).toBeTruthy();
+    const answerIndex = await choiceButtons.evaluateAll((buttons, genus) =>
+      buttons.findIndex((button) => button.querySelector('.choice__label').textContent.trim() === genus),
+    entry.genus);
+    expect(answerIndex).toBeGreaterThanOrEqual(0);
+    await page.locator(`.choice[data-i="${answerIndex}"]`).click();
+    await expect(page.locator(`.choice[data-i="${answerIndex}"]`)).toHaveClass(/is-correct/);
+
+    for (let step = 0; step < 100; step++) {
+      if ((await page.locator('#foe-img').getAttribute('src')) !== photo) break;
+      if (await page.locator('#more').isVisible()) await page.locator('#scene').click();
+      await page.waitForTimeout(20);
+    }
+    await expect(page.locator('#foe-img')).not.toHaveAttribute('src', photo);
+    await expect(choiceButtons).toHaveCount(4);
+    const bounds = await page.locator('#menu').evaluate((menu) => {
+      const rect = menu.getBoundingClientRect();
+      return { x: rect.x + scrollX, y: rect.y + scrollY, width: rect.width, height: rect.height };
+    });
+    expect(bounds).toMatchObject({
+      x: originalBounds.x,
+      y: originalBounds.y,
+      width: originalBounds.width,
+      height: originalBounds.height,
+    });
+  }
+
+  await expect(page.locator('.choice:visible:not(:disabled)')).toHaveCount(4);
+  const snapshots = await page.evaluate(() => window.choiceSnapshots);
+  expect(snapshots.length).toBeGreaterThan(0);
+  expect(snapshots.every(({ count, labeled }) => count === 4 && labeled)).toBe(true);
+});
+
 test('battle choices render immediately while the opening encounter prepares', async ({ page }) => {
   await page.getByRole('button', { name: 'Start battle' }).click();
   const choices = page.locator('.choice:visible');
@@ -121,6 +186,7 @@ test('distribution map filters organisms by region and opens Field guide details
   await page.keyboard.press('Enter');
   await expect(area).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('#region-results li')).toHaveCount(northAmerica.length);
+  await expect(page.locator('#region-results')).toHaveClass(/guide__grid/);
   await page.locator('#region-results button').first().click();
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.getByRole('button', { name: 'Close' }).click();
@@ -134,6 +200,16 @@ test('distribution map filters organisms by region and opens Field guide details
     await page.setViewportSize(viewport);
     const noHorizontalOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
     expect(noHorizontalOverflow, `Distribution map ${viewport.width}x${viewport.height}: horizontal overflow`).toBe(true);
+    const columns = await page.locator('#region-results').evaluate((grid) =>
+      getComputedStyle(grid).gridTemplateColumns.split(' ').length);
+    await page.locator('#btn-map-back').click();
+    await page.getByRole('button', { name: 'Field guide' }).click();
+    const guideColumns = await page.locator('#guide-grid').evaluate((grid) =>
+      getComputedStyle(grid).gridTemplateColumns.split(' ').length);
+    expect(columns, `Map grid ${viewport.width}x${viewport.height}`).toBe(guideColumns);
+    expect(columns, `Map grid ${viewport.width}x${viewport.height} should show multiple cards per row`).toBeGreaterThan(1);
+    await page.locator('#btn-guide-back').click();
+    await page.getByRole('button', { name: 'Distribution map' }).click();
   }
   await page.locator('#btn-map-back').click();
   await expect(page.locator('#screen-title')).toBeVisible();
